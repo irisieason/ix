@@ -10,3 +10,4 @@
 export { IxActiveModal } from './modal-ref';
 export { ModalContext, ModalService } from './modal.service';
 export { ModalConfig } from './modal.config';
+

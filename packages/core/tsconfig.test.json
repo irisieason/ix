@@ -4,7 +4,7 @@
     "paths": {
       "@utils/test": ["src/tests/utils/test"]
     },
-    "types": ["@siemens/ix-icons"],
+    "types": ["@irisieason/ix-icons"],
     "noEmit": true
   },
   "include": [
@@ -15,3 +15,4 @@
   ],
   "exclude": ["node_modules", "playwright.config.ts", "playwright-ct.config.ts"]
 }
+

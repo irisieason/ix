@@ -24,3 +24,4 @@ const IxFlipTile: StencilReactComponent<IxFlipTileElement, IxFlipTileEvents> = /
 });
 
 export default IxFlipTile;
+

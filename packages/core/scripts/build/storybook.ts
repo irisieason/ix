@@ -65,3 +65,4 @@ export function storybookOutputTarget(config: {
   };
   return outputTarget;
 }
+

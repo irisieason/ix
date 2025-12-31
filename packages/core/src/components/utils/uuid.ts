@@ -20,3 +20,4 @@ export function generateUUID(): string {
 export const createSequentialId = (prefix: string, sequenceId: number) => {
   return `${prefix}-${sequenceId++}`;
 };
+

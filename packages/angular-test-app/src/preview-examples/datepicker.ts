@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <ix-date-picker range="false"></ix-date-picker> `,
 })
 export default class Datepicker {}
+

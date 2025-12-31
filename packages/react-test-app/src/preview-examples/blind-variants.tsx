@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconBulb } from '@siemens/ix-icons/icons';
+import { iconBulb } from '@irisieason/ix-icons/icons';
 import './blind-variants.scoped.css';
 
 import { IxBlind } from '@siemens/ix-react';
@@ -77,3 +77,4 @@ export default () => {
     </>
   );
 };
+

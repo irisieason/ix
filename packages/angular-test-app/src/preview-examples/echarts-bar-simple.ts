@@ -62,3 +62,4 @@ export default class EchartsBarSimple implements OnInit {
     });
   }
 }
+

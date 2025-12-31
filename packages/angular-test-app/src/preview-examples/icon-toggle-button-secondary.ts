@@ -54,3 +54,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./icon-toggle-button-secondary.css'],
 })
 export default class Buttons {}
+

@@ -45,3 +45,4 @@ export default class ModalByInstanceContent {
     this.activeModal.close('My close response');
   }
 }
+

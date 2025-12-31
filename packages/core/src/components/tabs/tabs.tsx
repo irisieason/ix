@@ -23,7 +23,7 @@ import { requestAnimationFrameNoNgZone } from '../utils/requestAnimationFrame';
 import {
   iconChevronLeftSmall,
   iconChevronRightSmall,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 @Component({
   tag: 'ix-tabs',
@@ -379,3 +379,4 @@ export class Tabs {
     );
   }
 }
+

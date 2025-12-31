@@ -16,3 +16,4 @@ regressionTest.describe('icon', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

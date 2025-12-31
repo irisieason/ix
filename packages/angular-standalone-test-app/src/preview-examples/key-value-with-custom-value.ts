@@ -21,3 +21,4 @@ import { IxKeyValue } from '@siemens/ix-angular/standalone';
   styleUrls: ['./key-value-with-custom-value.css'],
 })
 export default class KeyValueWithCustomValue {}
+

@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconGlobe, iconHome, iconStar } from '@siemens/ix-icons/icons';
+import { iconGlobe, iconHome, iconStar } from '@irisieason/ix-icons/icons';
 import './vertical-tabs.scoped.css';
 
 import { IxMenu, IxMenuItem } from '@siemens/ix-react';
@@ -29,3 +29,4 @@ export default () => {
     </IxMenu>
   );
 };
+

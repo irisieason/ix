@@ -82,3 +82,4 @@ regressionTest.describe('event-list filled', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

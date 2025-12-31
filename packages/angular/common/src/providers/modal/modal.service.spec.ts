@@ -137,3 +137,4 @@ test('should throw TypeError if instance cannot be closed', () => {
     'Invalid modal instance: cannot close'
   );
 });
+

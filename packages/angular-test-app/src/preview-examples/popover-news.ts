@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './popover-news.html',
 })
 export default class PopoverNews {}
+

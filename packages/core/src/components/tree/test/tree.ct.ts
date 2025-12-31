@@ -463,3 +463,4 @@ regressionTest(
     await expect(items.nth(2)).not.toBeVisible();
   }
 );
+

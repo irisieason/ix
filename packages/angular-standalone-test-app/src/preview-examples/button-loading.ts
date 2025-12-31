@@ -40,3 +40,4 @@ export default class ButtonLoading {
     }, 2500);
   }
 }
+

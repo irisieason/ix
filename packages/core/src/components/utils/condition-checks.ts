@@ -33,3 +33,4 @@ export const isSvgDataUrl = (url: string) => {
 
   return url.startsWith('data:image/svg+xml');
 };
+

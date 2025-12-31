@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./blind-variants.css'],
 })
 export default class Blind {}
+

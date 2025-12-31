@@ -31,3 +31,4 @@ regressionTest.describe('date picker', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

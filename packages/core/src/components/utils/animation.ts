@@ -77,3 +77,4 @@ export default class Animation {
     return this.prefersReducedMotion() ? 0 : t;
   }
 }
+

@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconClose } from '@siemens/ix-icons/icons';
+import { iconClose } from '@irisieason/ix-icons/icons';
 import {
   Component,
   Event,
@@ -260,3 +260,4 @@ export class Drawer {
     );
   }
 }
+

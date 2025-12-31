@@ -8,3 +8,4 @@
  */
 
 export type ElementReference = string | HTMLElement | Promise<HTMLElement>;
+

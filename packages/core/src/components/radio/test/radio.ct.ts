@@ -181,3 +181,4 @@ test.describe('accessibility & click handling', () => {
     await expect(radio).toHaveAttribute('aria-checked', 'true');
   });
 });
+

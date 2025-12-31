@@ -12,3 +12,4 @@ import { IxTimePicker } from '@siemens/ix-react';
 export default () => {
   return <IxTimePicker format="hh:mm:ss.SSS" time="01:01:01.100" />;
 };
+

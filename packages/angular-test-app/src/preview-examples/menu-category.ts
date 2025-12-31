@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './menu-category.html',
 })
 export default class MenuCategory {}
+

@@ -262,3 +262,4 @@ regressionTest(
     await expect(tooltip).not.toBeVisible();
   }
 );
+

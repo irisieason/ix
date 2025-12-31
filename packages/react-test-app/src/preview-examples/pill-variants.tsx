@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconInfo } from '@siemens/ix-icons/icons';
+import { iconInfo } from '@irisieason/ix-icons/icons';
 import './pill-variants.scoped.css';
 
 import { IxCol, IxLayoutGrid, IxPill, IxRow } from '@siemens/ix-react';
@@ -126,3 +126,4 @@ export default () => {
     </>
   );
 };
+

@@ -16,3 +16,4 @@ regressionTest.describe('theme-system', () => {
     expect(await page.screenshot()).toMatchSnapshot();
   });
 });
+

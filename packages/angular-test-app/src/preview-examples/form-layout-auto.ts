@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './form-layout-auto.html',
 })
 export default class FormLayoutAuto {}
+

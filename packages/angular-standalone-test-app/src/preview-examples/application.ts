@@ -30,3 +30,4 @@ import {
   templateUrl: './application.html',
 })
 export default class ApplicationExample {}
+

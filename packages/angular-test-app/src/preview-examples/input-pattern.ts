@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './input-pattern.html',
 })
 export default class InputPattern {}
+

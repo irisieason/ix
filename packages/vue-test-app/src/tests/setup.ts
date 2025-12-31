@@ -6,6 +6,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { ixPlugin } from '@siemens/ix-vue';
+import { ixPlugin } from '@irisieason/ix-vue';
 
 await ixPlugin.install();
+

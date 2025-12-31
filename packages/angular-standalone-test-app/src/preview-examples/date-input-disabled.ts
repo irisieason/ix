@@ -19,3 +19,4 @@ import {
   templateUrl: './date-input-disabled.html',
 })
 export default class DateInputDisabled {}
+

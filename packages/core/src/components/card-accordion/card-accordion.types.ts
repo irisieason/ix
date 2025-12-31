@@ -14,3 +14,4 @@ export type CardAccordionExpandChangeEvent = {
 };
 
 export type CardAccordionVariant = CardVariant;
+

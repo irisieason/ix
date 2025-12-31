@@ -53,3 +53,4 @@ export class TypedEvent<T> {
     return this.on((e) => te.emit(e));
   };
 }
+

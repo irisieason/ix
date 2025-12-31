@@ -50,3 +50,4 @@ regressionTest.describe('avatar', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconStar } from '@siemens/ix-icons/icons';
+import { iconStar } from '@irisieason/ix-icons/icons';
 import './button-loading.scoped.css';
 
 import { IxButton, IxIconButton } from '@siemens/ix-react';
@@ -76,3 +76,4 @@ export default () => {
     </>
   );
 };
+

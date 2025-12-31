@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './time-input-disabled.html',
 })
 export default class TimeInputDisabled {}
+

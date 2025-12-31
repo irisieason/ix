@@ -34,3 +34,4 @@ export default class Loading {
     }, 1000);
   };
 }
+

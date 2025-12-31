@@ -212,3 +212,4 @@ export class Button implements IxButtonComponent {
     );
   }
 }
+

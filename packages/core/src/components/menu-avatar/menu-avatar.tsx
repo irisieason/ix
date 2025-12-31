@@ -17,7 +17,7 @@ import {
   State,
 } from '@stencil/core';
 import { getSlottedElements } from '../utils/shadow-dom';
-import { iconLogOut } from '@siemens/ix-icons/icons';
+import { iconLogOut } from '@irisieason/ix-icons/icons';
 
 @Component({
   tag: 'ix-menu-avatar',
@@ -121,3 +121,4 @@ export class MenuAvatar {
     );
   }
 }
+

@@ -13,7 +13,7 @@ import {
   iconQuestion,
   iconSuccess,
   iconWarning,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { getCoreDelegate } from '../delegate';
 import { TypedEvent } from '../typed-event';
 import { ModalConfig } from './modal';
@@ -280,3 +280,4 @@ showMessage.question = (
     ),
   });
 };
+

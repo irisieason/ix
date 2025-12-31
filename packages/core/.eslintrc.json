@@ -1,7 +1,7 @@
 {
   "root": true,
   "parserOptions": {
-    "project": "./tsconfig.lint.json"
+    "project": ["./tsconfig.lint.json"]
   },
   "extends": [
     /* "plugin:@typescript-eslint/recommended", */ "plugin:@stencil-community/recommended",
@@ -26,3 +26,4 @@
     "no-unused-vars": "off"
   }
 }
+

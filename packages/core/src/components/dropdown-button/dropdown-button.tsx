@@ -12,7 +12,7 @@ import { AlignedPlacement } from '../dropdown/placement';
 import {
   iconChevronDownSmall,
   iconChevronUpSmall,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { makeRef } from '../utils/make-ref';
 import type { DropdownButtonVariant } from './dropdown-button.types';
 import { a11yBoolean } from '../utils/a11y';
@@ -150,3 +150,4 @@ export class DropdownButton {
     );
   }
 }
+

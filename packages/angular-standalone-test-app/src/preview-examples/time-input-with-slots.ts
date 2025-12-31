@@ -21,3 +21,4 @@ import {
   templateUrl: './time-input-with-slots.html',
 })
 export default class TimeInputWithSlots {}
+

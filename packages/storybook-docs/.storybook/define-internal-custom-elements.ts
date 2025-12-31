@@ -11,7 +11,7 @@ import { defineCustomElement as defineIxApplicationSwitchModal } from '@siemens/
 import { defineCustomElement as defineIxBurgerMenu } from '@siemens/ix/components/ix-menu-expand-icon.js';
 import { defineCustomElement as defineIxDateTimeCard } from '@siemens/ix/components/ix-date-time-card.js';
 import { defineCustomElement as defineIxModalLoading } from '@siemens/ix/components/ix-modal-loading.js';
-import { defineCustomElement as defineIxIcon } from '@siemens/ix-icons/components/ix-icon.js';
+import { defineCustomElement as defineIxIcon } from '@irisieason/ix-icons/components/ix-icon.js';
 
 /**
  * Define custom elements during usage of the library to ensure that all
@@ -23,3 +23,4 @@ defineIxDateTimeCard();
 defineIxBurgerMenu();
 defineIxModalLoading();
 defineIxIcon();
+

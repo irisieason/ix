@@ -27,3 +27,4 @@ regressionTest.describe('datetime picker', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

@@ -60,3 +60,4 @@ regressionTest.describe('upload', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

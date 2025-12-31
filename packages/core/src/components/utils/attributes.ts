@@ -31,3 +31,4 @@ export const inheritAttributes = (
 
   return attributeObject;
 };
+

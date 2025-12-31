@@ -25,7 +25,7 @@ import {
   iconPiechart,
   iconPlant,
   iconNetworkDevice,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { useState } from 'react';
 
 export default function ApplicationAdvancedExample() {
@@ -81,3 +81,4 @@ export default function ApplicationAdvancedExample() {
     </IxApplication>
   );
 };
+

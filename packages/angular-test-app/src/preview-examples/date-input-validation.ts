@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './date-input-validation.html',
 })
 export default class DateInputValidation {}
+

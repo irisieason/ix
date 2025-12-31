@@ -21,3 +21,4 @@ import {
   templateUrl: './input-with-slots.html',
 })
 export default class InputWithSlots {}
+

@@ -10,3 +10,4 @@ export type TimeInputValidityState = {
   patternMismatch: boolean;
   invalidReason?: string;
 };
+

@@ -18,3 +18,4 @@ export class DropdownTriggerBaseDirective {
     this.element.nativeElement.trigger = this.ixDropdownTrigger.el;
   }
 }
+

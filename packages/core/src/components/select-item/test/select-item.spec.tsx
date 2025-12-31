@@ -42,3 +42,4 @@ describe('select-item', () => {
     expect(eventSpy).toHaveBeenCalled();
   });
 });
+

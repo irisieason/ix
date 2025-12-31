@@ -22,7 +22,7 @@ import { Breakpoint } from '../utils/breakpoints';
 import {
   iconDoubleChevronLeft,
   iconDoubleChevronRight,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 /**
  * @internal
@@ -107,3 +107,4 @@ export class MenuExpandIcon {
     );
   }
 }
+

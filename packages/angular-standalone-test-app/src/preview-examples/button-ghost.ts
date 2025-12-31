@@ -20,3 +20,4 @@ import { IxButton } from '@siemens/ix-angular/standalone';
   styleUrls: ['./button-ghost.css'],
 })
 export default class Buttons {}
+

@@ -21,3 +21,4 @@ regressionTest.describe('key value', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

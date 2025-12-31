@@ -22,3 +22,4 @@ import { IxGroup, IxGroupItem, IxButton } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class GroupCustomEntry {}
+

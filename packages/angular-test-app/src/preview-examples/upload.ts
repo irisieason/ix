@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <ix-upload></ix-upload> `,
 })
 export default class Upload {}
+

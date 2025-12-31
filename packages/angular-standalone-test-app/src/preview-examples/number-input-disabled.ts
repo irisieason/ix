@@ -19,3 +19,4 @@ import {
   templateUrl: './number-input-disabled.html',
 })
 export default class NumberInputDisabled {}
+

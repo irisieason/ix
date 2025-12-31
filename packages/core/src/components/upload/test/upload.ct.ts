@@ -16,3 +16,4 @@ regressionTest('renders', async ({ mount, page }) => {
   await expect(upload).toHaveClass(/hydrated/);
   await expect(upload).toBeVisible();
 });
+

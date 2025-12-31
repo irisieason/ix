@@ -68,3 +68,4 @@ regressionTest(
     await expect(element).not.toHaveClass(/expanded/);
   }
 );
+

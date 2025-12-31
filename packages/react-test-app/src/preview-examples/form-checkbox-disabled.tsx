@@ -14,3 +14,4 @@ export default () => {
     <IxCheckbox label="I agree everything" name="agreed" disabled></IxCheckbox>
   );
 };
+

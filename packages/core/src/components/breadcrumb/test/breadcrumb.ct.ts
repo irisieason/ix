@@ -115,3 +115,4 @@ regressionTest('should show next items', async ({ mount, page }) => {
   await expect(item1).toHaveText('Next Item 1');
   await expect(item2).toHaveText('Next Item 2');
 });
+

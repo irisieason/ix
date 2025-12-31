@@ -22,3 +22,4 @@ import { IxKeyValue } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class KeyValueWithLabelLeft {}
+

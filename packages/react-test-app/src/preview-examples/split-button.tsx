@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconChevronDownSmall } from '@siemens/ix-icons/icons';
+import { iconChevronDownSmall } from '@irisieason/ix-icons/icons';
 import { IxDropdownItem, IxSplitButton } from '@siemens/ix-react';
 import './split-button.scoped.css'
 
@@ -33,3 +33,4 @@ export default () => {
     </div>
   );
 };
+

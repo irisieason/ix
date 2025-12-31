@@ -36,3 +36,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./vertical-tabs-with-avatar.css'],
 })
 export default class VerticalTabsWithAvatar {}
+

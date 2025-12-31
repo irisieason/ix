@@ -113,3 +113,4 @@ regressionTest(
     expect(eventDetail).toBe('Tab 2');
   }
 );
+

@@ -51,3 +51,4 @@ export const Floating: Story = {
     variant: 'floating',
   },
 };
+

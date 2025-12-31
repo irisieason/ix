@@ -38,11 +38,11 @@ function loadResources() {
   const ixIcons = document.createElement('script');
   ixIcons.setAttribute('type', 'module');
   ixIcons.innerHTML =
-    'import { defineCustomElements } from "/www/node_modules/@siemens/ix-icons/loader/index.es2017.js"; defineCustomElements();';
+    'import { defineCustomElements } from "/www/node_modules/@irisieason/ix-icons/loader/index.es2017.js"; defineCustomElements();';
 
   const asset = document.createElement('meta');
   asset.setAttribute('name', 'ix-icons:path');
-  asset.setAttribute('content', '/www/node_modules/@siemens/ix-icons/svg');
+  asset.setAttribute('content', '/www/node_modules/@irisieason/ix-icons/svg');
   document.getElementsByTagName('head')[0].appendChild(asset);
 
   const fullBodyStyles = document.createElement('style');
@@ -85,3 +85,4 @@ function detectThemeSwitching() {
   loadResources();
   detectThemeSwitching();
 })();
+

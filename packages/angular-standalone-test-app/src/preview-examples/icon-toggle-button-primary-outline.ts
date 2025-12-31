@@ -36,3 +36,4 @@ import {
   styleUrls: ['./icon-toggle-button-primary-outline.css'],
 })
 export default class Buttons {}
+

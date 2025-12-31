@@ -22,7 +22,7 @@ import { BaseButton, BaseButtonProps } from '../button/base-button';
 import { FilterState } from './filter-state';
 import { InputState } from './input-state';
 import { LogicalFilterOperator } from './logical-filter-operator';
-import { iconClear, iconSearch } from '@siemens/ix-icons/icons';
+import { iconClear, iconSearch } from '@irisieason/ix-icons/icons';
 import { makeRef } from '../utils/make-ref';
 import {
   addDisposableEventListener,
@@ -922,3 +922,4 @@ export class CategoryFilter {
     );
   }
 }
+

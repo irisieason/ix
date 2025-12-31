@@ -5,7 +5,7 @@ import {
   iconContextMenu,
   iconRename,
   iconTrashcan,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import {
   IxBlind,
   IxContent,
@@ -63,3 +63,4 @@ const Other: React.FC = () => {
 };
 
 export default Other;
+

@@ -29,3 +29,4 @@ import {
 export default class SelectEditable {
   value = '1';
 }
+

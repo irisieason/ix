@@ -44,7 +44,7 @@
               },
               {
                 "glob": "**/*.svg",
-                "input": "node_modules/@siemens/ix-icons/svg",
+                "input": "node_modules/@irisieason/ix-icons/svg",
                 "output": "./svg"
               }
             ],
@@ -113,3 +113,4 @@
     }
   }
 }
+

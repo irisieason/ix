@@ -21,3 +21,4 @@ export default class DatepickerRange {
   fromDate = '2022/12/15';
   toDate = '2022/12/24';
 }
+

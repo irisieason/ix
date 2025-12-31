@@ -113,3 +113,4 @@ regressionTest(
     await expect(selectedDiv).toHaveClass(/selected/);
   }
 );
+

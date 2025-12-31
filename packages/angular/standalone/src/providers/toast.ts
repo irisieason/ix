@@ -11,10 +11,10 @@ import { Injectable } from '@angular/core';
 import {
   ToastService as BaseToastService,
   ToastConfig,
-} from '@siemens/ix-angular/common';
-import { ShowToastResult } from '@siemens/ix';
-import { defineCustomElement } from '@siemens/ix/components/ix-toast.js';
-import { defineCustomElement as defineCustomElementToastContainer } from '@siemens/ix/components/ix-toast-container.js';
+} from '@irisieason/ix-angular/common';
+import { ShowToastResult } from '@irisieason/ix';
+import { defineCustomElement } from '@irisieason/ix/components/ix-toast.js';
+import { defineCustomElement as defineCustomElementToastContainer } from '@irisieason/ix/components/ix-toast-container.js';
 
 @Injectable({ providedIn: 'root' })
 export class ToastService extends BaseToastService {
@@ -37,3 +37,4 @@ export class ToastService extends BaseToastService {
     return super.show(config);
   }
 }
+

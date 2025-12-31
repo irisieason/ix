@@ -10,7 +10,7 @@ import {
   State,
 } from '@stencil/core';
 import { createMutationObserver } from '../utils/mutation-observer';
-import { iconChevronDown, iconMoreMenu } from '@siemens/ix-icons/icons';
+import { iconChevronDown, iconMoreMenu } from '@irisieason/ix-icons/icons';
 
 function CardListTitle(props: {
   label?: string;
@@ -353,3 +353,4 @@ export class CardList {
     );
   }
 }
+

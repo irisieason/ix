@@ -26,7 +26,7 @@ import { IxDatePickerComponent } from '../date-picker/date-picker-component';
 import { makeRef } from '../utils/make-ref';
 import { ButtonVariant } from '../button/button';
 import { IxButtonComponent } from '../button/button-component';
-import { iconHistory } from '@siemens/ix-icons/icons';
+import { iconHistory } from '@irisieason/ix-icons/icons';
 import type {
   DateDropdownOption,
   DateRangeChangeEvent,
@@ -440,3 +440,4 @@ export class DateDropdown
     );
   }
 }
+

@@ -6,7 +6,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { addIcons, showMessage } from '@siemens/ix-icons';
+import { addIcons, showMessage } from '@irisieason/ix-icons';
 
 declare global {
   interface Window {
@@ -16,3 +16,4 @@ declare global {
 }
 
 export {};
+

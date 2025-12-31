@@ -18,3 +18,4 @@ export class Divider {
     return <Host></Host>;
   }
 }
+

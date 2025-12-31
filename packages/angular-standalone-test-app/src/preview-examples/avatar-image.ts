@@ -20,3 +20,4 @@ import { IxAvatar } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class AvatarImage {}
+

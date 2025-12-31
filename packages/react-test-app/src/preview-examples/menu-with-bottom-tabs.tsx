@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconGlobe, iconHome } from '@siemens/ix-icons/icons';
+import { iconGlobe, iconHome } from '@irisieason/ix-icons/icons';
 import { IxMenu, IxMenuItem } from '@siemens/ix-react';
 
 export default () => {
@@ -22,3 +22,4 @@ export default () => {
     </IxMenu>
   );
 };
+

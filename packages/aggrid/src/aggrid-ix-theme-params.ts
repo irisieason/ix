@@ -130,3 +130,4 @@ export const aggridIxThemeParams = {
   inputBorder: `var(--theme-border-width-default) solid var(--theme-input--border-color)`,
   inputFocusBorder: `var(--theme-focus-border-thickness) solid var(--theme-input--border-color--focus)`,
 };
+

@@ -26,3 +26,4 @@ export default () => {
   };
   return <IxButton onClick={() => startLoading()}>Start loading</IxButton>;
 };
+

@@ -7,3 +7,4 @@
  * LICENSE file in the root directory of this source tree.
  */
 export type LiteralStringUnion<T> = T | (string & Record<never, never>);
+

@@ -15,7 +15,7 @@ SPDX-License-Identifier: MIT
     <meta name="ix:legacy-icons" content="false" />
     <link
       rel="stylesheet"
-      href="./node_modules/@siemens/ix/dist/siemens-ix/siemens-ix.css"
+      href="./node_modules/@irisieason/ix/dist/siemens-ix/siemens-ix.css"
     />
 
     <title>Stencil Component Starter</title>
@@ -30,7 +30,7 @@ SPDX-License-Identifier: MIT
       const selector = queryParam.get('selector');
 
       const { defineCustomElement } = await import(
-        `/node_modules/@siemens/ix/components/${selector}.js`
+        `/node_modules/@irisieason/ix/components/${selector}.js`
       );
 
       defineCustomElement();
@@ -69,3 +69,5 @@ SPDX-License-Identifier: MIT
     </script>
   </body>
 </html>
+
+

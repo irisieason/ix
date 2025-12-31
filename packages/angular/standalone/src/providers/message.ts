@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { MessageConfig, TypedEvent } from '@siemens/ix';
-import { MessageService as BaseMessageService } from '@siemens/ix-angular/common';
+import { MessageConfig, TypedEvent } from '@irisieason/ix';
+import { MessageService as BaseMessageService } from '@irisieason/ix-angular/common';
 
-import { defineCustomElement } from '@siemens/ix/components/ix-modal.js';
-import { defineCustomElement as defineCustomElementModalFooter } from '@siemens/ix/components/ix-modal-footer.js';
+import { defineCustomElement } from '@irisieason/ix/components/ix-modal.js';
+import { defineCustomElement as defineCustomElementModalFooter } from '@irisieason/ix/components/ix-modal-footer.js';
 
 @Injectable({ providedIn: 'root' })
 export class MessageService extends BaseMessageService {
@@ -114,3 +114,4 @@ export class MessageService extends BaseMessageService {
     );
   }
 }
+

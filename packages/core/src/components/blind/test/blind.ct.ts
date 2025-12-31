@@ -14,3 +14,4 @@ regressionTest('renders', async ({ mount, page }) => {
   const blindElement = page.locator('ix-blind');
   await expect(blindElement).toHaveClass(/hydrated/);
 });
+

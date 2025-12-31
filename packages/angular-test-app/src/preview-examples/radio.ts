@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './radio.html',
 })
 export default class Radio {}
+

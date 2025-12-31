@@ -12,7 +12,7 @@ import {
   iconPrint,
   iconStar,
   iconError,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { useRef, useState } from 'react';
 import { IxButton } from '../../components';
 import { IxTree } from '../../tree';
@@ -126,3 +126,4 @@ export const TreeExample = () => {
     </div>
   );
 };
+

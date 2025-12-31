@@ -19,3 +19,4 @@ import {
   templateUrl: './number-input-validation.html',
 })
 export default class NumberInputValidation {}
+

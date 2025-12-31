@@ -1048,3 +1048,4 @@ test('should not show "All" chip of de-selected a item', async ({
 
   await expect(allChip).not.toBeVisible();
 });
+

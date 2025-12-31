@@ -13,7 +13,7 @@ import {
   AppSwitchConfigurationTarget,
 } from '../../utils/application-layout/context';
 import { dismissModal } from '../../utils/modal';
-import { iconApps, iconOpenExternal } from '@siemens/ix-icons/icons';
+import { iconApps, iconOpenExternal } from '@irisieason/ix-icons/icons';
 
 function ApplicationItem(props: {
   host: HTMLIxApplicationSwitchModalElement;
@@ -128,3 +128,4 @@ export class ApplicationSwitchModal {
     );
   }
 }
+

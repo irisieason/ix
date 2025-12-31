@@ -37,7 +37,7 @@ import {
   iconLightDark,
   iconNavigationLeft,
   iconNavigationRight,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import Animation from '../utils/animation';
 
 @Component({
@@ -790,3 +790,4 @@ export class Menu {
     );
   }
 }
+

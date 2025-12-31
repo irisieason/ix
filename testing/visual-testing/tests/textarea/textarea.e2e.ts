@@ -26,3 +26,4 @@ regressionTest.describe('textarea', () => {
     expect(await page.screenshot()).toMatchSnapshot();
   });
 });
+

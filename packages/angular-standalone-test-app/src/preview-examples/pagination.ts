@@ -16,3 +16,4 @@ import { IxPagination } from '@siemens/ix-angular/standalone';
   template: ` <ix-pagination count="100"></ix-pagination> `,
 })
 export default class Pagination {}
+

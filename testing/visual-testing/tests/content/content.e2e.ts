@@ -25,3 +25,4 @@ regressionTest.describe('content', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

@@ -8,8 +8,8 @@
     "start": "next dev"
   },
   "dependencies": {
-    "@siemens/ix-react": "workspace:*",
-    "@siemens/ix": "workspace:*",
+    "@irisieason/ix-react": "workspace:*",
+    "@irisieason/ix": "workspace:*",
     "next": "^15.3.3",
     "react-dom": "^19.1.0",
     "react": "^19.1.0"
@@ -22,3 +22,4 @@
     "typescript": "^5"
   }
 }
+

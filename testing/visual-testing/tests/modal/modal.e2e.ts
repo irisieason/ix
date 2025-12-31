@@ -145,3 +145,4 @@ regressionTest('modal should show centered', async ({ mount, page }) => {
   await page.waitForTimeout(2000);
   expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
 });
+

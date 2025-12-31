@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { defineCustomElements as ixIconsDefineCustomElements } from '@siemens/ix-icons/loader';
+import { defineCustomElements as ixIconsDefineCustomElements } from '@irisieason/ix-icons/loader';
 import { defineCustomElements } from '@siemens/ix/loader';
 import './global.css';
 
@@ -125,3 +125,4 @@ function setBodySizes() {
   scrollbarStyle.innerHTML = scrollbarOverwrite;
   header.appendChild(scrollbarStyle);
 })();
+

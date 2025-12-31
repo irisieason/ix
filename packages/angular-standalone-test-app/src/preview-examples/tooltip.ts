@@ -17,3 +17,4 @@ import { IxButton, IxTooltip } from '@siemens/ix-angular/standalone';
   styleUrls: ['./tooltip.css'],
 })
 export default class Tooltip {}
+

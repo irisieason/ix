@@ -23,3 +23,4 @@ import { Component } from '@angular/core';
 export default class BreadcrumbNextItems {
   nextItems = ['Next Item 1'];
 }
+

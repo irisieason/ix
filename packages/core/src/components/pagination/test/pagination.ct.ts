@@ -164,3 +164,4 @@ regressionTest(
     expect(await pageSelected$).toBe(9);
   }
 );
+

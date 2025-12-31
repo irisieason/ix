@@ -19,3 +19,4 @@ import {
   template: ` <ix-toggle disabled></ix-toggle> `,
 })
 export default class ToggleCustomDisabled {}
+

@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./input-types.css'],
 })
 export default class InputTypes {}
+

@@ -9,3 +9,4 @@
 import { ButtonVariant } from '../button/button';
 
 export type SplitButtonVariant = ButtonVariant;
+

@@ -44,3 +44,4 @@ const InternalIxTree: StencilReactComponent<IxTreeElement, IxTreeEvents> =
   });
 
 export default InternalIxTree;
+

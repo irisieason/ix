@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './progress-indicator-circular-sizes.html',
 })
 export default class ProgressIndicatorCircularSizes {}
+

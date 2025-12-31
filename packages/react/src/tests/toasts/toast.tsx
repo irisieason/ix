@@ -8,7 +8,7 @@
  */
 
 import { IxButton, showToast } from '../..';
-import { iconStar } from '@siemens/ix-icons/icons';
+import { iconStar } from '@irisieason/ix-icons/icons';
 
 const Index = () => {
   return (
@@ -26,3 +26,4 @@ const Index = () => {
 };
 
 export default Index;
+

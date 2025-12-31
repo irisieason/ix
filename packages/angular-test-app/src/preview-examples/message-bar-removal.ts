@@ -26,3 +26,4 @@ export default class MessageBarRemoval {
     this.messageBarVisible = true;
   }
 }
+

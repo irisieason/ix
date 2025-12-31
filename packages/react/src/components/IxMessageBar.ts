@@ -30,3 +30,4 @@ const IxMessageBar: StencilReactComponent<IxMessageBarElement, IxMessageBarEvent
 });
 
 export default IxMessageBar;
+

@@ -24,3 +24,4 @@ regressionTest.describe('action card: basic', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

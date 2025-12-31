@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './number-input-disabled.html',
 })
 export default class NumberInputDisabled {}
+

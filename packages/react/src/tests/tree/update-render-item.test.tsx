@@ -20,3 +20,4 @@ test('should update tree item after model change', async () => {
   const sampleItem = screen.getByText('Bad sample');
   await expect.element(sampleItem).toHaveTextContent('Bad sample');
 });
+

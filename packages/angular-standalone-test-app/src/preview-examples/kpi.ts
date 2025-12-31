@@ -37,3 +37,4 @@ import { IxKpi } from '@siemens/ix-angular/standalone';
   styleUrls: ['./kpi.css'],
 })
 export default class Kpi {}
+

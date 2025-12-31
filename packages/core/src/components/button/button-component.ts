@@ -41,3 +41,4 @@ export interface IxButtonComponent extends AnchorInterface {
    */
   ariaLabelButton?: string;
 }
+

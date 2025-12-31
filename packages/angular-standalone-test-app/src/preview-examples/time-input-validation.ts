@@ -19,3 +19,4 @@ import {
   templateUrl: './time-input-validation.html',
 })
 export default class TimeInputValidation {}
+

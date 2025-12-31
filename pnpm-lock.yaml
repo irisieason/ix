@@ -58,10 +58,13 @@ importers:
 
   packages/aggrid:
     dependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: ^4.2.0
         version: link:../core
     devDependencies:
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       '@playwright/test':
         specifier: ^1.54.1
         version: 1.54.1
@@ -71,9 +74,6 @@ importers:
       '@rollup/plugin-typescript':
         specifier: ^8.5.0
         version: 8.5.0(@rollup/wasm-node@4.53.3)(tslib@2.8.1)(typescript@5.8.3)
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
       '@types/node':
         specifier: ^24.0.3
         version: 24.0.14
@@ -104,12 +104,12 @@ importers:
 
   packages/angular:
     dependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: ~4.2.0
         version: link:../core
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
@@ -199,21 +199,21 @@ importers:
       '@angular/router':
         specifier: ^20.1.4
         version: 20.1.4(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@20.1.4(@angular/animations@20.1.4(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-aggrid':
+      '@irisieason/ix-aggrid':
         specifier: workspace:*
         version: link:../aggrid
-      '@siemens/ix-angular':
+      '@irisieason/ix-angular':
         specifier: workspace:*
         version: link:../angular/dist
-      '@siemens/ix-echarts':
+      '@irisieason/ix-echarts':
         specifier: workspace:*
         version: link:../echarts
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       ag-grid-angular:
         specifier: ^33.1.1
         version: 33.3.2(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))
@@ -302,21 +302,21 @@ importers:
       '@angular/router':
         specifier: ^20.1.4
         version: 20.1.4(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@20.1.4(@angular/animations@20.1.4(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-aggrid':
+      '@irisieason/ix-aggrid':
         specifier: workspace:*
         version: link:../aggrid
-      '@siemens/ix-angular':
+      '@irisieason/ix-angular':
         specifier: workspace:*
         version: link:../angular/dist
-      '@siemens/ix-echarts':
+      '@irisieason/ix-echarts':
         specifier: workspace:*
         version: link:../echarts
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       ag-grid-angular:
         specifier: ^33.1.1
         version: 33.3.2(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.3.15)(rxjs@7.8.2)(zone.js@0.15.1))
@@ -391,12 +391,12 @@ importers:
         specifier: ^3.4.4
         version: 3.4.4
     devDependencies:
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       '@playwright/test':
         specifier: ^1.54.1
         version: 1.54.1
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
       '@stencil-community/eslint-plugin':
         specifier: ^0.10.0
         version: 0.10.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.4.5))(eslint@8.57.1)(typescript@5.4.5))(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.4.5))(eslint-plugin-react@7.37.4(eslint@8.57.1))(eslint@8.57.1)(typescript@5.4.5)
@@ -505,13 +505,13 @@ importers:
 
   packages/documentation:
     devDependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-angular':
+      '@irisieason/ix-angular':
         specifier: workspace:*
         version: link:../angular/dist
-      '@siemens/ix-react':
+      '@irisieason/ix-react':
         specifier: workspace:*
         version: link:../react
       '@types/fs-extra':
@@ -638,18 +638,18 @@ importers:
         specifier: ^33.1.1
         version: 33.1.1
     devDependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-aggrid':
+      '@irisieason/ix-aggrid':
         specifier: workspace:*
         version: link:../aggrid
-      '@siemens/ix-echarts':
+      '@irisieason/ix-echarts':
         specifier: workspace:*
         version: link:../echarts
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       vite:
         specifier: ^4.5.14
         version: 4.5.14(@types/node@24.0.14)(less@4.3.0)(sass@1.93.0)(terser@5.44.1)
@@ -686,13 +686,13 @@ importers:
       '@ionic/react-router':
         specifier: ^8.7.4
         version: 8.7.4(react-dom@19.1.1(react@19.1.1))(react-router-dom@5.3.4(react@19.1.1))(react-router@5.3.4(react@19.1.1))(react@19.1.1)
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
-      '@siemens/ix-react':
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
+      '@irisieason/ix-react':
         specifier: workspace:*
         version: link:../react
       '@types/react-router':
@@ -762,10 +762,10 @@ importers:
 
   packages/nextjs-test-app:
     dependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-react':
+      '@irisieason/ix-react':
         specifier: workspace:*
         version: link:../react
       next:
@@ -796,12 +796,12 @@ importers:
 
   packages/react:
     dependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: ~4.2.0
         version: link:../core
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       '@stencil/react-output-target':
         specifier: ^1.2.0
         version: 1.2.0(@stencil/core@4.37.1)(@types/react@18.2.33)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -893,19 +893,19 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.6.0
         version: 3.9.0(react-hook-form@7.54.2(react@19.1.0))
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-aggrid':
+      '@irisieason/ix-aggrid':
         specifier: workspace:*
         version: link:../aggrid
-      '@siemens/ix-echarts':
+      '@irisieason/ix-echarts':
         specifier: workspace:*
         version: link:../echarts
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
-      '@siemens/ix-react':
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
+      '@irisieason/ix-react':
         specifier: workspace:*
         version: link:../react
       ag-grid-community:
@@ -985,12 +985,12 @@ importers:
       '@chromatic-com/storybook':
         specifier: ^4.0.1
         version: 4.0.1(storybook@9.0.18(@testing-library/dom@10.4.0)(prettier@3.4.2))
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       '@stencil/core':
         specifier: ~4.17.0
         version: 4.17.2
@@ -1042,12 +1042,12 @@ importers:
 
   packages/vue:
     dependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: ~4.2.0
         version: link:../core
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       '@stencil/vue-output-target':
         specifier: ^0.11.8
         version: 0.11.8(@stencil/core@4.37.1)(vue@3.5.13(typescript@5.8.3))
@@ -1100,19 +1100,19 @@ importers:
 
   packages/vue-test-app:
     dependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../core
-      '@siemens/ix-aggrid':
+      '@irisieason/ix-aggrid':
         specifier: workspace:*
         version: link:../aggrid
-      '@siemens/ix-echarts':
+      '@irisieason/ix-echarts':
         specifier: workspace:*
         version: link:../echarts
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
-      '@siemens/ix-vue':
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
+      '@irisieason/ix-vue':
         specifier: workspace:*
         version: link:../vue
       '@vuelidate/core':
@@ -1182,12 +1182,12 @@ importers:
 
   testing/performance-memlab:
     devDependencies:
+      '@irisieason/ix':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@memlab/api':
         specifier: ^1.0.38
         version: 1.0.39(typescript@5.9.2)
-      '@siemens/ix':
-        specifier: workspace:*
-        version: link:../../packages/core
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
@@ -1203,15 +1203,15 @@ importers:
       '@esbuild/linux-arm64':
         specifier: 0.25.1
         version: 0.25.1
+      '@irisieason/ix':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@irisieason/ix-icons':
+        specifier: ^3.3.0
+        version: 3.3.0
       '@playwright/test':
         specifier: ^1.54.1
         version: 1.54.1
-      '@siemens/ix':
-        specifier: workspace:*
-        version: link:../../packages/core
-      '@siemens/ix-icons':
-        specifier: ^3.2.0
-        version: 3.2.0
       '@types/node':
         specifier: ^24.0.14
         version: 24.0.14
@@ -1221,22 +1221,22 @@ importers:
 
   tooling/oss-clearing:
     dependencies:
-      '@siemens/ix':
+      '@irisieason/ix':
         specifier: workspace:*
         version: link:../../packages/core
-      '@siemens/ix-aggrid':
+      '@irisieason/ix-aggrid':
         specifier: workspace:*
         version: link:../../packages/aggrid
-      '@siemens/ix-angular':
+      '@irisieason/ix-angular':
         specifier: workspace:*
         version: link:../../packages/angular/dist
-      '@siemens/ix-echarts':
+      '@irisieason/ix-echarts':
         specifier: workspace:*
         version: link:../../packages/echarts
-      '@siemens/ix-react':
+      '@irisieason/ix-react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@siemens/ix-vue':
+      '@irisieason/ix-vue':
         specifier: workspace:*
         version: link:../../packages/vue
     devDependencies:
@@ -4228,6 +4228,10 @@ packages:
     resolution: {integrity: sha512-3cKScz9Jx2/Pr9ijj1OzGlBDfcmx7OMVBt4+P1uRR0SSW4cm1/y3Mo4OY3lfkuaYifMNBW8Wz6lQHbs1bihr7A==}
     engines: {node: '>=16.0.0'}
 
+  '@irisieason/ix-icons@3.3.0':
+    resolution: {integrity: sha512-ZgUbz/YGyNHhFhW1kqiM8qz/iRF5Z9mR5g4ePqQKtmHPEYoP5CBgB0KR9R4USDDDKQpQihULcEFu0VmWWiXA2A==, tarball: https://npm.pkg.github.com/download/@irisieason/ix-icons/3.3.0/373cd09460a3017601ff0e9a27c0b53fb8106667}
+    engines: {node: '>=22.19.x', pnpm: '>=10.x.x'}
+
   '@isaacs/balanced-match@4.0.1':
     resolution: {integrity: sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ==}
     engines: {node: 20 || >=22}
@@ -5061,10 +5065,6 @@ packages:
 
   '@sideway/pinpoint@2.0.0':
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
-
-  '@siemens/ix-icons@3.2.0':
-    resolution: {integrity: sha512-4cdEqCHlDILVCDCld1Ycy04/5d8ICCpRxE7Y3l2GBTo9EydI5ZUkVG243Y9wp/kZazTK9c4wvPZ5d6lCqS57tg==}
-    engines: {node: '>=22.19.x', pnpm: '>=10.x.x'}
 
   '@sigstore/bundle@3.1.0':
     resolution: {integrity: sha512-Mm1E3/CmDDCz3nDhFKTuYdB47EdRFRQMOE/EAbiG1MJW77/w1b3P7Qx7JSrVJs8PfwOLOVcKQCHErIwCTyPbag==}
@@ -17100,6 +17100,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@irisieason/ix-icons@3.3.0': {}
+
   '@isaacs/balanced-match@4.0.1': {}
 
   '@isaacs/brace-expansion@5.0.0':
@@ -18182,8 +18184,6 @@ snapshots:
   '@sideway/formula@3.0.1': {}
 
   '@sideway/pinpoint@2.0.0': {}
-
-  '@siemens/ix-icons@3.2.0': {}
 
   '@sigstore/bundle@3.1.0':
     dependencies:

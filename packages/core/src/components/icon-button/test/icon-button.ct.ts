@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import { expect } from '@playwright/test';
-import { iconRocket } from '@siemens/ix-icons/icons';
+import { iconRocket } from '@irisieason/ix-icons/icons';
 import { regressionTest } from '@utils/test';
 
 regressionTest('renders', async ({ mount, page }) => {
@@ -32,3 +32,4 @@ regressionTest('show spinner while loading', async ({ mount, page }) => {
   await button.evaluate((btn: HTMLIxButtonElement) => (btn.loading = true));
   await expect(button.locator('ix-spinner')).toBeVisible();
 });
+

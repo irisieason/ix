@@ -105,3 +105,4 @@ import {
   `,
 })
 export default class Pill {}
+

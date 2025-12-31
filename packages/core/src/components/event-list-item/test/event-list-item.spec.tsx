@@ -20,3 +20,4 @@ describe('event-list-item', () => {
     expect(page.root).toEqualHtml('<event-list-item></event-list-item>');
   });
 });
+

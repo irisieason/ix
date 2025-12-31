@@ -13,3 +13,4 @@ export const ROW_DATA = [
   { make: 'Ford', model: 'Mondeo', price: 32000, checked: true },
   { make: 'Porsche', model: 'Boxster', price: 72000, checked: false },
 ];
+

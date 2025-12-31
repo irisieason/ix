@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconLocation } from '@siemens/ix-icons/icons';
+import { iconLocation } from '@irisieason/ix-icons/icons';
 import { IxKeyValue } from '@siemens/ix-react';
 
 export default () => {
@@ -15,3 +15,4 @@ export default () => {
     <IxKeyValue icon={iconLocation} label="Label" value="Value"></IxKeyValue>
   );
 };
+

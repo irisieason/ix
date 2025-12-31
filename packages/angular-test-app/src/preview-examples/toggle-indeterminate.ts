@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <ix-toggle indeterminate></ix-toggle> `,
 })
 export default class ToggleIndeterminate {}
+

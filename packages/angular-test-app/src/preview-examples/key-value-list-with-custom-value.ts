@@ -45,3 +45,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./key-value-list-with-custom-value.css'],
 })
 export default class KeyValueListWithCustomValue {}
+

@@ -53,3 +53,4 @@ regressionTest('required', async ({ mount, page }) => {
   await expect(radioOption2).toHaveClass(/ix-invalid--required/);
   await expect(radioOption3).not.toHaveClass(/ix-invalid/);
 });
+

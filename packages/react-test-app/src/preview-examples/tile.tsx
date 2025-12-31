@@ -13,7 +13,7 @@ import { IxButton, IxIconButton, IxTile } from '@siemens/ix-react';
 import {
   iconChevronRightSmall,
   iconContextMenu,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 export default () => {
   return (
@@ -51,3 +51,4 @@ export default () => {
     </div>
   );
 };
+

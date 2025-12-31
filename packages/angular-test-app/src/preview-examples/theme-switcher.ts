@@ -60,3 +60,4 @@ export default class ThemeSwitcher implements OnInit {
     }
   }
 }
+

@@ -26,3 +26,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./vertical-tabs.css'],
 })
 export default class VerticalTabs {}
+

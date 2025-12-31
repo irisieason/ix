@@ -10,3 +10,4 @@ import { defineConfig } from 'vite';
 import './visual-regression.config';
 
 export default defineConfig({});
+

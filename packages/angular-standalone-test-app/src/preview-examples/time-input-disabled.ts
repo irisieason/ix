@@ -19,3 +19,4 @@ import {
   templateUrl: './time-input-disabled.html',
 })
 export default class TimeInputDisabled {}
+

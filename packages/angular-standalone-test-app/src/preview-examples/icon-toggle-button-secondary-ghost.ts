@@ -36,3 +36,4 @@ import {
   styleUrls: ['./icon-toggle-button-secondary-ghost.css'],
 })
 export default class Buttons {}
+

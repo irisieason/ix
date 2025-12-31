@@ -4,109 +4,109 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Even
 
 import { ProxyCmp } from './angular-component-lib/utils';
 
-import type { Components } from '@siemens/ix/components';
+import type { Components } from '@irisieason/ix/components';
 
-import { defineCustomElement as defineIxActionCard } from '@siemens/ix/components/ix-action-card.js';
-import { defineCustomElement as defineIxApplication } from '@siemens/ix/components/ix-application.js';
-import { defineCustomElement as defineIxApplicationHeader } from '@siemens/ix/components/ix-application-header.js';
-import { defineCustomElement as defineIxAvatar } from '@siemens/ix/components/ix-avatar.js';
-import { defineCustomElement as defineIxBlind } from '@siemens/ix/components/ix-blind.js';
-import { defineCustomElement as defineIxBreadcrumb } from '@siemens/ix/components/ix-breadcrumb.js';
-import { defineCustomElement as defineIxBreadcrumbItem } from '@siemens/ix/components/ix-breadcrumb-item.js';
-import { defineCustomElement as defineIxButton } from '@siemens/ix/components/ix-button.js';
-import { defineCustomElement as defineIxCard } from '@siemens/ix/components/ix-card.js';
-import { defineCustomElement as defineIxCardAccordion } from '@siemens/ix/components/ix-card-accordion.js';
-import { defineCustomElement as defineIxCardContent } from '@siemens/ix/components/ix-card-content.js';
-import { defineCustomElement as defineIxCardList } from '@siemens/ix/components/ix-card-list.js';
-import { defineCustomElement as defineIxCardTitle } from '@siemens/ix/components/ix-card-title.js';
-import { defineCustomElement as defineIxCategoryFilter } from '@siemens/ix/components/ix-category-filter.js';
-import { defineCustomElement as defineIxCheckbox } from '@siemens/ix/components/ix-checkbox.js';
-import { defineCustomElement as defineIxCheckboxGroup } from '@siemens/ix/components/ix-checkbox-group.js';
-import { defineCustomElement as defineIxChip } from '@siemens/ix/components/ix-chip.js';
-import { defineCustomElement as defineIxCol } from '@siemens/ix/components/ix-col.js';
-import { defineCustomElement as defineIxContent } from '@siemens/ix/components/ix-content.js';
-import { defineCustomElement as defineIxContentHeader } from '@siemens/ix/components/ix-content-header.js';
-import { defineCustomElement as defineIxCustomField } from '@siemens/ix/components/ix-custom-field.js';
-import { defineCustomElement as defineIxDateDropdown } from '@siemens/ix/components/ix-date-dropdown.js';
-import { defineCustomElement as defineIxDateInput } from '@siemens/ix/components/ix-date-input.js';
-import { defineCustomElement as defineIxDatePicker } from '@siemens/ix/components/ix-date-picker.js';
-import { defineCustomElement as defineIxDatetimePicker } from '@siemens/ix/components/ix-datetime-picker.js';
-import { defineCustomElement as defineIxDivider } from '@siemens/ix/components/ix-divider.js';
-import { defineCustomElement as defineIxDrawer } from '@siemens/ix/components/ix-drawer.js';
-import { defineCustomElement as defineIxDropdown } from '@siemens/ix/components/ix-dropdown.js';
-import { defineCustomElement as defineIxDropdownButton } from '@siemens/ix/components/ix-dropdown-button.js';
-import { defineCustomElement as defineIxDropdownHeader } from '@siemens/ix/components/ix-dropdown-header.js';
-import { defineCustomElement as defineIxDropdownItem } from '@siemens/ix/components/ix-dropdown-item.js';
-import { defineCustomElement as defineIxDropdownQuickActions } from '@siemens/ix/components/ix-dropdown-quick-actions.js';
-import { defineCustomElement as defineIxEmptyState } from '@siemens/ix/components/ix-empty-state.js';
-import { defineCustomElement as defineIxEventList } from '@siemens/ix/components/ix-event-list.js';
-import { defineCustomElement as defineIxEventListItem } from '@siemens/ix/components/ix-event-list-item.js';
-import { defineCustomElement as defineIxExpandingSearch } from '@siemens/ix/components/ix-expanding-search.js';
-import { defineCustomElement as defineIxFieldLabel } from '@siemens/ix/components/ix-field-label.js';
-import { defineCustomElement as defineIxFilterChip } from '@siemens/ix/components/ix-filter-chip.js';
-import { defineCustomElement as defineIxFlipTile } from '@siemens/ix/components/ix-flip-tile.js';
-import { defineCustomElement as defineIxFlipTileContent } from '@siemens/ix/components/ix-flip-tile-content.js';
-import { defineCustomElement as defineIxGroup } from '@siemens/ix/components/ix-group.js';
-import { defineCustomElement as defineIxGroupContextMenu } from '@siemens/ix/components/ix-group-context-menu.js';
-import { defineCustomElement as defineIxGroupItem } from '@siemens/ix/components/ix-group-item.js';
-import { defineCustomElement as defineIxHelperText } from '@siemens/ix/components/ix-helper-text.js';
-import { defineCustomElement as defineIxIconButton } from '@siemens/ix/components/ix-icon-button.js';
-import { defineCustomElement as defineIxIconToggleButton } from '@siemens/ix/components/ix-icon-toggle-button.js';
-import { defineCustomElement as defineIxInput } from '@siemens/ix/components/ix-input.js';
-import { defineCustomElement as defineIxInputGroup } from '@siemens/ix/components/ix-input-group.js';
-import { defineCustomElement as defineIxKeyValue } from '@siemens/ix/components/ix-key-value.js';
-import { defineCustomElement as defineIxKeyValueList } from '@siemens/ix/components/ix-key-value-list.js';
-import { defineCustomElement as defineIxKpi } from '@siemens/ix/components/ix-kpi.js';
-import { defineCustomElement as defineIxLayoutAuto } from '@siemens/ix/components/ix-layout-auto.js';
-import { defineCustomElement as defineIxLayoutGrid } from '@siemens/ix/components/ix-layout-grid.js';
-import { defineCustomElement as defineIxLinkButton } from '@siemens/ix/components/ix-link-button.js';
-import { defineCustomElement as defineIxMenu } from '@siemens/ix/components/ix-menu.js';
-import { defineCustomElement as defineIxMenuAbout } from '@siemens/ix/components/ix-menu-about.js';
-import { defineCustomElement as defineIxMenuAboutItem } from '@siemens/ix/components/ix-menu-about-item.js';
-import { defineCustomElement as defineIxMenuAboutNews } from '@siemens/ix/components/ix-menu-about-news.js';
-import { defineCustomElement as defineIxMenuAvatar } from '@siemens/ix/components/ix-menu-avatar.js';
-import { defineCustomElement as defineIxMenuAvatarItem } from '@siemens/ix/components/ix-menu-avatar-item.js';
-import { defineCustomElement as defineIxMenuCategory } from '@siemens/ix/components/ix-menu-category.js';
-import { defineCustomElement as defineIxMenuItem } from '@siemens/ix/components/ix-menu-item.js';
-import { defineCustomElement as defineIxMenuSettings } from '@siemens/ix/components/ix-menu-settings.js';
-import { defineCustomElement as defineIxMenuSettingsItem } from '@siemens/ix/components/ix-menu-settings-item.js';
-import { defineCustomElement as defineIxMessageBar } from '@siemens/ix/components/ix-message-bar.js';
-import { defineCustomElement as defineIxModal } from '@siemens/ix/components/ix-modal.js';
-import { defineCustomElement as defineIxModalContent } from '@siemens/ix/components/ix-modal-content.js';
-import { defineCustomElement as defineIxModalFooter } from '@siemens/ix/components/ix-modal-footer.js';
-import { defineCustomElement as defineIxModalHeader } from '@siemens/ix/components/ix-modal-header.js';
-import { defineCustomElement as defineIxNumberInput } from '@siemens/ix/components/ix-number-input.js';
-import { defineCustomElement as defineIxPagination } from '@siemens/ix/components/ix-pagination.js';
-import { defineCustomElement as defineIxPane } from '@siemens/ix/components/ix-pane.js';
-import { defineCustomElement as defineIxPaneLayout } from '@siemens/ix/components/ix-pane-layout.js';
-import { defineCustomElement as defineIxPill } from '@siemens/ix/components/ix-pill.js';
-import { defineCustomElement as defineIxProgressIndicator } from '@siemens/ix/components/ix-progress-indicator.js';
-import { defineCustomElement as defineIxPushCard } from '@siemens/ix/components/ix-push-card.js';
-import { defineCustomElement as defineIxRadio } from '@siemens/ix/components/ix-radio.js';
-import { defineCustomElement as defineIxRadioGroup } from '@siemens/ix/components/ix-radio-group.js';
-import { defineCustomElement as defineIxRow } from '@siemens/ix/components/ix-row.js';
-import { defineCustomElement as defineIxSelect } from '@siemens/ix/components/ix-select.js';
-import { defineCustomElement as defineIxSelectItem } from '@siemens/ix/components/ix-select-item.js';
-import { defineCustomElement as defineIxSlider } from '@siemens/ix/components/ix-slider.js';
-import { defineCustomElement as defineIxSpinner } from '@siemens/ix/components/ix-spinner.js';
-import { defineCustomElement as defineIxSplitButton } from '@siemens/ix/components/ix-split-button.js';
-import { defineCustomElement as defineIxTabItem } from '@siemens/ix/components/ix-tab-item.js';
-import { defineCustomElement as defineIxTabs } from '@siemens/ix/components/ix-tabs.js';
-import { defineCustomElement as defineIxTextarea } from '@siemens/ix/components/ix-textarea.js';
-import { defineCustomElement as defineIxTile } from '@siemens/ix/components/ix-tile.js';
-import { defineCustomElement as defineIxTimeInput } from '@siemens/ix/components/ix-time-input.js';
-import { defineCustomElement as defineIxTimePicker } from '@siemens/ix/components/ix-time-picker.js';
-import { defineCustomElement as defineIxToast } from '@siemens/ix/components/ix-toast.js';
-import { defineCustomElement as defineIxToastContainer } from '@siemens/ix/components/ix-toast-container.js';
-import { defineCustomElement as defineIxToggle } from '@siemens/ix/components/ix-toggle.js';
-import { defineCustomElement as defineIxToggleButton } from '@siemens/ix/components/ix-toggle-button.js';
-import { defineCustomElement as defineIxTooltip } from '@siemens/ix/components/ix-tooltip.js';
-import { defineCustomElement as defineIxTreeItem } from '@siemens/ix/components/ix-tree-item.js';
-import { defineCustomElement as defineIxTypography } from '@siemens/ix/components/ix-typography.js';
-import { defineCustomElement as defineIxUpload } from '@siemens/ix/components/ix-upload.js';
-import { defineCustomElement as defineIxValidationTooltip } from '@siemens/ix/components/ix-validation-tooltip.js';
-import { defineCustomElement as defineIxWorkflowStep } from '@siemens/ix/components/ix-workflow-step.js';
-import { defineCustomElement as defineIxWorkflowSteps } from '@siemens/ix/components/ix-workflow-steps.js';
+import { defineCustomElement as defineIxActionCard } from '@irisieason/ix/components/ix-action-card.js';
+import { defineCustomElement as defineIxApplication } from '@irisieason/ix/components/ix-application.js';
+import { defineCustomElement as defineIxApplicationHeader } from '@irisieason/ix/components/ix-application-header.js';
+import { defineCustomElement as defineIxAvatar } from '@irisieason/ix/components/ix-avatar.js';
+import { defineCustomElement as defineIxBlind } from '@irisieason/ix/components/ix-blind.js';
+import { defineCustomElement as defineIxBreadcrumb } from '@irisieason/ix/components/ix-breadcrumb.js';
+import { defineCustomElement as defineIxBreadcrumbItem } from '@irisieason/ix/components/ix-breadcrumb-item.js';
+import { defineCustomElement as defineIxButton } from '@irisieason/ix/components/ix-button.js';
+import { defineCustomElement as defineIxCard } from '@irisieason/ix/components/ix-card.js';
+import { defineCustomElement as defineIxCardAccordion } from '@irisieason/ix/components/ix-card-accordion.js';
+import { defineCustomElement as defineIxCardContent } from '@irisieason/ix/components/ix-card-content.js';
+import { defineCustomElement as defineIxCardList } from '@irisieason/ix/components/ix-card-list.js';
+import { defineCustomElement as defineIxCardTitle } from '@irisieason/ix/components/ix-card-title.js';
+import { defineCustomElement as defineIxCategoryFilter } from '@irisieason/ix/components/ix-category-filter.js';
+import { defineCustomElement as defineIxCheckbox } from '@irisieason/ix/components/ix-checkbox.js';
+import { defineCustomElement as defineIxCheckboxGroup } from '@irisieason/ix/components/ix-checkbox-group.js';
+import { defineCustomElement as defineIxChip } from '@irisieason/ix/components/ix-chip.js';
+import { defineCustomElement as defineIxCol } from '@irisieason/ix/components/ix-col.js';
+import { defineCustomElement as defineIxContent } from '@irisieason/ix/components/ix-content.js';
+import { defineCustomElement as defineIxContentHeader } from '@irisieason/ix/components/ix-content-header.js';
+import { defineCustomElement as defineIxCustomField } from '@irisieason/ix/components/ix-custom-field.js';
+import { defineCustomElement as defineIxDateDropdown } from '@irisieason/ix/components/ix-date-dropdown.js';
+import { defineCustomElement as defineIxDateInput } from '@irisieason/ix/components/ix-date-input.js';
+import { defineCustomElement as defineIxDatePicker } from '@irisieason/ix/components/ix-date-picker.js';
+import { defineCustomElement as defineIxDatetimePicker } from '@irisieason/ix/components/ix-datetime-picker.js';
+import { defineCustomElement as defineIxDivider } from '@irisieason/ix/components/ix-divider.js';
+import { defineCustomElement as defineIxDrawer } from '@irisieason/ix/components/ix-drawer.js';
+import { defineCustomElement as defineIxDropdown } from '@irisieason/ix/components/ix-dropdown.js';
+import { defineCustomElement as defineIxDropdownButton } from '@irisieason/ix/components/ix-dropdown-button.js';
+import { defineCustomElement as defineIxDropdownHeader } from '@irisieason/ix/components/ix-dropdown-header.js';
+import { defineCustomElement as defineIxDropdownItem } from '@irisieason/ix/components/ix-dropdown-item.js';
+import { defineCustomElement as defineIxDropdownQuickActions } from '@irisieason/ix/components/ix-dropdown-quick-actions.js';
+import { defineCustomElement as defineIxEmptyState } from '@irisieason/ix/components/ix-empty-state.js';
+import { defineCustomElement as defineIxEventList } from '@irisieason/ix/components/ix-event-list.js';
+import { defineCustomElement as defineIxEventListItem } from '@irisieason/ix/components/ix-event-list-item.js';
+import { defineCustomElement as defineIxExpandingSearch } from '@irisieason/ix/components/ix-expanding-search.js';
+import { defineCustomElement as defineIxFieldLabel } from '@irisieason/ix/components/ix-field-label.js';
+import { defineCustomElement as defineIxFilterChip } from '@irisieason/ix/components/ix-filter-chip.js';
+import { defineCustomElement as defineIxFlipTile } from '@irisieason/ix/components/ix-flip-tile.js';
+import { defineCustomElement as defineIxFlipTileContent } from '@irisieason/ix/components/ix-flip-tile-content.js';
+import { defineCustomElement as defineIxGroup } from '@irisieason/ix/components/ix-group.js';
+import { defineCustomElement as defineIxGroupContextMenu } from '@irisieason/ix/components/ix-group-context-menu.js';
+import { defineCustomElement as defineIxGroupItem } from '@irisieason/ix/components/ix-group-item.js';
+import { defineCustomElement as defineIxHelperText } from '@irisieason/ix/components/ix-helper-text.js';
+import { defineCustomElement as defineIxIconButton } from '@irisieason/ix/components/ix-icon-button.js';
+import { defineCustomElement as defineIxIconToggleButton } from '@irisieason/ix/components/ix-icon-toggle-button.js';
+import { defineCustomElement as defineIxInput } from '@irisieason/ix/components/ix-input.js';
+import { defineCustomElement as defineIxInputGroup } from '@irisieason/ix/components/ix-input-group.js';
+import { defineCustomElement as defineIxKeyValue } from '@irisieason/ix/components/ix-key-value.js';
+import { defineCustomElement as defineIxKeyValueList } from '@irisieason/ix/components/ix-key-value-list.js';
+import { defineCustomElement as defineIxKpi } from '@irisieason/ix/components/ix-kpi.js';
+import { defineCustomElement as defineIxLayoutAuto } from '@irisieason/ix/components/ix-layout-auto.js';
+import { defineCustomElement as defineIxLayoutGrid } from '@irisieason/ix/components/ix-layout-grid.js';
+import { defineCustomElement as defineIxLinkButton } from '@irisieason/ix/components/ix-link-button.js';
+import { defineCustomElement as defineIxMenu } from '@irisieason/ix/components/ix-menu.js';
+import { defineCustomElement as defineIxMenuAbout } from '@irisieason/ix/components/ix-menu-about.js';
+import { defineCustomElement as defineIxMenuAboutItem } from '@irisieason/ix/components/ix-menu-about-item.js';
+import { defineCustomElement as defineIxMenuAboutNews } from '@irisieason/ix/components/ix-menu-about-news.js';
+import { defineCustomElement as defineIxMenuAvatar } from '@irisieason/ix/components/ix-menu-avatar.js';
+import { defineCustomElement as defineIxMenuAvatarItem } from '@irisieason/ix/components/ix-menu-avatar-item.js';
+import { defineCustomElement as defineIxMenuCategory } from '@irisieason/ix/components/ix-menu-category.js';
+import { defineCustomElement as defineIxMenuItem } from '@irisieason/ix/components/ix-menu-item.js';
+import { defineCustomElement as defineIxMenuSettings } from '@irisieason/ix/components/ix-menu-settings.js';
+import { defineCustomElement as defineIxMenuSettingsItem } from '@irisieason/ix/components/ix-menu-settings-item.js';
+import { defineCustomElement as defineIxMessageBar } from '@irisieason/ix/components/ix-message-bar.js';
+import { defineCustomElement as defineIxModal } from '@irisieason/ix/components/ix-modal.js';
+import { defineCustomElement as defineIxModalContent } from '@irisieason/ix/components/ix-modal-content.js';
+import { defineCustomElement as defineIxModalFooter } from '@irisieason/ix/components/ix-modal-footer.js';
+import { defineCustomElement as defineIxModalHeader } from '@irisieason/ix/components/ix-modal-header.js';
+import { defineCustomElement as defineIxNumberInput } from '@irisieason/ix/components/ix-number-input.js';
+import { defineCustomElement as defineIxPagination } from '@irisieason/ix/components/ix-pagination.js';
+import { defineCustomElement as defineIxPane } from '@irisieason/ix/components/ix-pane.js';
+import { defineCustomElement as defineIxPaneLayout } from '@irisieason/ix/components/ix-pane-layout.js';
+import { defineCustomElement as defineIxPill } from '@irisieason/ix/components/ix-pill.js';
+import { defineCustomElement as defineIxProgressIndicator } from '@irisieason/ix/components/ix-progress-indicator.js';
+import { defineCustomElement as defineIxPushCard } from '@irisieason/ix/components/ix-push-card.js';
+import { defineCustomElement as defineIxRadio } from '@irisieason/ix/components/ix-radio.js';
+import { defineCustomElement as defineIxRadioGroup } from '@irisieason/ix/components/ix-radio-group.js';
+import { defineCustomElement as defineIxRow } from '@irisieason/ix/components/ix-row.js';
+import { defineCustomElement as defineIxSelect } from '@irisieason/ix/components/ix-select.js';
+import { defineCustomElement as defineIxSelectItem } from '@irisieason/ix/components/ix-select-item.js';
+import { defineCustomElement as defineIxSlider } from '@irisieason/ix/components/ix-slider.js';
+import { defineCustomElement as defineIxSpinner } from '@irisieason/ix/components/ix-spinner.js';
+import { defineCustomElement as defineIxSplitButton } from '@irisieason/ix/components/ix-split-button.js';
+import { defineCustomElement as defineIxTabItem } from '@irisieason/ix/components/ix-tab-item.js';
+import { defineCustomElement as defineIxTabs } from '@irisieason/ix/components/ix-tabs.js';
+import { defineCustomElement as defineIxTextarea } from '@irisieason/ix/components/ix-textarea.js';
+import { defineCustomElement as defineIxTile } from '@irisieason/ix/components/ix-tile.js';
+import { defineCustomElement as defineIxTimeInput } from '@irisieason/ix/components/ix-time-input.js';
+import { defineCustomElement as defineIxTimePicker } from '@irisieason/ix/components/ix-time-picker.js';
+import { defineCustomElement as defineIxToast } from '@irisieason/ix/components/ix-toast.js';
+import { defineCustomElement as defineIxToastContainer } from '@irisieason/ix/components/ix-toast-container.js';
+import { defineCustomElement as defineIxToggle } from '@irisieason/ix/components/ix-toggle.js';
+import { defineCustomElement as defineIxToggleButton } from '@irisieason/ix/components/ix-toggle-button.js';
+import { defineCustomElement as defineIxTooltip } from '@irisieason/ix/components/ix-tooltip.js';
+import { defineCustomElement as defineIxTreeItem } from '@irisieason/ix/components/ix-tree-item.js';
+import { defineCustomElement as defineIxTypography } from '@irisieason/ix/components/ix-typography.js';
+import { defineCustomElement as defineIxUpload } from '@irisieason/ix/components/ix-upload.js';
+import { defineCustomElement as defineIxValidationTooltip } from '@irisieason/ix/components/ix-validation-tooltip.js';
+import { defineCustomElement as defineIxWorkflowStep } from '@irisieason/ix/components/ix-workflow-step.js';
+import { defineCustomElement as defineIxWorkflowSteps } from '@irisieason/ix/components/ix-workflow-steps.js';
 @ProxyCmp({
   defineCustomElementFn: defineIxActionCard,
   inputs: ['ariaLabelCard', 'ariaLabelIcon', 'heading', 'icon', 'passive', 'selected', 'subheading', 'variant']
@@ -477,8 +477,8 @@ export class IxCategoryFilter {
 }
 
 
-import type { InputState as IIxCategoryFilterInputState } from '@siemens/ix/components';
-import type { FilterState as IIxCategoryFilterFilterState } from '@siemens/ix/components';
+import type { InputState as IIxCategoryFilterInputState } from '@irisieason/ix/components';
+import type { FilterState as IIxCategoryFilterFilterState } from '@irisieason/ix/components';
 
 export declare interface IxCategoryFilter extends Components.IxCategoryFilter {
   /**
@@ -714,7 +714,7 @@ export class IxDateDropdown {
 }
 
 
-import type { DateRangeChangeEvent as IIxDateDropdownDateRangeChangeEvent } from '@siemens/ix/components';
+import type { DateRangeChangeEvent as IIxDateDropdownDateRangeChangeEvent } from '@irisieason/ix/components';
 
 export declare interface IxDateDropdown extends Components.IxDateDropdown {
   /**
@@ -751,7 +751,7 @@ export class IxDateInput {
 }
 
 
-import type { DateInputValidityState as IIxDateInputDateInputValidityState } from '@siemens/ix/components';
+import type { DateInputValidityState as IIxDateInputDateInputValidityState } from '@irisieason/ix/components';
 
 export declare interface IxDateInput extends Components.IxDateInput {
   /**
@@ -790,7 +790,7 @@ export class IxDatePicker {
 }
 
 
-import type { DateChangeEvent as IIxDatePickerDateChangeEvent } from '@siemens/ix/components';
+import type { DateChangeEvent as IIxDatePickerDateChangeEvent } from '@irisieason/ix/components';
 
 export declare interface IxDatePicker extends Components.IxDatePicker {
   /**
@@ -839,8 +839,8 @@ export class IxDatetimePicker {
 }
 
 
-import type { DateTimeDateChangeEvent as IIxDatetimePickerDateTimeDateChangeEvent } from '@siemens/ix/components';
-import type { DateTimeSelectEvent as IIxDatetimePickerDateTimeSelectEvent } from '@siemens/ix/components';
+import type { DateTimeDateChangeEvent as IIxDatetimePickerDateTimeDateChangeEvent } from '@irisieason/ix/components';
+import type { DateTimeSelectEvent as IIxDatetimePickerDateTimeSelectEvent } from '@irisieason/ix/components';
 
 export declare interface IxDatetimePicker extends Components.IxDatetimePicker {
   /**
@@ -1699,7 +1699,7 @@ export class IxMenuAbout {
 }
 
 
-import type { CustomCloseEvent as IIxMenuAboutCustomCloseEvent } from '@siemens/ix/components';
+import type { CustomCloseEvent as IIxMenuAboutCustomCloseEvent } from '@irisieason/ix/components';
 
 export declare interface IxMenuAbout extends Components.IxMenuAbout {
   /**
@@ -1735,7 +1735,7 @@ export class IxMenuAboutItem {
 }
 
 
-import type { CustomLabelChangeEvent as IIxMenuAboutItemCustomLabelChangeEvent } from '@siemens/ix/components';
+import type { CustomLabelChangeEvent as IIxMenuAboutItemCustomLabelChangeEvent } from '@irisieason/ix/components';
 
 export declare interface IxMenuAboutItem extends Components.IxMenuAboutItem {
   /**
@@ -1909,7 +1909,7 @@ export class IxMenuSettings {
 }
 
 
-import type { CustomCloseEvent as IIxMenuSettingsCustomCloseEvent } from '@siemens/ix/components';
+import type { CustomCloseEvent as IIxMenuSettingsCustomCloseEvent } from '@irisieason/ix/components';
 
 export declare interface IxMenuSettings extends Components.IxMenuSettings {
   /**
@@ -1945,7 +1945,7 @@ export class IxMenuSettingsItem {
 }
 
 
-import type { CustomLabelChangeEvent as IIxMenuSettingsItemCustomLabelChangeEvent } from '@siemens/ix/components';
+import type { CustomLabelChangeEvent as IIxMenuSettingsItemCustomLabelChangeEvent } from '@irisieason/ix/components';
 
 export declare interface IxMenuSettingsItem extends Components.IxMenuSettingsItem {
   /**
@@ -2201,9 +2201,9 @@ export class IxPane {
 }
 
 
-import type { ExpandedChangedEvent as IIxPaneExpandedChangedEvent } from '@siemens/ix/components';
-import type { VariantChangedEvent as IIxPaneVariantChangedEvent } from '@siemens/ix/components';
-import type { BorderlessChangedEvent as IIxPaneBorderlessChangedEvent } from '@siemens/ix/components';
+import type { ExpandedChangedEvent as IIxPaneExpandedChangedEvent } from '@irisieason/ix/components';
+import type { VariantChangedEvent as IIxPaneVariantChangedEvent } from '@irisieason/ix/components';
+import type { BorderlessChangedEvent as IIxPaneBorderlessChangedEvent } from '@irisieason/ix/components';
 
 export declare interface IxPane extends Components.IxPane {
   /**
@@ -2584,7 +2584,7 @@ export class IxTabItem {
 }
 
 
-import type { TabClickDetail as IIxTabItemTabClickDetail } from '@siemens/ix/components';
+import type { TabClickDetail as IIxTabItemTabClickDetail } from '@irisieason/ix/components';
 
 export declare interface IxTabItem extends Components.IxTabItem {
   /**
@@ -2712,7 +2712,7 @@ export class IxTimeInput {
 }
 
 
-import type { TimeInputValidityState as IIxTimeInputTimeInputValidityState } from '@siemens/ix/components';
+import type { TimeInputValidityState as IIxTimeInputTimeInputValidityState } from '@irisieason/ix/components';
 
 export declare interface IxTimeInput extends Components.IxTimeInput {
   /**

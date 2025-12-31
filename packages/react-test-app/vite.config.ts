@@ -43,3 +43,4 @@ export default defineConfig(() => {
     plugins: [react(), reactScopedCssPlugin() as any],
   };
 });
+

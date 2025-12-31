@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export default class ContentHeaderWithSlot {}
+

@@ -66,3 +66,4 @@ export const CustomTooltip: Story = {
     tooltipText: 'My custom tooltip text',
   },
 };
+

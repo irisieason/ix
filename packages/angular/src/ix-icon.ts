@@ -14,7 +14,7 @@ import {
   ElementRef,
   NgZone,
 } from '@angular/core';
-import type { Components } from '@siemens/ix-icons';
+import type { Components } from '@irisieason/ix-icons';
 import { ProxyCmp } from './angular-component-lib/utils';
 
 export declare interface IxIcon extends Components.IxIcon {}
@@ -36,3 +36,4 @@ export class IxIcon {
     this.el = r.nativeElement;
   }
 }
+

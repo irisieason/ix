@@ -16,3 +16,4 @@ regressionTest.describe('fonts', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

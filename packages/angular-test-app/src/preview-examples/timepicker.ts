@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './timepicker.html',
 })
 export default class Timepicker {}
+

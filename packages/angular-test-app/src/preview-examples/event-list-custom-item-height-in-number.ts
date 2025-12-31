@@ -26,3 +26,4 @@ export default class EventListCustomItemHeightInNumber {
   itemHeight = 60;
   items = [1, 2, 3];
 }
+

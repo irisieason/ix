@@ -15,3 +15,4 @@ declare module 'vue' {
     onClick?: (...args: any[]) => void;
   }
 }
+

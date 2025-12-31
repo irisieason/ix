@@ -12,7 +12,7 @@ import {
   iconInfo,
   iconSuccess,
   iconWarning,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 export function hasAnyText({
   invalidText,
@@ -107,3 +107,4 @@ export function HelperText(
     )
   );
 }
+

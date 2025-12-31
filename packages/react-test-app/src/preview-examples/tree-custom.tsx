@@ -8,7 +8,7 @@
  */
 
 import { TreeContext, TreeModel } from '@siemens/ix';
-import { iconCut, iconPrint, iconStar } from '@siemens/ix-icons/icons';
+import { iconCut, iconPrint, iconStar } from '@irisieason/ix-icons/icons';
 import { IxButton, IxIcon, IxTree } from '@siemens/ix-react';
 import { useState } from 'react';
 
@@ -111,3 +111,4 @@ export default () => {
     </div>
   );
 };
+

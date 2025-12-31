@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconGlobe, iconHome, iconRocket } from '@siemens/ix-icons/icons';
+import { iconGlobe, iconHome, iconRocket } from '@irisieason/ix-icons/icons';
 import {
   IxApplication,
   IxMenu,
@@ -31,3 +31,4 @@ export default () => {
     </IxApplication>
   );
 };
+

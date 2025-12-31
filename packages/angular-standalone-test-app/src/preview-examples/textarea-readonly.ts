@@ -19,3 +19,4 @@ import {
   templateUrl: './textarea-readonly.html',
 })
 export default class TextareaReadonly {}
+

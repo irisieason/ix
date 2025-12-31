@@ -58,7 +58,7 @@ import {
   iconCheckboxes,
   iconStar,
   iconTree,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import Demo from './pages/Demo';
 import { useEffect } from 'react';
 
@@ -224,3 +224,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

@@ -34,3 +34,4 @@ export const visualTestConfig = defineVisualTestConfig([
     importPath: '@siemens/ix/dist/siemens-ix/theme/classic-light.css',
   },
 ]);
+

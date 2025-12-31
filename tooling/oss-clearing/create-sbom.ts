@@ -44,7 +44,7 @@ async function handleCoreLibraryDependencies(pnpmJson: any) {
   const pkg = JSON.parse(
     (
       await readFile(
-        path.join(__dirname, 'node_modules', '@siemens', 'ix', 'package.json'),
+        path.join(__dirname, 'node_modules', '@irisieason', 'ix', 'package.json'),
         'utf-8'
       )
     ).toString()
@@ -59,7 +59,7 @@ async function handleIconsLibraryDependencies(pnpmJson: any) {
         path.join(
           __dirname,
           'node_modules',
-          '@siemens',
+          '@irisieason',
           'ix-icons',
           'package.json'
         ),
@@ -119,7 +119,7 @@ async function createSBom(packageName: string) {
 
   let [npmJson] = JSON.parse(stdout.toString());
 
-  if (packageName === '@siemens/ix-angular') {
+  if (packageName === '@irisieason/ix-angular') {
     const { stdout } = spawnSync('pnpm', ['ls', '--json', '--long'], {
       cwd: path.join(npmJson.path, '..'),
       shell: true,
@@ -128,15 +128,15 @@ async function createSBom(packageName: string) {
     npmJson = npmJsonParent;
   }
 
-  if (packageName === '@siemens/ix') {
+  if (packageName === '@irisieason/ix') {
     npmJson = await handleCoreLibraryDependencies(npmJson);
   }
 
-  if (packageName === '@siemens/ix-brand-theme') {
+  if (packageName === '@irisieason/ix-brand-theme') {
     npmJson = await handleCoreLibraryDependencies(npmJson);
   }
 
-  if (packageName === '@siemens/ix-icons') {
+  if (packageName === '@irisieason/ix-icons') {
     npmJson = await handleIconsLibraryDependencies(npmJson);
   }
 
@@ -289,3 +289,4 @@ async function main() {
 }
 
 main();
+

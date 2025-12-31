@@ -5,3 +5,4 @@ export function toKebabCase(input: string) {
     .trim()
     .toLowerCase();
 }
+

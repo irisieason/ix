@@ -24,3 +24,4 @@ export default class ValidationSelect {
     console.log(this.exampleForm.value);
   }
 }
+

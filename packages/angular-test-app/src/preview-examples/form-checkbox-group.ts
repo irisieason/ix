@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: `./form-checkbox-group.html`,
 })
 export default class FormCheckboxGroup {}
+

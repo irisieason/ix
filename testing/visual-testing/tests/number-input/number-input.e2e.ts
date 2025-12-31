@@ -16,3 +16,4 @@ regressionTest.describe('number-input', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

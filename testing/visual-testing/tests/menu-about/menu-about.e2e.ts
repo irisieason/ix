@@ -23,3 +23,4 @@ regressionTest.describe('menu-about', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

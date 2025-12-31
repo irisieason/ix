@@ -11,3 +11,4 @@ export interface IxMenuItemBase extends AnchorInterface {
   // Annotate with @Prop to provide a tooltip
   tooltipText?: string;
 }
+

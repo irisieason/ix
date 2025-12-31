@@ -98,3 +98,4 @@ regressionTest('update item text', async ({ mount, page }) => {
   await expect(menuItem1.locator('ix-tooltip')).toHaveClass(/visible/);
   await expect(menuItem1.locator('ix-tooltip')).toHaveText('Test123');
 });
+

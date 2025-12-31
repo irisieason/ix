@@ -93,3 +93,4 @@ export default class Validation {
     this.wasValidated = true;
   }
 }
+

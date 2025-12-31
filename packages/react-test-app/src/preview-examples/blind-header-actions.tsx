@@ -12,7 +12,7 @@ import {
   iconInfo,
   iconRename,
   iconTrashcan,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import './blind-header-actions.scoped.css';
 
 import {
@@ -44,3 +44,4 @@ export default () => {
     </>
   );
 };
+

@@ -44,3 +44,4 @@ export class InternalIxActiveModal<
     this.modalElement = element;
   }
 }
+

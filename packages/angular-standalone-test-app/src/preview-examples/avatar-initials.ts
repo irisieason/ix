@@ -16,3 +16,4 @@ import { IxAvatar } from '@siemens/ix-angular/standalone';
   template: ` <ix-avatar initials="JD"></ix-avatar> `,
 })
 export default class AvatarInitials {}
+

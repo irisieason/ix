@@ -19,3 +19,4 @@ import {
   templateUrl: './date-input-readonly.html',
 })
 export default class DateInputReadonly {}
+

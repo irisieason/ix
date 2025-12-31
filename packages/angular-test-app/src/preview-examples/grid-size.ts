@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./grid-size.css'],
 })
 export default class GridSize {}
+

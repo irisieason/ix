@@ -13,11 +13,11 @@
     "test.watch": "vitest --config=vitest.config.ts"
   },
   "dependencies": {
-    "@siemens/ix": "workspace:*",
-    "@siemens/ix-aggrid": "workspace:*",
-    "@siemens/ix-echarts": "workspace:*",
-    "@siemens/ix-icons": "^3.2.0",
-    "@siemens/ix-vue": "workspace:*",
+    "@irisieason/ix": "workspace:*",
+    "@irisieason/ix-aggrid": "workspace:*",
+    "@irisieason/ix-echarts": "workspace:*",
+    "@irisieason/ix-icons": "^3.3.0",
+    "@irisieason/ix-vue": "workspace:*",
     "@vuelidate/core": "^2.0.3",
     "@vuelidate/validators": "^2.0.4",
     "ag-grid-community": "^33.1.1",
@@ -43,3 +43,4 @@
     "vue-tsc": "^2.2.10"
   }
 }
+

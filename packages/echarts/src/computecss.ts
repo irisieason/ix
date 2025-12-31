@@ -11,3 +11,4 @@
 export default function getComputedCSSProperty(cssProperty: string) {
   return getComputedStyle(document.body).getPropertyValue(`--theme-${cssProperty}`);
 }
+

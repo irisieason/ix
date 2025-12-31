@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconAdd } from '@siemens/ix-icons/icons';
+import { iconAdd } from '@irisieason/ix-icons/icons';
 import { IxEmptyState } from '@siemens/ix-react';
 
 export default () => {
@@ -21,3 +21,4 @@ export default () => {
     ></IxEmptyState>
   );
 };
+

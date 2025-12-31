@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './number-input-stepper-button.html',
 })
 export default class NumberInputStepperButton {}
+

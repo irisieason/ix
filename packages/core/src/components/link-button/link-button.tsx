@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconChevronRightSmall } from '@siemens/ix-icons/icons';
+import { iconChevronRightSmall } from '@irisieason/ix-icons/icons';
 import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
@@ -65,3 +65,4 @@ export class LinkButton {
     );
   }
 }
+

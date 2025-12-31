@@ -17,3 +17,4 @@ import { Component } from '@angular/core';
   `,
 })
 export default class Pagination {}
+

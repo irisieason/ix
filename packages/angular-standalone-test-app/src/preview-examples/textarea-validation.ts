@@ -19,3 +19,4 @@ import {
   templateUrl: './textarea-validation.html',
 })
 export default class TextareaValidation {}
+

@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./playground.css'],
 })
 export default class Playground {}
+

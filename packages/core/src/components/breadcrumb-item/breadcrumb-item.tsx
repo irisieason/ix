@@ -21,7 +21,7 @@ import {
 import { animate } from 'animejs';
 import { BaseButton, BaseButtonProps } from '../button/base-button';
 import { a11yHostAttributes } from '../utils/a11y';
-import { iconChevronRightSmall } from '@siemens/ix-icons/icons';
+import { iconChevronRightSmall } from '@irisieason/ix-icons/icons';
 import Animation from '../utils/animation';
 import { AnchorInterface, AnchorTarget } from '../button/button.interface';
 
@@ -166,3 +166,4 @@ export class BreadcrumbItem implements AnchorInterface {
     );
   }
 }
+

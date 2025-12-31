@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconCalendar } from '@siemens/ix-icons/icons';
+import { iconCalendar } from '@irisieason/ix-icons/icons';
 import {
   AttachInternals,
   Component,
@@ -547,3 +547,4 @@ export class DateInput implements IxInputFieldComponent<string | undefined> {
     );
   }
 }
+

@@ -107,3 +107,4 @@ export function OnListener<T>(event: string, fnExp?: (self: T) => boolean) {
     };
   };
 }
+

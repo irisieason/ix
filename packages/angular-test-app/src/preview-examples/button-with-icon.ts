@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./button-with-icon.css'],
 })
 export default class ButtonWithIcon {}
+

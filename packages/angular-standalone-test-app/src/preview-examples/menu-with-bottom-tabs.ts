@@ -21,3 +21,4 @@ import { IxMenu, IxMenuItem } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class VerticalTabs {}
+

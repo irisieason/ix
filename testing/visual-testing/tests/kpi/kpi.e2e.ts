@@ -16,3 +16,4 @@ regressionTest.describe('kpi', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

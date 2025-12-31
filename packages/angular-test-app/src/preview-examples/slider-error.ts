@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './slider-error.html',
 })
 export default class SliderError {}
+

@@ -19,3 +19,4 @@ import {
   templateUrl: `./form-checkbox.html`,
 })
 export default class FormCheckbox {}
+

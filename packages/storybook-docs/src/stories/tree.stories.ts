@@ -139,3 +139,4 @@ export const IntermediateNodeExpand: Story = {
     toggleOnItemClick: true,
   },
 };
+

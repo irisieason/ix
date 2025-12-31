@@ -16,3 +16,4 @@ import { IxSpinner } from '@siemens/ix-angular/standalone';
   template: ` <ix-spinner></ix-spinner> `,
 })
 export default class Spinner {}
+

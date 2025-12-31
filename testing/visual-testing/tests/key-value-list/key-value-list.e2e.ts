@@ -16,3 +16,4 @@ regressionTest.describe('key value list', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

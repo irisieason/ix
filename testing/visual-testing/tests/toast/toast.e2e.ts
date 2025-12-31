@@ -29,3 +29,4 @@ regressionTest.describe('toast', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

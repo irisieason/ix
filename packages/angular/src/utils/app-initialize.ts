@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { defineCustomElements as iconsDefineCustomElements } from '@siemens/ix-icons/loader';
+import { defineCustomElements as iconsDefineCustomElements } from '@irisieason/ix-icons/loader';
 import { defineCustomElements } from '@siemens/ix/loader';
 
 let didInitialize = false;
@@ -27,3 +27,4 @@ export const appInitialize = () => (doc: Document) => {
     }
   };
 };
+

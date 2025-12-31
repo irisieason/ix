@@ -19,3 +19,4 @@ import {
   template: ` <ix-toggle text-off="Offline" text-on="Online"></ix-toggle> `,
 })
 export default class ToggleCustomLabel {}
+

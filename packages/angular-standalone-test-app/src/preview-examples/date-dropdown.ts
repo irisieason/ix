@@ -16,3 +16,4 @@ import { IxDateDropdown } from '@siemens/ix-angular/standalone';
   templateUrl: './date-dropdown.html',
 })
 export default class DateDropdown {}
+

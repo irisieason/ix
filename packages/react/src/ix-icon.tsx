@@ -12,7 +12,7 @@
 import {
   IxIcon as IxIconElement,
   defineCustomElement as defineIxIcon,
-} from '@siemens/ix-icons/components/ix-icon.js';
+} from '@irisieason/ix-icons/components/ix-icon.js';
 import {
   createComponent,
   StencilReactComponent,
@@ -26,3 +26,4 @@ export const IxIcon: StencilReactComponent<IxIconElement> =
     react: React,
     defineCustomElement: defineIxIcon,
   });
+

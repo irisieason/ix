@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconArrowLeft } from '@siemens/ix-icons/icons';
+import { iconArrowLeft } from '@irisieason/ix-icons/icons';
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import type { ContentHeaderVariant } from './content-header.types';
 
@@ -94,3 +94,4 @@ export class ContentHeader {
     );
   }
 }
+

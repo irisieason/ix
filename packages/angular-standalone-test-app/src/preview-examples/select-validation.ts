@@ -20,3 +20,4 @@ import {
   templateUrl: './select-validation.html',
 })
 export default class SelectValidation {}
+

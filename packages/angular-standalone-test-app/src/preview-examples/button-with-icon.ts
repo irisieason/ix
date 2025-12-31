@@ -17,3 +17,4 @@ import { IxIconButton } from '@siemens/ix-angular/standalone';
   styleUrls: ['./button-with-icon.css'],
 })
 export default class ButtonWithIcon {}
+

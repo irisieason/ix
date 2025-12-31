@@ -26,3 +26,4 @@ regressionTest.describe('checkbox', () => {
     expect(await page.screenshot()).toMatchSnapshot();
   });
 });
+

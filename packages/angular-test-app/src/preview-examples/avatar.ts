@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <ix-avatar></ix-avatar> `,
 })
 export default class Avatar {}
+

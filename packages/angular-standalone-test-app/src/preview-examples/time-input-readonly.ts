@@ -19,3 +19,4 @@ import {
   templateUrl: './time-input-readonly.html',
 })
 export default class TimeInputReadonly {}
+

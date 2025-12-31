@@ -127,3 +127,4 @@ describe('ix-input required + additional validators', () => {
     expect(input.nativeElement.classList).not.toContain('ix-invalid');
   }));
 });
+

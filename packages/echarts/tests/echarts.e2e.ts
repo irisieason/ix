@@ -23,3 +23,4 @@ regressionTest.describe('echarts', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

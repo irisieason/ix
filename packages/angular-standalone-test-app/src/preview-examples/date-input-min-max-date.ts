@@ -19,3 +19,4 @@ import {
   templateUrl: './date-input-min-max-date.html',
 })
 export default class DateInputMinMaxDate {}
+

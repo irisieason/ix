@@ -8,7 +8,7 @@
  */
 
 import { IxButton, showToast } from '@siemens/ix-react';
-import { iconUndo } from '@siemens/ix-icons/icons';
+import { iconUndo } from '@irisieason/ix-icons/icons';
 
 function CustomToastMessage() {
   return <div>This message is from template</div>;
@@ -54,3 +54,4 @@ export default () => {
     </>
   );
 };
+

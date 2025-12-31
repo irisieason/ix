@@ -56,3 +56,4 @@ regressionTest.describe('Animations', () => {
     expect(animationDuration).toStrictEqual(['0', '0', '0', '0', '0']);
   });
 });
+

@@ -14,3 +14,4 @@ export function kebabToCamelCase(str: string): string {
     })
     .join('');
 }
+

@@ -16,3 +16,4 @@ regressionTest.describe('example-test', () => {
     expect(await page.screenshot()).toMatchSnapshot();
   });
 });
+

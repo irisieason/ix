@@ -25,3 +25,4 @@ regressionTest.describe('radio-group', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

@@ -24,3 +24,4 @@ regressionTest.describe('split-button', () => {
     });
   });
 });
+

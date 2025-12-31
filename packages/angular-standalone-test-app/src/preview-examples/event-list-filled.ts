@@ -31,3 +31,4 @@ export default class EventListFilled {
     { text: 'Text 4', color: 'color-success' },
   ];
 }
+

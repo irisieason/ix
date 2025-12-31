@@ -22,3 +22,4 @@ import { IxToggleButton } from '@siemens/ix-angular/standalone';
   styleUrls: ['./toggle-button-secondary.css'],
 })
 export default class Buttons {}
+

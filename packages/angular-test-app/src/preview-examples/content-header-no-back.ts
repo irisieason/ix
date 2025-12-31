@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './content-header-no-back.html',
 })
 export default class ContentHeaderNoBack {}
+

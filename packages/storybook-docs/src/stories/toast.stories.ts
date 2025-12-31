@@ -47,3 +47,4 @@ export const Default: Story = {
     autoCloseDelay: 5000,
   },
 };
+

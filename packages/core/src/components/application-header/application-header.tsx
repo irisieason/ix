@@ -6,7 +6,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { iconApps, iconMoreMenu } from '@siemens/ix-icons/icons';
+import { iconApps, iconMoreMenu } from '@irisieason/ix-icons/icons';
 import {
   Component,
   Element,
@@ -494,3 +494,4 @@ export class ApplicationHeader {
     );
   }
 }
+

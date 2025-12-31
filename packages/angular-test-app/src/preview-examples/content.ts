@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './content.html',
 })
 export default class ContentExample {}
+

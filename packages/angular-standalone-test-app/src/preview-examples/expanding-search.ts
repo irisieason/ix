@@ -18,3 +18,4 @@ import { IxExpandingSearch } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class ExpandingSearch {}
+

@@ -27,3 +27,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./toggle-button-primary-ghost.css'],
 })
 export default class Buttons {}
+

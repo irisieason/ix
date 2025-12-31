@@ -12,3 +12,4 @@ export class ApplicationSidebarToggleEvent extends Event {
     super('application-sidebar-toggle', { bubbles: true, composed: true });
   }
 }
+

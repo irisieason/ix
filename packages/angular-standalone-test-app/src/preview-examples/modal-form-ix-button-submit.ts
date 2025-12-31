@@ -52,3 +52,4 @@ export default class ModalFormIxButtonSubmit {
     form.control.markAllAsTouched();
   }
 }
+

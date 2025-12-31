@@ -18,7 +18,7 @@ import {
   State,
 } from '@stencil/core';
 import { AlignedPlacement } from '../dropdown/placement';
-import { iconContextMenu } from '@siemens/ix-icons/icons';
+import { iconContextMenu } from '@irisieason/ix-icons/icons';
 import { CloseBehavior } from '../dropdown/dropdown-controller';
 import type { SplitButtonVariant } from './split-button.types';
 import { makeRef } from '../utils/make-ref';
@@ -169,3 +169,4 @@ export class SplitButton {
     );
   }
 }
+

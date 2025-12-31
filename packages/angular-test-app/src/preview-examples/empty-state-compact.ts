@@ -26,3 +26,4 @@ export default class EmptyStateCompact {
     console.log(event);
   }
 }
+

@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './number-input-with-slots.html',
 })
 export default class NumberInputWithSlots {}
+

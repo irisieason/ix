@@ -106,3 +106,4 @@ export const CircularProgress: FunctionalComponent<CircularProgressProps> = (
     </div>
   );
 };
+

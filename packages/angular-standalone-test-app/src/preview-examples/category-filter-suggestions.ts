@@ -23,3 +23,4 @@ import { IxCategoryFilter } from '@siemens/ix-angular/standalone';
 export default class CategoryFilterSuggestions {
   suggestions = ['Item 1', 'Item 2'];
 }
+

@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './date-input-min-max-date.html',
 })
 export default class DateInputMinMaxDate {}
+

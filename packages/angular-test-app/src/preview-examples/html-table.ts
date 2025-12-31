@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './html-table.html',
 })
 export default class HtmlTable {}
+

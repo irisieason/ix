@@ -355,3 +355,4 @@ async function clickSettingsButton(element: Locator, page: Page) {
   await settingsButton.click();
   await page.waitForTimeout(1000);
 }
+

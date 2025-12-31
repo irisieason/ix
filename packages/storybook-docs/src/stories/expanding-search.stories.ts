@@ -34,3 +34,4 @@ export const Default: Story = {
     placeholder: 'Search...',
   },
 };
+

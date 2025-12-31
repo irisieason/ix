@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconClose, iconShout } from '@siemens/ix-icons/icons';
+import { iconClose, iconShout } from '@irisieason/ix-icons/icons';
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 
 @Component({
@@ -105,3 +105,4 @@ export class MenuAboutNews {
     );
   }
 }
+

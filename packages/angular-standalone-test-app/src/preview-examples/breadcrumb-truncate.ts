@@ -24,3 +24,4 @@ import { IxBreadcrumb, IxBreadcrumbItem } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class BreadcrumbTruncate {}
+

@@ -32,3 +32,4 @@ export function waitForElement<R extends HTMLElement>(
     checkIfElementExist();
   });
 }
+

@@ -6,12 +6,12 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import '@siemens/ix/dist/siemens-ix/siemens-ix-core.css';
+import '@irisieason/ix/dist/siemens-ix/siemens-ix-core.css';
 
-import { showMessage } from '@siemens/ix';
-import { defineCustomElements } from '@siemens/ix/loader';
-import { defineCustomElement as defineCustomElementIxIcon } from '@siemens/ix-icons/components/ix-icon.js';
-import { addIcons } from '@siemens/ix-icons';
+import { showMessage } from '@irisieason/ix';
+import { defineCustomElements } from '@irisieason/ix/loader';
+import { defineCustomElement as defineCustomElementIxIcon } from '@irisieason/ix-icons/components/ix-icon.js';
+import { addIcons } from '@irisieason/ix-icons';
 
 function normalizeBodyStyles() {
   const body = document.body;
@@ -64,3 +64,4 @@ function provideThemeStyles() {
   normalizeBodyStyles();
   detectThemeSwitching();
 })();
+

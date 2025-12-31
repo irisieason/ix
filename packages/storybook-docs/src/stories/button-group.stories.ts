@@ -37,3 +37,4 @@ export const Default: Story = {
     <ix-button outline>Test 3</ix-button>
   </div>`,
 };
+

@@ -23,3 +23,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./toggle-button-primary.css'],
 })
 export default class Buttons {}
+

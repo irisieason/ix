@@ -70,3 +70,4 @@ export default class EchartsPie implements OnInit {
     });
   }
 }
+

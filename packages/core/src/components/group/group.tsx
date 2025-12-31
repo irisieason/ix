@@ -24,7 +24,7 @@ import { hasSlottedElements } from '../utils/shadow-dom';
 import {
   iconChevronDownSmall,
   iconChevronUpSmall,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 @Component({
   tag: 'ix-group',
@@ -315,3 +315,4 @@ export class Group {
     );
   }
 }
+

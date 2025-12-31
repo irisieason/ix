@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: `<ix-key-value label="Label" value="Value"></ix-key-value>`,
 })
 export default class KeyValue {}
+

@@ -21,7 +21,7 @@ import { DropdownItemWrapper } from '../dropdown/dropdown-controller';
 import {
   iconChevronRightSmall,
   iconSingleCheck,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { a11yBoolean } from '../utils/a11y';
 
 @Component({
@@ -160,3 +160,4 @@ export class DropdownItem implements DropdownItemWrapper {
     );
   }
 }
+

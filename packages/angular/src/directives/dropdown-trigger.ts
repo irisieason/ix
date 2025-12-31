@@ -25,3 +25,4 @@ export class IxDropdownTriggerDirective extends DropdownTriggerBaseDirective {
     super.ngOnChanges();
   }
 }
+

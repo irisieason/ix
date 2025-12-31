@@ -36,3 +36,4 @@ const IxMenu: StencilReactComponent<IxMenuElement, IxMenuEvents> = /*@__PURE__*/
 });
 
 export default IxMenu;
+

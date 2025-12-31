@@ -97,3 +97,4 @@ export class ReactFrameworkDelegate implements FrameworkDelegate {
 
 export const reactFrameworkDelegate = new ReactFrameworkDelegate();
 registerFrameworkDelegate(reactFrameworkDelegate);
+

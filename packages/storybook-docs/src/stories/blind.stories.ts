@@ -41,3 +41,4 @@ export const Default: Story = {
     sublabel: getLoremIpsum(),
   },
 };
+

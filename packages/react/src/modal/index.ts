@@ -51,3 +51,4 @@ export function closeModal<T = any>(
     _closeModal(modalInstance.htmlElement, reason);
   }
 }
+

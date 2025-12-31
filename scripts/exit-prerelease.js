@@ -5,12 +5,12 @@ const cwdPath = process.cwd();
 const prePath = path.join(cwdPath, '.changeset', 'pre.json');
 
 const PROJECT = [
-  ['@siemens/ix-aggrid', 'aggrid'],
-  ['@siemens/ix-angular', 'angular'],
-  ['@siemens/ix', 'core'],
-  ['@siemens/ix-echarts', 'echarts'],
-  ['@siemens/ix-react', 'react'],
-  ['@siemens/ix-vue', 'vue'],
+  ['@irisieason/ix-aggrid', 'aggrid'],
+  ['@irisieason/ix-angular', 'angular'],
+  ['@irisieason/ix', 'core'],
+  ['@irisieason/ix-echarts', 'echarts'],
+  ['@irisieason/ix-react', 'react'],
+  ['@irisieason/ix-vue', 'vue'],
 ].map(([pkg, p]) => [pkg, path.join(cwdPath, 'packages', p, 'package.json')]);
 
 if (!fs.existsSync(prePath)) {
@@ -89,3 +89,4 @@ function preserveSemVer(existingVersion, newVersion) {
 
   return newVersion;
 }
+

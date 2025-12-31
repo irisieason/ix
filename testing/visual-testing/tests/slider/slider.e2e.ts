@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import { expect } from '@playwright/test';
-import { iconRocket } from '@siemens/ix-icons/icons';
+import { iconRocket } from '@irisieason/ix-icons/icons';
 import { regressionTest } from '@utils/test';
 
 regressionTest('should show reference value', async ({ page, mount }) => {
@@ -218,3 +218,4 @@ regressionTest('should render with error', async ({ page, mount }) => {
     await page.locator('#slider-container').screenshot()
   ).toMatchSnapshot();
 });
+

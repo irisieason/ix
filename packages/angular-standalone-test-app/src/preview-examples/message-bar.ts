@@ -28,3 +28,4 @@ import { IxButton, IxMessageBar } from '@siemens/ix-angular/standalone';
   styleUrls: ['./message-bar.css'],
 })
 export default class MessageBar {}
+

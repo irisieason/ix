@@ -80,3 +80,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./flip-tile.css'],
 })
 export default class FlipTile {}
+

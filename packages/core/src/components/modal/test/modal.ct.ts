@@ -15,7 +15,7 @@ import {
   iconQuestion,
   iconSuccess,
   iconWarning,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 declare global {
   interface Window {
@@ -337,3 +337,4 @@ regressionTest.describe('message utils', () => {
     });
   });
 });
+

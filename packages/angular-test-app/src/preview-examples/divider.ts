@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <ix-divider></ix-divider> `,
 })
 export default class Divider {}
+

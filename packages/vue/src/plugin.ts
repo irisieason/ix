@@ -5,3 +5,4 @@ export const ixPlugin: Plugin = {
     // Plugin initialization - currently no setup required
   },
 };
+

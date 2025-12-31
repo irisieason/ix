@@ -34,3 +34,4 @@ export const addDisposableEventListenerAsArray = (
 
   return () => disposables.forEach((dispose) => dispose());
 };
+

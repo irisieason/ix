@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './number-input.html',
 })
 export default class NumberInput {}
+

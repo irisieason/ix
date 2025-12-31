@@ -48,3 +48,4 @@ describe('ix-message-bar', () => {
     });
   });
 });
+

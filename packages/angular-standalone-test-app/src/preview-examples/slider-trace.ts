@@ -16,3 +16,4 @@ import { IxSlider } from '@siemens/ix-angular/standalone';
   templateUrl: './slider-trace.html',
 })
 export default class SliderTrace {}
+

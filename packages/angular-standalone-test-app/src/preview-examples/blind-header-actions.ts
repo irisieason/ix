@@ -39,3 +39,4 @@ import {
   styleUrls: ['./blind-header-actions.css'],
 })
 export default class Blind {}
+

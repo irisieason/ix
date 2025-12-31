@@ -19,11 +19,11 @@
     "@angular/platform-browser": "^20.1.4",
     "@angular/platform-browser-dynamic": "^20.1.4",
     "@angular/router": "^20.1.4",
-    "@siemens/ix": "workspace:*",
-    "@siemens/ix-angular": "workspace:*",
-    "@siemens/ix-echarts": "workspace:*",
-    "@siemens/ix-icons": "^3.2.0",
-    "@siemens/ix-aggrid": "workspace:*",
+    "@irisieason/ix": "workspace:*",
+    "@irisieason/ix-angular": "workspace:*",
+    "@irisieason/ix-echarts": "workspace:*",
+    "@irisieason/ix-icons": "^3.3.0",
+    "@irisieason/ix-aggrid": "workspace:*",
     "ag-grid-angular": "^33.1.1",
     "ag-grid-community": "^33.1.1",
     "echarts": "5.4.3",
@@ -48,3 +48,4 @@
     "typescript": "~5.8.2"
   }
 }
+

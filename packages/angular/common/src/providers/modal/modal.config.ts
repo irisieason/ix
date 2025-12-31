@@ -14,3 +14,4 @@ export type ModalConfig<TDATA = any> = Omit<IxModalConfig, 'content'> & {
   content: TemplateRef<unknown> | Type<unknown>;
   data?: TDATA;
 };
+

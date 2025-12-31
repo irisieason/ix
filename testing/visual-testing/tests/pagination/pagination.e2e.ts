@@ -23,3 +23,4 @@ regressionTest.describe('pagination', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

@@ -19,3 +19,4 @@ import {
   templateUrl: './input-validation.html',
 })
 export default class InputValidation {}
+

@@ -356,3 +356,4 @@ regressionTest(
     expect(emittedValue).toBeNull();
   }
 );
+

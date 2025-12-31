@@ -40,3 +40,4 @@ regressionTest.describe('workflow-steps', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

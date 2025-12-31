@@ -86,3 +86,4 @@ regressionTest('drawerClose', async ({ mount, page }) => {
   await drawer.evaluate((d: HTMLIxDrawerElement) => (d.show = false));
   await expect(drawer).toBeVisible();
 });
+

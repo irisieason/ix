@@ -21,3 +21,4 @@ import {
   styleUrls: ['./content-header-with-slot.css'],
 })
 export default class ContentHeaderWithSlot {}
+

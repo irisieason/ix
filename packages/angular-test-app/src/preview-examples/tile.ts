@@ -47,3 +47,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./tile.css'],
 })
 export default class Tile {}
+

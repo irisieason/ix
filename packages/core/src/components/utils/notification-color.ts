@@ -21,3 +21,4 @@ export type NotificationColor =
   | 'color-alarm'
   | 'color-neutral'
   | 'color-primary';
+

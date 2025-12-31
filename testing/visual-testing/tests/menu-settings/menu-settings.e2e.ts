@@ -56,3 +56,4 @@ regressionTest.describe('menu-settings', () => {
     });
   });
 });
+

@@ -109,3 +109,4 @@ regressionTest.describe('application header: standalone', () => {
     });
   });
 });
+

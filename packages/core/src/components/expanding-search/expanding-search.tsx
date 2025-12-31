@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconClear, iconSearch } from '@siemens/ix-icons/icons';
+import { iconClear, iconSearch } from '@irisieason/ix-icons/icons';
 import {
   Component,
   Event,
@@ -202,3 +202,4 @@ export class ExpandingSearch
     );
   }
 }
+

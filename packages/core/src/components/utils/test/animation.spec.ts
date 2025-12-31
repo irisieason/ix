@@ -15,3 +15,4 @@ describe('Animation', () => {
     expect(Animation.xSlowTime).toBe(1000);
   });
 });
+

@@ -26,3 +26,4 @@ export default class EmptyStateCompactBreak {
     console.log(event);
   }
 }
+

@@ -41,3 +41,4 @@ export default class FormCheckboxGroupIndeterminate {
     this.parentCheckbox.indeterminate = checkedCount > 0 && checkedCount < totalCount;
   }
 }
+

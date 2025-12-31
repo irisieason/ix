@@ -17,3 +17,4 @@ import { IxLayoutAuto, IxTypography } from '@siemens/ix-angular/standalone';
   styleUrls: ['./layout-auto.css'],
 })
 export default class LayoutAuto {}
+

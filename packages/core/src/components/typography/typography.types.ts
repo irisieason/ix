@@ -60,3 +60,4 @@ export type TypographyFormat =
   | TypographyFormatCode;
 
 export type TextDecoration = 'none' | 'underline' | 'line-through';
+

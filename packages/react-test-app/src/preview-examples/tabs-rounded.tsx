@@ -15,7 +15,7 @@ import {
   iconSoundLoud,
   iconSuccess,
   iconTree,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 export default () => {
   return (
@@ -41,3 +41,4 @@ export default () => {
     </IxTabs>
   );
 };
+

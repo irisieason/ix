@@ -1,5 +1,5 @@
 {
-  "name": "@siemens/ix/components",
+  "name": "@irisieason/ix/components",
   "version": "0.0.0",
   "main": "./index.js",
   "types": "./custom-elements.d.ts",
@@ -7,3 +7,4 @@
   "sideEffects": false,
   "type": "module"
 }
+

@@ -19,3 +19,4 @@ import {
   template: ` <ix-toggle indeterminate></ix-toggle> `,
 })
 export default class ToggleIndeterminate {}
+

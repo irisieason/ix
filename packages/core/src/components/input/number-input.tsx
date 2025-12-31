@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconMinus, iconPlus } from '@siemens/ix-icons/icons';
+import { iconMinus, iconPlus } from '@irisieason/ix-icons/icons';
 import {
   AttachInternals,
   Component,
@@ -528,3 +528,4 @@ export class NumberInput implements IxInputFieldComponent<number> {
     );
   }
 }
+

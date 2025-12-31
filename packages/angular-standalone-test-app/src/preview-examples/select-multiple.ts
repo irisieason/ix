@@ -29,3 +29,4 @@ import {
 export default class SelectMultiple {
   value = ['1', '3'];
 }
+

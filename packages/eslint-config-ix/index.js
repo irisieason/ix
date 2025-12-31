@@ -22,3 +22,4 @@ module.exports = {
     'no-inline-comments': 'error',
   },
 };
+

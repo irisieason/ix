@@ -19,3 +19,4 @@ import {
   templateUrl: './time-input-label.html',
 })
 export default class TimeInputLabel {}
+

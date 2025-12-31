@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './slider.html',
 })
 export default class Slider {}
+

@@ -55,3 +55,4 @@ describe('ix-pagination', () => {
     expect(pagination.selectedPage).toBe(3);
   });
 });
+

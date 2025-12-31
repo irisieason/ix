@@ -16,3 +16,4 @@ import { IxButton } from '@siemens/ix-angular/standalone';
   templateUrl: './button-danger-ghost.html',
 })
 export default class Buttons {}
+

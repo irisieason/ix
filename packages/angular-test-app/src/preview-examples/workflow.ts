@@ -25,3 +25,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./workflow.css'],
 })
 export default class Workflow {}
+

@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './time-input.html',
 })
 export default class TimeInput {}
+

@@ -14,3 +14,4 @@ export type ToastConfig = Omit<IxToastConfig, 'message' | 'action'> & {
   message?: string | TemplateRef<any>;
   action?: TemplateRef<any>;
 };
+

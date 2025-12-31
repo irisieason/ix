@@ -50,3 +50,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./chip.css'],
 })
 export default class Chip {}
+

@@ -566,3 +566,4 @@ export class Dropdown implements ComponentInterface, DropdownInterface {
     );
   }
 }
+

@@ -8,7 +8,7 @@
  */
 import { test } from '@utils/test';
 import { expect } from '@playwright/test';
-import { iconStar } from '@siemens/ix-icons/icons';
+import { iconStar } from '@irisieason/ix-icons/icons';
 
 test.describe('Pill', () => {
   test('dynamic gap behavior', async ({ mount, page }) => {
@@ -86,3 +86,4 @@ test.describe('tooltip', () => {
     await expect(tooltip).toHaveText('custom tooltip text');
   });
 });
+

@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './input-readonly.html',
 })
 export default class InputReadonly {}
+

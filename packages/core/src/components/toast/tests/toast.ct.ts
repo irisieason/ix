@@ -125,3 +125,4 @@ regressionTest('verify isPaused method', async ({ mount, page }) => {
   }, toastHandle);
   expect(paused).toBe(false);
 });
+

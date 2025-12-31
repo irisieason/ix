@@ -46,3 +46,4 @@ import { IxSplitButton, IxDropdownItem } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class SplitButton {}
+

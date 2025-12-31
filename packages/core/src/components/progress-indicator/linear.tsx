@@ -36,3 +36,4 @@ export function LinearBar({
     </div>
   );
 }
+

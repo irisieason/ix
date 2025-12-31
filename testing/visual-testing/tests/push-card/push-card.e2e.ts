@@ -8,7 +8,7 @@
  */
 
 import { expect } from '@playwright/test';
-import { iconBulb } from '@siemens/ix-icons/icons';
+import { iconBulb } from '@irisieason/ix-icons/icons';
 import { regressionTest } from '@utils/test';
 
 regressionTest.describe('push-card: basic', () => {
@@ -66,3 +66,4 @@ regressionTest('push card expand', async ({ page, mount }) => {
     await page.screenshot({ fullPage: true, animations: 'disabled' })
   ).toMatchSnapshot();
 });
+

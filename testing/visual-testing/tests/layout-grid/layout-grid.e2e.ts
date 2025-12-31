@@ -44,3 +44,4 @@ regressionTest('should not have regression small', async ({ page }) => {
 
   expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
 });
+

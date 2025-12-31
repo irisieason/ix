@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <ix-pagination count="100"></ix-pagination> `,
 })
 export default class Pagination {}
+

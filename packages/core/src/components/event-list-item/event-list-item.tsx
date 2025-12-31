@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconChevronRight } from '@siemens/ix-icons/icons';
+import { iconChevronRight } from '@irisieason/ix-icons/icons';
 import {
   Component,
   Event,
@@ -113,3 +113,4 @@ export class EventListItem {
     );
   }
 }
+

@@ -31,3 +31,4 @@ const IxMenuSettings: StencilReactComponent<IxMenuSettingsElement, IxMenuSetting
 });
 
 export default IxMenuSettings;
+

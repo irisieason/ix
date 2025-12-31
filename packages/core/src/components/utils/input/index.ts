@@ -107,3 +107,4 @@ export function isIxInputFieldComponent<T>(
     typeof obj.getNativeInputElement === 'function'
   );
 }
+

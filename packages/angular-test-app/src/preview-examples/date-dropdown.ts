@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './date-dropdown.html',
 })
 export default class DateDropdown {}
+

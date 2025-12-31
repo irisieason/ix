@@ -29,3 +29,4 @@ export function renderDefaultItem(
   });
   return el;
 }
+

@@ -8,8 +8,8 @@
  */
 
 import { Component } from '@angular/core';
-import { addIcons } from '@siemens/ix-icons';
-import { iconStar, iconStarFilled } from '@siemens/ix-icons/icons';
+import { addIcons } from '@irisieason/ix-icons';
+import { iconStar, iconStarFilled } from '@irisieason/ix-icons/icons';
 
 @Component({
   standalone: false,
@@ -24,3 +24,4 @@ export default class AddIcons {
     addIcons({ iconStar, iconStarFilled });
   }
 }
+

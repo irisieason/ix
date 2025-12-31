@@ -34,9 +34,10 @@
     "plugins": [],
     "skipLibCheck": true,
     "paths": {
-      "@siemens/ix-angular/common": ["common/src/index.ts"]
+      "@irisieason/ix-angular/common": ["common/src/index.ts"]
     }
   },
   "exclude": ["node_modules"],
   "files": ["src/index.ts", "common/src/index.ts", "standalone/src/index.ts"]
 }
+

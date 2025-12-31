@@ -36,3 +36,4 @@ export default class DatepickerLocale {
     this.locale = detail as Locale;
   }
 }
+

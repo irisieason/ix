@@ -8,7 +8,7 @@
  */
 
 import { expect } from '@playwright/test';
-import { iconStar } from '@siemens/ix-icons/icons';
+import { iconStar } from '@irisieason/ix-icons/icons';
 import { regressionTest } from '@utils/test';
 
 regressionTest('renders', async ({ mount, page }) => {
@@ -132,3 +132,4 @@ regressionTest(
     await expect(removeEventListenerCalled).resolves.toBe('click');
   }
 );
+

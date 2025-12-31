@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './button-danger-ghost.html',
 })
 export default class Buttons {}
+

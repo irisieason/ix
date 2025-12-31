@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './date-input-label.html',
 })
 export default class DateInputLabel {}
+

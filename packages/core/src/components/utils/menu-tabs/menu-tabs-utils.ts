@@ -77,3 +77,4 @@ export interface CustomCloseEvent {
   nativeEvent: MouseEvent;
   name: string;
 }
+

@@ -1,5 +1,5 @@
 {
-  "name": "@siemens/ix-react",
+  "name": "@irisieason/ix-react",
   "homepage": "https://ix.siemens.io",
   "bugs": "https://github.com/siemens/ix/issues",
   "repository": {
@@ -42,7 +42,7 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.5.0",
-    "@siemens/ix": "workspace:*",
+    "@irisieason/ix": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -70,13 +70,14 @@
     "vitest-browser-react": "^1.0.0"
   },
   "peerDependencies": {
-    "@siemens/ix-icons": "^3.2.0",
+    "@irisieason/ix-icons": "^3.3.0",
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
   },
   "dependencies": {
-    "@siemens/ix": "~4.2.0",
+    "@irisieason/ix": "~4.2.0",
     "@stencil/react-output-target": "^1.2.0",
     "tslib": "*"
   }
 }
+

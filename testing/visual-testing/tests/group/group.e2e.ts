@@ -55,3 +55,4 @@ regressionTest.describe('group', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

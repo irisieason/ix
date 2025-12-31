@@ -19,3 +19,4 @@ export type TypographyVariants =
   | 'large-single'
   | 'h2'
   | 'display-large';
+

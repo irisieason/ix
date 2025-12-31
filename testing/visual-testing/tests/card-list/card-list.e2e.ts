@@ -55,3 +55,4 @@ regressionTest.describe('card-list: basic', () => {
     ).toMatchSnapshot();
   });
 });
+

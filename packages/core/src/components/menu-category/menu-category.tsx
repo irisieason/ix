@@ -21,7 +21,7 @@ import { animate } from 'animejs';
 import { closestIxMenu } from '../utils/application-layout/context';
 import { createMutationObserver } from '../utils/mutation-observer';
 import { createEnterLeaveDebounce } from './enter-leave';
-import { iconChevronDownSmall } from '@siemens/ix-icons/icons';
+import { iconChevronDownSmall } from '@irisieason/ix-icons/icons';
 import type { IxMenuItemBase } from './../menu-item/menu-item.interface';
 const DefaultIxMenuItemHeight = 40;
 const DefaultAnimationTimeout = 150;
@@ -318,3 +318,4 @@ export class MenuCategory implements IxMenuItemBase {
     );
   }
 }
+

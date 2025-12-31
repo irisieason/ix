@@ -20,3 +20,4 @@ import {
   styleUrls: ['./input-types.css'],
 })
 export default class InputTypes {}
+

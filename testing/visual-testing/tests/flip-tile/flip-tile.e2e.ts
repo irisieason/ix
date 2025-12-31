@@ -21,3 +21,4 @@ regressionTest.describe('flip-tile', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

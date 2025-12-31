@@ -1,31 +1,31 @@
 {
   "folders": [
     {
-      "name": "@siemens/ix",
+      "name": "@irisieason/ix",
       "path": "./packages/core"
     },
     {
-      "name": "@siemens/ix-react",
+      "name": "@irisieason/ix-react",
       "path": "./packages/react"
     },
     {
-      "name": "@siemens/ix-angular",
+      "name": "@irisieason/ix-angular",
       "path": "./packages/angular"
     },
     {
-      "name": "@siemens/ix-vue (experimental)",
+      "name": "@irisieason/ix-vue (experimental)",
       "path": "./packages/vue"
     },
     {
-      "name": "@siemens/ix-aggrid",
+      "name": "@irisieason/ix-aggrid",
       "path": "./packages/aggrid"
     },
     {
-      "name": "@siemens/ix-echarts",
+      "name": "@irisieason/ix-echarts",
       "path": "./packages/echarts"
     },
     {
-      "name": "@siemens/ix-documentation",
+      "name": "@irisieason/ix-documentation",
       "path": "./packages/documentation"
     },
     {

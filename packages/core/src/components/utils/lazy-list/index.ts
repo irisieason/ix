@@ -8,3 +8,4 @@
  */
 export type { VirtualListConfig } from './lazy';
 export { VirtualList } from './lazy';
+

@@ -23,3 +23,4 @@ export default class Settings implements AfterViewInit {
     nativeElement.toggleSettings(true);
   }
 }
+

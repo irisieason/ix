@@ -16,3 +16,4 @@ import { IxUpload } from '@siemens/ix-angular/standalone';
   template: ` <ix-upload></ix-upload> `,
 })
 export default class Upload {}
+

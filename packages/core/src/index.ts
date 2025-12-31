@@ -13,4 +13,5 @@ export type * from './components.d.ts';
 export type {
   Components as IxIconsComponents,
   JSX as IxIconsJSX,
-} from '@siemens/ix-icons';
+} from '@irisieason/ix-icons';
+

@@ -31,3 +31,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./icon-toggle-button-secondary-ghost.css'],
 })
 export default class Buttons {}
+

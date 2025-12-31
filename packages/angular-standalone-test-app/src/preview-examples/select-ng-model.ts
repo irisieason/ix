@@ -37,3 +37,4 @@ import {
 export default class Select {
   value = '1';
 }
+

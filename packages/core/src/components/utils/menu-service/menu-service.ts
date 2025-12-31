@@ -73,3 +73,4 @@ class MenuService {
 }
 
 export const menuController = new MenuService();
+

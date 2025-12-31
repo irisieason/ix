@@ -23,3 +23,4 @@ import { IxButton } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class ButtonGroup {}
+

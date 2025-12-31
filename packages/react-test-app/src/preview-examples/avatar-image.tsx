@@ -14,3 +14,4 @@ export default () => {
     <IxAvatar image="https://www.gravatar.com/avatar/00000000000000000000000000000000"></IxAvatar>
   );
 };
+

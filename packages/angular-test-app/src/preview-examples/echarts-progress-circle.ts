@@ -98,3 +98,4 @@ export default class EchartsProgressCircle implements OnInit {
     });
   }
 }
+

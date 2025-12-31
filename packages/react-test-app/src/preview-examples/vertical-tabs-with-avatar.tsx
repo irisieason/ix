@@ -12,7 +12,7 @@ import {
   iconHome,
   iconStar,
   iconUserProfile,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import './vertical-tabs-with-avatar.scoped.css';
 
 import {
@@ -49,3 +49,4 @@ export default () => {
     </IxMenu>
   );
 };
+

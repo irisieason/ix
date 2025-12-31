@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import { expect } from '@playwright/test';
-import { iconRocket } from '@siemens/ix-icons/icons';
+import { iconRocket } from '@irisieason/ix-icons/icons';
 import { regressionTest } from '@utils/test';
 
 declare global {
@@ -206,3 +206,4 @@ regressionTest(
     expect(formSubmitted).toBe(true);
   }
 );
+

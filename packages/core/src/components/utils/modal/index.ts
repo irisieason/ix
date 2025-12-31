@@ -16,3 +16,4 @@ export {
   ModalInstance,
   showModal,
 } from './modal';
+

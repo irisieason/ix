@@ -19,3 +19,4 @@
   },
   "include": ["playwright.config.ts", "visual-regression.config.ts"]
 }
+

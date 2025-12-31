@@ -14,3 +14,4 @@ export default () => {
     <IxKeyValue label="Label" labelPosition="left" value="Value"></IxKeyValue>
   );
 };
+

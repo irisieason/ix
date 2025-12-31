@@ -26,3 +26,4 @@ export class BooleanValueAccessorBaseDirective extends ValueAccessor {
     super.handleValueChange(el, el.checked);
   }
 }
+

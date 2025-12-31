@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconCloseSmall } from '@siemens/ix-icons/icons';
+import { iconCloseSmall } from '@irisieason/ix-icons/icons';
 import {
   Component,
   Element,
@@ -78,3 +78,4 @@ export class FilterChip {
     );
   }
 }
+

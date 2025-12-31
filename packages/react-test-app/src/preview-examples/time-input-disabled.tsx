@@ -12,3 +12,4 @@ import { IxTimeInput } from '@siemens/ix-react';
 export default () => {
   return <IxTimeInput disabled></IxTimeInput>;
 };
+

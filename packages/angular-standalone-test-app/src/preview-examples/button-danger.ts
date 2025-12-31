@@ -17,3 +17,4 @@ import { IxButton } from '@siemens/ix-angular/standalone';
   styleUrls: ['./button-danger.css'],
 })
 export default class Buttons {}
+

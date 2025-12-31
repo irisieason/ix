@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './push-card.html',
 })
 export default class PushCard {}
+

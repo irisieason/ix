@@ -150,3 +150,4 @@ regressionTest(
     await expect(group).not.toHaveAttribute('selected');
   }
 );
+

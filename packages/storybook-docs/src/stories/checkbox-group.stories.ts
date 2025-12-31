@@ -37,3 +37,4 @@ export const Required: Story = {
     <ix-checkbox label="Option 3" value="option3"></ix-checkbox>
   </ix-checkbox-group>`,
 };
+

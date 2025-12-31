@@ -20,3 +20,4 @@ regressionTest.describe('dropdown-quick-actions', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

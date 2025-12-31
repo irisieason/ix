@@ -6,3 +6,4 @@ export function checkForError(
     .allArgs()
     .some((arg) => arg[0].toString().includes(errorName));
 }
+

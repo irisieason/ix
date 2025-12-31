@@ -251,3 +251,4 @@ regressionTest.describe('menu', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

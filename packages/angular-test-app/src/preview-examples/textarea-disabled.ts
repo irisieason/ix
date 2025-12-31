@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './textarea-disabled.html',
 })
 export default class TextareaDisabled {}
+

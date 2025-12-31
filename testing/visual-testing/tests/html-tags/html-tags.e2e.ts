@@ -16,3 +16,4 @@ regressionTest.describe('html-tags', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

@@ -31,3 +31,4 @@ export default class PaneLayout {
       this.layout === 'full-horizontal' ? 'full-vertical' : 'full-horizontal';
   }
 }
+

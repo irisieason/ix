@@ -25,7 +25,7 @@ import {
   iconInfo,
   iconSuccess,
   iconWarning,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 @Component({
   tag: 'ix-toast',
@@ -247,3 +247,4 @@ export class Toast {
     );
   }
 }
+

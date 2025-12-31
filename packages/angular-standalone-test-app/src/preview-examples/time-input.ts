@@ -19,3 +19,4 @@ import {
   templateUrl: './time-input.html',
 })
 export default class TimeInput {}
+

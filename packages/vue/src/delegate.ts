@@ -1,4 +1,4 @@
-import { FrameworkDelegate, registerFrameworkDelegate } from '@siemens/ix';
+import { FrameworkDelegate, registerFrameworkDelegate } from '@irisieason/ix';
 import { VNode } from 'vue';
 
 let viewInstance = 0;
@@ -55,3 +55,4 @@ export class VueFrameworkDelegate implements FrameworkDelegate {
 
 export const vueFrameworkDelegate = new VueFrameworkDelegate();
 registerFrameworkDelegate(vueFrameworkDelegate);
+

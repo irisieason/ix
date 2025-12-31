@@ -16,3 +16,4 @@ import { IxPushCard } from '@siemens/ix-angular/standalone';
   templateUrl: './push-card.html',
 })
 export default class PushCard {}
+

@@ -24,3 +24,4 @@ export default class InputFormValidation {
     console.log(this.exampleForm.value);
   }
 }
+

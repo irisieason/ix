@@ -102,3 +102,4 @@ regressionTest(
     await expect(dynamicButton).not.toHaveAttribute('disabled');
   }
 );
+

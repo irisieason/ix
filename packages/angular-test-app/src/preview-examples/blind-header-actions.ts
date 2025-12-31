@@ -33,3 +33,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./blind-header-actions.css'],
 })
 export default class Blind {}
+

@@ -39,3 +39,4 @@ import { IxPill } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class Pill {}
+

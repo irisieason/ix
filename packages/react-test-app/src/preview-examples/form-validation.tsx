@@ -14,7 +14,7 @@ import {
   iconBezierCurve,
   iconLocation,
   iconStar,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import {
   IxButton,
   IxCheckbox,
@@ -280,3 +280,4 @@ export default function FormValidation() {
     </form>
   );
 }
+

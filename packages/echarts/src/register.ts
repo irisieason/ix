@@ -30,3 +30,4 @@ export default function registerTheme(echartsInstance?: any) {
     echarts.registerTheme(themeBundle.themeName, themeBundle.theme);
   });
 }
+

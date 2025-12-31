@@ -16,3 +16,4 @@ regressionTest.describe('date-input', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

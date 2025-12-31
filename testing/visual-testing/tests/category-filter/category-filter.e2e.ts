@@ -76,3 +76,4 @@ regressionTest.describe('category-filter', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

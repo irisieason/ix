@@ -16,3 +16,4 @@ import { IxCustomField } from '@siemens/ix-angular/standalone';
   templateUrl: './custom-field-validation.html',
 })
 export default class CustomFieldValidation {}
+

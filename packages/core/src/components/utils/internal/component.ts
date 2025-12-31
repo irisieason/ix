@@ -11,3 +11,4 @@ import { HTMLStencilElement, ComponentInterface } from '@stencil/core/internal';
 export interface IxComponent extends ComponentInterface {
   hostElement: HTMLStencilElement;
 }
+

@@ -14,7 +14,7 @@ import {
   iconInfo,
   iconSuccess,
   iconWarning,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { CircularProgress } from './circular';
 import type {
   ProgressIndicatorSize,
@@ -206,3 +206,4 @@ export class ProgressIndicator {
     );
   }
 }
+

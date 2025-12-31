@@ -24,3 +24,4 @@ import { Component } from '@angular/core';
 export default class SelectMultiple {
   value = ['1', '3'];
 }
+

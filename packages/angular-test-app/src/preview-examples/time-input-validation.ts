@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './time-input-validation.html',
 })
 export default class TimeInputValidation {}
+

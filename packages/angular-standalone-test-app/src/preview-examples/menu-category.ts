@@ -21,3 +21,4 @@ import {
   templateUrl: './menu-category.html',
 })
 export default class MenuCategory {}
+

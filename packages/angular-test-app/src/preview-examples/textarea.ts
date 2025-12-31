@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './textarea.html',
 })
 export default class Textarea {}
+

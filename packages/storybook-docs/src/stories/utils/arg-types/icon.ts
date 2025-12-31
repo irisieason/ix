@@ -6,7 +6,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { icons } from '@siemens/ix-icons/dist/sample.json';
+import { icons } from '@irisieason/ix-icons/dist/sample.json';
 
 export function icon(name: string, allowEmptyIcon = false): any {
   let iconOptions = icons;
@@ -21,3 +21,4 @@ export function icon(name: string, allowEmptyIcon = false): any {
     options: iconOptions,
   };
 }
+

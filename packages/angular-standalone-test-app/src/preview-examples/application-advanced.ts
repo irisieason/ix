@@ -44,3 +44,4 @@ export default class ApplicationAdvancedExample {
     this.activeContent = contentKey;
   }
 }
+

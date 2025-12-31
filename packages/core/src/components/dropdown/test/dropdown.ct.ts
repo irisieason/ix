@@ -13,7 +13,7 @@ import {
   iconPin,
   iconPrint,
   iconStar,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { regressionTest, viewPorts } from '@utils/test';
 
 const html = String.raw;
@@ -884,3 +884,4 @@ regressionTest(
     await expect(dynamicItem).not.toHaveAttribute('disabled');
   }
 );
+

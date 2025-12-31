@@ -70,7 +70,7 @@ export const customComponentDocGenerator = (docs: JsonDocs): void => {
 export const getDevAssets = () => {
   const copyAssets: CopyTask[] = [
     {
-      src: './../node_modules/@siemens/ix-icons',
+      src: './../node_modules/@irisieason/ix-icons',
       dest: 'build',
       keepDirStructure: true,
     },
@@ -93,3 +93,4 @@ export const getDevAssets = () => {
 
   return copyAssets;
 };
+

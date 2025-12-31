@@ -35,3 +35,4 @@ regressionTest.describe('toggle', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

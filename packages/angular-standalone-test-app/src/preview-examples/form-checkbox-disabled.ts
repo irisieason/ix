@@ -19,3 +19,4 @@ import {
   templateUrl: `./form-checkbox-disabled.html`,
 })
 export default class FormCheckboxDisabled {}
+

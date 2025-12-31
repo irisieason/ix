@@ -13,7 +13,7 @@ import {
   iconDocument,
   iconStar,
   iconTrashcan,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import {
   IxButton,
   IxDivider,
@@ -43,3 +43,4 @@ export default () => {
     </>
   );
 };
+

@@ -33,3 +33,4 @@ export const Modal = React.forwardRef<ModalRef, React.PropsWithChildren>(
     return <IxModal ref={wrapperRef}>{props.children}</IxModal>;
   }
 );
+

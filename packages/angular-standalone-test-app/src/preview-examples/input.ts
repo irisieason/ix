@@ -19,3 +19,4 @@ import {
   templateUrl: './input.html',
 })
 export default class Input {}
+

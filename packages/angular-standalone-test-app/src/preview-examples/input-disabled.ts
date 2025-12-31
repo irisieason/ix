@@ -19,3 +19,4 @@ import {
   templateUrl: './input-disabled.html',
 })
 export default class InputDisabled {}
+

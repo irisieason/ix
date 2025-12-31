@@ -17,3 +17,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./button-secondary.css'],
 })
 export default class Buttons {}
+

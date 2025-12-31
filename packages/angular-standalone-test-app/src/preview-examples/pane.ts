@@ -26,3 +26,4 @@ export default class Pane {
     this.expanded = event.detail.expanded;
   }
 }
+

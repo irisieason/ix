@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./tooltip.css'],
 })
 export default class TooltipWithIcon {}
+

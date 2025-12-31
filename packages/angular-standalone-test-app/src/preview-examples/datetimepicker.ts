@@ -16,3 +16,4 @@ import { IxDatetimePicker } from '@siemens/ix-angular/standalone';
   template: `<ix-datetime-picker></ix-datetime-picker>`,
 })
 export default class Datetimepicker {}
+

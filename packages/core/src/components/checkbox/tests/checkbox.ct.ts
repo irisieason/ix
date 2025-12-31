@@ -132,3 +132,4 @@ test.describe('accessibility', () => {
     await expect(checkbox).toHaveAttribute('aria-checked', 'true');
   });
 });
+

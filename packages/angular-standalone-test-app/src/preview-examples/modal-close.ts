@@ -31,3 +31,4 @@ export default class ModalClose {
     }, 5000);
   }
 }
+

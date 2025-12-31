@@ -52,3 +52,4 @@ export function parseJSDocsToMarkdown(str: string) {
 export function escapeBackticks(str: string) {
   return str.replaceAll(/`/g, '\\`');
 }
+

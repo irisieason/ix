@@ -19,3 +19,4 @@ import {
   templateUrl: './number-input-label.html',
 })
 export default class NumberInputLabel {}
+

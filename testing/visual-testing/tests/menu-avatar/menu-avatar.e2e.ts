@@ -55,3 +55,4 @@ regressionTest.describe('menu-avatar', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

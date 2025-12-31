@@ -8,7 +8,7 @@
  */
 
 import { expect } from '@playwright/test';
-import { iconContextMenu } from '@siemens/ix-icons/icons';
+import { iconContextMenu } from '@irisieason/ix-icons/icons';
 import { regressionTest } from '@utils/test';
 
 regressionTest.describe('blind', () => {
@@ -71,3 +71,4 @@ regressionTest.describe('blind', () => {
     await expect(blindElement).toHaveScreenshot();
   });
 });
+

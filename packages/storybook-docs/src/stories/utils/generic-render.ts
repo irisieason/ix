@@ -6,7 +6,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { icons } from '@siemens/ix-icons/dist/sample.json';
+import { icons } from '@irisieason/ix-icons/dist/sample.json';
 import jsonFile from '@siemens/ix/component-doc.json';
 import { ArgTypes } from '@storybook/web-components';
 import type { JsonDocsProp } from '@stencil/core/internal';
@@ -157,3 +157,4 @@ function switchTypes(prop: JsonDocsProp): any {
       return { type: 'text' };
   }
 }
+

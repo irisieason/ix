@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './dropdown-quick-actions.html',
 })
 export default class DropdownQuickActions {}
+

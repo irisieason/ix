@@ -19,3 +19,4 @@ import {
   template: ` <ix-toggle checked></ix-toggle> `,
 })
 export default class ToggleChecked {}
+

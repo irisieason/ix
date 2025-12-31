@@ -11,7 +11,7 @@ import {
   iconChevronLeftSmall,
   iconChevronRightSmall,
   iconSingleCheck,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import {
   Component,
   Element,
@@ -845,3 +845,4 @@ export class DatePicker implements IxDatePickerComponent {
     );
   }
 }
+

@@ -31,3 +31,4 @@ const IxDateInput: StencilReactComponent<IxDateInputElement, IxDateInputEvents> 
 });
 
 export default IxDateInput;
+

@@ -13,3 +13,4 @@ import { LoadingService as BaseLoadingService } from '@siemens/ix-angular/common
   providedIn: 'root',
 })
 export class LoadingService extends BaseLoadingService {}
+

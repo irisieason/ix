@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Even
 
 import { ProxyCmp } from './angular-component-lib/utils';
 
-import { Components } from '@siemens/ix';
+import { Components } from '@irisieason/ix';
 
 
 @ProxyCmp({
@@ -377,8 +377,8 @@ export class IxCategoryFilter {
 }
 
 
-import type { InputState as IIxCategoryFilterInputState } from '@siemens/ix';
-import type { FilterState as IIxCategoryFilterFilterState } from '@siemens/ix';
+import type { InputState as IIxCategoryFilterInputState } from '@irisieason/ix';
+import type { FilterState as IIxCategoryFilterFilterState } from '@irisieason/ix';
 
 export declare interface IxCategoryFilter extends Components.IxCategoryFilter {
   /**
@@ -614,7 +614,7 @@ export class IxDateDropdown {
 }
 
 
-import type { DateRangeChangeEvent as IIxDateDropdownDateRangeChangeEvent } from '@siemens/ix';
+import type { DateRangeChangeEvent as IIxDateDropdownDateRangeChangeEvent } from '@irisieason/ix';
 
 export declare interface IxDateDropdown extends Components.IxDateDropdown {
   /**
@@ -651,7 +651,7 @@ export class IxDateInput {
 }
 
 
-import type { DateInputValidityState as IIxDateInputDateInputValidityState } from '@siemens/ix';
+import type { DateInputValidityState as IIxDateInputDateInputValidityState } from '@irisieason/ix';
 
 export declare interface IxDateInput extends Components.IxDateInput {
   /**
@@ -690,7 +690,7 @@ export class IxDatePicker {
 }
 
 
-import type { DateChangeEvent as IIxDatePickerDateChangeEvent } from '@siemens/ix';
+import type { DateChangeEvent as IIxDatePickerDateChangeEvent } from '@irisieason/ix';
 
 export declare interface IxDatePicker extends Components.IxDatePicker {
   /**
@@ -739,8 +739,8 @@ export class IxDatetimePicker {
 }
 
 
-import type { DateTimeDateChangeEvent as IIxDatetimePickerDateTimeDateChangeEvent } from '@siemens/ix';
-import type { DateTimeSelectEvent as IIxDatetimePickerDateTimeSelectEvent } from '@siemens/ix';
+import type { DateTimeDateChangeEvent as IIxDatetimePickerDateTimeDateChangeEvent } from '@irisieason/ix';
+import type { DateTimeSelectEvent as IIxDatetimePickerDateTimeSelectEvent } from '@irisieason/ix';
 
 export declare interface IxDatetimePicker extends Components.IxDatetimePicker {
   /**
@@ -1599,7 +1599,7 @@ export class IxMenuAbout {
 }
 
 
-import type { CustomCloseEvent as IIxMenuAboutCustomCloseEvent } from '@siemens/ix';
+import type { CustomCloseEvent as IIxMenuAboutCustomCloseEvent } from '@irisieason/ix';
 
 export declare interface IxMenuAbout extends Components.IxMenuAbout {
   /**
@@ -1635,7 +1635,7 @@ export class IxMenuAboutItem {
 }
 
 
-import type { CustomLabelChangeEvent as IIxMenuAboutItemCustomLabelChangeEvent } from '@siemens/ix';
+import type { CustomLabelChangeEvent as IIxMenuAboutItemCustomLabelChangeEvent } from '@irisieason/ix';
 
 export declare interface IxMenuAboutItem extends Components.IxMenuAboutItem {
   /**
@@ -1809,7 +1809,7 @@ export class IxMenuSettings {
 }
 
 
-import type { CustomCloseEvent as IIxMenuSettingsCustomCloseEvent } from '@siemens/ix';
+import type { CustomCloseEvent as IIxMenuSettingsCustomCloseEvent } from '@irisieason/ix';
 
 export declare interface IxMenuSettings extends Components.IxMenuSettings {
   /**
@@ -1845,7 +1845,7 @@ export class IxMenuSettingsItem {
 }
 
 
-import type { CustomLabelChangeEvent as IIxMenuSettingsItemCustomLabelChangeEvent } from '@siemens/ix';
+import type { CustomLabelChangeEvent as IIxMenuSettingsItemCustomLabelChangeEvent } from '@irisieason/ix';
 
 export declare interface IxMenuSettingsItem extends Components.IxMenuSettingsItem {
   /**
@@ -2101,9 +2101,9 @@ export class IxPane {
 }
 
 
-import type { ExpandedChangedEvent as IIxPaneExpandedChangedEvent } from '@siemens/ix';
-import type { VariantChangedEvent as IIxPaneVariantChangedEvent } from '@siemens/ix';
-import type { BorderlessChangedEvent as IIxPaneBorderlessChangedEvent } from '@siemens/ix';
+import type { ExpandedChangedEvent as IIxPaneExpandedChangedEvent } from '@irisieason/ix';
+import type { VariantChangedEvent as IIxPaneVariantChangedEvent } from '@irisieason/ix';
+import type { BorderlessChangedEvent as IIxPaneBorderlessChangedEvent } from '@irisieason/ix';
 
 export declare interface IxPane extends Components.IxPane {
   /**
@@ -2484,7 +2484,7 @@ export class IxTabItem {
 }
 
 
-import type { TabClickDetail as IIxTabItemTabClickDetail } from '@siemens/ix';
+import type { TabClickDetail as IIxTabItemTabClickDetail } from '@irisieason/ix';
 
 export declare interface IxTabItem extends Components.IxTabItem {
   /**
@@ -2612,7 +2612,7 @@ export class IxTimeInput {
 }
 
 
-import type { TimeInputValidityState as IIxTimeInputTimeInputValidityState } from '@siemens/ix';
+import type { TimeInputValidityState as IIxTimeInputTimeInputValidityState } from '@irisieason/ix';
 
 export declare interface IxTimeInput extends Components.IxTimeInput {
   /**

@@ -315,3 +315,4 @@ regressionTest.describe('time picker tests', () => {
     }
   );
 });
+

@@ -14,3 +14,4 @@ export enum UploadFileState {
   UPLOAD_FAILED = 'UPLOAD_FAILED',
   UPLOAD_SUCCESSED = 'UPLOAD_SUCCESSED',
 }
+

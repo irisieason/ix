@@ -16,3 +16,4 @@ export class FilterState {
     operator: LogicalFilterOperator;
   }[] = [];
 }
+

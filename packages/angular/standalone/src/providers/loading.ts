@@ -7,9 +7,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 import { Injectable } from '@angular/core';
-import { LoadingService as BaseLoadingService } from '@siemens/ix-angular/common';
-import { defineCustomElement } from '@siemens/ix/components/ix-modal.js';
-import { ModalLoadingContext } from '@siemens/ix';
+import { LoadingService as BaseLoadingService } from '@irisieason/ix-angular/common';
+import { defineCustomElement } from '@irisieason/ix/components/ix-modal.js';
+import { ModalLoadingContext } from '@irisieason/ix';
 
 @Injectable({
   providedIn: 'root',
@@ -25,3 +25,4 @@ export class LoadingService extends BaseLoadingService {
     return super.showModalLoading(message);
   }
 }
+

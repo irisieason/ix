@@ -42,3 +42,4 @@ import {
   styleUrls: ['./vertical-tabs-with-avatar.css'],
 })
 export default class VerticalTabsWithAvatar {}
+

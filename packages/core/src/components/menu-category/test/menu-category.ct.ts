@@ -370,3 +370,4 @@ test('should adjust height when items are added dynamically', async ({
   expect(initialHeight).toBe(136);
   expect(newHeight).toBe(216);
 });
+

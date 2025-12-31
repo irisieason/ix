@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of thi  s source tree.
  */
 import { expect } from '@playwright/test';
-import { iconEye } from '@siemens/ix-icons/icons';
+import { iconEye } from '@irisieason/ix-icons/icons';
 import { regressionTest } from '@utils/test';
 
 regressionTest('renders', async ({ mount, page }) => {
@@ -215,3 +215,4 @@ regressionTest(
     await expect(input).toHaveCSS('padding-left', '49px');
   }
 );
+

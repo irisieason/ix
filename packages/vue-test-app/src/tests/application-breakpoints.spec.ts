@@ -29,3 +29,4 @@ describe('ApplicationBreakpoints - Radio Interaction', () => {
     expect(application?.classList.contains('breakpoint-md')).toBe(false);
   });
 });
+

@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './progress-indicator-linear-sizes.html',
 })
 export default class ProgressIndicatorLinearSizes {}
+

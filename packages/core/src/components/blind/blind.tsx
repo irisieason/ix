@@ -20,7 +20,7 @@ import {
 } from '@stencil/core';
 import { animate } from 'animejs';
 import { a11yBoolean } from '../utils/a11y';
-import { iconChevronDownSmall } from '@siemens/ix-icons/icons';
+import { iconChevronDownSmall } from '@irisieason/ix-icons/icons';
 import type { BlindVariant } from './blind.types';
 import Animation from '../utils/animation';
 
@@ -219,3 +219,4 @@ export class Blind {
     );
   }
 }
+

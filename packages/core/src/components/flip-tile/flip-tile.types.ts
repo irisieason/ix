@@ -14,3 +14,4 @@ export type FlipTileVariant =
   | 'warning'
   | 'alarm'
   | 'primary';
+

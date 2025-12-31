@@ -13,3 +13,4 @@ import { BaseButton, BaseButtonProps } from '../button/base-button';
 export function BaseIconButton(props: Omit<BaseButtonProps, 'type'>) {
   return <BaseButton {...props} type="button"></BaseButton>;
 }
+

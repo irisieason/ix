@@ -12,7 +12,7 @@ import {
   iconChevronUpSmall,
   iconClear,
   iconPlus,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import {
   AttachInternals,
   Component,
@@ -1061,3 +1061,4 @@ export class Select implements IxInputFieldComponent<string | string[]> {
     );
   }
 }
+

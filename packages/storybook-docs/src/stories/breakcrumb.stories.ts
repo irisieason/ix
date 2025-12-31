@@ -55,3 +55,4 @@ export const Default: Story = {
     visibleItemCount: 4,
   },
 };
+

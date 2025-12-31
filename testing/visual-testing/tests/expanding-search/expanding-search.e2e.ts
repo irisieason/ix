@@ -38,3 +38,4 @@ regressionTest.describe('expanding-search', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

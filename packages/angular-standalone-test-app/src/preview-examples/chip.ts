@@ -51,3 +51,4 @@ import { IxChip } from '@siemens/ix-angular/standalone';
   styleUrls: ['./chip.css'],
 })
 export default class Chip {}
+

@@ -56,3 +56,4 @@ export function closestPassShadow(node: Node, selector: string) {
 
   return closestPassShadow(node.parentNode!, selector);
 }
+

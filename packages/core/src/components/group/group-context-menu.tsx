@@ -9,7 +9,7 @@
 
 import { Component, Element, h, Host, State } from '@stencil/core';
 import { getSlottedElements } from '../utils/shadow-dom';
-import { iconContextMenu } from '@siemens/ix-icons/icons';
+import { iconContextMenu } from '@irisieason/ix-icons/icons';
 
 @Component({
   tag: 'ix-group-context-menu',
@@ -72,3 +72,4 @@ export class GroupContextMenu {
     );
   }
 }
+

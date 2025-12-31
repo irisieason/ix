@@ -8,7 +8,7 @@
  */
 
 import { IxButton, IxContentHeader, IxPill } from '@siemens/ix-react';
-import { iconInfo } from '@siemens/ix-icons/icons';
+import { iconInfo } from '@irisieason/ix-icons/icons';
 import './content-header-with-slot.scoped.css';
 
 export default () => {
@@ -27,3 +27,4 @@ export default () => {
     </IxContentHeader>
   );
 };
+

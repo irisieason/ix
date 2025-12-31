@@ -1,4 +1,4 @@
-import { iconChevronDownSmall } from '@siemens/ix-icons/icons';
+import { iconChevronDownSmall } from '@irisieason/ix-icons/icons';
 import {
   Component,
   Element,
@@ -136,3 +136,4 @@ export class CardAccordion {
     );
   }
 }
+

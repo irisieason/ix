@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout-auto.css'],
 })
 export default class LayoutAuto {}
+

@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './radio-group.html',
 })
 export default class RadioGroup {}
+

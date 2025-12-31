@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconBulb, iconRocket } from '@siemens/ix-icons/icons';
+import { iconBulb, iconRocket } from '@irisieason/ix-icons/icons';
 import { IxCardList, IxPushCard } from '@siemens/ix-react';
 
 export default () => {
@@ -77,3 +77,4 @@ export default () => {
     </>
   );
 };
+

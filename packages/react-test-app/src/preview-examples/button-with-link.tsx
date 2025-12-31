@@ -8,7 +8,7 @@
  */
 
 import { IxButton } from '@siemens/ix-react';
-import { iconHome, iconOpenExternal } from '@siemens/ix-icons/icons';
+import { iconHome, iconOpenExternal } from '@irisieason/ix-icons/icons';
 import React from 'react';
 
 export const ButtonWithLink: React.FC = () => {
@@ -83,3 +83,4 @@ export const ButtonWithLink: React.FC = () => {
 };
 
 export default ButtonWithLink;
+

@@ -28,3 +28,4 @@ import {
   templateUrl: './application-header.html',
 })
 export default class ApplicationHeaderExample {}
+

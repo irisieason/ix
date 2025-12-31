@@ -19,7 +19,7 @@ import {
 import classNames from 'classnames';
 import { useState } from 'react';
 import styles from './Demo.module.css';
-import { iconAdd } from '@siemens/ix-icons/icons';
+import { iconAdd } from '@irisieason/ix-icons/icons';
 
 function EmptyExample() {
   return (
@@ -199,3 +199,4 @@ const Demo: React.FC = () => {
 };
 
 export default Demo;
+

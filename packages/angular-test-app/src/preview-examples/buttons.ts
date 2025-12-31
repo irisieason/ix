@@ -19,3 +19,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./buttons.css'],
 })
 export default class Buttons {}
+

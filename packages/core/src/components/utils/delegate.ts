@@ -43,3 +43,4 @@ export const resolveDelegate = () => {
 };
 
 export const getCoreDelegate = () => coreDelegate;
+

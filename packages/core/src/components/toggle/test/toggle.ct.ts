@@ -149,3 +149,4 @@ regressionTest(
     await expect(input).not.toBeChecked();
   }
 );
+

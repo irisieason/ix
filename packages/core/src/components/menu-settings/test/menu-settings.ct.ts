@@ -72,3 +72,4 @@ test('tabChange event should fire exactly once per tab click', async ({
   const eventDetail = await eventPromise;
   expect(eventDetail).toBe('Tab 2');
 });
+

@@ -18,7 +18,7 @@ import {
   Watch,
 } from '@stencil/core';
 import { closestPassShadow } from '../utils/shadow-dom';
-import { iconClose } from '@siemens/ix-icons/icons';
+import { iconClose } from '@irisieason/ix-icons/icons';
 
 @Component({
   tag: 'ix-modal-header',
@@ -122,3 +122,4 @@ export class ModalHeader {
     );
   }
 }
+

@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "@memlab/api": "^1.0.38",
-    "@siemens/ix": "workspace:*",
+    "@irisieason/ix": "workspace:*",
     "http-server": "^14.1.1",
     "memlab": "^1.1.56",
     "start-server-and-test": "^2.0.12"
@@ -15,3 +15,4 @@
     "test.run": "memlab run --scenario ./scenarios/ix-drawer.js"
   }
 }
+

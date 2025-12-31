@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconCheckboxes } from '@siemens/ix-icons/icons';
+import { iconCheckboxes } from '@irisieason/ix-icons/icons';
 import {
   IxApplicationHeader,
   IxAvatar,
@@ -38,3 +38,4 @@ export default () => {
     </IxApplicationHeader>
   );
 };
+

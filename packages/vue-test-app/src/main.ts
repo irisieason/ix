@@ -9,10 +9,11 @@
 
 import './preview-examples/global.css';
 
-import { ixPlugin } from '@siemens/ix-vue';
+import { ixPlugin } from '@irisieason/ix-vue';
 import { createApp } from 'vue';
 import Root from './Root.vue';
 
 const app = createApp(Root);
 app.use(ixPlugin);
 app.mount('#root');
+

@@ -19,3 +19,4 @@ import {
   templateUrl: './date-input-label.html',
 })
 export default class DateInputLabel {}
+

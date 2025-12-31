@@ -37,3 +37,4 @@ import { IxTabs, IxTabItem, IxIcon } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class TabsRounded {}
+

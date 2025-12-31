@@ -64,3 +64,4 @@ regressionTest.describe('button: basic', () => {
     expect(await page.screenshot({ animations: 'disabled' })).toMatchSnapshot();
   });
 });
+

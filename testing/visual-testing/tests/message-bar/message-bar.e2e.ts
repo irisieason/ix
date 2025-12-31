@@ -21,3 +21,4 @@ regressionTest.describe('message-bar', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

@@ -36,3 +36,4 @@ import { IxKeyValueList, IxKeyValue } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class KeyValueList {}
+

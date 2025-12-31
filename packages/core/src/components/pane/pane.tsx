@@ -13,7 +13,7 @@ import {
   iconDoubleChevronLeft,
   iconDoubleChevronRight,
   iconDoubleChevronUp,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import {
   Component,
   Element,
@@ -724,3 +724,4 @@ export class Pane {
     );
   }
 }
+

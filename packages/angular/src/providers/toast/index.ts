@@ -8,3 +8,4 @@
  */
 export { ToastConfig } from '@siemens/ix-angular/common';
 export * from './toast.service';
+

@@ -225,3 +225,4 @@ export class Checkbox implements IxFormComponent<string> {
     );
   }
 }
+

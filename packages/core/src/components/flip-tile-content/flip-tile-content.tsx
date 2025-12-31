@@ -25,3 +25,4 @@ export class FlipTileContent {
     return <Host>{this.contentVisible ? <slot></slot> : null}</Host>;
   }
 }
+

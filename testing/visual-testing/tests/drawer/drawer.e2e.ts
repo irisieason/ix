@@ -32,3 +32,4 @@ regressionTest.describe('drawer', () => {
     expect(await page.screenshot({ animations: 'disabled' })).toMatchSnapshot();
   });
 });
+

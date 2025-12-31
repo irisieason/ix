@@ -122,3 +122,4 @@ regressionTest.describe('aggrid', () => {
     ).toMatchSnapshot();
   });
 });
+

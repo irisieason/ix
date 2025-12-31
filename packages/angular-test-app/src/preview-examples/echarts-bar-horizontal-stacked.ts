@@ -71,3 +71,4 @@ export default class EchartsBarHorizontalStacked implements OnInit {
     });
   }
 }
+

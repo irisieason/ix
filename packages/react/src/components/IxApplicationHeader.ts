@@ -30,3 +30,4 @@ const IxApplicationHeader: StencilReactComponent<IxApplicationHeaderElement, IxA
 });
 
 export default IxApplicationHeader;
+

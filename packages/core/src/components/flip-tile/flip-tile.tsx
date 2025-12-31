@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconEye } from '@siemens/ix-icons/icons';
+import { iconEye } from '@irisieason/ix-icons/icons';
 import {
   Component,
   Element,
@@ -228,3 +228,4 @@ export class FlipTile {
     );
   }
 }
+

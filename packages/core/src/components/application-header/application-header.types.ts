@@ -11,3 +11,4 @@ export type PrimaryNavigation = {
   icon?: string;
   url: string;
 };
+

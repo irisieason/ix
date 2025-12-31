@@ -10,7 +10,7 @@
 import './tooltip.scoped.css';
 
 import { IxButton, IxIcon, IxTooltip } from '@siemens/ix-react';
-import { iconInfo } from '@siemens/ix-icons/icons';
+import { iconInfo } from '@irisieason/ix-icons/icons';
 
 const TooltipWithIcon = () => {
   return (
@@ -28,3 +28,4 @@ const TooltipWithIcon = () => {
 };
 
 export default TooltipWithIcon;
+

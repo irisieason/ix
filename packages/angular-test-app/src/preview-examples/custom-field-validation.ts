@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './custom-field-validation.html',
 })
 export default class CustomFieldValidation {}
+

@@ -10,3 +10,4 @@
 import { CardVariant } from '../card/card.types';
 
 export type ActionCardVariant = CardVariant;
+

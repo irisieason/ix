@@ -65,3 +65,4 @@ export default class EchartsSpecialToolbox implements OnInit {
     });
   }
 }
+

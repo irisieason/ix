@@ -8,7 +8,7 @@
  */
 
 import { IxTimeInput, IxIcon, IxTypography } from '@siemens/ix-react';
-import { iconBulb } from '@siemens/ix-icons/icons';
+import { iconBulb } from '@irisieason/ix-icons/icons';
 
 export default () => {
   return (
@@ -18,3 +18,4 @@ export default () => {
     </IxTimeInput>
   );
 };
+

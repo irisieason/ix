@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   templateUrl: './pill.html',
 })
 export default class Pill {}
+

@@ -44,3 +44,4 @@ regressionTest.describe('menu-about-news', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

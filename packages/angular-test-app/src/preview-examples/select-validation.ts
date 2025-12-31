@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './select-validation.html',
 })
 export default class SelectValidation {}
+

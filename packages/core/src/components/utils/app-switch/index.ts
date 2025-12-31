@@ -32,3 +32,4 @@ export async function showAppSwitch(config: AppSwitchConfiguration) {
     appSwitchElement.config = updateAppSwitchConfig;
   };
 }
+

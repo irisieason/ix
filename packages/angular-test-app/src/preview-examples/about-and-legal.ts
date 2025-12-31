@@ -23,3 +23,4 @@ export default class AboutAndLegal implements AfterViewInit {
     nativeElement.toggleAbout(true);
   }
 }
+

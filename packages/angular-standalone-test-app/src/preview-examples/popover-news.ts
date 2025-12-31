@@ -30,3 +30,4 @@ import {
   templateUrl: './popover-news.html',
 })
 export default class PopoverNews {}
+

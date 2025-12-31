@@ -12,3 +12,4 @@ export {
   ModalContext,
 } from '@siemens/ix-angular/common';
 export * from './modal.service';
+

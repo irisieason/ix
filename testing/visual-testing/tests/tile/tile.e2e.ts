@@ -16,3 +16,4 @@ regressionTest.describe('tile', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

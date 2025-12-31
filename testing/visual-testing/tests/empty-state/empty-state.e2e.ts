@@ -35,3 +35,4 @@ regressionTest.describe('empty state', () => {
     expect(await emptyState.screenshot()).toMatchSnapshot();
   });
 });
+

@@ -32,3 +32,4 @@ test.describe('ix-message-bar', () => {
     await expect(messageBar).not.toBeVisible();
   });
 });
+

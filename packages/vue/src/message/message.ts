@@ -2,8 +2,8 @@ import {
   MessageConfig,
   TypedEvent,
   showMessage as _showMessage,
-} from '@siemens/ix';
-import { defineCustomElement } from '@siemens/ix/components/ix-modal.js';
+} from '@irisieason/ix';
+import { defineCustomElement } from '@irisieason/ix/components/ix-modal.js';
 
 // call defineCustomElement once at module level
 defineCustomElement();
@@ -44,3 +44,4 @@ showMessage.warning = createMessageVariant('warning');
 showMessage.error = createMessageVariant('error');
 showMessage.success = createMessageVariant('success');
 showMessage.question = createMessageVariant('question');
+

@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './date-input-with-slots.html',
 })
 export default class DateInputWithSlots {}
+

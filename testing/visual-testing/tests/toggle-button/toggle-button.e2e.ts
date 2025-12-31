@@ -57,3 +57,4 @@ regressionTest.describe('toggle-button: basic', () => {
     expect(await page.screenshot({ animations: 'disabled' })).toMatchSnapshot();
   });
 });
+

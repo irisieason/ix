@@ -26,3 +26,4 @@ export default class Card {
     console.log(event);
   }
 }
+

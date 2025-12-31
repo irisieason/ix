@@ -17,3 +17,4 @@ import { IxBlind } from '@siemens/ix-angular/standalone';
   styleUrls: ['./blind-variants.css'],
 })
 export default class Blind {}
+

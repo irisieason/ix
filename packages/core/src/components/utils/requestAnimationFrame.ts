@@ -26,3 +26,4 @@ export const requestAnimationFrameNoNgZone = (
   }
   return setTimeout(callback);
 };
+

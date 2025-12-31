@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: `<ix-datetime-picker></ix-datetime-picker>`,
 })
 export default class Datetimepicker {}
+

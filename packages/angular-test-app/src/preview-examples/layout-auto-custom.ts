@@ -22,3 +22,4 @@ export default class LayoutAutoCustom {
     { minWidth: '50rem', columns: 4 },
   ];
 }
+

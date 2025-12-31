@@ -6,9 +6,9 @@ import {
   closeModal as _closeModal,
   ModalInstance as IxModalInstance,
   ModalLoadingContext,
-} from '@siemens/ix';
+} from '@irisieason/ix';
 import { VNode } from 'vue';
-import { defineCustomElement } from '@siemens/ix/components/ix-modal.js';
+import { defineCustomElement } from '@irisieason/ix/components/ix-modal.js';
 
 // call defineCustomElement once at module level
 defineCustomElement();
@@ -46,3 +46,4 @@ export function closeModal<T = any>(
     _closeModal(modalInstance.htmlElement, reason);
   }
 }
+

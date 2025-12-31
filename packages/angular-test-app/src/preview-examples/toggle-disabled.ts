@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <ix-toggle disabled></ix-toggle> `,
 })
 export default class ToggleCustomDisabled {}
+

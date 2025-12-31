@@ -1,5 +1,5 @@
 {
-  "name": "@siemens/ix-docs",
+  "name": "@irisieason/ix-docs",
   "version": "4.2.0",
   "scripts": {
     "build": "tsx --tsconfig ./tsconfig.json ./scripts/build.ts"
@@ -9,9 +9,9 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@siemens/ix-angular": "workspace:*",
-    "@siemens/ix-react": "workspace:*",
-    "@siemens/ix": "workspace:*",
+    "@irisieason/ix-angular": "workspace:*",
+    "@irisieason/ix-react": "workspace:*",
+    "@irisieason/ix": "workspace:*",
     "@types/fs-extra": "^11.0.4",
     "@types/mustache": "^4.2.6",
     "@types/node": "^20.16.0",
@@ -34,3 +34,4 @@
     "vue-test-app": "workspace:*"
   }
 }
+

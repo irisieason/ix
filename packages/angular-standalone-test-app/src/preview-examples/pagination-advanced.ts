@@ -18,3 +18,4 @@ import { IxPagination } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class Pagination {}
+

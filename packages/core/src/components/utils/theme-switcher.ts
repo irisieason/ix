@@ -253,3 +253,4 @@ export const getCurrentSystemAppearance = (): ThemeVariant => {
 };
 
 export const themeSwitcher = new ThemeSwitcher();
+

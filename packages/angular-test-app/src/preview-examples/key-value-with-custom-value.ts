@@ -25,3 +25,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./key-value-with-custom-value.css'],
 })
 export default class KeyValueWithCustomValue {}
+

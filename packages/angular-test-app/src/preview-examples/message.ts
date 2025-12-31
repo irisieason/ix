@@ -33,3 +33,4 @@ export default class Message {
     ).once(console.log);
   };
 }
+

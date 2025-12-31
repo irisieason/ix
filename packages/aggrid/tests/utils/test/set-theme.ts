@@ -9,3 +9,4 @@ if (searchParams.has('colorSchema')) {
   const colorSchema = searchParams.get('colorSchema');
   document.documentElement.dataset.ixColorSchema = colorSchema!;
 }
+

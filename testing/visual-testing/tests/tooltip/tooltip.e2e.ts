@@ -239,3 +239,4 @@ regressionTest.describe('tooltip delay', () => {
     );
   });
 });
+

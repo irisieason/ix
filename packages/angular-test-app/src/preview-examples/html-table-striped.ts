@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './html-table-striped.html',
 })
 export default class HtmlTableStriped {}
+

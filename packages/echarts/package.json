@@ -1,5 +1,5 @@
 {
-  "name": "@siemens/ix-echarts",
+  "name": "@irisieason/ix-echarts",
   "homepage": "https://ix.siemens.io",
   "bugs": "https://github.com/siemens/ix/issues",
   "repository": {
@@ -41,3 +41,4 @@
     "echarts": "^5.3.3"
   }
 }
+

@@ -70,3 +70,4 @@ export default function EchartsBarHorizontalStacked() {
 
   return <ReactEcharts option={options} theme={theme} className="echarts" />;
 }
+

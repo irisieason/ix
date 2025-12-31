@@ -20,3 +20,4 @@ export type ColumnSize =
   | '11'
   | '12'
   | 'auto';
+

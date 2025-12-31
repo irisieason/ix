@@ -16,3 +16,4 @@ import { IxSlider } from '@siemens/ix-angular/standalone';
   templateUrl: './slider-error.html',
 })
 export default class SliderError {}
+

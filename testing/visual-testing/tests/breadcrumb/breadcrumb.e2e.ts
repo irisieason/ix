@@ -26,3 +26,4 @@ regressionTest.describe('breadcrumb', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

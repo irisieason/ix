@@ -14,9 +14,9 @@ import {
   ElementRef,
   NgZone,
 } from '@angular/core';
-import { defineCustomElement as defineIxTree } from '@siemens/ix/components/ix-tree.js';
+import { defineCustomElement as defineIxTree } from '@irisieason/ix/components/ix-tree.js';
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
-import { TreeBaseDirective } from '@siemens/ix-angular/common';
+import { TreeBaseDirective } from '@irisieason/ix-angular/common';
 
 @ProxyCmp({
   inputs: ['context', 'model', 'root', 'lazyLoading'],
@@ -33,3 +33,4 @@ export class IxTree extends TreeBaseDirective {
     super(c, r, z, proxyOutputs);
   }
 }
+

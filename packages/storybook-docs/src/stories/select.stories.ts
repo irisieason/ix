@@ -124,3 +124,4 @@ export const multiSelect: Story = {
     value: ['1', '2', '3', '4', '5'],
   },
 };
+

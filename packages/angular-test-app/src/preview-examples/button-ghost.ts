@@ -19,3 +19,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./button-ghost.css'],
 })
 export default class Buttons {}
+

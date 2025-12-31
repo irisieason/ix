@@ -283,3 +283,4 @@ export class Avatar {
     return <Host>{Avatar}</Host>;
   }
 }
+

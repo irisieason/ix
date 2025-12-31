@@ -15,3 +15,4 @@ export type ShowToastResult = {
   resume: () => void;
   isPaused: () => Promise<boolean>;
 };
+

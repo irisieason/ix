@@ -20,3 +20,4 @@ export function useApplicationContext(): ApplicationContext {
   }
   return context;
 }
+

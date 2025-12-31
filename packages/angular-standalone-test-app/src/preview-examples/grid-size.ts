@@ -22,3 +22,4 @@ import {
   styleUrls: ['./grid-size.css'],
 })
 export default class GridSize {}
+

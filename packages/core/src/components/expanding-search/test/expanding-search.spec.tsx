@@ -40,3 +40,4 @@ describe('ix-expanding-search', () => {
     expect(callbackSpy.mock.calls[0][0].detail).toEqual(expandingSearch.value);
   });
 });
+

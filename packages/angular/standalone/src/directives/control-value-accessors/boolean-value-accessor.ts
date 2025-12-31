@@ -25,3 +25,4 @@ export class IxBooleanValueAccessorDirective extends BooleanValueAccessorBaseDir
     super(injector, el);
   }
 }
+

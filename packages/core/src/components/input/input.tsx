@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { iconEye, iconEyeCancelled } from '@siemens/ix-icons/icons';
+import { iconEye, iconEyeCancelled } from '@irisieason/ix-icons/icons';
 import {
   AttachInternals,
   Component,
@@ -370,3 +370,4 @@ export class Input implements IxInputFieldComponent<string> {
     );
   }
 }
+

@@ -55,7 +55,7 @@
     "axes": [
       {
         "type": "all",
-        "name": "通用坐标轴",
+        "name": "通用坐标�?,
         "axisLineShow": true,
         "axisLineColor": "rgba(0,0,40,0.3)",
         "axisTickShow": true,
@@ -69,7 +69,7 @@
       },
       {
         "type": "category",
-        "name": "类目坐标轴",
+        "name": "类目坐标�?,
         "axisLineShow": true,
         "axisLineColor": "#6E7079",
         "axisTickShow": true,
@@ -97,7 +97,7 @@
       },
       {
         "type": "log",
-        "name": "对数坐标轴",
+        "name": "对数坐标�?,
         "axisLineShow": false,
         "axisLineColor": "#6E7079",
         "axisTickShow": false,
@@ -111,7 +111,7 @@
       },
       {
         "type": "time",
-        "name": "时间坐标轴",
+        "name": "时间坐标�?,
         "axisLineShow": true,
         "axisLineColor": "#6E7079",
         "axisTickShow": true,
@@ -142,3 +142,4 @@
     "timelineLabelColor": "#000028"
   }
 }
+

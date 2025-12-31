@@ -21,3 +21,4 @@ regressionTest.describe('chip', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

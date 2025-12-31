@@ -25,3 +25,4 @@ regressionTest.describe('checkbox-group', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

@@ -21,7 +21,7 @@ import { a11yBoolean } from '../utils/a11y';
 import {
   iconChevronLeftSmall,
   iconChevronRightSmall,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 @Component({
   tag: 'ix-pagination',
@@ -324,3 +324,4 @@ export class Pagination {
     );
   }
 }
+

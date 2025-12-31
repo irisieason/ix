@@ -1,5 +1,5 @@
 {
-  "name": "@siemens/ix-vue",
+  "name": "@irisieason/ix-vue",
   "homepage": "https://ix.siemens.io",
   "author": "Siemens AG",
   "license": "MIT",
@@ -29,11 +29,11 @@
     "test.watch": "vitest --config=vitest.config.ts"
   },
   "dependencies": {
-    "@siemens/ix": "~4.2.0",
+    "@irisieason/ix": "~4.2.0",
     "@stencil/vue-output-target": "^0.11.8"
   },
   "devDependencies": {
-    "@siemens/ix": "workspace:*",
+    "@irisieason/ix": "workspace:*",
     "@testing-library/vue": "^8.1.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
@@ -51,7 +51,8 @@
     "vue-tsc": "^2.2.10"
   },
   "peerDependencies": {
-    "@siemens/ix-icons": "^3.2.0",
+    "@irisieason/ix-icons": "^3.3.0",
     "vue": ">=3.2.45"
   }
 }
+

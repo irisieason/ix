@@ -23,3 +23,4 @@ import { IxEventList, IxEventListItem } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class EventList {}
+

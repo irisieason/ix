@@ -61,3 +61,4 @@ regressionTest.describe('date dropdown', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

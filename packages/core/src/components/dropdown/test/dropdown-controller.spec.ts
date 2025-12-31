@@ -23,3 +23,4 @@ describe('dropdown-controller', () => {
     expect(hasDropdownItemWrapperImplemented(wrapperElement)).toBeTruthy();
   });
 });
+

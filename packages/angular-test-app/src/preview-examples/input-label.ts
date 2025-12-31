@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './input-label.html',
 })
 export default class InputLabel {}
+

@@ -134,3 +134,4 @@ export function findElement(
   const selector = `#${element}`;
   return waitForSelector(selector, document, hostElement);
 }
+

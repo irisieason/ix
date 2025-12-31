@@ -9,8 +9,8 @@
 import {
   ModalService as BaseModalService,
   ModalConfig,
-} from '@siemens/ix-angular/common';
-import { ModalInstance } from '@siemens/ix';
+} from '@irisieason/ix-angular/common';
+import { ModalInstance } from '@irisieason/ix';
 import {
   ApplicationRef,
   ComponentFactoryResolver,
@@ -18,8 +18,8 @@ import {
   Injector,
 } from '@angular/core';
 
-import { defineCustomElement } from '@siemens/ix/components/ix-modal.js';
-export { IxActiveModal } from '@siemens/ix-angular/common';
+import { defineCustomElement } from '@irisieason/ix/components/ix-modal.js';
+export { IxActiveModal } from '@irisieason/ix-angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class ModalService extends BaseModalService {
@@ -46,3 +46,4 @@ export class ModalService extends BaseModalService {
     super.close(instance, reason);
   }
 }
+

@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <textarea placeholder="Enter text here"></textarea> `,
 })
 export default class TextareaLegacy {}
+

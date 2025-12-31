@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./button-danger.css'],
 })
 export default class Buttons {}
+

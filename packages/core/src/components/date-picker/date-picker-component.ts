@@ -65,3 +65,4 @@ export interface IxDatePickerComponent {
    */
   showWeekNumbers: boolean;
 }
+

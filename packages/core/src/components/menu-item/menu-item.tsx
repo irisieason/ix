@@ -12,7 +12,7 @@ import { createMutationObserver } from '../utils/mutation-observer';
 import { makeRef } from '../utils/make-ref';
 import { menuController } from '../utils/menu-service/menu-service';
 import { Disposable } from '../utils/typed-event';
-import { iconDocument } from '@siemens/ix-icons/icons';
+import { iconDocument } from '@irisieason/ix-icons/icons';
 import { a11yBoolean } from '../utils/a11y';
 import { createSequentialId } from '../utils/uuid';
 import { IxMenuItemBase } from './menu-item.interface';
@@ -248,3 +248,4 @@ export class MenuItem implements IxMenuItemBase {
     );
   }
 }
+

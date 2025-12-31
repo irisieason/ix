@@ -320,3 +320,4 @@ regressionTest.describe('date picker tests range', () => {
     expect(await dateSelectEventPromise).toBeTruthy();
   });
 });
+

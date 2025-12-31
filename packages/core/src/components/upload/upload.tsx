@@ -19,7 +19,7 @@ import {
   State,
 } from '@stencil/core';
 import { UploadFileState } from './upload-file-state';
-import { iconError, iconSuccess } from '@siemens/ix-icons/icons';
+import { iconError, iconSuccess } from '@irisieason/ix-icons/icons';
 import { A11yAttributes, a11yHostAttributes } from '../utils/a11y';
 
 @Component({
@@ -57,12 +57,12 @@ export class Upload {
   /**
    * Will be used by state = UploadFileState.SELECT_FILE
    */
-  @Prop() selectFileText = '+ Drag files here or…';
+  @Prop() selectFileText = '+ Drag files here or click to browse';
 
   /**
    * Will be used by state = UploadFileState.LOADING
    */
-  @Prop() loadingText = 'Checking files…';
+  @Prop() loadingText = 'Checking files...';
 
   /**
    * Will be used by state = UploadFileState.UPLOAD_FAILED
@@ -77,7 +77,7 @@ export class Upload {
   /**
    * Label for upload file button
    */
-  @Prop({ attribute: 'i18n-upload-file' }) i18nUploadFile = 'Upload file…';
+  @Prop({ attribute: 'i18n-upload-file' }) i18nUploadFile = 'Upload file';
 
   /**
    * Text for disabled state
@@ -290,3 +290,4 @@ export class Upload {
     );
   }
 }
+

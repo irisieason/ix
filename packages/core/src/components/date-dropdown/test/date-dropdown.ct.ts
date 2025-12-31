@@ -287,3 +287,4 @@ regressionTest(
     await expect(dropdown).not.toBeVisible();
   }
 );
+

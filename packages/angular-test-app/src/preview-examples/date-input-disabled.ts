@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './date-input-disabled.html',
 })
 export default class DateInputDisabled {}
+

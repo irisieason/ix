@@ -16,3 +16,4 @@ import { IxContentHeader, IxButton } from '@siemens/ix-angular/standalone';
   templateUrl: './content-header.html',
 })
 export default class ContentHeader {}
+

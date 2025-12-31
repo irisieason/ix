@@ -74,3 +74,4 @@ export function pulseOnElement(queryFunction) {
     pulseElement.classList.add('pulse-element');
   });
 }
+

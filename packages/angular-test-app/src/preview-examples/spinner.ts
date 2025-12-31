@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   template: ` <ix-spinner></ix-spinner> `,
 })
 export default class Spinner {}
+

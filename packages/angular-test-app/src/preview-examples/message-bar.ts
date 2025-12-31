@@ -16,3 +16,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./message-bar.css'],
 })
 export default class MessageBar {}
+

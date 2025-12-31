@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './textarea-readonly.html',
 })
 export default class TextareaReadonly {}
+

@@ -242,3 +242,4 @@ regressionTest.describe('keyboard navigation', () => {
     await expect(page.getByLabel('Option 2')).toBeChecked();
   });
 });
+

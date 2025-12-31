@@ -45,3 +45,4 @@ export type IxConfig = {
 export default async function (config?: IxConfig) {
   handlePlatformHelpers(config || {});
 }
+

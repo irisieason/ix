@@ -71,3 +71,4 @@ export default class EchartsCircle implements OnInit {
     });
   }
 }
+

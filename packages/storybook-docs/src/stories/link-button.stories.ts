@@ -41,3 +41,4 @@ export const Default: Story = {
     defaultSlot: 'My link',
   },
 };
+

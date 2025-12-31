@@ -11,10 +11,10 @@ import {
   getToastContainer,
   toast,
   ToastConfig as IxToastConfig,
-} from '@siemens/ix';
-import { defineCustomElement as defineIxToast } from '@siemens/ix/components/ix-toast.js';
-import { defineCustomElement as defineIxToastContainer } from '@siemens/ix/components/ix-toast-container.js';
-import { defineCustomElement as defineIxIcon } from '@siemens/ix-icons/components/ix-icon.js';
+} from '@irisieason/ix';
+import { defineCustomElement as defineIxToast } from '@irisieason/ix/components/ix-toast.js';
+import { defineCustomElement as defineIxToastContainer } from '@irisieason/ix/components/ix-toast-container.js';
+import { defineCustomElement as defineIxIcon } from '@irisieason/ix-icons/components/ix-icon.js';
 
 export type ToastConfig = {
   message?: string | HTMLElement;
@@ -59,3 +59,4 @@ export async function showToast(
 
   return toastInstance;
 }
+

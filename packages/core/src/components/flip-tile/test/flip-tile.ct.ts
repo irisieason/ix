@@ -97,3 +97,4 @@ regressionTest('toggle - prevent default', async ({ mount, page }) => {
   await expect(pageOne).toBeVisible();
   await expect(pageTwo).not.toBeVisible();
 });
+

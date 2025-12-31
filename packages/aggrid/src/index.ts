@@ -20,7 +20,7 @@ import {
   iconSortAscending,
   iconAppMenu,
   iconDragGripper,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 // Flexible type for multiple versions
 type AgGridModule = {
@@ -126,3 +126,4 @@ const getIxThemeAsync = async (
 };
 
 export { getIxTheme, getIxThemeAsync };
+

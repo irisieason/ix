@@ -9,8 +9,8 @@
 
 import { expect } from '@playwright/test';
 import { regressionTest } from '@utils/test';
-import { IxModalSize } from '@siemens/ix';
-import { iconInfo } from '@siemens/ix-icons/icons';
+import { IxModalSize } from '@irisieason/ix';
+import { iconInfo } from '@irisieason/ix-icons/icons';
 
 const screenWidths: IxModalSize[] = [
   `360`,
@@ -45,3 +45,4 @@ screenWidths.forEach((size) => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

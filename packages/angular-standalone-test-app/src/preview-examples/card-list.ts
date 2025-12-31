@@ -16,3 +16,4 @@ import { IxCardList, IxPushCard } from '@siemens/ix-angular/standalone';
   templateUrl: './card-list.html',
 })
 export default class CardList {}
+

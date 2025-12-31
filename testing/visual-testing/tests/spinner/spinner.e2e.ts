@@ -16,3 +16,4 @@ regressionTest.describe('spinner', () => {
     expect(await page.screenshot({ animations: 'disabled' })).toMatchSnapshot();
   });
 });
+

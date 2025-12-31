@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './slider-marker.html',
 })
 export default class SliderMarker {}
+

@@ -88,3 +88,4 @@ regressionTest('renders with required label', async ({ mount, page }) => {
   await expect(typography).toHaveClass(/typography-label/);
   await expect(fieldLabel.filter({ hasText: 'Label*' })).toHaveText('Label*');
 });
+

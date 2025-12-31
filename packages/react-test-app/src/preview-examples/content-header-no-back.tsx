@@ -11,7 +11,7 @@ import {
   iconContextMenu,
   iconPen,
   iconTrashcan,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { IxContentHeader, IxIconButton } from '@siemens/ix-react';
 
 export default () => {
@@ -33,3 +33,4 @@ export default () => {
     </IxContentHeader>
   );
 };
+

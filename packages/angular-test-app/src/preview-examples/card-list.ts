@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './card-list.html',
 })
 export default class CardList {}
+

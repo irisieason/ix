@@ -37,3 +37,4 @@ regressionTest.describe('tabs', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

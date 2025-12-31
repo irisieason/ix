@@ -31,3 +31,4 @@ const IxMenuAbout: StencilReactComponent<IxMenuAboutElement, IxMenuAboutEvents> 
 });
 
 export default IxMenuAbout;
+

@@ -16,7 +16,7 @@ import ReactEcharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 import { EChartsOption } from 'echarts';
 import { IxEmptyState } from '@siemens/ix-react';
-import { iconInfo } from '@siemens/ix-icons/icons';
+import { iconInfo } from '@irisieason/ix-icons/icons';
 
 export default function Echarts() {
   registerTheme(echarts);
@@ -67,3 +67,4 @@ export default function Echarts() {
     </div>
   );
 }
+

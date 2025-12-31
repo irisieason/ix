@@ -26,3 +26,4 @@ import { IxGroup, IxGroupItem } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class GroupHeaderSuppressed {}
+

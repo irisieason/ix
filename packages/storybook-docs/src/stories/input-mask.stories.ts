@@ -81,3 +81,4 @@ export const Precision: Story = {
     value: '123.456',
   },
 };
+

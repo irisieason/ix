@@ -372,3 +372,4 @@ regressionTest.describe('handles multiple references', () => {
     }
   );
 });
+

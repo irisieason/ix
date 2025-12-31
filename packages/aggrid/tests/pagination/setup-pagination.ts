@@ -48,3 +48,4 @@ const gridOptions: GridOptions = {
 
 const myGridElement = document.querySelector('#testGrid') as HTMLElement;
 createGrid(myGridElement, gridOptions);
+

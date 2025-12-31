@@ -26,3 +26,4 @@ export default () => {
     <IxButton onClick={() => triggerMessage()}>Show 'success' message</IxButton>
   );
 };
+

@@ -100,3 +100,4 @@ export default class EchartsSpecialZoom implements OnInit {
     });
   }
 }
+

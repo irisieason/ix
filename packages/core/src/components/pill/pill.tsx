@@ -164,3 +164,4 @@ export class Pill implements IxComponent {
     );
   }
 }
+

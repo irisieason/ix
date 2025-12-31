@@ -5,3 +5,4 @@ import { MessageService as BaseMessageService } from '@siemens/ix-angular/common
   providedIn: 'root',
 })
 export class MessageService extends BaseMessageService {}
+

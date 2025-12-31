@@ -50,3 +50,4 @@ regressionTest.describe('radiobutton', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

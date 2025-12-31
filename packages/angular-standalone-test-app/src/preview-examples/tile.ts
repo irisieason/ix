@@ -53,3 +53,4 @@ import {
   styleUrls: ['./tile.css'],
 })
 export default class Tile {}
+

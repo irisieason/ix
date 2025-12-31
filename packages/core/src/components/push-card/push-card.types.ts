@@ -9,3 +9,4 @@
 import { CardVariant } from '../card/card.types';
 
 export type PushCardVariant = CardVariant;
+

@@ -183,3 +183,4 @@ type PartialRecord<K extends A11yAttributeName, T> = {
   [P in K]?: T;
 };
 export type A11yAttributes = PartialRecord<A11yAttributeName, string>;
+

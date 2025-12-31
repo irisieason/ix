@@ -16,3 +16,4 @@ regressionTest.describe('pill', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

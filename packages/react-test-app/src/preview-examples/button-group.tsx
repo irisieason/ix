@@ -17,3 +17,4 @@ export default () => (
     <IxButton variant="subtle-secondary">Button 4</IxButton>
   </div>
 );
+

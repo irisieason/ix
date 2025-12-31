@@ -81,3 +81,4 @@ describe('workflow-steps', () => {
     expect(step2.selected).toEqual(false);
   });
 });
+

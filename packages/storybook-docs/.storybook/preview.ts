@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/web-components-vite';
 import { withThemeByClassName } from '@storybook/addon-themes';
-import { defineCustomElement } from '@siemens/ix-icons/components/ix-icon.js';
+import { defineCustomElement } from '@irisieason/ix-icons/components/ix-icon.js';
 import './define-custom-elements';
 import './define-internal-custom-elements';
 import { preloadIcons } from './preload-icons';
@@ -59,3 +59,4 @@ const preview: Preview = {
 };
 
 export default preview;
+

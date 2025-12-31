@@ -41,3 +41,4 @@ export const ApplicationLayoutContext = createContext<{
   hideHeader: false,
   sidebar: false,
 });
+

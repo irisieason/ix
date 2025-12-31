@@ -53,3 +53,4 @@ regressionTest('Nested dropdowns', async ({ mount, page }) => {
 
   await expect(dropdown2).toBeVisible();
 });
+

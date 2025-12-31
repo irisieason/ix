@@ -86,3 +86,4 @@ regressionTest.describe('dropdown', () => {
     await expect(page).toHaveScreenshot();
   });
 });
+

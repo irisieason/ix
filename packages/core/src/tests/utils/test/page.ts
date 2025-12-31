@@ -14,7 +14,7 @@ import {
   TestInfo as _TestInfo,
   expect,
 } from '@playwright/test';
-import type { addIcons as _addIcons } from '@siemens/ix-icons';
+import type { addIcons as _addIcons } from '@irisieason/ix-icons';
 
 interface TestInfo extends _TestInfo {
   componentTest?: boolean;
@@ -83,7 +83,7 @@ async function mountComponent(
       if (config?.icons) {
         const moduleImport = await import(
           //@ts-expect-error - Only existing on runtime
-          '/www/node_modules/@siemens/ix-icons/dist/index.js'
+          '/www/node_modules/@irisieason/ix-icons/dist/index.js'
         );
         const addIcons: typeof _addIcons = moduleImport.addIcons;
         addIcons(config.icons);
@@ -183,3 +183,4 @@ export const regressionTest = testBase.extend<{
 });
 
 export const test = regressionTest;
+

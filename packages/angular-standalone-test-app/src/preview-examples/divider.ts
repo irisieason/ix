@@ -16,3 +16,4 @@ import { IxDivider } from '@siemens/ix-angular/standalone';
   template: ` <ix-divider></ix-divider> `,
 })
 export default class Divider {}
+

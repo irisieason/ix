@@ -26,7 +26,7 @@ import {
   iconSuccess,
   iconWarning,
   iconWarningRhomb,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 
 interface MessageTypeConfig {
   icon?: string;
@@ -141,3 +141,4 @@ export class MessageBar {
     );
   }
 }
+

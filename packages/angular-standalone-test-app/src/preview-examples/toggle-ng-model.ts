@@ -24,3 +24,4 @@ import {
 export default class Toggle {
   checked = false;
 }
+

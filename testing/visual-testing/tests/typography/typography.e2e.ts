@@ -31,3 +31,4 @@ regressionTest.describe('typography', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

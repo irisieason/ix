@@ -42,3 +42,4 @@ export const convertToAbbreviationString = (num: number) => {
 
   return num + unit;
 };
+

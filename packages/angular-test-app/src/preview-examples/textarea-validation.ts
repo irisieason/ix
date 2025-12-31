@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './textarea-validation.html',
 })
 export default class TextareaValidation {}
+

@@ -90,3 +90,4 @@ regressionTest(
     await expect(slider).toHaveAttribute('value', '20');
   }
 );
+

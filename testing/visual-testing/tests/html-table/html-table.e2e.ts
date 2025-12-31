@@ -21,3 +21,4 @@ regressionTest.describe('html-table', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

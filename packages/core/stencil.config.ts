@@ -17,7 +17,7 @@ import autoprefixer from 'autoprefixer';
 import { customComponentDocGenerator, getDevAssets } from './scripts/build/dev';
 import { storybookOutputTarget } from './scripts/build/storybook';
 
-const corePackageName = '@siemens/ix';
+const corePackageName = '@irisieason/ix';
 
 function getAngularConfig() {
   const excludeComponents = ['ix-tree', 'ix-icon'];
@@ -103,8 +103,8 @@ export const config: Config = {
       stencilPackageName: corePackageName,
       outDir: '../react/src',
       excludeComponents: ['ix-tree', 'ix-tree-item', 'ix-icon'],
-      hydrateModule: '@siemens/ix/hydrate',
-      clientModule: '@siemens/ix',
+      hydrateModule: '@irisieason/ix/hydrate',
+      clientModule: '@irisieason/ix',
       serializeShadowRoot: { scoped: [], default: 'declarative-shadow-dom' },
     }),
     {
@@ -143,3 +143,4 @@ export const config: Config = {
     },
   ],
 };
+

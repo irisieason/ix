@@ -20,3 +20,4 @@ import {
   templateUrl: './radio-group.html',
 })
 export default class RadioGroup {}
+

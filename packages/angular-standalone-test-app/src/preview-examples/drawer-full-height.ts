@@ -24,3 +24,4 @@ import { IxDrawer, IxButton } from '@siemens/ix-angular/standalone';
 export default class DrawerFullHeight {
   show = false;
 }
+

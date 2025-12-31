@@ -15,3 +15,4 @@ import { Component } from '@angular/core';
   templateUrl: './progress-indicator-linear-status.html',
 })
 export default class ProgressIndicatorLinearStatus {}
+

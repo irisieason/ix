@@ -29,3 +29,4 @@ regressionTest.describe('link-button', () => {
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 });
+

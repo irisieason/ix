@@ -98,3 +98,4 @@ regressionTest.describe('progress-indicator', () => {
     });
   });
 });
+

@@ -49,3 +49,4 @@ export class ModalService extends BaseModalService {
     super.close(instance, reason);
   }
 }
+

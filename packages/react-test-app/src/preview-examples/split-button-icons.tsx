@@ -11,7 +11,7 @@ import {
   iconBulb,
   iconChevronDownSmall,
   iconCut,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { IxDropdownItem, IxSplitButton } from '@siemens/ix-react';
 
 export default () => {
@@ -22,3 +22,4 @@ export default () => {
     </IxSplitButton>
   );
 };
+

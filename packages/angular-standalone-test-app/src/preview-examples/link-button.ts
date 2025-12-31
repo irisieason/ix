@@ -18,3 +18,4 @@ import { IxLinkButton } from '@siemens/ix-angular/standalone';
   `,
 })
 export default class LinkButton {}
+
