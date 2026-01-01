@@ -1,13 +1,13 @@
 {
   "name": "@irisieason/ix",
-  "homepage": "https://ix.siemens.io",
-  "bugs": "https://github.com/siemens/ix/issues",
+  "homepage": "https://github.com/irisieason/ix",
+  "bugs": "https://github.com/irisieason/ix/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/siemens/ix",
+    "url": "https://github.com/irisieason/ix",
     "directory": "packages/core"
   },
-  "version": "4.2.0",
+  "version": "4.2.1",
   "license": "MIT",
   "description": "Siemens iX Web Components",
   "type": "module",

@@ -1,13 +1,13 @@
 {
   "name": "@irisieason/ix-react",
-  "homepage": "https://ix.siemens.io",
-  "bugs": "https://github.com/siemens/ix/issues",
+  "homepage": "https://github.com/irisieason/ix",
+  "bugs": "https://github.com/irisieason/ix/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/siemens/ix",
+    "url": "https://github.com/irisieason/ix",
     "directory": "packages/react"
   },
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Siemens iX for React",
   "files": [
     "LICENSE",
@@ -75,7 +75,7 @@
     "react-dom": "^18 || ^19"
   },
   "dependencies": {
-    "@irisieason/ix": "~4.2.0",
+    "@irisieason/ix": "~4.2.1",
     "@stencil/react-output-target": "^1.2.0",
     "tslib": "*"
   }
