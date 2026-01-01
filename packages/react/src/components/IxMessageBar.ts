@@ -7,7 +7,7 @@
 
 /* eslint-disable */
 
-import { IxMessageBar as IxMessageBarElement, defineCustomElement as defineIxMessageBar } from "@siemens/ix/components/ix-message-bar.js";
+import { IxMessageBar as IxMessageBarElement, defineCustomElement as defineIxMessageBar } from "@irisieason/ix/components/ix-message-bar.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';

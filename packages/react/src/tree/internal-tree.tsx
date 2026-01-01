@@ -10,11 +10,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { type IxTreeCustomEvent, type TreeContext } from '@siemens/ix';
+import { type IxTreeCustomEvent, type TreeContext } from '@irisieason/ix';
 import {
   IxTree as IxTreeElement,
   defineCustomElement as defineIxTree,
-} from '@siemens/ix/components/ix-tree.js';
+} from '@irisieason/ix/components/ix-tree.js';
 import {
   createComponent,
   type EventName,

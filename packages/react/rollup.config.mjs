@@ -31,9 +31,9 @@ export default {
   external: (id) => {
     return (
       external.includes(id) ||
-      id.startsWith('@siemens/ix') ||
-      id.startsWith('@siemens/ix/hydrate') ||
-      id.startsWith('@siemens/ix-icons') ||
+      id.startsWith('@irisieason/ix') ||
+      id.startsWith('@irisieason/ix/hydrate') ||
+      id.startsWith('@irisieason/ix-icons') ||
       id.startsWith('@stencil/react-output-target') ||
       id.startsWith('@stencil/react-output-target/runtime')
     );

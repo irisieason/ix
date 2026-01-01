@@ -13,7 +13,7 @@ import {
   type TreeContext,
   UpdateCallback,
   type IxTreeCustomEvent,
-} from '@siemens/ix';
+} from '@irisieason/ix';
 import React, { useCallback, useRef } from 'react';
 import ReactDOM, { Root } from 'react-dom/client';
 import InternalIxTree from './internal-tree';

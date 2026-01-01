@@ -7,8 +7,8 @@
 
 /* eslint-disable */
 
-import { type DateInputValidityState, type IxDateInputCustomEvent } from "@siemens/ix";
-import { IxDateInput as IxDateInputElement, defineCustomElement as defineIxDateInput } from "@siemens/ix/components/ix-date-input.js";
+import { type DateInputValidityState, type IxDateInputCustomEvent } from "@irisieason/ix";
+import { IxDateInput as IxDateInputElement, defineCustomElement as defineIxDateInput } from "@irisieason/ix/components/ix-date-input.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';

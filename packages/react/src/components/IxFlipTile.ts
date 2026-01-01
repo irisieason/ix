@@ -7,7 +7,7 @@
 
 /* eslint-disable */
 
-import { IxFlipTile as IxFlipTileElement, defineCustomElement as defineIxFlipTile } from "@siemens/ix/components/ix-flip-tile.js";
+import { IxFlipTile as IxFlipTileElement, defineCustomElement as defineIxFlipTile } from "@irisieason/ix/components/ix-flip-tile.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';

@@ -7,7 +7,7 @@
 
 /* eslint-disable */
 
-import { IxMenu as IxMenuElement, defineCustomElement as defineIxMenu } from "@siemens/ix/components/ix-menu.js";
+import { IxMenu as IxMenuElement, defineCustomElement as defineIxMenu } from "@irisieason/ix/components/ix-menu.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';

@@ -7,8 +7,8 @@
 
 /* eslint-disable */
 
-import { type CustomCloseEvent, type IxMenuSettingsCustomEvent } from "@siemens/ix";
-import { IxMenuSettings as IxMenuSettingsElement, defineCustomElement as defineIxMenuSettings } from "@siemens/ix/components/ix-menu-settings.js";
+import { type CustomCloseEvent, type IxMenuSettingsCustomEvent } from "@irisieason/ix";
+import { IxMenuSettings as IxMenuSettingsElement, defineCustomElement as defineIxMenuSettings } from "@irisieason/ix/components/ix-menu-settings.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';

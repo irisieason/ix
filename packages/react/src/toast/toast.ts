@@ -7,10 +7,10 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { defineCustomElement as defineToastContainer } from '@siemens/ix/components/ix-toast-container.js';
-import { defineCustomElement as defineToast } from '@siemens/ix/components/ix-toast.js';
+import { defineCustomElement as defineToastContainer } from '@irisieason/ix/components/ix-toast-container.js';
+import { defineCustomElement as defineToast } from '@irisieason/ix/components/ix-toast.js';
 
-import { toast, ToastConfig as IxToastConfig } from '@siemens/ix';
+import { toast, ToastConfig as IxToastConfig } from '@irisieason/ix';
 import ReactDOMClient from 'react-dom/client';
 
 export type ToastConfig = {
