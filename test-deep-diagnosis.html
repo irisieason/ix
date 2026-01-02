@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Diagnosis - Why Bar Chart Not Showing</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: white;
+            text-align: center;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #555;
+            border-radius: 8px;
+        }
+        .debug-info {
+            background: #333;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 11px;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .manual-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .manual-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .manual-bar {
+            height: 16px;
+            display: inline-block;
+        }
+        .success { background-color: #01d65a; }
+        .warning { background-color: #ffd732; }
+        .alarm { background-color: #ff2640; }
+        .critical { background-color: #ff9000; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>深度诊断：为什么 Bar Chart 不显示？</h1>
+
+        <div class="test-section">
+            <h2>期望的效果（手动绘制）</h2>
+            <div class="manual-bars">
+                <div class="manual-bar-row">
+                    <span style="width: 40px; display: inline-block;">10.x:</span>
+                    <div class="manual-bar success" style="width: 60px;"></div>
+                </div>
+                <div class="manual-bar-row">
+                    <span style="width: 40px; display: inline-block;">192.x:</span>
+                    <div class="manual-bar success" style="width: 100px;"></div>
+                    <div class="manual-bar alarm" style="width: 20px;"></div>
+                    <div class="manual-bar critical" style="width: 15px;"></div>
+                </div>
+                <div class="manual-bar-row">
+                    <span style="width: 40px; display: inline-block;">172.x:</span>
+                    <div class="manual-bar success" style="width: 80px;"></div>
+                    <div class="manual-bar warning" style="width: 30px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>实际组件</h2>
+            <div class="card-container">
+                <ix-custom-card id="test-card"></ix-custom-card>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>完整的 DOM 结构分析</h2>
+            <div class="debug-info" id="dom-analysis">
+                分析中...
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>CSS 样式详细检查</h2>
+            <div class="debug-info" id="css-analysis">
+                分析中...
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>可能的根本原因</h2>
+            <div class="debug-info" id="root-cause">
+                分析中...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Deep Diagnosis Started ===');
+
+                const card = document.getElementById('test-card');
+                const domAnalysis = document.getElementById('dom-analysis');
+                const cssAnalysis = document.getElementById('css-analysis');
+                const rootCause = document.getElementById('root-cause');
+
+                if (!card) {
+                    domAnalysis.textContent = '❌ 组件元素未找到';
+                    return;
+                }
+
+                if (!card.shadowRoot) {
+                    domAnalysis.textContent = '❌ Shadow DOM 未找到';
+                    return;
+                }
+
+                const shadowRoot = card.shadowRoot;
+
+                // 1. DOM 结构分析
+                let domInfo = '=== DOM 结构分析 ===\n\n';
+
+                // 检查主要容器
+                const chartContainer = shadowRoot.querySelector('.chart-container');
+                const chartArea = shadowRoot.querySelector('.chart-area');
+                const chartBars = shadowRoot.querySelector('.chart-bars');
+
+                domInfo += `chart-container: ${chartContainer ? '✅ 存在' : '❌ 缺失'}\n`;
+                domInfo += `chart-area: ${chartArea ? '✅ 存在' : '❌ 缺失'}\n`;
+                domInfo += `chart-bars: ${chartBars ? '✅ 存在' : '❌ 缺失'}\n\n`;
+
+                // 检查 bar 相关元素
+                const barRows = shadowRoot.querySelectorAll('.bar-row');
+                const barContainers = shadowRoot.querySelectorAll('.bar-container');
+                const bars = shadowRoot.querySelectorAll('.bar');
+
+                domInfo += `bar-row 元素: ${barRows.length} 个\n`;
+                domInfo += `bar-container 元素: ${barContainers.length} 个\n`;
+                domInfo += `bar 元素: ${bars.length} 个\n\n`;
+
+                // 检查每个 bar 的类名
+                bars.forEach((bar, index) => {
+                    domInfo += `Bar ${index + 1}: class="${bar.className}", style="${bar.getAttribute('style')}"\n`;
+                });
+
+                domInfo += '\n=== 完整的 chart-bars HTML 结构 ===\n';
+                if (chartBars) {
+                    domInfo += chartBars.innerHTML.replace(/></g, '>\n<');
+                } else {
+                    domInfo += '❌ chart-bars 元素不存在';
+                }
+
+                domAnalysis.textContent = domInfo;
+
+                // 2. CSS 样式分析
+                let cssInfo = '=== CSS 样式详细分析 ===\n\n';
+
+                if (chartContainer) {
+                    const containerStyle = window.getComputedStyle(chartContainer);
+                    cssInfo += `chart-container 样式:\n`;
+                    cssInfo += `  display: ${containerStyle.display}\n`;
+                    cssInfo += `  height: ${containerStyle.height}\n`;
+                    cssInfo += `  width: ${containerStyle.width}\n\n`;
+                }
+
+                if (chartArea) {
+                    const areaStyle = window.getComputedStyle(chartArea);
+                    cssInfo += `chart-area 样式:\n`;
+                    cssInfo += `  display: ${areaStyle.display}\n`;
+                    cssInfo += `  position: ${areaStyle.position}\n`;
+                    cssInfo += `  height: ${areaStyle.height}\n`;
+                    cssInfo += `  width: ${areaStyle.width}\n\n`;
+                }
+
+                if (chartBars) {
+                    const barsStyle = window.getComputedStyle(chartBars);
+                    cssInfo += `chart-bars 样式:\n`;
+                    cssInfo += `  display: ${barsStyle.display}\n`;
+                    cssInfo += `  position: ${barsStyle.position}\n`;
+                    cssInfo += `  height: ${barsStyle.height}\n`;
+                    cssInfo += `  width: ${barsStyle.width}\n`;
+                    cssInfo += `  flex-direction: ${barsStyle.flexDirection}\n\n`;
+                }
+
+                // 检查每个 bar-row
+                barRows.forEach((row, index) => {
+                    const rowStyle = window.getComputedStyle(row);
+                    cssInfo += `bar-row ${index + 1} 样式:\n`;
+                    cssInfo += `  display: ${rowStyle.display}\n`;
+                    cssInfo += `  flex: ${rowStyle.flex}\n`;
+                    cssInfo += `  height: ${rowStyle.height}\n`;
+                    cssInfo += `  min-height: ${rowStyle.minHeight}\n\n`;
+                });
+
+                // 检查每个 bar-container
+                barContainers.forEach((container, index) => {
+                    const containerStyle = window.getComputedStyle(container);
+                    cssInfo += `bar-container ${index + 1} 样式:\n`;
+                    cssInfo += `  display: ${containerStyle.display}\n`;
+                    cssInfo += `  flex: ${containerStyle.flex}\n`;
+                    cssInfo += `  height: ${containerStyle.height}\n`;
+                    cssInfo += `  min-height: ${containerStyle.minHeight}\n`;
+                    cssInfo += `  padding: ${containerStyle.padding}\n\n`;
+                });
+
+                // 检查每个 bar
+                bars.forEach((bar, index) => {
+                    const barStyle = window.getComputedStyle(bar);
+                    cssInfo += `bar ${index + 1} (${bar.className}) 样式:\n`;
+                    cssInfo += `  display: ${barStyle.display}\n`;
+                    cssInfo += `  height: ${barStyle.height}\n`;
+                    cssInfo += `  width: ${barStyle.width}\n`;
+                    cssInfo += `  min-height: ${barStyle.minHeight}\n`;
+                    cssInfo += `  background-color: ${barStyle.backgroundColor}\n`;
+                    cssInfo += `  opacity: ${barStyle.opacity}\n`;
+                    cssInfo += `  visibility: ${barStyle.visibility}\n`;
+                    cssInfo += `  position: ${barStyle.position}\n`;
+                    cssInfo += `  z-index: ${barStyle.zIndex}\n\n`;
+                });
+
+                cssAnalysis.textContent = cssInfo;
+
+                // 3. 根本原因分析
+                let causeInfo = '=== 根本原因分析 ===\n\n';
+
+                // 检查可能的问题
+                const issues = [];
+
+                if (bars.length === 0) {
+                    issues.push('❌ 致命问题：没有 .bar 元素被创建');
+                } else {
+                    let visibleBars = 0;
+                    bars.forEach(bar => {
+                        const style = window.getComputedStyle(bar);
+                        const hasWidth = parseInt(style.width) > 0;
+                        const hasHeight = parseInt(style.height) > 0;
+                        const hasBackground = style.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
+                                            style.backgroundColor !== 'transparent';
+                        const isVisible = style.visibility === 'visible' && style.display !== 'none';
+
+                        if (hasWidth && hasHeight && hasBackground && isVisible) {
+                            visibleBars++;
+                        }
+                    });
+
+                    if (visibleBars === 0) {
+                        issues.push('❌ 严重问题：bar 元素存在但不可见');
+
+                        // 详细分析每个 bar 的问题
+                        bars.forEach((bar, index) => {
+                            const style = window.getComputedStyle(bar);
+                            const problems = [];
+
+                            if (parseInt(style.width) <= 0) problems.push('宽度为0或负数');
+                            if (parseInt(style.height) <= 0) problems.push('高度为0或负数');
+                            if (style.backgroundColor === 'rgba(0, 0, 0, 0)' || style.backgroundColor === 'transparent') {
+                                problems.push('背景色透明');
+                            }
+                            if (style.visibility !== 'visible') problems.push('visibility不是visible');
+                            if (style.display === 'none') problems.push('display是none');
+                            if (parseFloat(style.opacity) < 1) problems.push('opacity小于1');
+
+                            if (problems.length > 0) {
+                                issues.push(`  Bar ${index + 1} 问题: ${problems.join(', ')}`);
+                            }
+                        });
+                    } else {
+                        issues.push(`✅ 有 ${visibleBars}/${bars.length} 个 bar 可见`);
+                    }
+                }
+
+                if (chartContainer) {
+                    const containerStyle = window.getComputedStyle(chartContainer);
+                    if (parseInt(containerStyle.height) <= 0) {
+                        issues.push('❌ chart-container 高度为0');
+                    }
+                }
+
+                if (chartArea) {
+                    const areaStyle = window.getComputedStyle(chartArea);
+                    if (parseInt(areaStyle.height) <= 0) {
+                        issues.push('❌ chart-area 高度为0');
+                    }
+                }
+
+                if (chartBars) {
+                    const barsStyle = window.getComputedStyle(chartBars);
+                    if (parseInt(barsStyle.height) <= 0) {
+                        issues.push('❌ chart-bars 高度为0');
+                    }
+                }
+
+                causeInfo += issues.join('\n') + '\n\n';
+
+                causeInfo += '=== 建议的解决方案 ===\n';
+                if (bars.length === 0) {
+                    causeInfo += '1. 检查 TSX 模板中的 bar 元素是否正确渲染\n';
+                    causeInfo += '2. 检查条件渲染逻辑\n';
+                    causeInfo += '3. 验证组件数据是否正确传递\n';
+                } else {
+                    causeInfo += '1. 为所有容器设置明确的高度\n';
+                    causeInfo += '2. 使用绝对定位或固定尺寸\n';
+                    causeInfo += '3. 检查 CSS 层叠和优先级\n';
+                    causeInfo += '4. 考虑使用 SVG 或 Canvas 替代 CSS 绘制\n';
+                }
+
+                rootCause.textContent = causeInfo;
+
+                console.log('Deep Diagnosis Complete:', {
+                    bars: bars.length,
+                    barRows: barRows.length,
+                    barContainers: barContainers.length,
+                    issues: issues
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

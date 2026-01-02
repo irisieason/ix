@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Bars Solution Test</title>
+    <script type="module" src="./packages/core/dist/ix/ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/ix/ix.css">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        .test-container {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success { color: #01d65a; }
+        .warning { color: #ffd732; }
+        .alarm { color: #ff2640; }
+        .critical { color: #ff9000; }
+    </style>
+</head>
+<body>
+    <h1>Final Bars Solution Test</h1>
+
+    <div class="test-container">
+        <h2>Test 1: Default Data</h2>
+        <ix-device-status-chart id="chart1"></ix-device-status-chart>
+        <p>Expected: 3 rows with bars for 10.x (success), 192.x (success+alarm+critical), 172.x (success+warning)</p>
+    </div>
+
+    <div class="test-container">
+        <h2>Test 2: Custom Data</h2>
+        <ix-device-status-chart
+            id="chart2"
+            data='{"Server A": {"success": 80, "warning": 15, "alarm": 3, "critical": 2}, "Server B": {"success": 120, "warning": 0, "alarm": 8, "critical": 0}}'
+        ></ix-device-status-chart>
+        <p>Expected: 2 rows with different bar combinations</p>
+    </div>
+
+    <div class="test-container">
+        <h2>Test 3: Custom Card Integration</h2>
+        <ix-custom-card id="customCard"></ix-custom-card>
+        <p>Expected: Card containing the chart with bars</p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            console.log('=== Final Bars Solution Test ===');
+
+            const charts = document.querySelectorAll('ix-device-status-chart, ix-custom-card');
+
+            charts.forEach((chart, i) => {
+                console.log(`\nChart ${i + 1} (${chart.tagName}):`);
+
+                if (chart.shadowRoot) {
+                    const bars = chart.shadowRoot.querySelectorAll('.bar');
+                    const barContainers = chart.shadowRoot.querySelectorAll('.bar-container');
+
+                    console.log(`  Bar containers: ${barContainers.length}`);
+                    console.log(`  Total bars: ${bars.length}`);
+
+                    if (bars.length > 0) {
+                        console.log('  ✅ SUCCESS: Bars are rendering!');
+
+                        bars.forEach((bar, j) => {
+                            const rect = bar.getBoundingClientRect();
+                            const classes = bar.className;
+                            console.log(`    Bar ${j}: ${rect.width}px wide, classes: ${classes}`);
+                        });
+                    } else {
+                        console.log('  ❌ ISSUE: No bars found');
+                    }
+                } else {
+                    console.log('  ❌ No shadow root found');
+                }
+            });
+
+            // Summary
+            const totalBars = document.querySelectorAll('ix-device-status-chart, ix-custom-card')
+                .length > 0 ?
+                Array.from(document.querySelectorAll('ix-device-status-chart, ix-custom-card'))
+                    .reduce((total, chart) => {
+                        return total + (chart.shadowRoot ? chart.shadowRoot.querySelectorAll('.bar').length : 0);
+                    }, 0) : 0;
+
+            console.log(`\n=== SUMMARY ===`);
+            console.log(`Total bars rendered: ${totalBars}`);
+            console.log(totalBars > 0 ? '🎉 SUCCESS: Bar charts are working!' : '❌ FAILED: No bars rendered');
+
+        }, 2000);
+    </script>
+</body>
+</html>

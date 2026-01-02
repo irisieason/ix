@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINAL SYSTEMATIC SOLUTION</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            color: white;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .final-header {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 8px 32px rgba(40, 167, 69, 0.3);
+        }
+        .test-container {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+        .chart-wrapper {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .analysis {
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+        .success {
+            background: rgba(40, 167, 69, 0.2);
+            border-left: 4px solid #28a745;
+            color: #28a745;
+        }
+        .error {
+            background: rgba(220, 53, 69, 0.2);
+            border-left: 4px solid #dc3545;
+            color: #dc3545;
+        }
+        .debug {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 11px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="final-header">
+        <h1>🎯 FINAL SYSTEMATIC SOLUTION</h1>
+        <p>Definitive Test with Complete Analysis</p>
+    </div>
+
+    <div class="test-container">
+        <h3>Test 1: Default Chart with Systematic Rendering</h3>
+        <div class="chart-wrapper">
+            <ix-device-status-chart id="chart1"></ix-device-status-chart>
+        </div>
+        <div id="analysis1" class="analysis">Analyzing...</div>
+        <div id="debug1" class="debug"></div>
+    </div>
+
+    <div class="test-container">
+        <h3>Test 2: Custom Data with All Status Types</h3>
+        <div class="chart-wrapper">
+            <ix-device-status-chart
+                id="chart2"
+                data='{"Production": {"success": 150, "warning": 25, "alarm": 10, "critical": 5}, "Staging": {"success": 80, "warning": 12, "alarm": 3, "critical": 2}, "Development": {"success": 40, "warning": 8, "alarm": 1, "critical": 0}}'
+            ></ix-device-status-chart>
+        </div>
+        <div id="analysis2" class="analysis">Analyzing...</div>
+        <div id="debug2" class="debug"></div>
+    </div>
+
+    <div class="test-container">
+        <h3>Test 3: Custom Card Integration</h3>
+        <div class="chart-wrapper">
+            <ix-custom-card id="customCard"></ix-custom-card>
+        </div>
+        <div id="analysis3" class="analysis">Analyzing...</div>
+        <div id="debug3" class="debug"></div>
+    </div>
+
+    <script>
+        console.log('🎯 FINAL SYSTEMATIC SOLUTION TEST');
+        console.log('==================================');
+
+        function comprehensiveAnalysis(chartId, analysisId, debugId, description) {
+            const chart = document.getElementById(chartId);
+            const analysisDiv = document.getElementById(analysisId);
+            const debugDiv = document.getElementById(debugId);
+
+            let debugInfo = [];
+
+            debugInfo.push(`🔍 COMPREHENSIVE ANALYSIS: ${description}`);
+            debugInfo.push(`Chart element: ${!!chart}`);
+
+            if (!chart) {
+                analysisDiv.className = 'analysis error';
+                analysisDiv.innerHTML = `❌ ${description}: Element not found`;
+                debugDiv.innerHTML = debugInfo.join('<br>');
+                return false;
+            }
+
+            debugInfo.push(`Tag name: ${chart.tagName}`);
+            debugInfo.push(`Shadow root: ${!!chart.shadowRoot}`);
+
+            if (!chart.shadowRoot) {
+                analysisDiv.className = 'analysis error';
+                analysisDiv.innerHTML = `❌ ${description}: Shadow root missing`;
+                debugDiv.innerHTML = debugInfo.join('<br>');
+                return false;
+            }
+
+            // Comprehensive shadow DOM analysis
+            const shadowRoot = chart.shadowRoot;
+            const allElements = shadowRoot.querySelectorAll('*');
+            const bars = shadowRoot.querySelectorAll('.bar');
+            const barContainers = shadowRoot.querySelectorAll('.bar-container');
+            const chartRows = shadowRoot.querySelectorAll('.chart-row');
+            const gridLines = shadowRoot.querySelectorAll('.grid-line');
+            const legend = shadowRoot.querySelector('.legend');
+
+            debugInfo.push(`Total shadow DOM elements: ${allElements.length}`);
+            debugInfo.push(`Chart rows: ${chartRows.length}`);
+            debugInfo.push(`Bar containers: ${barContainers.length}`);
+            debugInfo.push(`Total bars: ${bars.length}`);
+            debugInfo.push(`Grid lines: ${gridLines.length}`);
+            debugInfo.push(`Legend: ${!!legend}`);
+
+            // Analyze bar types
+            const barTypes = {
+                success: shadowRoot.querySelectorAll('.bar-success').length,
+                warning: shadowRoot.querySelectorAll('.bar-warning').length,
+                alarm: shadowRoot.querySelectorAll('.bar-alarm').length,
+                critical: shadowRoot.querySelectorAll('.bar-critical').length
+            };
+
+            debugInfo.push(`Bar types - Success: ${barTypes.success}, Warning: ${barTypes.warning}, Alarm: ${barTypes.alarm}, Critical: ${barTypes.critical}`);
+
+            if (bars.length === 0) {
+                debugInfo.push('❌ NO BARS FOUND');
+                debugInfo.push('Shadow DOM structure:');
+                Array.from(allElements).slice(0, 20).forEach((el, i) => {
+                    debugInfo.push(`  ${i}: ${el.tagName}.${el.className || 'no-class'}`);
+                });
+
+                analysisDiv.className = 'analysis error';
+                analysisDiv.innerHTML = `❌ ${description}: No bars rendered<br>Structure exists but bars are missing`;
+                debugDiv.innerHTML = debugInfo.join('<br>');
+                return false;
+            }
+
+            // Detailed bar analysis
+            const barDetails = Array.from(bars).map((bar, i) => {
+                const style = window.getComputedStyle(bar);
+                const rect = bar.getBoundingClientRect();
+                return {
+                    index: i,
+                    className: bar.className,
+                    width: style.width,
+                    height: style.height,
+                    display: style.display,
+                    backgroundColor: style.backgroundColor,
+                    position: style.position,
+                    left: style.left,
+                    top: style.top,
+                    rectWidth: rect.width,
+                    rectHeight: rect.height,
+                    visible: rect.width > 0 && rect.height > 0 && style.display !== 'none'
+                };
+            });
+
+            debugInfo.push('Bar details:');
+            barDetails.forEach(bar => {
+                debugInfo.push(`  Bar ${bar.index}: ${bar.className}, ${bar.width}×${bar.height}, display:${bar.display}, bg:${bar.backgroundColor}, visible:${bar.visible}`);
+            });
+
+            const visibleBars = barDetails.filter(bar => bar.visible);
+            const properBars = barDetails.filter(bar =>
+                bar.width !== '0px' &&
+                bar.height !== '0px' &&
+                bar.display !== 'none' &&
+                bar.rectWidth > 0 &&
+                bar.rectHeight > 0
+            );
+
+            debugInfo.push(`Visible bars: ${visibleBars.length}/${bars.length}`);
+            debugInfo.push(`Properly sized bars: ${properBars.length}/${bars.length}`);
+
+            if (properBars.length === 0) {
+                analysisDiv.className = 'analysis error';
+                analysisDiv.innerHTML = `❌ ${description}: ${bars.length} bars exist but none are properly rendered<br>All bars have 0px dimensions or are hidden`;
+            } else {
+                analysisDiv.className = 'analysis success';
+                analysisDiv.innerHTML = `✅ ${description}: SYSTEMATIC SUCCESS!<br>${properBars.length}/${bars.length} bars properly rendered<br>Types: S(${barTypes.success}) W(${barTypes.warning}) A(${barTypes.alarm}) C(${barTypes.critical})`;
+            }
+
+            debugDiv.innerHTML = debugInfo.join('<br>');
+            return properBars.length > 0;
+        }
+
+        // Run comprehensive analysis
+        setTimeout(() => {
+            console.log('Starting comprehensive analysis...');
+
+            const results = [
+                comprehensiveAnalysis('chart1', 'analysis1', 'debug1', 'Default Chart'),
+                comprehensiveAnalysis('chart2', 'analysis2', 'debug2', 'Custom Data'),
+                comprehensiveAnalysis('customCard', 'analysis3', 'debug3', 'Custom Card')
+            ];
+
+            const successCount = results.filter(r => r).length;
+            const totalCount = results.length;
+
+            console.log(`Final Results: ${successCount}/${totalCount} charts working`);
+
+            // Update header
+            const header = document.querySelector('.final-header');
+            if (successCount === totalCount) {
+                header.innerHTML = `
+                    <h1>🎉 COMPLETE SUCCESS!</h1>
+                    <p>All ${totalCount} Charts Working with Systematic Solution</p>
+                    <p style="font-size: 14px; margin-top: 10px; opacity: 0.9;">
+                        Bar charts are now rendering correctly with proper dimensions and positioning
+                    </p>
+                `;
+            } else if (successCount > 0) {
+                header.innerHTML = `
+                    <h1>⚠️ PARTIAL SUCCESS</h1>
+                    <p>${successCount}/${totalCount} Charts Working</p>
+                `;
+                header.style.background = 'linear-gradient(135deg, #ffc107, #fd7e14)';
+            } else {
+                header.innerHTML = `
+                    <h1>❌ SYSTEMATIC FAILURE</h1>
+                    <p>Bar Charts Still Not Rendering - Deep Investigation Needed</p>
+                `;
+                header.style.background = 'linear-gradient(135deg, #dc3545, #c82333)';
+            }
+
+        }, 3000);
+    </script>
+</body>
+</html>

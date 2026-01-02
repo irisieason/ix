@@ -20,6 +20,7 @@ import { InputState } from "./components/category-filter/input-state";
 import { ColumnSize } from "./components/col/col.types";
 import { ContentHeaderVariant } from "./components/content-header/content-header.types";
 import { CssGridTemplateType } from "./components/css-grid/css-grid.types";
+import { ChartData } from "./components/device-status-chart/device-status-chart.types";
 import { ButtonVariant as ButtonVariant1 } from "./components/button/button";
 import { DateDropdownOption, DateRangeChangeEvent } from "./components/date-dropdown/date-dropdown.types";
 import { DateInputValidityState } from "./components/date-input/date-input.types";
@@ -70,6 +71,7 @@ export { InputState } from "./components/category-filter/input-state";
 export { ColumnSize } from "./components/col/col.types";
 export { ContentHeaderVariant } from "./components/content-header/content-header.types";
 export { CssGridTemplateType } from "./components/css-grid/css-grid.types";
+export { ChartData } from "./components/device-status-chart/device-status-chart.types";
 export { ButtonVariant as ButtonVariant1 } from "./components/button/button";
 export { DateDropdownOption, DateRangeChangeEvent } from "./components/date-dropdown/date-dropdown.types";
 export { DateInputValidityState } from "./components/date-input/date-input.types";
@@ -797,6 +799,43 @@ export namespace Components {
          */
         "itemName": string;
     }
+    interface IxCustomCard {
+        /**
+          * Card title
+          * @default 'Device status'
+         */
+        "cardTitle": string;
+        /**
+          * Chart data as JSON string or object Format: {"10.x": {"online": 60, "maintenance": 0, "error": 0, "offline": 0}, ...}
+          * @default JSON.stringify({     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },     '192.x': { online: 250, maintenance: 0, error: 20, offline: 15 },     '172.x': { online: 180, maintenance: 30, error: 0, offline: 0 }   })
+         */
+        "data": string | ChartData;
+        /**
+          * If true, disables hover and active styles and changes cursor to default
+          * @default false
+         */
+        "passive": boolean;
+        /**
+          * Show card in selected state
+          * @default false
+         */
+        "selected": boolean;
+        /**
+          * Card variant
+          * @default 'outline'
+         */
+        "variant": CardVariant;
+        /**
+          * X-axis label
+          * @default 'Device'
+         */
+        "xAxisLabel": string;
+        /**
+          * Y-axis label
+          * @default 'IP Range'
+         */
+        "yAxisLabel": string;
+    }
     interface IxCustomField {
         /**
           * Show text below the field component which show additional information
@@ -1247,6 +1286,32 @@ export namespace Components {
           * @default 0
          */
         "weekStartIndex": number;
+    }
+    interface IxDeviceStatusChart {
+        /**
+          * Chart title
+          * @default 'Device status'
+         */
+        "chartTitle": string;
+        /**
+          * Chart data as JSON string or object
+          * @default {     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },     '192.x': { online: 250, maintenance: 0, error: 26, offline: 15 },     '172.x': { online: 180, maintenance: 49, error: 0, offline: 0 }   }
+         */
+        "data": string | ChartData;
+        /**
+          * Maximum value for scaling bars (auto-calculated if not provided)
+         */
+        "maxValue"?: number;
+        /**
+          * X-axis label
+          * @default 'Device'
+         */
+        "xAxisLabel": string;
+        /**
+          * Y-axis label
+          * @default 'IP Range'
+         */
+        "yAxisLabel": string;
     }
     interface IxDivider {
     }
@@ -4627,6 +4692,12 @@ declare global {
         prototype: HTMLIxCssGridItemElement;
         new (): HTMLIxCssGridItemElement;
     };
+    interface HTMLIxCustomCardElement extends Components.IxCustomCard, HTMLStencilElement {
+    }
+    var HTMLIxCustomCardElement: {
+        prototype: HTMLIxCustomCardElement;
+        new (): HTMLIxCustomCardElement;
+    };
     interface HTMLIxCustomFieldElement extends Components.IxCustomField, HTMLStencilElement {
     }
     var HTMLIxCustomFieldElement: {
@@ -4716,6 +4787,12 @@ declare global {
     var HTMLIxDatetimePickerElement: {
         prototype: HTMLIxDatetimePickerElement;
         new (): HTMLIxDatetimePickerElement;
+    };
+    interface HTMLIxDeviceStatusChartElement extends Components.IxDeviceStatusChart, HTMLStencilElement {
+    }
+    var HTMLIxDeviceStatusChartElement: {
+        prototype: HTMLIxDeviceStatusChartElement;
+        new (): HTMLIxDeviceStatusChartElement;
     };
     interface HTMLIxDividerElement extends Components.IxDivider, HTMLStencilElement {
     }
@@ -5806,12 +5883,14 @@ declare global {
         "ix-content-header": HTMLIxContentHeaderElement;
         "ix-css-grid": HTMLIxCssGridElement;
         "ix-css-grid-item": HTMLIxCssGridItemElement;
+        "ix-custom-card": HTMLIxCustomCardElement;
         "ix-custom-field": HTMLIxCustomFieldElement;
         "ix-date-dropdown": HTMLIxDateDropdownElement;
         "ix-date-input": HTMLIxDateInputElement;
         "ix-date-picker": HTMLIxDatePickerElement;
         "ix-date-time-card": HTMLIxDateTimeCardElement;
         "ix-datetime-picker": HTMLIxDatetimePickerElement;
+        "ix-device-status-chart": HTMLIxDeviceStatusChartElement;
         "ix-divider": HTMLIxDividerElement;
         "ix-drawer": HTMLIxDrawerElement;
         "ix-dropdown": HTMLIxDropdownElement;
@@ -6656,6 +6735,43 @@ declare namespace LocalJSX {
          */
         "itemName": string;
     }
+    interface IxCustomCard {
+        /**
+          * Card title
+          * @default 'Device status'
+         */
+        "cardTitle"?: string;
+        /**
+          * Chart data as JSON string or object Format: {"10.x": {"online": 60, "maintenance": 0, "error": 0, "offline": 0}, ...}
+          * @default JSON.stringify({     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },     '192.x': { online: 250, maintenance: 0, error: 20, offline: 15 },     '172.x': { online: 180, maintenance: 30, error: 0, offline: 0 }   })
+         */
+        "data"?: string | ChartData;
+        /**
+          * If true, disables hover and active styles and changes cursor to default
+          * @default false
+         */
+        "passive"?: boolean;
+        /**
+          * Show card in selected state
+          * @default false
+         */
+        "selected"?: boolean;
+        /**
+          * Card variant
+          * @default 'outline'
+         */
+        "variant"?: CardVariant;
+        /**
+          * X-axis label
+          * @default 'Device'
+         */
+        "xAxisLabel"?: string;
+        /**
+          * Y-axis label
+          * @default 'IP Range'
+         */
+        "yAxisLabel"?: string;
+    }
     interface IxCustomField {
         /**
           * Show text below the field component which show additional information
@@ -7121,6 +7237,32 @@ declare namespace LocalJSX {
           * @default 0
          */
         "weekStartIndex"?: number;
+    }
+    interface IxDeviceStatusChart {
+        /**
+          * Chart title
+          * @default 'Device status'
+         */
+        "chartTitle"?: string;
+        /**
+          * Chart data as JSON string or object
+          * @default {     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },     '192.x': { online: 250, maintenance: 0, error: 26, offline: 15 },     '172.x': { online: 180, maintenance: 49, error: 0, offline: 0 }   }
+         */
+        "data"?: string | ChartData;
+        /**
+          * Maximum value for scaling bars (auto-calculated if not provided)
+         */
+        "maxValue"?: number;
+        /**
+          * X-axis label
+          * @default 'Device'
+         */
+        "xAxisLabel"?: string;
+        /**
+          * Y-axis label
+          * @default 'IP Range'
+         */
+        "yAxisLabel"?: string;
     }
     interface IxDivider {
     }
@@ -10156,12 +10298,14 @@ declare namespace LocalJSX {
         "ix-content-header": IxContentHeader;
         "ix-css-grid": IxCssGrid;
         "ix-css-grid-item": IxCssGridItem;
+        "ix-custom-card": IxCustomCard;
         "ix-custom-field": IxCustomField;
         "ix-date-dropdown": IxDateDropdown;
         "ix-date-input": IxDateInput;
         "ix-date-picker": IxDatePicker;
         "ix-date-time-card": IxDateTimeCard;
         "ix-datetime-picker": IxDatetimePicker;
+        "ix-device-status-chart": IxDeviceStatusChart;
         "ix-divider": IxDivider;
         "ix-drawer": IxDrawer;
         "ix-dropdown": IxDropdown;
@@ -10278,6 +10422,7 @@ declare module "@stencil/core" {
             "ix-content-header": LocalJSX.IxContentHeader & JSXBase.HTMLAttributes<HTMLIxContentHeaderElement>;
             "ix-css-grid": LocalJSX.IxCssGrid & JSXBase.HTMLAttributes<HTMLIxCssGridElement>;
             "ix-css-grid-item": LocalJSX.IxCssGridItem & JSXBase.HTMLAttributes<HTMLIxCssGridItemElement>;
+            "ix-custom-card": LocalJSX.IxCustomCard & JSXBase.HTMLAttributes<HTMLIxCustomCardElement>;
             "ix-custom-field": LocalJSX.IxCustomField & JSXBase.HTMLAttributes<HTMLIxCustomFieldElement>;
             "ix-date-dropdown": LocalJSX.IxDateDropdown & JSXBase.HTMLAttributes<HTMLIxDateDropdownElement>;
             /**
@@ -10287,6 +10432,7 @@ declare module "@stencil/core" {
             "ix-date-picker": LocalJSX.IxDatePicker & JSXBase.HTMLAttributes<HTMLIxDatePickerElement>;
             "ix-date-time-card": LocalJSX.IxDateTimeCard & JSXBase.HTMLAttributes<HTMLIxDateTimeCardElement>;
             "ix-datetime-picker": LocalJSX.IxDatetimePicker & JSXBase.HTMLAttributes<HTMLIxDatetimePickerElement>;
+            "ix-device-status-chart": LocalJSX.IxDeviceStatusChart & JSXBase.HTMLAttributes<HTMLIxDeviceStatusChartElement>;
             "ix-divider": LocalJSX.IxDivider & JSXBase.HTMLAttributes<HTMLIxDividerElement>;
             /**
              * @deprecated Will be removed with 5.0.0, use ix-pane as successor

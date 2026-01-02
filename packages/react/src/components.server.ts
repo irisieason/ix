@@ -29,11 +29,13 @@ import { IxChip as IxChipElement } from "@irisieason/ix/components/ix-chip.js";
 import { IxCol as IxColElement } from "@irisieason/ix/components/ix-col.js";
 import { IxContentHeader as IxContentHeaderElement } from "@irisieason/ix/components/ix-content-header.js";
 import { IxContent as IxContentElement } from "@irisieason/ix/components/ix-content.js";
+import { IxCustomCard as IxCustomCardElement } from "@irisieason/ix/components/ix-custom-card.js";
 import { IxCustomField as IxCustomFieldElement } from "@irisieason/ix/components/ix-custom-field.js";
 import { IxDateDropdown as IxDateDropdownElement } from "@irisieason/ix/components/ix-date-dropdown.js";
 import { IxDateInput as IxDateInputElement } from "@irisieason/ix/components/ix-date-input.js";
 import { IxDatePicker as IxDatePickerElement } from "@irisieason/ix/components/ix-date-picker.js";
 import { IxDatetimePicker as IxDatetimePickerElement } from "@irisieason/ix/components/ix-datetime-picker.js";
+import { IxDeviceStatusChart as IxDeviceStatusChartElement } from "@irisieason/ix/components/ix-device-status-chart.js";
 import { IxDivider as IxDividerElement } from "@irisieason/ix/components/ix-divider.js";
 import { IxDrawer as IxDrawerElement } from "@irisieason/ix/components/ix-drawer.js";
 import { IxDropdownButton as IxDropdownButtonElement } from "@irisieason/ix/components/ix-dropdown-button.js";
@@ -484,6 +486,24 @@ export const IxContentHeader: StencilReactComponent<IxContentHeaderElement, IxCo
     serializeShadowRoot,
 });
 
+export type IxCustomCardEvents = NonNullable<unknown>;
+
+export const IxCustomCard: StencilReactComponent<IxCustomCardElement, IxCustomCardEvents> = /*@__PURE__*/ createComponent<IxCustomCardElement, IxCustomCardEvents>({
+    tagName: 'ix-custom-card',
+    properties: {
+        variant: 'variant',
+        selected: 'selected',
+        passive: 'passive',
+        cardTitle: 'card-title',
+        yAxisLabel: 'y-axis-label',
+        xAxisLabel: 'x-axis-label',
+        data: 'data'
+    },
+    hydrateModule: import('@irisieason/ix/hydrate') as Promise<HydrateModule>,
+    clientModule: clientComponents.IxCustomCard as ReactWebComponent<IxCustomCardElement, IxCustomCardEvents>,
+    serializeShadowRoot,
+});
+
 export type IxCustomFieldEvents = NonNullable<unknown>;
 
 export const IxCustomField: StencilReactComponent<IxCustomFieldElement, IxCustomFieldEvents> = /*@__PURE__*/ createComponent<IxCustomFieldElement, IxCustomFieldEvents>({
@@ -632,6 +652,22 @@ export const IxDatetimePicker: StencilReactComponent<IxDatetimePickerElement, Ix
     },
     hydrateModule: import('@irisieason/ix/hydrate') as Promise<HydrateModule>,
     clientModule: clientComponents.IxDatetimePicker as ReactWebComponent<IxDatetimePickerElement, IxDatetimePickerEvents>,
+    serializeShadowRoot,
+});
+
+export type IxDeviceStatusChartEvents = NonNullable<unknown>;
+
+export const IxDeviceStatusChart: StencilReactComponent<IxDeviceStatusChartElement, IxDeviceStatusChartEvents> = /*@__PURE__*/ createComponent<IxDeviceStatusChartElement, IxDeviceStatusChartEvents>({
+    tagName: 'ix-device-status-chart',
+    properties: {
+        chartTitle: 'chart-title',
+        yAxisLabel: 'y-axis-label',
+        xAxisLabel: 'x-axis-label',
+        maxValue: 'max-value',
+        data: 'data'
+    },
+    hydrateModule: import('@irisieason/ix/hydrate') as Promise<HydrateModule>,
+    clientModule: clientComponents.IxDeviceStatusChart as ReactWebComponent<IxDeviceStatusChartElement, IxDeviceStatusChartEvents>,
     serializeShadowRoot,
 });
 

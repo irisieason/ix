@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Custom Card Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .debug-info {
+            background: #333;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Custom Card Component - Final Test</h1>
+
+        <div class="debug-info">
+            Expected: Dark card with "Device status" title, navigation buttons, IP Range labels (10.x, 192.x, 172.x),
+            colored bar charts with grid lines, X-axis scale (0-18), and legend with colored squares
+        </div>
+
+        <div class="test-section">
+            <ix-custom-card></ix-custom-card>
+        </div>
+
+        <div class="debug-info">
+            Custom properties test:
+        </div>
+
+        <div class="test-section">
+            <ix-custom-card
+                card-title="服务器状态"
+                y-axis-label="服务器类型"
+                x-axis-label="数量"
+            ></ix-custom-card>
+        </div>
+    </div>
+
+    <script>
+        // Debug logging
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Final Component Test ===');
+                const cards = document.querySelectorAll('ix-custom-card');
+                console.log('Custom cards found:', cards.length);
+
+                cards.forEach((card, index) => {
+                    console.log(`Card ${index + 1}:`, {
+                        cardTitle: card.cardTitle,
+                        yAxisLabel: card.yAxisLabel,
+                        xAxisLabel: card.xAxisLabel,
+                        chartData: card.chartData,
+                        shadowRoot: !!card.shadowRoot
+                    });
+                });
+
+                // Check if components are defined
+                console.log('ix-custom-card defined:', customElements.get('ix-custom-card') !== undefined);
+                console.log('ix-typography defined:', customElements.get('ix-typography') !== undefined);
+                console.log('ix-icon-button defined:', customElements.get('ix-icon-button') !== undefined);
+                console.log('ix-card defined:', customElements.get('ix-card') !== undefined);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

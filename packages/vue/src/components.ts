@@ -25,11 +25,13 @@ import { defineCustomElement as defineIxChip } from '@irisieason/ix/components/i
 import { defineCustomElement as defineIxCol } from '@irisieason/ix/components/ix-col.js';
 import { defineCustomElement as defineIxContent } from '@irisieason/ix/components/ix-content.js';
 import { defineCustomElement as defineIxContentHeader } from '@irisieason/ix/components/ix-content-header.js';
+import { defineCustomElement as defineIxCustomCard } from '@irisieason/ix/components/ix-custom-card.js';
 import { defineCustomElement as defineIxCustomField } from '@irisieason/ix/components/ix-custom-field.js';
 import { defineCustomElement as defineIxDateDropdown } from '@irisieason/ix/components/ix-date-dropdown.js';
 import { defineCustomElement as defineIxDateInput } from '@irisieason/ix/components/ix-date-input.js';
 import { defineCustomElement as defineIxDatePicker } from '@irisieason/ix/components/ix-date-picker.js';
 import { defineCustomElement as defineIxDatetimePicker } from '@irisieason/ix/components/ix-datetime-picker.js';
+import { defineCustomElement as defineIxDeviceStatusChart } from '@irisieason/ix/components/ix-device-status-chart.js';
 import { defineCustomElement as defineIxDivider } from '@irisieason/ix/components/ix-divider.js';
 import { defineCustomElement as defineIxDrawer } from '@irisieason/ix/components/ix-drawer.js';
 import { defineCustomElement as defineIxDropdown } from '@irisieason/ix/components/ix-dropdown.js';
@@ -365,6 +367,17 @@ export const IxContentHeader: StencilVueComponent<JSX.IxContentHeader> = /*@__PU
 ]);
 
 
+export const IxCustomCard: StencilVueComponent<JSX.IxCustomCard> = /*@__PURE__*/ defineContainer<JSX.IxCustomCard>('ix-custom-card', defineIxCustomCard, [
+  'variant',
+  'selected',
+  'passive',
+  'cardTitle',
+  'yAxisLabel',
+  'xAxisLabel',
+  'data'
+]);
+
+
 export const IxCustomField: StencilVueComponent<JSX.IxCustomField> = /*@__PURE__*/ defineContainer<JSX.IxCustomField>('ix-custom-field', defineIxCustomField, [
   'required',
   'label',
@@ -494,6 +507,15 @@ export const IxDatetimePicker: StencilVueComponent<JSX.IxDatetimePicker> = /*@__
   'timeChange',
   'dateChange',
   'dateSelect'
+]);
+
+
+export const IxDeviceStatusChart: StencilVueComponent<JSX.IxDeviceStatusChart> = /*@__PURE__*/ defineContainer<JSX.IxDeviceStatusChart>('ix-device-status-chart', defineIxDeviceStatusChart, [
+  'chartTitle',
+  'yAxisLabel',
+  'xAxisLabel',
+  'maxValue',
+  'data'
 ]);
 
 

@@ -1,0 +1,300 @@
+/*
+ * SPDX-FileCopyrightText: 2025 Siemens AG
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@use 'mixins/shadow-dom/component';
+
+:host {
+  display: block;
+  width: 474px;
+  height: 332px;
+
+  @include component.ix-component;
+}
+
+.chart-container {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: transparent;
+}
+
+// Header with title and navigation (32px height)
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  flex-shrink: 0;
+
+  .title {
+    flex: 1;
+
+    ix-typography {
+      color: var(--text-color-std-text, white);
+    }
+  }
+
+  .navigation {
+    display: flex;
+    gap: 0;
+  }
+}
+
+// Y-axis label
+.y-axis-label {
+  flex-shrink: 0;
+
+  ix-typography {
+    color: var(--text-color-std-text, white);
+  }
+}
+
+// Main chart grid container
+.chart-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.grid-container {
+  display: flex;
+  gap: 5px;
+  height: 118px; // 3×38px + 4×1px = 114px + 4px = 118px
+  align-items: stretch;
+}
+
+// Y-axis scale (left side)
+.y-axis-scale {
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 3px;
+  flex-shrink: 0;
+
+  .y-scale-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+
+    ix-typography {
+      color: white;
+      font-size: 12px;
+    }
+  }
+}
+
+// Chart area (main grid and bars)
+.chart-area {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+// Vertical grid lines
+.vertical-grid {
+  position: absolute;
+  top: 0;
+  left: 4px;
+  right: 8px;
+  height: calc(100% + 4px); // 延伸4像素超出底部基准线
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+
+  .grid-line {
+    width: 1px;
+    height: 100%;
+    background-color: var(--theme-color-weak-bdr);
+  }
+}
+
+// Chart rows container
+.chart-rows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+// Individual chart row
+.chart-row {
+  height: 38px; // Fixed height for each row section (38px each)
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+// Horizontal grid line
+.horizontal-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    width: 4px;
+    height: 1px;
+    background-color: var(--theme-color-weak-bdr);
+  }
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--theme-color-weak-bdr);
+  }
+}
+
+// Bar container
+.bar-container {
+  position: absolute;
+  top: 6px; // (38px - 26px) / 2 = 6px for perfect centering
+  left: 5px;
+  right: 1px;
+  height: 26px; // Bar height
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0; // No gap between bars for stacked effect
+}
+
+// Individual bars - Systematic approach
+.bar {
+  height: 26px; // Full container height
+  display: inline-block;
+  min-width: 4px; // Ensure bars are always visible
+  flex-shrink: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &.bar-online {
+    background-color: var(--status-color-success, #01d65a);
+  }
+
+  &.bar-maintenance {
+    background-color: var(--status-color-warning, #ffd732);
+  }
+
+  &.bar-error {
+    background-color: var(--status-color-alarm, #ff2640);
+  }
+
+  &.bar-offline {
+    background-color: var(--status-color-critical, #ff9000);
+  }
+}
+
+// Bottom horizontal line
+.bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 8px;
+  height: 1px;
+  background-color: var(--theme-color-weak-bdr);
+}
+
+// X-axis scale
+.x-axis-scale {
+  display: flex;
+  gap: 49px;
+  align-items: center;
+  padding-left: 33px;
+  height: 18px;
+  flex-shrink: 0;
+
+  .x-scale-item {
+    width: 16px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    ix-typography {
+      color: white;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}
+
+// X-axis label
+.x-axis-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  ix-typography {
+    color: var(--text-color-std-text, white);
+  }
+}
+
+// Legend
+.legend {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-shrink: 0;
+  height: 18px;
+}
+
+.legend-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 18px;
+
+  ix-typography {
+    color: white;
+    font-size: 12px;
+  }
+}
+
+.legend-color {
+  width: 24px;
+  height: 12px;
+  flex-shrink: 0;
+
+  &.legend-online {
+    background-color: var(--status-color-success, #01d65a);
+  }
+
+  &.legend-maintenance {
+    background-color: var(--status-color-warning, #ffd732);
+  }
+
+  &.legend-error {
+    background-color: var(--status-color-alarm, #ff2640);
+  }
+
+  &.legend-offline {
+    background-color: var(--status-color-critical, #ff9000);
+  }
+}

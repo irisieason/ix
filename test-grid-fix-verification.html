@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Fix Verification</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .test-section {
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 8px;
+        }
+        .dark-bg {
+            background-color: #1a1a1a;
+            color: white;
+        }
+        .light-bg {
+            background-color: #f6f9fc;
+            color: #333;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px dashed #666;
+            border-radius: 4px;
+        }
+        .status-info {
+            background: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 20px 0;
+        }
+        .light-bg .status-info {
+            background: #e0e0e0;
+            color: #333;
+        }
+        .checklist {
+            margin: 15px 0;
+        }
+        .checklist li {
+            margin: 8px 0;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .pass {
+            background-color: rgba(1, 214, 90, 0.2);
+            color: #01d65a;
+        }
+        .fail {
+            background-color: rgba(255, 38, 64, 0.2);
+            color: #ff2640;
+        }
+        .pending {
+            background-color: rgba(255, 215, 50, 0.2);
+            color: #ffd732;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>网格线和柱状图修复验证</h1>
+
+        <div class="status-info">
+            <strong>修复内容：</strong><br>
+            ✅ 使用绝对颜色值 rgba(235, 240, 245, 0.4) 替代 CSS 变量<br>
+            ✅ 添加 !important 声明确保样式优先级<br>
+            ✅ 为网格线添加多重样式保障（background-color + background + border-right）<br>
+            ✅ 为柱状图和图例添加 !important 声明<br>
+            ✅ 添加 display: block !important 确保元素显示
+        </div>
+
+        <div class="test-grid">
+            <!-- 深色背景测试 -->
+            <div class="test-section dark-bg">
+                <h2>深色背景（HTML 环境）</h2>
+                <div class="card-container">
+                    <ix-custom-card id="dark-card"></ix-custom-card>
+                </div>
+                <div class="status-info">
+                    <strong>检查结果：</strong>
+                    <ul class="checklist" id="dark-checklist">
+                        <li class="pending">🔄 检查中...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 浅色背景测试 -->
+            <div class="test-section light-bg">
+                <h2>浅色背景（模拟 Storybook）</h2>
+                <div class="card-container" style="background: white; border-color: #ddd;">
+                    <ix-custom-card id="light-card"></ix-custom-card>
+                </div>
+                <div class="status-info">
+                    <strong>检查结果：</strong>
+                    <ul class="checklist" id="light-checklist">
+                        <li class="pending">🔄 检查中...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-info">
+            <h3>总体结果</h3>
+            <div id="overall-result">检查中...</div>
+        </div>
+
+        <div class="status-info">
+            <h3>下一步</h3>
+            <div>
+                如果浅色背景测试通过，说明 Storybook 中的网格线和柱状图问题已解决。<br>
+                如果仍有问题，可能需要：<br>
+                • 检查 Storybook 的具体 CSS 环境<br>
+                • 使用 SVG 或 Canvas 绘制图表<br>
+                • 改用 DOM 元素而非 CSS 绘制
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Grid Fix Verification ===');
+
+                const darkCard = document.getElementById('dark-card');
+                const lightCard = document.getElementById('light-card');
+                const darkChecklist = document.getElementById('dark-checklist');
+                const lightChecklist = document.getElementById('light-checklist');
+
+                function checkCard(card, checklist, envName) {
+                    const results = [];
+
+                    if (!card || !card.shadowRoot) {
+                        results.push({ text: `❌ ${envName}: 组件未找到`, class: 'fail' });
+                        return results;
+                    }
+
+                    const shadowRoot = card.shadowRoot;
+
+                    // 检查网格线
+                    const verticalLines = shadowRoot.querySelectorAll('.grid-line');
+                    const horizontalLines = shadowRoot.querySelectorAll('.horizontal-grid-line');
+                    const bottomLine = shadowRoot.querySelectorAll('.bottom-horizontal-line');
+
+                    results.push({
+                        text: `垂直网格线: ${verticalLines.length}/7 个`,
+                        class: verticalLines.length === 7 ? 'pass' : 'fail'
+                    });
+
+                    results.push({
+                        text: `水平网格线: ${horizontalLines.length + bottomLine.length}/4 个`,
+                        class: (horizontalLines.length + bottomLine.length) === 4 ? 'pass' : 'fail'
+                    });
+
+                    // 检查网格线样式
+                    if (verticalLines.length > 0) {
+                        const lineStyle = window.getComputedStyle(verticalLines[0]);
+                        const hasBackground = lineStyle.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
+                                            lineStyle.backgroundColor !== 'transparent';
+                        results.push({
+                            text: `垂直线可见性: ${hasBackground ? '✅ 有背景色' : '❌ 无背景色'}`,
+                            class: hasBackground ? 'pass' : 'fail'
+                        });
+
+                        console.log(`${envName} 垂直线样式:`, {
+                            backgroundColor: lineStyle.backgroundColor,
+                            background: lineStyle.background,
+                            opacity: lineStyle.opacity,
+                            visibility: lineStyle.visibility,
+                            display: lineStyle.display
+                        });
+                    }
+
+                    // 检查柱状图
+                    const bars = shadowRoot.querySelectorAll('.bar');
+                    results.push({
+                        text: `柱状图元素: ${bars.length} 个`,
+                        class: bars.length > 0 ? 'pass' : 'fail'
+                    });
+
+                    if (bars.length > 0) {
+                        const barStyle = window.getComputedStyle(bars[0]);
+                        const hasBarBackground = barStyle.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
+                                               barStyle.backgroundColor !== 'transparent';
+                        results.push({
+                            text: `柱状图可见性: ${hasBarBackground ? '✅ 有背景色' : '❌ 无背景色'}`,
+                            class: hasBarBackground ? 'pass' : 'fail'
+                        });
+
+                        console.log(`${envName} 柱状图样式:`, {
+                            backgroundColor: barStyle.backgroundColor,
+                            opacity: barStyle.opacity,
+                            visibility: barStyle.visibility,
+                            display: barStyle.display
+                        });
+                    }
+
+                    // 检查图例
+                    const legendItems = shadowRoot.querySelectorAll('.legend-item');
+                    results.push({
+                        text: `图例元素: ${legendItems.length}/4 个`,
+                        class: legendItems.length === 4 ? 'pass' : 'fail'
+                    });
+
+                    return results;
+                }
+
+                // 检查两个环境
+                const darkResults = checkCard(darkCard, darkChecklist, '深色背景');
+                const lightResults = checkCard(lightCard, lightChecklist, '浅色背景');
+
+                // 更新检查列表
+                function updateChecklist(checklist, results) {
+                    checklist.innerHTML = results.map(result =>
+                        `<li class="${result.class}">${result.text}</li>`
+                    ).join('');
+                }
+
+                updateChecklist(darkChecklist, darkResults);
+                updateChecklist(lightChecklist, lightResults);
+
+                // 计算总体结果
+                const allResults = [...darkResults, ...lightResults];
+                const passCount = allResults.filter(r => r.class === 'pass').length;
+                const totalCount = allResults.length;
+                const successRate = Math.round((passCount / totalCount) * 100);
+
+                const overallResult = document.getElementById('overall-result');
+                if (successRate >= 80) {
+                    overallResult.innerHTML = `🎉 修复成功！通过率: ${successRate}% (${passCount}/${totalCount})`;
+                    overallResult.style.color = '#01d65a';
+                } else if (successRate >= 50) {
+                    overallResult.innerHTML = `⚠️ 部分修复。通过率: ${successRate}% (${passCount}/${totalCount})`;
+                    overallResult.style.color = '#ffd732';
+                } else {
+                    overallResult.innerHTML = `❌ 修复失败。通过率: ${successRate}% (${passCount}/${totalCount})`;
+                    overallResult.style.color = '#ff2640';
+                }
+
+                console.log('Verification complete:', {
+                    darkResults,
+                    lightResults,
+                    successRate,
+                    passCount,
+                    totalCount
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合理修复测试</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .success { background: rgba(1, 214, 90, 0.2); color: #01d65a; }
+        .error { background: rgba(255, 38, 64, 0.2); color: #ff2640; }
+    </style>
+</head>
+<body>
+    <h1>🔧 合理修复测试</h1>
+    <p>修复了数据流问题：chartData初始化不为空</p>
+
+    <div class="test-container">
+        <h3>设备状态图表</h3>
+        <ix-device-status-chart id="testChart"></ix-device-status-chart>
+        <div id="result" class="result">检测中...</div>
+    </div>
+
+    <script>
+        console.log('🔧 开始合理修复测试');
+
+        function checkBars() {
+            const chart = document.getElementById('testChart');
+            const resultDiv = document.getElementById('result');
+
+            if (!chart) {
+                resultDiv.className = 'result error';
+                resultDiv.textContent = '❌ 图表元素未找到';
+                return;
+            }
+
+            if (!chart.shadowRoot) {
+                resultDiv.className = 'result error';
+                resultDiv.textContent = '❌ Shadow root未找到';
+                return;
+            }
+
+            const bars = chart.shadowRoot.querySelectorAll('.bar');
+            const visibleBars = Array.from(bars).filter(bar => {
+                const style = window.getComputedStyle(bar);
+                const rect = bar.getBoundingClientRect();
+                return rect.width > 0 && rect.height > 0 && style.display !== 'none';
+            });
+
+            console.log(`找到 ${bars.length} 个条形图元素，${visibleBars.length} 个可见`);
+
+            if (visibleBars.length > 0) {
+                resultDiv.className = 'result success';
+                resultDiv.textContent = `✅ 成功！${visibleBars.length} 个条形图正常显示`;
+
+                // 显示详细信息
+                visibleBars.forEach((bar, i) => {
+                    const rect = bar.getBoundingClientRect();
+                    console.log(`条形图 ${i}: ${bar.className}, ${rect.width}x${rect.height}px`);
+                });
+
+            } else {
+                resultDiv.className = 'result error';
+                resultDiv.textContent = `❌ 条形图未显示 (${bars.length} 个元素存在但不可见)`;
+
+                // 调试信息
+                bars.forEach((bar, i) => {
+                    const style = window.getComputedStyle(bar);
+                    const rect = bar.getBoundingClientRect();
+                    console.log(`条形图 ${i}: ${bar.className}, 计算样式: ${style.width}x${style.height}, 实际尺寸: ${rect.width}x${rect.height}, 显示: ${style.display}`);
+                });
+            }
+        }
+
+        // 等待组件加载后检测
+        setTimeout(checkBars, 2000);
+    </script>
+</body>
+</html>

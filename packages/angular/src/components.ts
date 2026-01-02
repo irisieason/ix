@@ -569,6 +569,29 @@ export declare interface IxContentHeader extends Components.IxContentHeader {
 
 
 @ProxyCmp({
+  inputs: ['cardTitle', 'data', 'passive', 'selected', 'variant', 'xAxisLabel', 'yAxisLabel']
+})
+@Component({
+  selector: 'ix-custom-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['cardTitle', 'data', 'passive', 'selected', 'variant', 'xAxisLabel', 'yAxisLabel'],
+  standalone: false
+})
+export class IxCustomCard {
+  protected el: HTMLIxCustomCardElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface IxCustomCard extends Components.IxCustomCard {}
+
+
+@ProxyCmp({
   inputs: ['helperText', 'infoText', 'invalidText', 'label', 'required', 'showTextAsTooltip', 'validText', 'warningText']
 })
 @Component({
@@ -756,6 +779,29 @@ export declare interface IxDatetimePicker extends Components.IxDatetimePicker {
    */
   dateSelect: EventEmitter<CustomEvent<IIxDatetimePickerDateTimeSelectEvent>>;
 }
+
+
+@ProxyCmp({
+  inputs: ['chartTitle', 'data', 'maxValue', 'xAxisLabel', 'yAxisLabel']
+})
+@Component({
+  selector: 'ix-device-status-chart',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['chartTitle', 'data', 'maxValue', 'xAxisLabel', 'yAxisLabel'],
+  standalone: false
+})
+export class IxDeviceStatusChart {
+  protected el: HTMLIxDeviceStatusChartElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface IxDeviceStatusChart extends Components.IxDeviceStatusChart {}
 
 
 @ProxyCmp({

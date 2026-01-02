@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storybook vs HTML Comparison</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: white;
+            text-align: center;
+        }
+        .comparison-section {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        .test-column {
+            flex: 1;
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            background: #2a2a2a;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px dashed #666;
+            border-radius: 4px;
+        }
+        .storybook-simulation {
+            /* 模拟 Storybook 的样式环境 */
+            background: #f6f9fc;
+            color: #333;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .info-box {
+            background: #333;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 20px 0;
+        }
+        .css-var-test {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid var(--theme-color-soft-bdr);
+            background: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Storybook vs HTML 环境对比测试</h1>
+
+        <div class="info-box">
+            <strong>测试目的：</strong><br>
+            • 对比组件在不同环境中的表现<br>
+            • 检查 CSS 变量在不同背景下的可见性<br>
+            • 验证网格线是否受环境影响<br>
+            • 找出 Storybook 中不可见的原因
+        </div>
+
+        <div class="comparison-section">
+            <div class="test-column">
+                <h2>HTML 环境（深色背景）</h2>
+                <div class="card-container">
+                    <ix-custom-card id="html-card"></ix-custom-card>
+                </div>
+                <div class="css-var-test">
+                    CSS 变量测试边框：<br>
+                    <span style="color: var(--theme-color-soft-bdr);">soft-bdr 颜色文字</span>
+                </div>
+            </div>
+
+            <div class="test-column storybook-simulation">
+                <h2 style="color: #333;">Storybook 环境（浅色背景）</h2>
+                <div class="card-container" style="background: white; border-color: #ddd;">
+                    <ix-custom-card id="storybook-card"></ix-custom-card>
+                </div>
+                <div style="border: 1px solid var(--theme-color-soft-bdr); padding: 10px; background: rgba(0,0,0,0.1); color: #333;">
+                    CSS 变量测试边框：<br>
+                    <span style="color: var(--theme-color-soft-bdr);">soft-bdr 颜色文字</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>诊断信息</h3>
+            <div id="diagnostic-info">检查中...</div>
+        </div>
+
+        <div class="info-box">
+            <h3>可能的解决方案</h3>
+            <div>
+                <strong>如果 Storybook 中网格线不可见，可能的原因：</strong><br>
+                1. <strong>颜色对比度问题</strong>：soft-bdr 在浅色背景下可能太浅<br>
+                2. <strong>CSS 变量覆盖</strong>：Storybook 可能有自己的主题变量<br>
+                3. <strong>z-index 问题</strong>：网格线可能被其他元素遮挡<br>
+                4. <strong>样式优先级</strong>：Storybook 的样式可能覆盖了组件样式<br><br>
+
+                <strong>建议的修复方法：</strong><br>
+                • 使用更明显的颜色或增加对比度<br>
+                • 添加 !important 确保样式优先级<br>
+                • 检查 Storybook 的主题配置<br>
+                • 使用绝对颜色值而不是 CSS 变量
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Storybook vs HTML Comparison ===');
+
+                const htmlCard = document.getElementById('html-card');
+                const storybookCard = document.getElementById('storybook-card');
+
+                const diagnosticInfo = [];
+
+                // 检查 CSS 变量值
+                const testElement = document.createElement('div');
+                testElement.style.color = 'var(--theme-color-soft-bdr)';
+                document.body.appendChild(testElement);
+                const computedStyle = window.getComputedStyle(testElement);
+                const softBdrColor = computedStyle.color;
+                document.body.removeChild(testElement);
+
+                diagnosticInfo.push(`CSS 变量 --theme-color-soft-bdr 的值: ${softBdrColor}`);
+
+                // 检查两个卡片的网格线
+                [htmlCard, storybookCard].forEach((card, index) => {
+                    const envName = index === 0 ? 'HTML环境' : 'Storybook模拟环境';
+
+                    if (card && card.shadowRoot) {
+                        const verticalLines = card.shadowRoot.querySelectorAll('.grid-line');
+                        const horizontalLines = card.shadowRoot.querySelectorAll('.horizontal-grid-line');
+
+                        diagnosticInfo.push(`${envName}:`);
+                        diagnosticInfo.push(`  垂直网格线: ${verticalLines.length} 个`);
+                        diagnosticInfo.push(`  水平网格线: ${horizontalLines.length} 个`);
+
+                        // 检查第一条垂直线的样式
+                        if (verticalLines.length > 0) {
+                            const lineStyle = window.getComputedStyle(verticalLines[0]);
+                            diagnosticInfo.push(`  垂直线样式: 宽度=${lineStyle.width}, 背景色=${lineStyle.backgroundColor}, 透明度=${lineStyle.opacity}`);
+                        }
+
+                        // 检查第一条水平线的样式
+                        if (horizontalLines.length > 0) {
+                            const lineStyle = window.getComputedStyle(horizontalLines[0]);
+                            const beforeStyle = window.getComputedStyle(horizontalLines[0], '::before');
+                            diagnosticInfo.push(`  水平线样式: 高度=${lineStyle.height}, ::before背景=${beforeStyle.backgroundColor}`);
+                        }
+                    } else {
+                        diagnosticInfo.push(`${envName}: 组件未找到或 Shadow DOM 不可用`);
+                    }
+                    diagnosticInfo.push('');
+                });
+
+                document.getElementById('diagnostic-info').innerHTML =
+                    diagnosticInfo.join('<br>');
+
+                console.log('Diagnostic info:', diagnosticInfo);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

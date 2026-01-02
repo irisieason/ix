@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart Visibility Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: white;
+            text-align: center;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #555;
+            border-radius: 8px;
+        }
+        .info-box {
+            background: #333;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 20px 0;
+        }
+        .expected-data {
+            background: #2d4a2d;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .checklist {
+            margin: 15px 0;
+        }
+        .checklist li {
+            margin: 8px 0;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .pass {
+            background-color: rgba(1, 214, 90, 0.2);
+            color: #01d65a;
+        }
+        .fail {
+            background-color: rgba(255, 38, 64, 0.2);
+            color: #ff2640;
+        }
+        .pending {
+            background-color: rgba(255, 215, 50, 0.2);
+            color: #ffd732;
+        }
+        .color-sample {
+            display: inline-block;
+            width: 20px;
+            height: 12px;
+            margin-right: 8px;
+            vertical-align: middle;
+            border: 1px solid #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bar Chart 可见性测试</h1>
+
+        <div class="expected-data">
+            <h3>期望的数据显示：</h3>
+            <strong>3个水平 Bar Chart：</strong><br>
+            • <span class="color-sample" style="background-color: #01d65a;"></span><strong>10.x</strong>: 60px 绿色条<br>
+            • <span class="color-sample" style="background-color: #01d65a;"></span><strong>192.x</strong>: 250px 绿色 +
+              <span class="color-sample" style="background-color: #ff2640;"></span>20px 红色 +
+              <span class="color-sample" style="background-color: #ff9000;"></span>15px 橙色<br>
+            • <span class="color-sample" style="background-color: #01d65a;"></span><strong>172.x</strong>: 180px 绿色 +
+              <span class="color-sample" style="background-color: #ffd732;"></span>30px 黄色<br><br>
+            <strong>网格线系统：</strong><br>
+            • 7条垂直线（对应 X 轴：0,3,6,9,12,15,18）<br>
+            • 4条水平线（3行数据 + 底部边界）
+        </div>
+
+        <div class="test-section">
+            <h2>组件显示测试</h2>
+            <div class="card-container">
+                <ix-custom-card id="test-card"></ix-custom-card>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>详细检查结果</h2>
+            <div class="info-box">
+                <ul class="checklist" id="check-results">
+                    <li class="pending">🔄 检查中...</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>修复建议</h2>
+            <div class="info-box" id="fix-suggestions">
+                等待检查结果...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Bar Chart Visibility Test ===');
+
+                const card = document.getElementById('test-card');
+                const checkResults = document.getElementById('check-results');
+                const fixSuggestions = document.getElementById('fix-suggestions');
+                const results = [];
+
+                if (!card || !card.shadowRoot) {
+                    results.push({ text: '❌ 组件未找到或 Shadow DOM 不可用', class: 'fail' });
+                    checkResults.innerHTML = results.map(r => `<li class="${r.class}">${r.text}</li>`).join('');
+                    return;
+                }
+
+                const shadowRoot = card.shadowRoot;
+
+                // 检查网格线
+                const verticalLines = shadowRoot.querySelectorAll('.grid-line');
+                const horizontalLines = shadowRoot.querySelectorAll('.horizontal-grid-line');
+                const bottomLine = shadowRoot.querySelectorAll('.bottom-horizontal-line');
+
+                results.push({
+                    text: `垂直网格线: ${verticalLines.length}/7 个 ${verticalLines.length === 7 ? '✅' : '❌'}`,
+                    class: verticalLines.length === 7 ? 'pass' : 'fail'
+                });
+
+                results.push({
+                    text: `水平网格线: ${horizontalLines.length + bottomLine.length}/4 个 ${(horizontalLines.length + bottomLine.length) === 4 ? '✅' : '❌'}`,
+                    class: (horizontalLines.length + bottomLine.length) === 4 ? 'pass' : 'fail'
+                });
+
+                // 检查柱状图
+                const bars = shadowRoot.querySelectorAll('.bar');
+                const barRows = shadowRoot.querySelectorAll('.bar-row');
+                const barContainers = shadowRoot.querySelectorAll('.bar-container');
+
+                results.push({
+                    text: `Bar 行数: ${barRows.length}/3 个 ${barRows.length === 3 ? '✅' : '❌'}`,
+                    class: barRows.length === 3 ? 'pass' : 'fail'
+                });
+
+                results.push({
+                    text: `Bar 容器: ${barContainers.length}/3 个 ${barContainers.length === 3 ? '✅' : '❌'}`,
+                    class: barContainers.length === 3 ? 'pass' : 'fail'
+                });
+
+                results.push({
+                    text: `Bar 元素: ${bars.length} 个 ${bars.length > 0 ? '✅' : '❌'}`,
+                    class: bars.length > 0 ? 'pass' : 'fail'
+                });
+
+                // 检查每个 bar 的样式
+                let visibleBars = 0;
+                bars.forEach((bar, index) => {
+                    const style = window.getComputedStyle(bar);
+                    const hasBackground = style.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
+                                        style.backgroundColor !== 'transparent';
+                    const hasWidth = parseInt(style.width) > 0;
+                    const hasHeight = parseInt(style.height) > 0;
+
+                    if (hasBackground && hasWidth && hasHeight) {
+                        visibleBars++;
+                    }
+
+                    console.log(`Bar ${index + 1}:`, {
+                        backgroundColor: style.backgroundColor,
+                        width: style.width,
+                        height: style.height,
+                        display: style.display,
+                        opacity: style.opacity,
+                        visibility: style.visibility,
+                        className: bar.className
+                    });
+                });
+
+                results.push({
+                    text: `可见的 Bar: ${visibleBars}/${bars.length} 个 ${visibleBars > 0 ? '✅' : '❌'}`,
+                    class: visibleBars > 0 ? 'pass' : 'fail'
+                });
+
+                // 检查具体的 bar 类型
+                const successBars = shadowRoot.querySelectorAll('.bar.success');
+                const warningBars = shadowRoot.querySelectorAll('.bar.warning');
+                const alarmBars = shadowRoot.querySelectorAll('.bar.alarm');
+                const criticalBars = shadowRoot.querySelectorAll('.bar.critical');
+
+                results.push({
+                    text: `Success bars: ${successBars.length} 个`,
+                    class: successBars.length > 0 ? 'pass' : 'fail'
+                });
+
+                results.push({
+                    text: `Warning bars: ${warningBars.length} 个`,
+                    class: warningBars.length > 0 ? 'pass' : 'pending'
+                });
+
+                results.push({
+                    text: `Alarm bars: ${alarmBars.length} 个`,
+                    class: alarmBars.length > 0 ? 'pass' : 'pending'
+                });
+
+                results.push({
+                    text: `Critical bars: ${criticalBars.length} 个`,
+                    class: criticalBars.length > 0 ? 'pass' : 'pending'
+                });
+
+                // 更新结果显示
+                checkResults.innerHTML = results.map(result =>
+                    `<li class="${result.class}">${result.text}</li>`
+                ).join('');
+
+                // 生成修复建议
+                const failedChecks = results.filter(r => r.class === 'fail');
+                let suggestions = '';
+
+                if (failedChecks.length === 0) {
+                    suggestions = '🎉 所有检查都通过了！Bar Chart 和网格线应该都正确显示。';
+                } else {
+                    suggestions = '<strong>需要修复的问题：</strong><br>';
+
+                    if (bars.length === 0) {
+                        suggestions += '• Bar 元素完全缺失 - 检查 HTML 结构<br>';
+                    } else if (visibleBars === 0) {
+                        suggestions += '• Bar 元素存在但不可见 - 检查 CSS 样式（高度、宽度、背景色）<br>';
+                    }
+
+                    if (verticalLines.length !== 7) {
+                        suggestions += '• 垂直网格线数量不正确<br>';
+                    }
+
+                    if ((horizontalLines.length + bottomLine.length) !== 4) {
+                        suggestions += '• 水平网格线数量不正确<br>';
+                    }
+
+                    suggestions += '<br><strong>建议的解决方案：</strong><br>';
+                    suggestions += '1. 确保 .bar 元素有固定的高度和宽度<br>';
+                    suggestions += '2. 使用 !important 确保背景色不被覆盖<br>';
+                    suggestions += '3. 检查 .bar-container 的布局<br>';
+                    suggestions += '4. 验证网格线的 CSS 样式';
+                }
+
+                fixSuggestions.innerHTML = suggestions;
+
+                console.log('Bar Chart Test Results:', {
+                    totalBars: bars.length,
+                    visibleBars: visibleBars,
+                    verticalLines: verticalLines.length,
+                    horizontalLines: horizontalLines.length + bottomLine.length,
+                    results: results
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -28,11 +28,13 @@ import { IxChip as IxChipElement, defineCustomElement as defineIxChip } from "@i
 import { IxCol as IxColElement, defineCustomElement as defineIxCol } from "@irisieason/ix/components/ix-col.js";
 import { IxContentHeader as IxContentHeaderElement, defineCustomElement as defineIxContentHeader } from "@irisieason/ix/components/ix-content-header.js";
 import { IxContent as IxContentElement, defineCustomElement as defineIxContent } from "@irisieason/ix/components/ix-content.js";
+import { IxCustomCard as IxCustomCardElement, defineCustomElement as defineIxCustomCard } from "@irisieason/ix/components/ix-custom-card.js";
 import { IxCustomField as IxCustomFieldElement, defineCustomElement as defineIxCustomField } from "@irisieason/ix/components/ix-custom-field.js";
 import { IxDateDropdown as IxDateDropdownElement, defineCustomElement as defineIxDateDropdown } from "@irisieason/ix/components/ix-date-dropdown.js";
 import { IxDateInput as IxDateInputElement, defineCustomElement as defineIxDateInput } from "@irisieason/ix/components/ix-date-input.js";
 import { IxDatePicker as IxDatePickerElement, defineCustomElement as defineIxDatePicker } from "@irisieason/ix/components/ix-date-picker.js";
 import { IxDatetimePicker as IxDatetimePickerElement, defineCustomElement as defineIxDatetimePicker } from "@irisieason/ix/components/ix-datetime-picker.js";
+import { IxDeviceStatusChart as IxDeviceStatusChartElement, defineCustomElement as defineIxDeviceStatusChart } from "@irisieason/ix/components/ix-device-status-chart.js";
 import { IxDivider as IxDividerElement, defineCustomElement as defineIxDivider } from "@irisieason/ix/components/ix-divider.js";
 import { IxDrawer as IxDrawerElement, defineCustomElement as defineIxDrawer } from "@irisieason/ix/components/ix-drawer.js";
 import { IxDropdownButton as IxDropdownButtonElement, defineCustomElement as defineIxDropdownButton } from "@irisieason/ix/components/ix-dropdown-button.js";
@@ -374,6 +376,17 @@ export const IxContentHeader: StencilReactComponent<IxContentHeaderElement, IxCo
     defineCustomElement: defineIxContentHeader
 });
 
+export type IxCustomCardEvents = NonNullable<unknown>;
+
+export const IxCustomCard: StencilReactComponent<IxCustomCardElement, IxCustomCardEvents> = /*@__PURE__*/ createComponent<IxCustomCardElement, IxCustomCardEvents>({
+    tagName: 'ix-custom-card',
+    elementClass: IxCustomCardElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as IxCustomCardEvents,
+    defineCustomElement: defineIxCustomCard
+});
+
 export type IxCustomFieldEvents = NonNullable<unknown>;
 
 export const IxCustomField: StencilReactComponent<IxCustomFieldElement, IxCustomFieldEvents> = /*@__PURE__*/ createComponent<IxCustomFieldElement, IxCustomFieldEvents>({
@@ -449,6 +462,17 @@ export const IxDatetimePicker: StencilReactComponent<IxDatetimePickerElement, Ix
         onDateSelect: 'dateSelect'
     } as IxDatetimePickerEvents,
     defineCustomElement: defineIxDatetimePicker
+});
+
+export type IxDeviceStatusChartEvents = NonNullable<unknown>;
+
+export const IxDeviceStatusChart: StencilReactComponent<IxDeviceStatusChartElement, IxDeviceStatusChartEvents> = /*@__PURE__*/ createComponent<IxDeviceStatusChartElement, IxDeviceStatusChartEvents>({
+    tagName: 'ix-device-status-chart',
+    elementClass: IxDeviceStatusChartElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as IxDeviceStatusChartEvents,
+    defineCustomElement: defineIxDeviceStatusChart
 });
 
 export type IxDividerEvents = NonNullable<unknown>;

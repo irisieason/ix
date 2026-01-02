@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart Width Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: white;
+            text-align: center;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #555;
+            border-radius: 8px;
+        }
+        .expected-bars {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .expected-row {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            gap: 10px;
+        }
+        .expected-label {
+            width: 40px;
+            font-size: 12px;
+        }
+        .expected-bar {
+            height: 16px;
+            display: inline-block;
+        }
+        .success { background-color: #01d65a; }
+        .warning { background-color: #ffd732; }
+        .alarm { background-color: #ff2640; }
+        .critical { background-color: #ff9000; }
+        .analysis {
+            background: #333;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bar Chart 宽度测试</h1>
+
+        <div class="expected-bars">
+            <h3>期望的宽度（参考）：</h3>
+            <div class="expected-row">
+                <span class="expected-label">10.x:</span>
+                <div class="expected-bar success" style="width: 60px;"></div>
+                <span>60px</span>
+            </div>
+            <div class="expected-row">
+                <span class="expected-label">192.x:</span>
+                <div class="expected-bar success" style="width: 100px;"></div>
+                <div class="expected-bar alarm" style="width: 20px;"></div>
+                <div class="expected-bar critical" style="width: 15px;"></div>
+                <span>100px + 20px + 15px</span>
+            </div>
+            <div class="expected-row">
+                <span class="expected-label">172.x:</span>
+                <div class="expected-bar success" style="width: 80px;"></div>
+                <div class="expected-bar warning" style="width: 30px;"></div>
+                <span>80px + 30px</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>实际组件显示</h2>
+            <div class="card-container">
+                <ix-custom-card id="test-card"></ix-custom-card>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>宽度分析</h2>
+            <div class="analysis" id="width-analysis">
+                分析中...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Bar Width Test ===');
+
+                const card = document.getElementById('test-card');
+                const analysis = document.getElementById('width-analysis');
+
+                if (!card || !card.shadowRoot) {
+                    analysis.textContent = '❌ 组件未找到';
+                    return;
+                }
+
+                const shadowRoot = card.shadowRoot;
+                let result = '=== Bar 宽度分析 ===\n\n';
+
+                // 检查所有 bar 元素
+                const barSuccess = shadowRoot.querySelectorAll('.bar-success');
+                const barWarning = shadowRoot.querySelectorAll('.bar-warning');
+                const barAlarm = shadowRoot.querySelectorAll('.bar-alarm');
+                const barCritical = shadowRoot.querySelectorAll('.bar-critical');
+
+                const allBars = [
+                    { elements: barSuccess, type: 'success', color: '#01d65a' },
+                    { elements: barWarning, type: 'warning', color: '#ffd732' },
+                    { elements: barAlarm, type: 'alarm', color: '#ff2640' },
+                    { elements: barCritical, type: 'critical', color: '#ff9000' }
+                ];
+
+                result += `找到的 bar 元素总数: ${barSuccess.length + barWarning.length + barAlarm.length + barCritical.length}\n\n`;
+
+                let barIndex = 1;
+                allBars.forEach(({ elements, type, color }) => {
+                    elements.forEach((bar, index) => {
+                        const style = window.getComputedStyle(bar);
+                        const inlineStyle = bar.getAttribute('style') || '';
+
+                        result += `Bar ${barIndex} (${type}):\n`;
+                        result += `  内联样式: ${inlineStyle}\n`;
+                        result += `  计算后宽度: ${style.width}\n`;
+                        result += `  计算后高度: ${style.height}\n`;
+                        result += `  背景色: ${style.backgroundColor}\n`;
+                        result += `  显示: ${style.display}\n`;
+                        result += `  透明度: ${style.opacity}\n\n`;
+
+                        barIndex++;
+                    });
+                });
+
+                // 检查期望的宽度
+                result += '=== 期望 vs 实际对比 ===\n';
+                const expectedWidths = [
+                    { type: 'success', expected: '60px', row: '10.x' },
+                    { type: 'success', expected: '100px', row: '192.x-1' },
+                    { type: 'alarm', expected: '20px', row: '192.x-2' },
+                    { type: 'critical', expected: '15px', row: '192.x-3' },
+                    { type: 'success', expected: '80px', row: '172.x-1' },
+                    { type: 'warning', expected: '30px', row: '172.x-2' }
+                ];
+
+                let actualBarIndex = 0;
+                expectedWidths.forEach(({ type, expected, row }) => {
+                    const typeElements = allBars.find(b => b.type === type)?.elements;
+                    if (typeElements && typeElements[actualBarIndex >= typeElements.length ? 0 : actualBarIndex]) {
+                        const bar = typeElements[actualBarIndex >= typeElements.length ? 0 : actualBarIndex];
+                        const actualWidth = window.getComputedStyle(bar).width;
+                        const match = actualWidth === expected ? '✅' : '❌';
+
+                        result += `${row}: 期望 ${expected}, 实际 ${actualWidth} ${match}\n`;
+
+                        if (actualBarIndex < typeElements.length - 1) {
+                            actualBarIndex++;
+                        }
+                    }
+                });
+
+                // 总结
+                result += '\n=== 总结 ===\n';
+                const totalBars = barSuccess.length + barWarning.length + barAlarm.length + barCritical.length;
+                if (totalBars === 0) {
+                    result += '❌ 没有找到任何 bar 元素\n';
+                } else if (totalBars < 6) {
+                    result += `⚠️ 只找到 ${totalBars}/6 个 bar 元素\n`;
+                } else {
+                    result += `✅ 找到了所有 ${totalBars} 个 bar 元素\n`;
+
+                    // 检查是否有宽度为 1px 的问题
+                    let narrowBars = 0;
+                    [barSuccess, barWarning, barAlarm, barCritical].forEach(bars => {
+                        bars.forEach(bar => {
+                            const width = parseInt(window.getComputedStyle(bar).width);
+                            if (width <= 1) narrowBars++;
+                        });
+                    });
+
+                    if (narrowBars > 0) {
+                        result += `❌ 有 ${narrowBars} 个 bar 的宽度 ≤ 1px\n`;
+                        result += '建议：检查内联样式是否正确应用\n';
+                    } else {
+                        result += '✅ 所有 bar 的宽度都正常\n';
+                    }
+                }
+
+                analysis.textContent = result;
+                console.log('Bar Width Analysis:', result);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

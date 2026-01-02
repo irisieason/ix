@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Isolation Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Component Isolation Test</h1>
+        <p>Testing that custom-card doesn't affect other components</p>
+
+        <div class="test-section">
+            <h2>1. Custom Card Component</h2>
+            <div style="display: flex; justify-content: center;">
+                <ix-custom-card></ix-custom-card>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>2. Standard Card Components (Should be unaffected)</h2>
+            <div class="component-grid">
+                <ix-card variant="outline">
+                    <ix-card-content>
+                        <ix-typography format="h5">Standard Card</ix-typography>
+                        <ix-typography>This is a standard card that should not be affected by custom-card styles.</ix-typography>
+                        <ix-icon-button icon="star" variant="primary">Standard Button</ix-icon-button>
+                    </ix-card-content>
+                </ix-card>
+
+                <ix-action-card
+                    heading="Action Card"
+                    subheading="This should look normal"
+                    icon="star"
+                    variant="outline">
+                </ix-action-card>
+
+                <ix-push-card
+                    heading="Push Card"
+                    subheading="This should also look normal"
+                    icon="info"
+                    variant="filled">
+                </ix-push-card>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>3. Typography Components (Should be unaffected)</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <ix-typography format="h1">H1 Typography - Should be normal color</ix-typography>
+                <ix-typography format="h2">H2 Typography - Should be normal color</ix-typography>
+                <ix-typography format="h5">H5 Typography - Should be normal color</ix-typography>
+                <ix-typography format="body">Body Typography - Should be normal color</ix-typography>
+                <ix-typography format="label">Label Typography - Should be normal color</ix-typography>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>4. Icon Buttons (Should be unaffected)</h2>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <ix-icon-button icon="star" variant="primary">Primary</ix-icon-button>
+                <ix-icon-button icon="heart" variant="secondary">Secondary</ix-icon-button>
+                <ix-icon-button icon="info" variant="tertiary">Tertiary</ix-icon-button>
+                <ix-icon-button icon="settings" variant="outline">Outline</ix-icon-button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>5. Mixed Components Test</h2>
+            <div class="component-grid">
+                <ix-custom-card card-title="Custom Card 1"></ix-custom-card>
+
+                <ix-card variant="filled">
+                    <ix-card-content>
+                        <ix-typography format="h5">Normal Card Next to Custom</ix-typography>
+                        <ix-typography>This card is right next to custom-card. Typography and buttons should look normal.</ix-typography>
+                        <ix-icon-button icon="check" variant="primary">Normal Button</ix-icon-button>
+                    </ix-card-content>
+                </ix-card>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Component Isolation Test ===');
+
+                // Check if all components are defined
+                const components = [
+                    'ix-custom-card',
+                    'ix-card',
+                    'ix-card-content',
+                    'ix-action-card',
+                    'ix-push-card',
+                    'ix-typography',
+                    'ix-icon-button'
+                ];
+
+                components.forEach(comp => {
+                    console.log(`${comp} defined:`, customElements.get(comp) !== undefined);
+                });
+
+                // Check custom card instances
+                const customCards = document.querySelectorAll('ix-custom-card');
+                console.log('Custom cards found:', customCards.length);
+
+                // Check if other components are rendering normally
+                const normalCards = document.querySelectorAll('ix-card:not(ix-custom-card ix-card)');
+                console.log('Normal cards found:', normalCards.length);
+
+                const typography = document.querySelectorAll('ix-typography');
+                console.log('Typography components found:', typography.length);
+
+                const iconButtons = document.querySelectorAll('ix-icon-button');
+                console.log('Icon buttons found:', iconButtons.length);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

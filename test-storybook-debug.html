@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storybook Debug - Why Legend Works But Grid/Bars Don't</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: white;
+            text-align: center;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        .test-column {
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+        }
+        .dark-bg {
+            background: #1a1a1a;
+        }
+        .light-bg {
+            background: #f6f9fc;
+            color: #333;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px dashed #666;
+            border-radius: 4px;
+        }
+        .debug-info {
+            background: #333;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 20px 0;
+        }
+        .element-test {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 4px;
+        }
+        .grid-line-test {
+            width: 100px;
+            height: 2px;
+            background-color: var(--theme-color-soft-bdr, rgba(235, 240, 245, 0.4));
+            margin: 5px 0;
+        }
+        .bar-test {
+            width: 60px;
+            height: 20px;
+            background-color: #01d65a;
+            margin: 5px 0;
+        }
+        .legend-test {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .legend-color-test {
+            width: 24px;
+            height: 12px;
+            background-color: #01d65a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>为什么 Legend 可见但 Grid/Bars 不可见？</h1>
+
+        <div class="debug-info">
+            <strong>分析假设：</strong><br>
+            • Legend 使用 DOM 元素（div + ix-typography）→ 在任何环境都可见<br>
+            • Grid 线使用 CSS background-color → 可能被 Storybook 样式覆盖<br>
+            • Bar chart 使用 CSS background-color → 同样可能有样式冲突<br>
+            • Storybook 可能有不同的 CSS 变量值或样式优先级
+        </div>
+
+        <div class="test-section">
+            <h2>元素类型对比测试</h2>
+            <div class="comparison-grid">
+                <div class="test-column dark-bg">
+                    <h3 style="color: white;">深色背景（HTML 环境）</h3>
+
+                    <div class="element-test">
+                        <strong style="color: white;">1. CSS 绘制的网格线：</strong>
+                        <div class="grid-line-test"></div>
+                        <div class="grid-line-test"></div>
+                    </div>
+
+                    <div class="element-test">
+                        <strong style="color: white;">2. CSS 绘制的柱状图：</strong>
+                        <div class="bar-test"></div>
+                        <div class="bar-test" style="background-color: #ffd732; width: 30px;"></div>
+                    </div>
+
+                    <div class="element-test">
+                        <strong style="color: white;">3. DOM 元素的图例：</strong>
+                        <div class="legend-test">
+                            <div class="legend-color-test"></div>
+                            <span style="color: white;">Label</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="test-column light-bg">
+                    <h3 style="color: #333;">浅色背景（Storybook 环境）</h3>
+
+                    <div class="element-test" style="border-color: #ddd;">
+                        <strong style="color: #333;">1. CSS 绘制的网格线：</strong>
+                        <div class="grid-line-test"></div>
+                        <div class="grid-line-test"></div>
+                    </div>
+
+                    <div class="element-test" style="border-color: #ddd;">
+                        <strong style="color: #333;">2. CSS 绘制的柱状图：</strong>
+                        <div class="bar-test"></div>
+                        <div class="bar-test" style="background-color: #ffd732; width: 30px;"></div>
+                    </div>
+
+                    <div class="element-test" style="border-color: #ddd;">
+                        <strong style="color: #333;">3. DOM 元素的图例：</strong>
+                        <div class="legend-test">
+                            <div class="legend-color-test"></div>
+                            <span style="color: #333;">Label</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>实际组件对比</h2>
+            <div class="comparison-grid">
+                <div class="test-column dark-bg">
+                    <h3 style="color: white;">深色背景中的组件</h3>
+                    <div class="card-container">
+                        <ix-custom-card id="dark-card"></ix-custom-card>
+                    </div>
+                </div>
+
+                <div class="test-column light-bg">
+                    <h3 style="color: #333;">浅色背景中的组件</h3>
+                    <div class="card-container" style="background: white; border-color: #ddd;">
+                        <ix-custom-card id="light-card"></ix-custom-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>诊断结果</h2>
+            <div id="diagnostic-results" class="debug-info">
+                检查中...
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>解决方案建议</h2>
+            <div class="debug-info">
+                <strong>如果确认是 CSS 样式问题，解决方案：</strong><br>
+                1. <strong>使用更强的样式优先级</strong>：添加 !important<br>
+                2. <strong>使用绝对颜色值</strong>：不依赖 CSS 变量<br>
+                3. <strong>改用 DOM 元素</strong>：像 legend 一样用实际的 div 元素绘制网格和柱状图<br>
+                4. <strong>检查 Storybook 主题</strong>：确保 CSS 变量正确定义<br>
+                5. <strong>使用 SVG</strong>：更可靠的图形绘制方式
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Storybook Debug Analysis ===');
+
+                const results = [];
+
+                // 检查 CSS 变量值
+                const testElement = document.createElement('div');
+                testElement.style.color = 'var(--theme-color-soft-bdr, rgba(235, 240, 245, 0.4))';
+                document.body.appendChild(testElement);
+                const computedStyle = window.getComputedStyle(testElement);
+                const softBdrColor = computedStyle.color;
+                document.body.removeChild(testElement);
+
+                results.push(`CSS 变量 --theme-color-soft-bdr 解析值: ${softBdrColor}`);
+                results.push('');
+
+                // 检查两个环境中的组件
+                const darkCard = document.getElementById('dark-card');
+                const lightCard = document.getElementById('light-card');
+
+                [darkCard, lightCard].forEach((card, index) => {
+                    const envName = index === 0 ? '深色背景环境' : '浅色背景环境';
+
+                    if (card && card.shadowRoot) {
+                        const verticalLines = card.shadowRoot.querySelectorAll('.grid-line');
+                        const bars = card.shadowRoot.querySelectorAll('.bar');
+                        const legendItems = card.shadowRoot.querySelectorAll('.legend-item');
+
+                        results.push(`${envName}:`);
+                        results.push(`  网格线元素: ${verticalLines.length} 个`);
+                        results.push(`  柱状图元素: ${bars.length} 个`);
+                        results.push(`  图例元素: ${legendItems.length} 个`);
+
+                        // 检查样式
+                        if (verticalLines.length > 0) {
+                            const lineStyle = window.getComputedStyle(verticalLines[0]);
+                            results.push(`  网格线样式: 背景色=${lineStyle.backgroundColor}, 透明度=${lineStyle.opacity}, 可见性=${lineStyle.visibility}`);
+                        }
+
+                        if (bars.length > 0) {
+                            const barStyle = window.getComputedStyle(bars[0]);
+                            results.push(`  柱状图样式: 背景色=${barStyle.backgroundColor}, 透明度=${barStyle.opacity}, 可见性=${barStyle.visibility}`);
+                        }
+
+                        if (legendItems.length > 0) {
+                            const legendStyle = window.getComputedStyle(legendItems[0]);
+                            results.push(`  图例样式: 显示=${legendStyle.display}, 透明度=${legendStyle.opacity}, 可见性=${legendStyle.visibility}`);
+                        }
+                    } else {
+                        results.push(`${envName}: 组件未找到或 Shadow DOM 不可用`);
+                    }
+                    results.push('');
+                });
+
+                // 分析结论
+                results.push('=== 分析结论 ===');
+                results.push('如果网格线和柱状图在浅色背景中不可见，但图例可见，');
+                results.push('说明问题确实在于 CSS 样式的可见性，而不是 DOM 结构。');
+                results.push('');
+                results.push('推荐解决方案：');
+                results.push('1. 使用更明显的颜色和 !important 声明');
+                results.push('2. 或者改用 DOM 元素绘制（像图例一样）');
+
+                document.getElementById('diagnostic-results').innerHTML = results.join('<br>');
+                console.log('Diagnostic results:', results);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bar Chart Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: white;
+            text-align: center;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #555;
+            border-radius: 8px;
+        }
+        .expected-bars {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .expected-row {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            gap: 10px;
+        }
+        .expected-label {
+            width: 40px;
+            font-size: 12px;
+        }
+        .expected-bar {
+            height: 16px;
+            display: inline-block;
+        }
+        .success { background-color: #01d65a; }
+        .warning { background-color: #ffd732; }
+        .alarm { background-color: #ff2640; }
+        .critical { background-color: #ff9000; }
+        .debug-info {
+            background: #333;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>简化的 Bar Chart 测试</h1>
+
+        <div class="expected-bars">
+            <h3>期望显示的效果：</h3>
+            <div class="expected-row">
+                <span class="expected-label">10.x:</span>
+                <div class="expected-bar success" style="width: 60px;"></div>
+                <span>60px 绿色</span>
+            </div>
+            <div class="expected-row">
+                <span class="expected-label">192.x:</span>
+                <div class="expected-bar success" style="width: 100px;"></div>
+                <div class="expected-bar alarm" style="width: 20px;"></div>
+                <div class="expected-bar critical" style="width: 15px;"></div>
+                <span>100px 绿色 + 20px 红色 + 15px 橙色</span>
+            </div>
+            <div class="expected-row">
+                <span class="expected-label">172.x:</span>
+                <div class="expected-bar success" style="width: 80px;"></div>
+                <div class="expected-bar warning" style="width: 30px;"></div>
+                <span>80px 绿色 + 30px 黄色</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>实际组件显示</h2>
+            <div class="card-container">
+                <ix-custom-card id="test-card"></ix-custom-card>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>检查结果</h2>
+            <div class="debug-info" id="check-results">
+                检查中...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Simple Bar Chart Test ===');
+
+                const card = document.getElementById('test-card');
+                const checkResults = document.getElementById('check-results');
+
+                if (!card || !card.shadowRoot) {
+                    checkResults.textContent = '❌ 组件未找到或 Shadow DOM 不可用';
+                    return;
+                }
+
+                const shadowRoot = card.shadowRoot;
+                let results = [];
+
+                // 检查新的结构
+                const barChart = shadowRoot.querySelector('.bar-chart');
+                const chartRows = shadowRoot.querySelectorAll('.chart-row');
+                const barSuccess = shadowRoot.querySelectorAll('.bar-success');
+                const barWarning = shadowRoot.querySelectorAll('.bar-warning');
+                const barAlarm = shadowRoot.querySelectorAll('.bar-alarm');
+                const barCritical = shadowRoot.querySelectorAll('.bar-critical');
+
+                results.push(`bar-chart 容器: ${barChart ? '✅ 存在' : '❌ 缺失'}`);
+                results.push(`chart-row 行数: ${chartRows.length}/3 ${chartRows.length === 3 ? '✅' : '❌'}`);
+                results.push(`success bars: ${barSuccess.length} 个`);
+                results.push(`warning bars: ${barWarning.length} 个`);
+                results.push(`alarm bars: ${barAlarm.length} 个`);
+                results.push(`critical bars: ${barCritical.length} 个`);
+
+                // 检查每个 bar 的可见性
+                let visibleBars = 0;
+                const allBars = [
+                    ...barSuccess,
+                    ...barWarning,
+                    ...barAlarm,
+                    ...barCritical
+                ];
+
+                allBars.forEach((bar, index) => {
+                    const style = window.getComputedStyle(bar);
+                    const hasWidth = parseInt(style.width) > 0;
+                    const hasHeight = parseInt(style.height) > 0;
+                    const hasBackground = style.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
+                                        style.backgroundColor !== 'transparent';
+
+                    if (hasWidth && hasHeight && hasBackground) {
+                        visibleBars++;
+                    }
+
+                    console.log(`Bar ${index + 1} (${bar.className}):`, {
+                        width: style.width,
+                        height: style.height,
+                        backgroundColor: style.backgroundColor,
+                        display: style.display,
+                        opacity: style.opacity
+                    });
+                });
+
+                results.push(`可见的 bars: ${visibleBars}/${allBars.length} 个 ${visibleBars > 0 ? '✅' : '❌'}`);
+
+                // 检查网格线
+                const verticalLines = shadowRoot.querySelectorAll('.v-line');
+                const horizontalLines = shadowRoot.querySelectorAll('.h-line');
+
+                results.push(`垂直网格线: ${verticalLines.length}/7 ${verticalLines.length === 7 ? '✅' : '❌'}`);
+                results.push(`水平网格线: ${horizontalLines.length}/4 ${horizontalLines.length === 4 ? '✅' : '❌'}`);
+
+                // 显示结果
+                checkResults.innerHTML = results.join('<br>');
+
+                // 总结
+                if (visibleBars > 0) {
+                    checkResults.innerHTML += '<br><br>🎉 <strong>成功！Bar Chart 现在可见了！</strong>';
+                } else {
+                    checkResults.innerHTML += '<br><br>❌ <strong>仍然有问题，需要进一步调试</strong>';
+                }
+
+                console.log('Simple Bar Test Results:', {
+                    barChart: !!barChart,
+                    chartRows: chartRows.length,
+                    totalBars: allBars.length,
+                    visibleBars: visibleBars,
+                    verticalLines: verticalLines.length,
+                    horizontalLines: horizontalLines.length
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Custom Card</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Force text color for ix components */
+        ix-typography {
+            color: #333 !important;
+        }
+
+        ix-custom-card {
+            color: #333 !important;
+        }
+
+        ix-custom-card * {
+            color: #333 !important;
+        }
+        .debug-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .debug-info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <h1>Debug Custom Card Component</h1>
+
+        <div class="test-section">
+            <h2>1. Basic ix-card Test</h2>
+            <ix-card>
+                <div style="padding: 20px;">
+                    <h3>Basic Card Content</h3>
+                    <p>This should show if ix-card works</p>
+                </div>
+            </ix-card>
+        </div>
+
+        <div class="test-section">
+            <h2>2. ix-typography Test</h2>
+            <ix-typography format="h5">Typography H5 Test</ix-typography>
+            <ix-typography format="label">Typography Label Test</ix-typography>
+        </div>
+
+        <div class="test-section">
+            <h2>3. ix-icon-button Test</h2>
+            <ix-icon-button icon="chevron-left-small" variant="tertiary" size="24"></ix-icon-button>
+            <ix-icon-button icon="chevron-right-small" variant="tertiary" size="24"></ix-icon-button>
+        </div>
+
+        <div class="test-section">
+            <h2>4. Custom Card - Minimal</h2>
+            <div class="debug-info">
+                Expected: Device status chart with bars and labels
+            </div>
+            <ix-custom-card></ix-custom-card>
+        </div>
+
+        <div class="test-section">
+            <h2>5. Custom Card - With Props</h2>
+            <div class="debug-info">
+                card-title="Test Title", variant="filled"
+            </div>
+            <ix-custom-card card-title="Test Title" variant="filled"></ix-custom-card>
+        </div>
+
+        <div class="test-section">
+            <h2>6. Custom Card - Debug Styles</h2>
+            <div class="debug-info">
+                Adding border to see component boundaries
+            </div>
+            <ix-custom-card style="border: 2px solid red; min-height: 200px;"></ix-custom-card>
+        </div>
+    </div>
+
+    <script>
+        // Debug script to check if components are loaded
+        setTimeout(() => {
+            console.log('=== Component Debug Info ===');
+            console.log('ix-card elements:', document.querySelectorAll('ix-card').length);
+            console.log('ix-custom-card elements:', document.querySelectorAll('ix-custom-card').length);
+            console.log('ix-typography elements:', document.querySelectorAll('ix-typography').length);
+            console.log('ix-icon-button elements:', document.querySelectorAll('ix-icon-button').length);
+
+            // Check if custom elements are defined
+            console.log('ix-card defined:', customElements.get('ix-card') !== undefined);
+            console.log('ix-custom-card defined:', customElements.get('ix-custom-card') !== undefined);
+            console.log('ix-typography defined:', customElements.get('ix-typography') !== undefined);
+            console.log('ix-icon-button defined:', customElements.get('ix-icon-button') !== undefined);
+
+            // Check custom card properties
+            const customCard = document.querySelector('ix-custom-card');
+            if (customCard) {
+                console.log('Custom card properties:', {
+                    cardTitle: customCard.cardTitle,
+                    chartData: customCard.chartData,
+                    variant: customCard.variant
+                });
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

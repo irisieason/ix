@@ -26,11 +26,13 @@ import { defineCustomElement as defineIxChip } from '@irisieason/ix/components/i
 import { defineCustomElement as defineIxCol } from '@irisieason/ix/components/ix-col.js';
 import { defineCustomElement as defineIxContent } from '@irisieason/ix/components/ix-content.js';
 import { defineCustomElement as defineIxContentHeader } from '@irisieason/ix/components/ix-content-header.js';
+import { defineCustomElement as defineIxCustomCard } from '@irisieason/ix/components/ix-custom-card.js';
 import { defineCustomElement as defineIxCustomField } from '@irisieason/ix/components/ix-custom-field.js';
 import { defineCustomElement as defineIxDateDropdown } from '@irisieason/ix/components/ix-date-dropdown.js';
 import { defineCustomElement as defineIxDateInput } from '@irisieason/ix/components/ix-date-input.js';
 import { defineCustomElement as defineIxDatePicker } from '@irisieason/ix/components/ix-date-picker.js';
 import { defineCustomElement as defineIxDatetimePicker } from '@irisieason/ix/components/ix-datetime-picker.js';
+import { defineCustomElement as defineIxDeviceStatusChart } from '@irisieason/ix/components/ix-device-status-chart.js';
 import { defineCustomElement as defineIxDivider } from '@irisieason/ix/components/ix-divider.js';
 import { defineCustomElement as defineIxDrawer } from '@irisieason/ix/components/ix-drawer.js';
 import { defineCustomElement as defineIxDropdown } from '@irisieason/ix/components/ix-dropdown.js';
@@ -669,6 +671,29 @@ export declare interface IxContentHeader extends Components.IxContentHeader {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineIxCustomCard,
+  inputs: ['cardTitle', 'data', 'passive', 'selected', 'variant', 'xAxisLabel', 'yAxisLabel']
+})
+@Component({
+  selector: 'ix-custom-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['cardTitle', 'data', 'passive', 'selected', 'variant', 'xAxisLabel', 'yAxisLabel'],
+})
+export class IxCustomCard {
+  protected el: HTMLIxCustomCardElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface IxCustomCard extends Components.IxCustomCard {}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineIxCustomField,
   inputs: ['helperText', 'infoText', 'invalidText', 'label', 'required', 'showTextAsTooltip', 'validText', 'warningText']
 })
@@ -856,6 +881,29 @@ export declare interface IxDatetimePicker extends Components.IxDatetimePicker {
    */
   dateSelect: EventEmitter<CustomEvent<IIxDatetimePickerDateTimeSelectEvent>>;
 }
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineIxDeviceStatusChart,
+  inputs: ['chartTitle', 'data', 'maxValue', 'xAxisLabel', 'yAxisLabel']
+})
+@Component({
+  selector: 'ix-device-status-chart',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['chartTitle', 'data', 'maxValue', 'xAxisLabel', 'yAxisLabel'],
+})
+export class IxDeviceStatusChart {
+  protected el: HTMLIxDeviceStatusChartElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface IxDeviceStatusChart extends Components.IxDeviceStatusChart {}
 
 
 @ProxyCmp({

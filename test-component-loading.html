@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Loading Diagnosis</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-box {
+            border: 2px solid #333;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .log {
+            background: #2a2a2a;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Component Loading Diagnosis</h1>
+
+    <div class="test-box">
+        <h2>Test 1: Basic Component Existence</h2>
+        <ix-device-status-chart id="testChart"></ix-device-status-chart>
+        <div id="log1" class="log">Checking...</div>
+    </div>
+
+    <div class="test-box">
+        <h2>Test 2: Known Working Component (for comparison)</h2>
+        <ix-button id="testButton">Test Button</ix-button>
+        <div id="log2" class="log">Checking...</div>
+    </div>
+
+    <script>
+        function diagnoseComponent(elementId, logId, componentName) {
+            const element = document.getElementById(elementId);
+            const logDiv = document.getElementById(logId);
+
+            let log = `=== ${componentName} Diagnosis ===\n`;
+
+            // Check if element exists
+            if (!element) {
+                log += `❌ Element not found in DOM\n`;
+                logDiv.textContent = log;
+                return;
+            }
+            log += `✅ Element found in DOM\n`;
+
+            // Check if it's a custom element
+            log += `Tag name: ${element.tagName}\n`;
+            log += `Constructor: ${element.constructor.name}\n`;
+
+            // Check if it's defined as a custom element
+            const isCustomElement = customElements.get(element.tagName.toLowerCase());
+            log += `Custom element defined: ${isCustomElement ? '✅ Yes' : '❌ No'}\n`;
+
+            // Check shadow root
+            if (element.shadowRoot) {
+                log += `✅ Shadow root exists\n`;
+                log += `Shadow root mode: ${element.shadowRoot.mode}\n`;
+                log += `Shadow root children: ${element.shadowRoot.children.length}\n`;
+            } else {
+                log += `❌ No shadow root found\n`;
+            }
+
+            // Check if component is connected
+            log += `Connected: ${element.isConnected ? '✅ Yes' : '❌ No'}\n`;
+
+            // Check computed styles
+            const styles = window.getComputedStyle(element);
+            log += `Display: ${styles.display}\n`;
+            log += `Visibility: ${styles.visibility}\n`;
+
+            logDiv.textContent = log;
+        }
+
+        // Check custom elements registry
+        console.log('Custom elements in registry:');
+        console.log('ix-device-status-chart:', customElements.get('ix-device-status-chart'));
+        console.log('ix-button:', customElements.get('ix-button'));
+
+        // Wait for components to load
+        setTimeout(() => {
+            diagnoseComponent('testChart', 'log1', 'ix-device-status-chart');
+            diagnoseComponent('testButton', 'log2', 'ix-button');
+        }, 2000);
+
+        // Also check after longer delay
+        setTimeout(() => {
+            console.log('=== After 5 seconds ===');
+            diagnoseComponent('testChart', 'log1', 'ix-device-status-chart');
+        }, 5000);
+
+        // Listen for custom element definition
+        customElements.whenDefined('ix-device-status-chart').then(() => {
+            console.log('✅ ix-device-status-chart is now defined');
+        }).catch(err => {
+            console.log('❌ ix-device-status-chart failed to define:', err);
+        });
+
+        customElements.whenDefined('ix-button').then(() => {
+            console.log('✅ ix-button is now defined');
+        }).catch(err => {
+            console.log('❌ ix-button failed to define:', err);
+        });
+    </script>
+</body>
+</html>

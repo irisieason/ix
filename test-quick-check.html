@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Bar Chart Check</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #555;
+            border-radius: 8px;
+        }
+        .status {
+            background: #333;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+        .pass { color: #01d65a; }
+        .fail { color: #ff2640; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>快速检查 Bar Chart 状态</h1>
+
+        <div class="card-container">
+            <ix-custom-card id="test-card"></ix-custom-card>
+        </div>
+
+        <div class="status" id="status">
+            检查中...
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const card = document.getElementById('test-card');
+                const status = document.getElementById('status');
+
+                if (!card || !card.shadowRoot) {
+                    status.innerHTML = '<span class="fail">❌ 组件未找到</span>';
+                    return;
+                }
+
+                const shadowRoot = card.shadowRoot;
+
+                // 快速检查
+                const barSuccess = shadowRoot.querySelectorAll('.bar-success');
+                const barWarning = shadowRoot.querySelectorAll('.bar-warning');
+                const barAlarm = shadowRoot.querySelectorAll('.bar-alarm');
+                const barCritical = shadowRoot.querySelectorAll('.bar-critical');
+
+                const totalBars = barSuccess.length + barWarning.length + barAlarm.length + barCritical.length;
+
+                let result = '';
+
+                if (totalBars === 0) {
+                    result = '<span class="fail">❌ 没有找到任何 bar 元素</span><br>';
+                    result += '问题：bar 元素没有被创建或类名不匹配';
+                } else {
+                    result = `<span class="pass">✅ 找到 ${totalBars} 个 bar 元素</span><br>`;
+
+                    // 检查可见性
+                    let visibleBars = 0;
+                    [barSuccess, barWarning, barAlarm, barCritical].forEach(bars => {
+                        bars.forEach(bar => {
+                            const style = window.getComputedStyle(bar);
+                            const hasBackground = style.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
+                                                style.backgroundColor !== 'transparent';
+                            const hasHeight = parseInt(style.height) > 0;
+                            const isVisible = style.display !== 'none' && style.visibility !== 'hidden';
+
+                            if (hasBackground && hasHeight && isVisible) {
+                                visibleBars++;
+                            }
+                        });
+                    });
+
+                    if (visibleBars === 0) {
+                        result += '<span class="fail">❌ bar 元素存在但不可见</span><br>';
+                        result += '问题：样式没有正确应用';
+                    } else {
+                        result += `<span class="pass">✅ 有 ${visibleBars}/${totalBars} 个 bar 可见</span><br>`;
+
+                        // 检查宽度
+                        let narrowBars = 0;
+                        [barSuccess, barWarning, barAlarm, barCritical].forEach(bars => {
+                            bars.forEach(bar => {
+                                const width = parseInt(window.getComputedStyle(bar).width);
+                                if (width <= 1) narrowBars++;
+                            });
+                        });
+
+                        if (narrowBars > 0) {
+                            result += `<span class="fail">⚠️ 有 ${narrowBars} 个 bar 宽度 ≤ 1px</span><br>';
+                            result += '问题：内联样式的宽度没有正确应用';
+                        } else {
+                            result += '<span class="pass">✅ 所有 bar 宽度正常</span>';
+                        }
+                    }
+                }
+
+                status.innerHTML = result;
+                console.log('Quick Check:', { totalBars, visibleBars });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

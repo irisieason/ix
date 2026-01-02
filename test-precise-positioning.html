@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Status Chart - Precise Bar Positioning</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1000px;
+        }
+        .test-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .description {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        .specs {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .specs h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .comparison {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .test-item {
+            flex: 1;
+            min-width: 450px;
+        }
+        .test-subtitle {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-title">Device Status Chart - Precise Bar Positioning</div>
+
+        <div class="specs">
+            <h3>Positioning Specifications:</h3>
+            <ul>
+                <li>Each row section height: 38px</li>
+                <li>Grid lines: 4 lines × 1px = 4px total</li>
+                <li>Total chart area height: 3×38px + 4×1px = 118px</li>
+                <li>Bar chart height: 26px</li>
+                <li>Distance from top/bottom grid lines: 6px each ((38-26)/2 = 6px)</li>
+                <li>Bars should be perfectly centered vertically in their 38px sections</li>
+            </ul>
+        </div>
+
+        <div class="comparison">
+            <div class="test-item">
+                <div class="test-subtitle">Standalone Chart Component</div>
+                <ix-device-status-chart
+                    title="Device status"
+                    y-axis-label="IP Range"
+                    x-axis-label="Device">
+                </ix-device-status-chart>
+            </div>
+
+            <div class="test-item">
+                <div class="test-subtitle">Custom Card Integration</div>
+                <ix-custom-card
+                    variant="outline"
+                    card-title="Device status"
+                    y-axis-label="IP Range"
+                    x-axis-label="Device">
+                </ix-custom-card>
+            </div>
+        </div>
+
+        <div class="description">
+            <strong>Verification Points:</strong>
+            <ul>
+                <li><strong>10.x bar:</strong> Should be 6px below the top edge, 6px above the first horizontal line</li>
+                <li><strong>192.x bar:</strong> Should be 6px below the first horizontal line, 6px above the second horizontal line</li>
+                <li><strong>172.x bar:</strong> Should be 6px below the second horizontal line, 6px above the bottom baseline</li>
+                <li>All bars should have consistent 26px height</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

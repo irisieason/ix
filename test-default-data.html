@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Data Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .test-item {
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .test-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-item">
+            <div class="test-title">Test 1: 完全默认（应该显示默认数据的bar chart）</div>
+            <ix-device-status-chart></ix-device-status-chart>
+        </div>
+
+        <div class="test-item">
+            <div class="test-title">Test 2: 只设置标题（应该显示默认数据的bar chart）</div>
+            <ix-device-status-chart chart-title="Custom Title"></ix-device-status-chart>
+        </div>
+
+        <div class="test-item">
+            <div class="test-title">Test 3: 明确传入数据（应该显示传入数据的bar chart）</div>
+            <ix-device-status-chart
+                chart-title="With Data"
+                id="chart-with-data">
+            </ix-device-status-chart>
+        </div>
+
+        <div class="test-item">
+            <div class="test-title">Test 4: Custom Card（应该显示bar chart）</div>
+            <ix-custom-card
+                card-title="Custom Card Test"
+                id="custom-card-test">
+            </ix-custom-card>
+        </div>
+    </div>
+
+    <script>
+        // Set data for test 3
+        setTimeout(() => {
+            const chart3 = document.getElementById('chart-with-data');
+            if (chart3) {
+                chart3.data = {
+                    'System A': { success: 25, warning: 5, alarm: 2, critical: 1 },
+                    'System B': { success: 40, warning: 8, alarm: 3, critical: 2 }
+                };
+            }
+
+            const customCard = document.getElementById('custom-card-test');
+            if (customCard) {
+                customCard.data = {
+                    'Server A': { success: 15, warning: 3, alarm: 1, critical: 0 },
+                    'Server B': { success: 20, warning: 2, alarm: 0, critical: 1 }
+                };
+            }
+        }, 500);
+    </script>
+</body>
+</html>

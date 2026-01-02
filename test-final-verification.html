@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Verification - Bar Charts Working</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .success-banner {
+            background: linear-gradient(135deg, #01d65a, #00b84a);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .test-card {
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .success {
+            background: rgba(1, 214, 90, 0.2);
+            border-left: 4px solid #01d65a;
+            color: #01d65a;
+        }
+        .error {
+            background: rgba(255, 38, 64, 0.2);
+            border-left: 4px solid #ff2640;
+            color: #ff2640;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-banner">
+        🎉 Final Verification: Dynamic Bar Charts with Reasonable Architecture
+    </div>
+
+    <h1>Bar Chart Components - Final Test</h1>
+
+    <div class="test-grid">
+        <div class="test-card">
+            <h3>Device Status Chart</h3>
+            <ix-device-status-chart id="chart1"></ix-device-status-chart>
+            <div id="result1" class="result">Testing...</div>
+        </div>
+
+        <div class="test-card">
+            <h3>Custom Card Integration</h3>
+            <ix-custom-card id="customCard"></ix-custom-card>
+            <div id="result2" class="result">Testing...</div>
+        </div>
+
+        <div class="test-card">
+            <h3>Dynamic Data Example</h3>
+            <ix-device-status-chart
+                id="chart2"
+                data='{"Production": {"success": 150, "warning": 25, "alarm": 5, "critical": 2}, "Staging": {"success": 80, "warning": 10, "alarm": 2, "critical": 1}}'
+            ></ix-device-status-chart>
+            <div id="result3" class="result">Testing...</div>
+        </div>
+
+        <div class="test-card">
+            <h3>Minimal Data Example</h3>
+            <ix-device-status-chart
+                id="chart3"
+                data='{"System": {"success": 10, "warning": 2, "alarm": 1, "critical": 0}}'
+            ></ix-device-status-chart>
+            <div id="result4" class="result">Testing...</div>
+        </div>
+    </div>
+
+    <script>
+        function verifyChart(chartId, resultId) {
+            const chart = document.getElementById(chartId);
+            const resultDiv = document.getElementById(resultId);
+
+            if (!chart) {
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = '❌ Chart element not found';
+                return false;
+            }
+
+            if (!chart.shadowRoot) {
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = '❌ Shadow root not found - component not loaded';
+                return false;
+            }
+
+            const bars = chart.shadowRoot.querySelectorAll('.bar');
+            const barContainers = chart.shadowRoot.querySelectorAll('.bar-container');
+
+            if (bars.length === 0) {
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = `❌ No bars rendered (${barContainers.length} containers)`;
+                return false;
+            }
+
+            // Count bar types
+            const barTypes = {
+                success: chart.shadowRoot.querySelectorAll('.bar-success').length,
+                warning: chart.shadowRoot.querySelectorAll('.bar-warning').length,
+                alarm: chart.shadowRoot.querySelectorAll('.bar-alarm').length,
+                critical: chart.shadowRoot.querySelectorAll('.bar-critical').length
+            };
+
+            resultDiv.className = 'result success';
+            resultDiv.innerHTML = `✅ SUCCESS: ${bars.length} bars rendered
+Types: S:${barTypes.success} W:${barTypes.warning} A:${barTypes.alarm} C:${barTypes.critical}`;
+
+            return true;
+        }
+
+        // Run verification after components load
+        setTimeout(() => {
+            console.log('=== Final Verification Test ===');
+
+            const results = [
+                verifyChart('chart1', 'result1'),
+                verifyChart('customCard', 'result2'),
+                verifyChart('chart2', 'result3'),
+                verifyChart('chart3', 'result4')
+            ];
+
+            const allPassed = results.every(r => r);
+            const passedCount = results.filter(r => r).length;
+
+            console.log(`Results: ${passedCount}/${results.length} tests passed`);
+
+            // Update banner
+            const banner = document.querySelector('.success-banner');
+            if (allPassed) {
+                banner.innerHTML = '🎉 SUCCESS: All Bar Charts Working with Reasonable Architecture!';
+                banner.style.background = 'linear-gradient(135deg, #01d65a, #00b84a)';
+            } else {
+                banner.innerHTML = `⚠️ PARTIAL SUCCESS: ${passedCount}/${results.length} Charts Working`;
+                banner.style.background = 'linear-gradient(135deg, #ffd732, #ffb700)';
+            }
+
+        }, 3000);
+
+        // Log component registration status
+        customElements.whenDefined('ix-device-status-chart').then(() => {
+            console.log('✅ ix-device-status-chart component registered successfully');
+        });
+
+        customElements.whenDefined('ix-custom-card').then(() => {
+            console.log('✅ ix-custom-card component registered successfully');
+        });
+    </script>
+</body>
+</html>

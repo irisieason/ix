@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Card Test - Simple</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #333;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Custom Card Component Test</h1>
+
+        <div class="test-section">
+            <h2>Default Custom Card</h2>
+            <ix-custom-card></ix-custom-card>
+        </div>
+
+        <div class="test-section">
+            <h2>Custom Card with Chinese Labels</h2>
+            <ix-custom-card
+                card-title="设备状态"
+                y-axis-label="IP 范围"
+                x-axis-label="设备数量"
+            ></ix-custom-card>
+        </div>
+
+        <div class="test-section">
+            <h2>Custom Card - Filled Variant</h2>
+            <ix-custom-card
+                variant="filled"
+                card-title="Server Status"
+            ></ix-custom-card>
+        </div>
+    </div>
+
+    <script>
+        // Wait for components to load
+        setTimeout(() => {
+            console.log('=== Component Status ===');
+            console.log('Custom cards found:', document.querySelectorAll('ix-custom-card').length);
+
+            const customCard = document.querySelector('ix-custom-card');
+            if (customCard) {
+                console.log('First custom card properties:', {
+                    cardTitle: customCard.cardTitle,
+                    chartData: customCard.chartData,
+                    variant: customCard.variant
+                });
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
