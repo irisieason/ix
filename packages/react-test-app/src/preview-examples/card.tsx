@@ -9,7 +9,7 @@
 
 import './card.scoped.css';
 
-import { IxCard, IxCardContent, IxIcon, IxTypography } from '@siemens/ix-react';
+import { IxCard, IxCardContent, IxIcon, IxTypography } from '@irisieason/ix-react';
 import { iconCapacity } from '@irisieason/ix-icons/icons';
 
 export default () => {

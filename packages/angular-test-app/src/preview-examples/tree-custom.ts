@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { TreeContext, TreeModel } from '@siemens/ix';
+import { TreeContext, TreeModel } from '@irisieason/ix';
 
 type TreeData = {
   name: string;

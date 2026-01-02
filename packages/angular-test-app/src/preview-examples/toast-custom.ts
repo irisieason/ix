@@ -8,7 +8,7 @@
  */
 
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { ToastService } from '@siemens/ix-angular';
+import { ToastService } from '@irisieason/ix-angular';
 
 @Component({
   standalone: false,

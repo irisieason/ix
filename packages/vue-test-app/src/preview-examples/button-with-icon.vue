@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconInfo } from '@siemens/ix-icons/icons';
-import { IxIconButton } from '@siemens/ix-vue';
+import { iconInfo } from '@irisieason/ix-icons/icons';
+import { IxIconButton } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./button-with-icon.css"></style>

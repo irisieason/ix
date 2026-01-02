@@ -1,4 +1,4 @@
-# @siemens/ix-docs
+# @irisieason/ix-docs
 
 ## 4.2.0
 

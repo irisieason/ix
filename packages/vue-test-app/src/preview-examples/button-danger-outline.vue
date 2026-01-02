@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxButton } from '@siemens/ix-vue';
+import { IxButton } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./button-danger-outline.css"></style>

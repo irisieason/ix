@@ -8,7 +8,7 @@
 -->
 
 <script lang="ts">
-import { IxTextarea } from '@siemens/ix-vue'
+import { IxTextarea } from '@irisieason/ix-vue'
 
 export default {
   name: 'TextareaRowsCols',

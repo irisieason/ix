@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { themeSwitcher, type ThemeVariant } from '@siemens/ix';
+import { themeSwitcher, type ThemeVariant } from '@irisieason/ix';
 import {
   IxButton,
   IxCheckbox,
@@ -17,7 +17,7 @@ import {
   IxRow,
   IxSelect,
   IxSelectItem,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 import { onMounted, ref } from 'vue';
 
 const variants = ref<ThemeVariant[]>(['light', 'dark']);

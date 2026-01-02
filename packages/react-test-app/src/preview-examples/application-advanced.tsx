@@ -18,7 +18,7 @@ import {
   IxMenuCategory,
   IxMenuItem,
   IxMenuSettings,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 import {
   iconAlarmBell,
   iconHome,

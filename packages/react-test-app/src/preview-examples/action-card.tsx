@@ -8,7 +8,7 @@
  */
 
 import { iconRefresh } from '@irisieason/ix-icons/icons';
-import { IxActionCard } from '@siemens/ix-react';
+import { IxActionCard } from '@irisieason/ix-react';
 
 export default () => {
   return (

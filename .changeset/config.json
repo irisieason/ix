@@ -5,11 +5,11 @@
   "linked": [],
   "fixed": [
     [
-      "@siemens/ix",
-      "@siemens/ix-angular",
-      "@siemens/ix-react",
-      "@siemens/ix-vue",
-      "@siemens/ix-docs"
+      "@irisieason/ix",
+      "@irisieason/ix-angular",
+      "@irisieason/ix-react",
+      "@irisieason/ix-vue",
+      "@irisieason/ix-docs"
     ]
   ],
   "access": "public",

@@ -1,4 +1,4 @@
-# @siemens/ix-echarts
+# @irisieason/ix-echarts
 
 ## 3.0.0
 

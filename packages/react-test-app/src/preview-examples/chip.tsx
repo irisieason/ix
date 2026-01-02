@@ -10,7 +10,7 @@
 import { iconPrint } from '@irisieason/ix-icons/icons';
 import './chip.scoped.css';
 
-import { IxChip } from '@siemens/ix-react';
+import { IxChip } from '@irisieason/ix-react';
 
 export default () => {
   return (

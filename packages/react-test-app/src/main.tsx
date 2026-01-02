@@ -9,7 +9,7 @@
 
 import './preview-examples/global.css';
 
-import { IxApplicationContext } from '@siemens/ix-react';
+import { IxApplicationContext } from '@irisieason/ix-react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 

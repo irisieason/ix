@@ -7,8 +7,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type { ToastConfig } from '@siemens/ix';
-import { toast } from '@siemens/ix';
+import type { ToastConfig } from '@irisieason/ix';
+import { toast } from '@irisieason/ix';
 
 type Element = ToastConfig;
 

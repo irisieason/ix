@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { IxCustomField, IxInput, IxIconButton } from '@siemens/ix-vue';
+import { IxCustomField, IxInput, IxIconButton } from '@irisieason/ix-vue';
 
 const input = ref();
 const openFileBrowser = () => {

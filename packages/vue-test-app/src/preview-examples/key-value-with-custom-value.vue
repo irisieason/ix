@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxKeyValue } from '@siemens/ix-vue';
+import { IxKeyValue } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./key-value-with-custom-value.css"></style>

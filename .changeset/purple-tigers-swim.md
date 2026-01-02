@@ -1,5 +1,5 @@
 ---
-'@siemens/ix-echarts': patch
+'@irisieason/ix-echarts': patch
 ---
 
 Update **eCharts** theme to match latest design spec.

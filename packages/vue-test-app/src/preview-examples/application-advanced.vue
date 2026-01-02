@@ -19,14 +19,14 @@ import {
   IxMenuCategory,
   IxMenuItem,
   IxMenuSettings,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 import {
   iconAlarmBell,
   iconHome,
   iconPiechart,
   iconPlant,
   iconNetworkDevice,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import { ref } from 'vue';
 
 const activeContent = ref('home');

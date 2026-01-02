@@ -8,7 +8,7 @@
  */
 
 import { iconLocation } from '@irisieason/ix-icons/icons';
-import { IxKeyValue, IxKeyValueList } from '@siemens/ix-react';
+import { IxKeyValue, IxKeyValueList } from '@irisieason/ix-react';
 
 export default () => {
   return (

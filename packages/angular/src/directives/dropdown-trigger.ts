@@ -8,7 +8,7 @@
  */
 
 import { Directive, ElementRef, Input } from '@angular/core';
-import { DropdownTriggerBaseDirective } from '@siemens/ix-angular/common';
+import { DropdownTriggerBaseDirective } from '@irisieason/ix-angular/common';
 
 @Directive({
   selector: '[ixDropdownTrigger]',

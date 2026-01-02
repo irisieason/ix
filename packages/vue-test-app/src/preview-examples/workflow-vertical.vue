@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxWorkflowStep, IxWorkflowSteps } from '@siemens/ix-vue';
+import { IxWorkflowStep, IxWorkflowSteps } from '@irisieason/ix-vue';
 </script>
 
 <template>

@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxDivider } from '@siemens/ix-angular/standalone';
+import { IxDivider } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

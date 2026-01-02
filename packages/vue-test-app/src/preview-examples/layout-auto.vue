@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxLayoutAuto, IxTypography } from '@siemens/ix-vue';
+import { IxLayoutAuto, IxTypography } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./layout-auto.css"></style>

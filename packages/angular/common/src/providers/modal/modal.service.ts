@@ -16,7 +16,7 @@ import {
   Type,
   ViewRef,
 } from '@angular/core';
-import { closeModal, dismissModal, showModal } from '@siemens/ix';
+import { closeModal, dismissModal, showModal } from '@irisieason/ix';
 import { InternalIxActiveModal, IxActiveModal } from './modal-ref';
 import { ModalConfig } from './modal.config';
 

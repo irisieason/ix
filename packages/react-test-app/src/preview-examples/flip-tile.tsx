@@ -9,7 +9,7 @@
 
 import './flip-tile.scoped.css';
 
-import { IxFlipTile, IxFlipTileContent, IxIcon } from '@siemens/ix-react';
+import { IxFlipTile, IxFlipTileContent, IxIcon } from '@irisieason/ix-react';
 import { iconInfo } from '@irisieason/ix-icons/icons';
 
 export default () => {

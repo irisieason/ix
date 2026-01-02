@@ -8,8 +8,8 @@
  */
 
 import { Component } from '@angular/core';
-import { ModalLoadingContext } from '@siemens/ix';
-import { IxButton, LoadingService } from '@siemens/ix-angular/standalone';
+import { ModalLoadingContext } from '@irisieason/ix';
+import { IxButton, LoadingService } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

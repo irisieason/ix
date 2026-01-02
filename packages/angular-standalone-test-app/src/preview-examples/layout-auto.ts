@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxLayoutAuto, IxTypography } from '@siemens/ix-angular/standalone';
+import { IxLayoutAuto, IxTypography } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

@@ -9,8 +9,8 @@ LICENSE file in the root directory of this source tree.
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { getComputedCSSProperty, registerTheme } from '@siemens/ix-echarts';
-import { themeSwitcher } from '@siemens/ix';
+import { getComputedCSSProperty, registerTheme } from '@irisieason/ix-echarts';
+import { themeSwitcher } from '@irisieason/ix';
 import VueECharts from 'vue-echarts';
 import * as echarts from 'echarts';
 import * as charts from 'echarts/charts';

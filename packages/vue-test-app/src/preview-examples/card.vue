@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconCapacity } from '@siemens/ix-icons/icons';
-import { IxCard, IxCardContent, IxIcon, IxTypography } from '@siemens/ix-vue';
+import { iconCapacity } from '@irisieason/ix-icons/icons';
+import { IxCard, IxCardContent, IxIcon, IxTypography } from '@irisieason/ix-vue';
 
 const onClick = (event: Event) => {
   console.log(event);

@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxCustomField } from '@siemens/ix-angular/standalone';
+import { IxCustomField } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

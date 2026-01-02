@@ -10,8 +10,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxEchartsDirective, provideEchartsCore } from 'ngx-echarts';
 
-import { registerTheme } from '@siemens/ix-echarts';
-import { themeSwitcher } from '@siemens/ix';
+import { registerTheme } from '@irisieason/ix-echarts';
+import { themeSwitcher } from '@irisieason/ix';
 import * as echarts from 'echarts';
 import { BarSeriesOption, EChartsOption } from 'echarts';
 

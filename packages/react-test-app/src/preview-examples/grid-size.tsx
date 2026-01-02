@@ -9,7 +9,7 @@
 
 import './grid-size.scoped.css';
 
-import { IxCol, IxLayoutGrid, IxRow, IxTypography } from '@siemens/ix-react';
+import { IxCol, IxLayoutGrid, IxRow, IxTypography } from '@irisieason/ix-react';
 
 export default () => {
   return (

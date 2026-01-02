@@ -6,7 +6,7 @@ import {
   IxModalContent,
   IxModalFooter,
   IxInput,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 import { ref } from 'vue';
 
 const modalRef = ref<HTMLRefElement<HTMLIxModalElement>>();

@@ -1,6 +1,6 @@
 'use server';
 import styles from './page.module.css';
-import { IxBlind, IxButton } from '@siemens/ix-react';
+import { IxBlind, IxButton } from '@irisieason/ix-react';
 
 export default async function Home() {
   return (

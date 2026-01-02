@@ -8,7 +8,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { getIxTheme } from '@siemens/ix-aggrid';
+import { getIxTheme } from '@irisieason/ix-aggrid';
 import {
   GridOptions,
   AllCommunityModule,

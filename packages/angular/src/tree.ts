@@ -14,7 +14,7 @@ import {
   ElementRef,
   NgZone,
 } from '@angular/core';
-import { TreeBaseDirective } from '@siemens/ix-angular/common';
+import { TreeBaseDirective } from '@irisieason/ix-angular/common';
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 @ProxyCmp({

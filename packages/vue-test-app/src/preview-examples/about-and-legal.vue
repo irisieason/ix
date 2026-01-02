@@ -14,7 +14,7 @@ import {
   IxMenu,
   IxMenuAbout,
   IxMenuAboutItem,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 import { useTemplateRef, onMounted } from 'vue';
 
 const input = useTemplateRef<HTMLIxMenuElement>('menu');

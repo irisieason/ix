@@ -1,5 +1,5 @@
 ---
-'@siemens/ix': patch
+'@irisieason/ix': patch
 ---
 
 fix(message-bar): remove text truncation and fix action button alignment for examples

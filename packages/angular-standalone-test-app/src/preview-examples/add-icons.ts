@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxIcon } from '@siemens/ix-angular/standalone';
+import { IxIcon } from '@irisieason/ix-angular/standalone';
 import { addIcons } from '@irisieason/ix-icons';
 import { iconStar, iconStarFilled } from '@irisieason/ix-icons/icons';
 

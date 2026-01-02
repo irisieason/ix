@@ -15,7 +15,7 @@ import {
   IxMenuAbout,
   IxMenuAboutItem,
   IxMenuAboutNews,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <template>

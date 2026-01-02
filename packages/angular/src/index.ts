@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export * from '@siemens/ix';
+export * from '@irisieason/ix';
 export * from './components';
 export { IxIcon } from './ix-icon';
 export { IxTree } from './tree';

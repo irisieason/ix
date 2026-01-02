@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxSelect, IxSelectItem } from '@siemens/ix-vue';
+import { IxSelect, IxSelectItem } from '@irisieason/ix-vue';
 import { nextTick, onMounted, ref } from 'vue';
 
 const selection = ref<string[]>([]);

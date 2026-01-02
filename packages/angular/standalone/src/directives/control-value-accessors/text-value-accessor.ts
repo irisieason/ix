@@ -11,7 +11,7 @@ import { ElementRef, Injector, Directive } from '@angular/core';
 import {
   createValueAccessorProvider,
   TextValueAccessorBaseDirective,
-} from '@siemens/ix-angular/common';
+} from '@irisieason/ix-angular/common';
 
 /**
  * Value Accessor for ix-input, ix-number-input and ix-textarea

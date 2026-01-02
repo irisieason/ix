@@ -9,7 +9,7 @@
 
 import './message-bar.scoped.css';
 
-import { IxMessageBar, IxButton } from '@siemens/ix-react';
+import { IxMessageBar, IxButton } from '@irisieason/ix-react';
 import { useState } from 'react';
 
 export default () => {

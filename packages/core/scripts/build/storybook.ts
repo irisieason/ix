@@ -43,7 +43,7 @@ export function storybookOutputTarget(config: {
         .map((component) => {
           return `import { defineCustomElement as ${kebabToCamelCase(
             component.tag
-          )} } from '@siemens/ix/components/${component.tag}.js';`;
+          )} } from '@irisieason/ix/components/${component.tag}.js';`;
         })
         .join('\n');
 

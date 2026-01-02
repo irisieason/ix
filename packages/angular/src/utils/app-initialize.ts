@@ -8,7 +8,7 @@
  */
 
 import { defineCustomElements as iconsDefineCustomElements } from '@irisieason/ix-icons/loader';
-import { defineCustomElements } from '@siemens/ix/loader';
+import { defineCustomElements } from '@irisieason/ix/loader';
 
 let didInitialize = false;
 

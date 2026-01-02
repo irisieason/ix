@@ -16,7 +16,7 @@ import {
   ModalRef,
   showModal,
   dismissModal,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 import { useRef } from 'react';
 
 function CustomModal() {

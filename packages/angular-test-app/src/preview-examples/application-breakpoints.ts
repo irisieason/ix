@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import { Component } from '@angular/core';
-import { Breakpoint } from '@siemens/ix';
+import { Breakpoint } from '@irisieason/ix';
 
 @Component({
   standalone: false,

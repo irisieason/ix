@@ -8,9 +8,9 @@
 -->
 
 <script setup lang="ts">
-import { addIcons } from '@siemens/ix-icons';
-import { IxButton } from '@siemens/ix-vue';
-import { iconHome, iconOpenExternal, iconInfo } from '@siemens/ix-icons/icons';
+import { addIcons } from '@irisieason/ix-icons';
+import { IxButton } from '@irisieason/ix-vue';
+import { iconHome, iconOpenExternal, iconInfo } from '@irisieason/ix-icons/icons';
 addIcons({ iconHome, iconOpenExternal, iconInfo });
 </script>
 

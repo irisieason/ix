@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { IxMessageBar, IxButton } from '@siemens/ix-vue';
+import { IxMessageBar, IxButton } from '@irisieason/ix-vue';
 
 const messageBarVisible = ref(true);
 

@@ -14,7 +14,7 @@ import {
   IxDropdownButton,
   IxDropdownItem,
   IxIconButton,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 
 export default () => {
   return (

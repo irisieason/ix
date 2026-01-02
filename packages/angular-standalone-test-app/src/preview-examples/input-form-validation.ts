@@ -13,7 +13,7 @@ import {
   IxInput,
   IxButton,
   IxTextValueAccessorDirective,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 import {
   FormControl,

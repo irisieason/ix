@@ -13,13 +13,13 @@ import {
   iconHome,
   iconStar,
   iconUserProfile,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import {
   IxMenu,
   IxMenuAvatar,
   IxMenuAvatarItem,
   IxMenuItem,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./vertical-tabs-with-avatar.css"></style>

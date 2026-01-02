@@ -7,8 +7,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { TreeModel } from '@siemens/ix';
-import { IxTree } from '@siemens/ix-react';
+import { TreeModel } from '@irisieason/ix';
+import { IxTree } from '@irisieason/ix-react';
 import { useState } from 'react';
 
 type TreeData = {

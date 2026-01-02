@@ -9,7 +9,7 @@
 import { expect, test, jest } from '@jest/globals';
 import { ModalService, IxActiveModal } from './';
 
-jest.mock('@siemens/ix', () => ({
+jest.mock('@irisieason/ix', () => ({
   showModal: jest.fn(() =>
     Promise.resolve({
       onClose: {

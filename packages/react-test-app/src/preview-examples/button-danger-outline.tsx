@@ -9,7 +9,7 @@
 
 import './button-danger-outline.scoped.css';
 
-import { IxButton } from '@siemens/ix-react';
+import { IxButton } from '@irisieason/ix-react';
 
 export default () => {
   return (

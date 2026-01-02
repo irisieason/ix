@@ -7,7 +7,7 @@ import {
   IxLayoutGrid,
   IxRow,
   IxSelect,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./form-layout-grid.css"></style>

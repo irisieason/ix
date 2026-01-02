@@ -77,7 +77,7 @@ export const getDevAssets = () => {
   ];
 
   try {
-    const brandTheme = require.resolve('@siemens/ix-brand-theme');
+    const brandTheme = require.resolve('@irisieason/ix-brand-theme');
 
     if (brandTheme) {
       const themeFolder = path.join(brandTheme, '..', '..');

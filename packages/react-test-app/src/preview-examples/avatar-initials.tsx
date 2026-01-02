@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxAvatar } from '@siemens/ix-react';
+import { IxAvatar } from '@irisieason/ix-react';
 
 export default () => {
   return <IxAvatar initials="JD"></IxAvatar>;

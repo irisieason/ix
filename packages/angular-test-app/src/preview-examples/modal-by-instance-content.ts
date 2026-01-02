@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxActiveModal } from '@siemens/ix-angular';
+import { IxActiveModal } from '@irisieason/ix-angular';
 
 @Component({
   standalone: false,

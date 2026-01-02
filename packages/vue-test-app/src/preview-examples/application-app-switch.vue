@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { AppSwitchConfiguration } from '@siemens/ix';
+import { AppSwitchConfiguration } from '@irisieason/ix';
 import {
   IxApplication,
   IxApplicationHeader,
@@ -19,7 +19,7 @@ import {
   IxDropdownItem,
   IxMenu,
   IxMenuItem,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 
 const appSwitchConfig: AppSwitchConfiguration = {
   i18nAppSwitch: 'Switch to Application',

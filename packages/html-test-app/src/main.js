@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { defineCustomElements } from '@siemens/ix/loader';
+import { defineCustomElements } from '@irisieason/ix/loader';
 import './preview-examples/global.css';
 
 (async () => {

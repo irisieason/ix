@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxDateDropdown } from '@siemens/ix-vue';
+import { IxDateDropdown } from '@irisieason/ix-vue';
 
 const today = new Date().toLocaleDateString('en-US', {
   year: 'numeric',

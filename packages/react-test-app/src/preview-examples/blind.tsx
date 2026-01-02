@@ -9,7 +9,7 @@
 
 import './blind.scoped.css';
 
-import { IxBlind } from '@siemens/ix-react';
+import { IxBlind } from '@irisieason/ix-react';
 
 export default () => {
   return (

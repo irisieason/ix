@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxToggle } from '@siemens/ix-vue';
+import { IxToggle } from '@irisieason/ix-vue';
 </script>
 
 <template>

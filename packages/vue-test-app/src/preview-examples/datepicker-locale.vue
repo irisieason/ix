@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxDatePicker, IxSelect, IxSelectItem } from '@siemens/ix-vue';
+import { IxDatePicker, IxSelect, IxSelectItem } from '@irisieason/ix-vue';
 </script>
 
 <script lang="ts">

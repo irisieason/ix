@@ -29,12 +29,12 @@ pnpm docs                    # Documentation site
 
 # Building
 pnpm build                   # Full build (required before tests)
-pnpm build --filter @siemens/ix    # Single package
+pnpm build --filter @irisieason/ix    # Single package
 
 # Visual regression testing (requires Docker)
 pnpm build --filter \!documentation  # Build first
 pnpm visual-regression              # All tests
-pnpm visual-regression --filter @siemens/ix-aggrid  # Specific package
+pnpm visual-regression --filter @irisieason/ix-aggrid  # Specific package
 ```
 
 ### Testing Architecture

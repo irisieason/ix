@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxToggle } from '@siemens/ix-react';
+import { IxToggle } from '@irisieason/ix-react';
 
 export default () => {
   return <IxToggle />;

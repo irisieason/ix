@@ -11,7 +11,7 @@ import { Directive, ElementRef, Injector } from '@angular/core';
 import {
   BooleanValueAccessorBaseDirective,
   createValueAccessorProvider,
-} from '@siemens/ix-angular/common';
+} from '@irisieason/ix-angular/common';
 
 /**
  * Value Accessor for ix-checkbox and ix-toggle

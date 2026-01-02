@@ -5,7 +5,7 @@ import {
   IxInput,
   IxLayoutAuto,
   IxSelect,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <template>

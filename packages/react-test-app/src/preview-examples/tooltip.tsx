@@ -9,7 +9,7 @@
 
 import './tooltip.scoped.css';
 
-import { IxButton, IxTooltip } from '@siemens/ix-react';
+import { IxButton, IxTooltip } from '@irisieason/ix-react';
 
 export default () => {
   return (

@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { MessageService } from '@siemens/ix-angular';
+import { MessageService } from '@irisieason/ix-angular';
 
 @Component({
   standalone: false,

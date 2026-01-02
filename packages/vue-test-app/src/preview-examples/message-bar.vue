@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxButton, IxMessageBar } from '@siemens/ix-vue';
+import { IxButton, IxMessageBar } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./message-bar.css"></style>

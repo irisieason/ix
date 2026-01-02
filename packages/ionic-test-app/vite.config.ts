@@ -8,7 +8,7 @@ import fs from 'fs-extra';
 
 function copyAdditionalThemeIfPresent() {
   try {
-    const additionalTheme = import.meta.resolve('@siemens-ix/corporate-theme');
+    const additionalTheme = import.meta.resolve('@irisieason-ix/corporate-theme');
     const basePath = path.join(
       additionalTheme.replace('file://', ''),
       '..',

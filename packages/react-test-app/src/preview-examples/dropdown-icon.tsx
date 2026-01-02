@@ -8,7 +8,7 @@
  */
 
 import { iconBulb, iconDocument, iconStar } from '@irisieason/ix-icons/icons';
-import { IxButton, IxDropdown, IxDropdownItem } from '@siemens/ix-react';
+import { IxButton, IxDropdown, IxDropdownItem } from '@irisieason/ix-react';
 
 export default () => {
   return (

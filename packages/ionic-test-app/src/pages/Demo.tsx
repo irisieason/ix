@@ -15,7 +15,7 @@ import {
   IxSlider,
   IxToggle,
   IxTypography,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 import classNames from 'classnames';
 import { useState } from 'react';
 import styles from './Demo.module.css';

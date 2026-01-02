@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconPrint } from '@siemens/ix-icons/icons';
-import { IxChip } from '@siemens/ix-vue';
+import { iconPrint } from '@irisieason/ix-icons/icons';
+import { IxChip } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./chip.css"></style>

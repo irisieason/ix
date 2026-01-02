@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { FilterState, LogicalFilterOperator } from '@siemens/ix';
-import { IxCategoryFilter } from '@siemens/ix-vue';
+import { FilterState, LogicalFilterOperator } from '@irisieason/ix';
+import { IxCategoryFilter } from '@irisieason/ix-vue';
 
 const filter: FilterState = {
   tokens: ['Custom filter text'],

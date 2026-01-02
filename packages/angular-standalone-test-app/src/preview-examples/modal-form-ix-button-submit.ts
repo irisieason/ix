@@ -16,7 +16,7 @@ import {
   IxModalFooter,
   IxInput,
   ModalService,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({

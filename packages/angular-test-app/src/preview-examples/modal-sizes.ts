@@ -8,7 +8,7 @@
  */
 
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { IxModalSize, ModalService } from '@siemens/ix-angular';
+import { IxModalSize, ModalService } from '@irisieason/ix-angular';
 
 @Component({
   standalone: false,

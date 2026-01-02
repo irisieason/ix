@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxButton, ModalService } from '@siemens/ix-angular/standalone';
+import { IxButton, ModalService } from '@irisieason/ix-angular/standalone';
 
 import ModalByInstanceExample from './modal-by-instance-content';
 

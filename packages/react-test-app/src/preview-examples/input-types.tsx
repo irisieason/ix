@@ -9,7 +9,7 @@
 
 import './input-types.scoped.css';
 
-import { IxInput } from '@siemens/ix-react';
+import { IxInput } from '@irisieason/ix-react';
 
 export default () => {
   return (

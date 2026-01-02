@@ -12,9 +12,9 @@ import stencilSSR from '@stencil/ssr/next';
 const nextConfig = {};
 
 export default stencilSSR({
-  module: import('@siemens/ix-react'),
-  from: '@siemens/ix-react',
-  hydrateModule: import('@siemens/ix/hydrate'),
+  module: import('@irisieason/ix-react'),
+  from: '@irisieason/ix-react',
+  hydrateModule: import('@irisieason/ix/hydrate'),
   serializeShadowRoot: {
     default: 'declarative-shadow-dom',
   },

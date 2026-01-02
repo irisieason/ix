@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxInput } from '@siemens/ix-vue';
+import { IxInput } from '@irisieason/ix-vue';
 </script>
 
 <template>

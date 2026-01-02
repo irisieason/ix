@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxTimePicker } from '@siemens/ix-vue';
+import { IxTimePicker } from '@irisieason/ix-vue';
 </script>
 
 <template>

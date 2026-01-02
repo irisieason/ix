@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import type { Breakpoint } from '@siemens/ix';
+import type { Breakpoint } from '@irisieason/ix';
 import {
   IxApplication,
   IxApplicationHeader,
@@ -21,7 +21,7 @@ import {
   IxMenuItem,
   IxRadio,
   IxRadioGroup,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <script lang="ts">

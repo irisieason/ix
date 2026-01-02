@@ -22,12 +22,12 @@ import {
   IxButton,
   IxLayoutAuto,
   IxInput,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 import {
   iconLocation,
   iconBezierCurve,
   iconStar,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import useValidate from '@vuelidate/core';
 import { required, helpers, email, sameAs } from '@vuelidate/validators';
 import { ref } from 'vue';

@@ -9,8 +9,8 @@
 
 import './modal-sizes.scoped.css';
 
-import { IxModalSize } from '@siemens/ix';
-import { IxButton, Modal, ModalRef, showModal } from '@siemens/ix-react';
+import { IxModalSize } from '@irisieason/ix';
+import { IxButton, Modal, ModalRef, showModal } from '@irisieason/ix-react';
 import { useRef } from 'react';
 
 export default () => {

@@ -7,8 +7,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { DateDropdownOption } from '@siemens/ix';
-import { IxDateDropdown } from '@siemens/ix-react';
+import { DateDropdownOption } from '@irisieason/ix';
+import { IxDateDropdown } from '@irisieason/ix-react';
 
 const today = new Date().toLocaleDateString('en-US', {
   year: 'numeric',

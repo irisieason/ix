@@ -9,7 +9,7 @@
 
 import './workflow.scoped.css';
 
-import { IxWorkflowStep, IxWorkflowSteps } from '@siemens/ix-react';
+import { IxWorkflowStep, IxWorkflowSteps } from '@irisieason/ix-react';
 
 export default () => {
   return (

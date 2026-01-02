@@ -15,7 +15,7 @@ import {
   IxLayoutGrid,
   IxRow,
   IxSelect,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 
 import './form-layout-grid.scoped.css';
 

@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxDatePicker, IxSelect, IxSelectItem } from '@siemens/ix-react';
+import { IxDatePicker, IxSelect, IxSelectItem } from '@irisieason/ix-react';
 import { useState } from 'react';
 
 export default () => {

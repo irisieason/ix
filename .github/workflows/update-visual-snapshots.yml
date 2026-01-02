@@ -118,13 +118,13 @@ jobs:
       - uses: ./.github/workflows/actions/turbo
 
       - name: Build
-        run: pnpm build --cache-dir=.turbo --filter @siemens/ix
+        run: pnpm build --cache-dir=.turbo --filter @irisieason/ix
 
       - name: Install Playwright Browsers
         run: pnpm exec playwright install chromium --with-deps
 
       - name: Visual Regression
-        run: pnpm --filter @siemens/ix visual-regression ${{ steps.parse-command.outputs.args }} -u
+        run: pnpm --filter @irisieason/ix visual-regression ${{ steps.parse-command.outputs.args }} -u
 
       - name: Commit and push changes
         run: |

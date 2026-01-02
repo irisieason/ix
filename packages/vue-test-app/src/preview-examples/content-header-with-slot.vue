@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { IxButton, IxContentHeader, IxPill } from '@siemens/ix-vue';
-import { iconInfo } from '@siemens/ix-icons/icons';
+import { IxButton, IxContentHeader, IxPill } from '@irisieason/ix-vue';
+import { iconInfo } from '@irisieason/ix-icons/icons';
 </script>
 
 <style scoped src="./content-header-with-slot.css"></style>

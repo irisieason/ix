@@ -8,7 +8,7 @@
  */
 
 import { iconChevronDownSmall } from '@irisieason/ix-icons/icons';
-import { IxDropdownItem, IxSplitButton } from '@siemens/ix-react';
+import { IxDropdownItem, IxSplitButton } from '@irisieason/ix-react';
 import './split-button.scoped.css'
 
 export default () => {

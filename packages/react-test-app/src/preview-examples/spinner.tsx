@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxSpinner } from '@siemens/ix-react';
+import { IxSpinner } from '@irisieason/ix-react';
 
 export default () => {
   return <IxSpinner></IxSpinner>;

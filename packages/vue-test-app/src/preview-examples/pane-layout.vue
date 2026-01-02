@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxPaneLayout, IxPane, IxButton } from '@siemens/ix-vue';
+import { IxPaneLayout, IxPane, IxButton } from '@irisieason/ix-vue';
 import { ref } from 'vue';
 
 const variant = ref<'floating' | 'inline'>('floating');

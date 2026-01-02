@@ -10,7 +10,7 @@
 import { iconInfo } from '@irisieason/ix-icons/icons';
 import './pill-variants.scoped.css';
 
-import { IxCol, IxLayoutGrid, IxPill, IxRow } from '@siemens/ix-react';
+import { IxCol, IxLayoutGrid, IxPill, IxRow } from '@irisieason/ix-react';
 
 export default () => {
   return (

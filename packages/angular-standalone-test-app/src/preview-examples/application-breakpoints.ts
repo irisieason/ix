@@ -19,9 +19,9 @@ import {
   IxMenuItem,
   IxRadio,
   IxRadioGroup,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
-import { Breakpoint } from '@siemens/ix';
+import { Breakpoint } from '@irisieason/ix';
 
 @Component({
   selector: 'app-example',

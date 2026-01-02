@@ -9,7 +9,7 @@
 
 import './tile.scoped.css';
 
-import { IxButton, IxIconButton, IxTile } from '@siemens/ix-react';
+import { IxButton, IxIconButton, IxTile } from '@irisieason/ix-react';
 import {
   iconChevronRightSmall,
   iconContextMenu,

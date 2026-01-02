@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { Breakpoint } from '@siemens/ix';
+import { Breakpoint } from '@irisieason/ix';
 import {
   IxApplication,
   IxApplicationHeader,
@@ -20,7 +20,7 @@ import {
   IxMenuItem,
   IxRadio,
   IxRadioGroup,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 
 import { useState } from 'react';
 

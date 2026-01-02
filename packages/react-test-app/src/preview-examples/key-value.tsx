@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxKeyValue } from '@siemens/ix-react';
+import { IxKeyValue } from '@irisieason/ix-react';
 
 export default () => {
   return <IxKeyValue label="Label" value="Value"></IxKeyValue>;

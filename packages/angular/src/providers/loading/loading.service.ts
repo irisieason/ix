@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import { Injectable } from '@angular/core';
-import { LoadingService as BaseLoadingService } from '@siemens/ix-angular/common';
+import { LoadingService as BaseLoadingService } from '@irisieason/ix-angular/common';
 
 @Injectable({
   providedIn: 'root',

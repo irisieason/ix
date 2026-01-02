@@ -14,7 +14,7 @@ import {
   iconDocument,
   iconStar,
   iconTrashcan,
-} from '@siemens/ix-icons/icons';
+} from '@irisieason/ix-icons/icons';
 import {
   IxButton,
   IxDivider,
@@ -22,7 +22,7 @@ import {
   IxDropdownItem,
   IxDropdownQuickActions,
   IxIconButton,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <template>

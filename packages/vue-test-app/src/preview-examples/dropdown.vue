@@ -14,7 +14,7 @@ import {
   IxDropdown,
   IxDropdownHeader,
   IxDropdownItem,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <template>

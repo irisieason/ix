@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxButton, setToastPosition, showToast } from '@siemens/ix-vue';
+import { IxButton, setToastPosition, showToast } from '@irisieason/ix-vue';
 
 setToastPosition('top-right');
 </script>

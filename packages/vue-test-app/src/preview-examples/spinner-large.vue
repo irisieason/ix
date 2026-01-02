@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxSpinner } from '@siemens/ix-vue';
+import { IxSpinner } from '@irisieason/ix-vue';
 </script>
 
 <template>

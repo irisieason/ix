@@ -10,7 +10,7 @@
 import { iconCheckboxes } from '@irisieason/ix-icons/icons';
 import './dropdown-button-icon.scoped.css';
 
-import { IxDropdownButton, IxDropdownItem } from '@siemens/ix-react';
+import { IxDropdownButton, IxDropdownItem } from '@irisieason/ix-react';
 
 export default () => {
   return (

@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxTabs, IxTabItem, IxIcon } from '@siemens/ix-angular/standalone';
+import { IxTabs, IxTabItem, IxIcon } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

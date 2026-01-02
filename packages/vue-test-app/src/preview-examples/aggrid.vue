@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { AgGridVue } from 'ag-grid-vue3';
-import { getIxTheme } from '@siemens/ix-aggrid';
+import { getIxTheme } from '@irisieason/ix-aggrid';
 import {
   ModuleRegistry,
   AllCommunityModule,

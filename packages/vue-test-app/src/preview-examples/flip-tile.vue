@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconInfo } from '@siemens/ix-icons/icons';
-import { IxFlipTile, IxFlipTileContent, IxIcon } from '@siemens/ix-vue';
+import { iconInfo } from '@irisieason/ix-icons/icons';
+import { IxFlipTile, IxFlipTileContent, IxIcon } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./flip-tile.css"></style>

@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxButton } from '@siemens/ix-react';
+import { IxButton } from '@irisieason/ix-react';
 import { iconHome, iconOpenExternal } from '@irisieason/ix-icons/icons';
 import React from 'react';
 

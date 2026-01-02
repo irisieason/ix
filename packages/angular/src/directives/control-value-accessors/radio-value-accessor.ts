@@ -11,7 +11,7 @@ import { Directive, ElementRef, Injector } from '@angular/core';
 import {
   createValueAccessorProvider,
   RadioValueAccessorBaseDirective,
-} from '@siemens/ix-angular/common';
+} from '@irisieason/ix-angular/common';
 
 @Directive({
   selector: 'ix-radio',

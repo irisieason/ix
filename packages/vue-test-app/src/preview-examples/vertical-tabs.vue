@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconGlobe, iconHome, iconStar } from '@siemens/ix-icons/icons';
-import { IxMenu, IxMenuItem } from '@siemens/ix-vue';
+import { iconGlobe, iconHome, iconStar } from '@irisieason/ix-icons/icons';
+import { IxMenu, IxMenuItem } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./vertical-tabs.css"></style>

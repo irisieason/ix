@@ -8,11 +8,11 @@
  */
 
 import { Injectable } from '@angular/core';
-import { ShowToastResult, ToastPosition } from '@siemens/ix';
+import { ShowToastResult, ToastPosition } from '@irisieason/ix';
 import {
   ToastService as BaseToastService,
   ToastConfig,
-} from '@siemens/ix-angular/common';
+} from '@irisieason/ix-angular/common';
 
 @Injectable({
   providedIn: 'root',

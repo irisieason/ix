@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxLinkButton } from '@siemens/ix-vue';
+import { IxLinkButton } from '@irisieason/ix-vue';
 </script>
 
 <template>

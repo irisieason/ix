@@ -15,7 +15,7 @@ export default defineConfig({
     rollupOptions: {
       external: (id) =>
         external.includes(id) ||
-        id.startsWith('@siemens/ix') ||
+        id.startsWith('@irisieason/ix') ||
         id.startsWith('@stencil/vue-output-target'),
       output: [
         {

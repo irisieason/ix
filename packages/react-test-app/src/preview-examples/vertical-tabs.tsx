@@ -10,7 +10,7 @@
 import { iconGlobe, iconHome, iconStar } from '@irisieason/ix-icons/icons';
 import './vertical-tabs.scoped.css';
 
-import { IxMenu, IxMenuItem } from '@siemens/ix-react';
+import { IxMenu, IxMenuItem } from '@irisieason/ix-react';
 
 export default () => {
   return (

@@ -13,7 +13,7 @@ import {
   IxSelectItem,
   IxDatePicker,
   IxSelectValueAccessorDirective,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 type Locale = 'de' | 'en';
 

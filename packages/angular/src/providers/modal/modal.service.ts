@@ -12,11 +12,11 @@ import {
   Injectable,
   Injector,
 } from '@angular/core';
-import { ModalInstance } from '@siemens/ix';
+import { ModalInstance } from '@irisieason/ix';
 import {
   ModalConfig,
   ModalService as BaseModalService,
-} from '@siemens/ix-angular/common';
+} from '@irisieason/ix-angular/common';
 
 export type ModalContext<T> = {
   close: ((result: any) => void) | null;

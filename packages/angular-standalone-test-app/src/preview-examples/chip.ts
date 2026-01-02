@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxChip } from '@siemens/ix-angular/standalone';
+import { IxChip } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

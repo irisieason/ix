@@ -15,8 +15,8 @@ import {
   iconSoundLoud,
   iconSuccess,
   iconTree,
-} from '@siemens/ix-icons/icons';
-import { IxIcon, IxTabItem, IxTabs } from '@siemens/ix-vue';
+} from '@irisieason/ix-icons/icons';
+import { IxIcon, IxTabItem, IxTabs } from '@irisieason/ix-vue';
 </script>
 
 <template>

@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 
-import { IxApplicationContext } from '@siemens/ix-vue';
+import { IxApplicationContext } from '@irisieason/ix-vue';
 
 import App from './App.vue';
 import AboutAndLegal from './preview-examples/about-and-legal.vue';

@@ -9,7 +9,7 @@
 
 import './button-ghost.scoped.css';
 
-import { IxButton } from '@siemens/ix-react';
+import { IxButton } from '@irisieason/ix-react';
 
 export default () => {
   return (

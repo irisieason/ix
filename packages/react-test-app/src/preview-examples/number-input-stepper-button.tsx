@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxNumberInput } from '@siemens/ix-react';
+import { IxNumberInput } from '@irisieason/ix-react';
 
 export default () => {
   return <IxNumberInput value={0} showStepperButtons></IxNumberInput>;

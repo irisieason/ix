@@ -8,7 +8,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { themeSwitcher, ThemeVariant } from '@siemens/ix';
+import { themeSwitcher, ThemeVariant } from '@irisieason/ix';
 
 @Component({
   standalone: false,

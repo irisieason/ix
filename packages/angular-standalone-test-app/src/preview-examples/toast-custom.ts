@@ -8,7 +8,7 @@
  */
 
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { IxButton, ToastService } from '@siemens/ix-angular/standalone';
+import { IxButton, ToastService } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

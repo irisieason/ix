@@ -12,7 +12,7 @@ import {
   IxCol,
   IxLayoutGrid,
   IxRow,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 
 import { useForm } from 'react-hook-form';
 

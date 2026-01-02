@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxButton, IxTooltip } from '@siemens/ix-vue';
+import { IxButton, IxTooltip } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./tooltip.css"></style>

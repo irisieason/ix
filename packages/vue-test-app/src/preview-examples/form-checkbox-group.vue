@@ -8,7 +8,7 @@
 -->
 
 <script setup lang='ts'>
-import { IxCheckbox, IxCheckboxGroup } from '@siemens/ix-vue';
+import { IxCheckbox, IxCheckboxGroup } from '@irisieason/ix-vue';
 </script>
 
 <template>

@@ -4,7 +4,7 @@ import { defineCustomElement } from '@irisieason/ix-icons/components/ix-icon.js'
 import './define-custom-elements';
 import './define-internal-custom-elements';
 import { preloadIcons } from './preload-icons';
-import '@siemens/ix/dist/siemens-ix/siemens-ix.css';
+import '@irisieason/ix/dist/siemens-ix/siemens-ix.css';
 import './preview.css';
 
 preloadIcons();

@@ -239,7 +239,7 @@ pnpm start --filter html-test-app       # Web Components examples
 #### Building changes
 
 1. Run `pnpm build` from within the `root` directory.
-2. For single packages: `pnpm build --filter @siemens/ix`
+2. For single packages: `pnpm build --filter @irisieason/ix`
 3. Make sure you have committed all changes.
 
 > **Important**: Always build before running tests, especially visual regression tests.
@@ -251,8 +251,8 @@ pnpm start --filter html-test-app       # Web Components examples
 pnpm test
 
 # Specific package tests
-pnpm test --filter @siemens/ix          # Core Stencil tests (Jest)
-pnpm test --filter @siemens/ix-react    # React tests (Vitest)
+pnpm test --filter @irisieason/ix          # Core Stencil tests (Jest)
+pnpm test --filter @irisieason/ix-react    # React tests (Vitest)
 ```
 
 **Test Types**:
@@ -286,9 +286,9 @@ docker run -v $(pwd):/work/ -w /work -it mcr.microsoft.com/playwright:v1.50.0-no
 
 **Package-specific tests**:
 
-- `@siemens/ix-aggrid` => `pnpm visual-regression --filter @siemens/ix-aggrid`
-- `@siemens/ix-echarts` => `pnpm visual-regression --filter @siemens/ix-echarts`
-- `@siemens/ix` (core) => `pnpm visual-regression --filter visual-testing`
+- `@irisieason/ix-aggrid` => `pnpm visual-regression --filter @irisieason/ix-aggrid`
+- `@irisieason/ix-echarts` => `pnpm visual-regression --filter @irisieason/ix-echarts`
+- `@irisieason/ix` (core) => `pnpm visual-regression --filter visual-testing`
 
 6. Adapt and update snapshots with: `pnpm --filter visual-testing run visual-regression <test name> -u`
 

@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 import {
   IxWorkflowSteps,
   IxWorkflowStep,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

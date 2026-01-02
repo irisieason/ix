@@ -14,9 +14,9 @@ import {
   IxDropdownButton,
   IxDropdownItem,
   IxIconButton,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 
-import { iconCheckboxes } from '@siemens/ix-icons/icons';
+import { iconCheckboxes } from '@irisieason/ix-icons/icons';
 </script>
 
 <template>

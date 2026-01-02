@@ -129,20 +129,20 @@ jobs:
 
             Core library:
             ```
-            npm i @siemens/ix@${{ steps.get-version.outputs.version }}
+            npm i @irisieason/ix@${{ steps.get-version.outputs.version }}
             ```
 
             Angular:
             ```
-            npm i @siemens/ix-angular@${{ steps.get-version.outputs.version }}
+            npm i @irisieason/ix-angular@${{ steps.get-version.outputs.version }}
             ```
 
             React:
             ```
-            npm i @siemens/ix-react@${{ steps.get-version.outputs.version }}
+            npm i @irisieason/ix-react@${{ steps.get-version.outputs.version }}
             ```
 
             Vue:
             ```
-            npm i @siemens/ix-vue@${{ steps.get-version.outputs.version }}
+            npm i @irisieason/ix-vue@${{ steps.get-version.outputs.version }}
             ```

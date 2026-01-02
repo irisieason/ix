@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxButton, IxContentHeader, IxPill } from '@siemens/ix-react';
+import { IxButton, IxContentHeader, IxPill } from '@irisieason/ix-react';
 import { iconInfo } from '@irisieason/ix-icons/icons';
 import './content-header-with-slot.scoped.css';
 

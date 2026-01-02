@@ -15,7 +15,7 @@ import {
   IxDropdownItem,
   IxDivider,
   IxDropdownTriggerDirective,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

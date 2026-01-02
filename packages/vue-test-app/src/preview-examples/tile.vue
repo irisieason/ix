@@ -11,8 +11,8 @@
 import {
   iconChevronRightSmall,
   iconContextMenu,
-} from '@siemens/ix-icons/icons';
-import { IxButton, IxIconButton, IxTile } from '@siemens/ix-vue';
+} from '@irisieason/ix-icons/icons';
+import { IxButton, IxIconButton, IxTile } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./tile.css"></style>

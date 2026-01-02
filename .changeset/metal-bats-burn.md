@@ -1,5 +1,5 @@
 ---
-"@siemens/ix": minor
+"@irisieason/ix": minor
 ---
 
 add new `hide-icon` property for *ix-toast* component

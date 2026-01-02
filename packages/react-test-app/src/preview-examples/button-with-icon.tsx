@@ -10,7 +10,7 @@
 import { iconInfo } from '@irisieason/ix-icons/icons';
 import './button-with-icon.scoped.css';
 
-import { IxIconButton } from '@siemens/ix-react';
+import { IxIconButton } from '@irisieason/ix-react';
 
 export default () => {
   return (

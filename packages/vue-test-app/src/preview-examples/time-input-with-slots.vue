@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconBulb } from '@siemens/ix-icons/icons';
-import { IxTimeInput, IxIcon, IxTypography } from '@siemens/ix-vue';
+import { iconBulb } from '@irisieason/ix-icons/icons';
+import { IxTimeInput, IxIcon, IxTypography } from '@irisieason/ix-vue';
 </script>
 
 <template>

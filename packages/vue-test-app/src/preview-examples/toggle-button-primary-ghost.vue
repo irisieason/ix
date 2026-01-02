@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxToggleButton } from '@siemens/ix-vue';
+import { IxToggleButton } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./toggle-button-primary-ghost.css"></style>

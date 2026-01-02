@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxBlind } from '@siemens/ix-angular/standalone';
+import { IxBlind } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

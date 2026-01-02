@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxKpi } from '@siemens/ix-angular/standalone';
+import { IxKpi } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

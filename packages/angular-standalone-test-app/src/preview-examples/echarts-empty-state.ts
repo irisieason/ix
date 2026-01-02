@@ -12,10 +12,10 @@ import { NgxEchartsDirective, provideEchartsCore } from 'ngx-echarts';
 
 import { NgIf } from '@angular/common';
 
-import { IxEmptyState } from '@siemens/ix-angular/standalone';
+import { IxEmptyState } from '@irisieason/ix-angular/standalone';
 
-import { registerTheme } from '@siemens/ix-echarts';
-import { themeSwitcher } from '@siemens/ix';
+import { registerTheme } from '@irisieason/ix-echarts';
+import { themeSwitcher } from '@irisieason/ix';
 import * as echarts from 'echarts';
 import { EChartsOption } from 'echarts';
 

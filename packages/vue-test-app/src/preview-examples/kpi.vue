@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxKpi } from '@siemens/ix-vue';
+import { IxKpi } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./kpi.css"></style>

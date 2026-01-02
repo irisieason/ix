@@ -10,8 +10,8 @@
 import './echarts-special-toolbox.scoped.css';
 
 import { useEffect, useState } from 'react';
-import { registerTheme } from '@siemens/ix-echarts';
-import { themeSwitcher } from '@siemens/ix';
+import { registerTheme } from '@irisieason/ix-echarts';
+import { themeSwitcher } from '@irisieason/ix';
 import ReactEcharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 import { EChartsOption } from 'echarts';

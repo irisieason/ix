@@ -12,7 +12,7 @@ import {
   getToastContainer,
   toast,
   ToastConfig as IxToastConfig,
-} from '@siemens/ix';
+} from '@irisieason/ix';
 import { ToastConfig } from './toast.config';
 
 @Injectable({

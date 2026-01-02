@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxIcon, IxTabItem, IxTabs } from '@siemens/ix-react';
+import { IxIcon, IxTabItem, IxTabs } from '@irisieason/ix-react';
 import {
   iconCalendarSettings,
   iconHierarchy,

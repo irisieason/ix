@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxDivider } from '@siemens/ix-react';
+import { IxDivider } from '@irisieason/ix-react';
 
 export default () => {
   return (

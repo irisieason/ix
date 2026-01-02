@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconBulb } from '@siemens/ix-icons/icons';
-import { IxBlind } from '@siemens/ix-vue';
+import { iconBulb } from '@irisieason/ix-icons/icons';
+import { IxBlind } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./blind-variants.css"></style>

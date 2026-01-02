@@ -10,7 +10,7 @@
 import { iconStar } from '@irisieason/ix-icons/icons';
 import './pill.scoped.css';
 
-import { IxPill } from '@siemens/ix-react';
+import { IxPill } from '@irisieason/ix-react';
 
 export default () => {
   return (

@@ -11,7 +11,7 @@ import { ElementRef, Injector, Directive } from '@angular/core';
 import {
   createValueAccessorProvider,
   TimeValueAccessorBaseDirective,
-} from '@siemens/ix-angular/common';
+} from '@irisieason/ix-angular/common';
 
 @Directive({
   selector: 'ix-time-input',

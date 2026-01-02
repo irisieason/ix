@@ -12,7 +12,7 @@ import {
   iconPen,
   iconTrashcan,
 } from '@irisieason/ix-icons/icons';
-import { IxContentHeader, IxIconButton } from '@siemens/ix-react';
+import { IxContentHeader, IxIconButton } from '@irisieason/ix-react';
 
 export default () => {
   return (

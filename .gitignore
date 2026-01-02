@@ -162,7 +162,7 @@ packages/*/dist-transpiled/
 packages/*/build/
 
 ###
-# @siemens/ix
+# @irisieason/ix
 ###
 
 packages/core/dist-css
@@ -197,6 +197,6 @@ packages/documentation/static/ionic-preview
 !packages/documentation/static/versioned_examples/*/webcomponent-examples
 
 ###
-# artifact from bundle @siemens/ix-icons
+# artifact from bundle @irisieason/ix-icons
 ###
 ix-icons/dist/collection/components/icon/icon.css

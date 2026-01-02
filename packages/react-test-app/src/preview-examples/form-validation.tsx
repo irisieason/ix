@@ -32,7 +32,7 @@ import {
   IxInput,
   IxTextarea,
   IxTypography,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 import clsx from 'clsx';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';

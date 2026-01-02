@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxKeyValueList, IxKeyValue } from '@siemens/ix-angular/standalone';
+import { IxKeyValueList, IxKeyValue } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

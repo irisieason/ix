@@ -16,7 +16,7 @@ import {
   Modal,
   ModalSlotProps,
   showModal
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 
 function show() {
   showModal({

@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconChevronDownSmall } from '@siemens/ix-icons/icons';
-import { IxSplitButton, IxDropdownItem } from '@siemens/ix-vue';
+import { iconChevronDownSmall } from '@irisieason/ix-icons/icons';
+import { IxSplitButton, IxDropdownItem } from '@irisieason/ix-vue';
 </script>
 
 <template>

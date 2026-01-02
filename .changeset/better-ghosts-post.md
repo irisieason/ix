@@ -1,5 +1,5 @@
 ---
-'@siemens/ix-docs': patch
+'@irisieason/ix-docs': patch
 ---
 
 Include examples into api table

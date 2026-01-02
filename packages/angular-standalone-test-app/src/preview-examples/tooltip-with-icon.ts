@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxButton, IxIcon, IxTooltip } from '@siemens/ix-angular/standalone';
+import { IxButton, IxIcon, IxTooltip } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

@@ -8,7 +8,7 @@
 -->
 
 <script lang="ts">
-import { IxSelect, IxSelectItem, IxButton } from '@siemens/ix-vue';
+import { IxSelect, IxSelectItem, IxButton } from '@irisieason/ix-vue';
 import useValidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 

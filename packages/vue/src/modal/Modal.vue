@@ -3,7 +3,7 @@ import { defineProps, PropType, ref } from 'vue'
 import { IxModal } from '../components'
 import { HTMLRefElement } from '..'
 import type { ModalSlotProps } from './modal-slot-props'
-import type { IxModalSize, IxModalCustomEvent } from '@siemens/ix';
+import type { IxModalSize, IxModalCustomEvent } from '@irisieason/ix';
 
 const modalRef = ref<HTMLRefElement<HTMLIxModalElement>>()
 

@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconLocation } from '@siemens/ix-icons/icons';
-import { IxKeyValue, IxKeyValueList } from '@siemens/ix-vue';
+import { iconLocation } from '@irisieason/ix-icons/icons';
+import { IxKeyValue, IxKeyValueList } from '@irisieason/ix-vue';
 </script>
 
 <template>

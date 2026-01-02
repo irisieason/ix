@@ -8,7 +8,7 @@
  */
 
 import { iconBulb } from '@irisieason/ix-icons/icons';
-import { IxPushCard } from '@siemens/ix-react';
+import { IxPushCard } from '@irisieason/ix-react';
 
 export default () => {
   return (

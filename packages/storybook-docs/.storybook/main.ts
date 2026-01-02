@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 
 function copyAdditionalThemeIfPresent() {
   try {
-    const additionalTheme = require.resolve('@siemens-ix/corporate-theme');
+    const additionalTheme = require.resolve('@irisieason/ix-corporate-theme');
 
     const basePath = path.join(additionalTheme, '..', '..');
     const targetPath = path.join(__dirname, '..', 'public', 'themes');

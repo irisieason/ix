@@ -12,7 +12,7 @@ import {
   IxModalHeader,
   ModalRef,
   showModal,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 import './Home.css';
 
 import { Device, DeviceInfo } from '@capacitor/device';

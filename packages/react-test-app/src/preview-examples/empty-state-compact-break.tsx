@@ -8,7 +8,7 @@
  */
 
 import { iconAdd } from '@irisieason/ix-icons/icons';
-import { IxEmptyState } from '@siemens/ix-react';
+import { IxEmptyState } from '@irisieason/ix-react';
 
 export default () => {
   return (

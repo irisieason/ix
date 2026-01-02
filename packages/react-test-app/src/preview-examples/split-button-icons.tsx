@@ -12,7 +12,7 @@ import {
   iconChevronDownSmall,
   iconCut,
 } from '@irisieason/ix-icons/icons';
-import { IxDropdownItem, IxSplitButton } from '@siemens/ix-react';
+import { IxDropdownItem, IxSplitButton } from '@irisieason/ix-react';
 
 export default () => {
   return (

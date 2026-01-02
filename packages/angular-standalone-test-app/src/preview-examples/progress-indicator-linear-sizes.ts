@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxProgressIndicator } from '@siemens/ix-angular/standalone';
+import { IxProgressIndicator } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

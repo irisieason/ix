@@ -1,5 +1,5 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { ModalService } from '@siemens/ix-angular';
+import { ModalService } from '@irisieason/ix-angular';
 import { NgForm } from '@angular/forms';
 
 @Component({

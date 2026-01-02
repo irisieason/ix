@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxCustomField } from '@siemens/ix-react';
+import { IxCustomField } from '@irisieason/ix-react';
 
 const wrapperStyle = {
   marginBottom: '1rem',

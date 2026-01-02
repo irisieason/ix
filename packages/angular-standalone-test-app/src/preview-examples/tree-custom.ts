@@ -8,9 +8,9 @@
  */
 
 import { Component } from '@angular/core';
-import { IxButton, IxTree, IxIcon } from '@siemens/ix-angular/standalone';
+import { IxButton, IxTree, IxIcon } from '@irisieason/ix-angular/standalone';
 
-import { TreeContext, TreeModel } from '@siemens/ix';
+import { TreeContext, TreeModel } from '@irisieason/ix';
 
 type TreeData = {
   name: string;

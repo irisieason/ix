@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconInfo } from '@siemens/ix-icons/icons';
-import { IxCol, IxLayoutGrid, IxPill, IxRow } from '@siemens/ix-vue';
+import { iconInfo } from '@irisieason/ix-icons/icons';
+import { IxCol, IxLayoutGrid, IxPill, IxRow } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./pill-variants.css"></style>

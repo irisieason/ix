@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxExpandingSearch } from '@siemens/ix-vue';
+import { IxExpandingSearch } from '@irisieason/ix-vue';
 </script>
 
 <template>

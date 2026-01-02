@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxBreadcrumb, IxBreadcrumbItem } from '@siemens/ix-angular/standalone';
+import { IxBreadcrumb, IxBreadcrumbItem } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

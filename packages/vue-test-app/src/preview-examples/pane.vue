@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxPane, IxButton } from '@siemens/ix-vue';
+import { IxPane, IxButton } from '@irisieason/ix-vue';
 import { onMounted, ref } from 'vue';
 
 const expanded = ref<boolean>(false);

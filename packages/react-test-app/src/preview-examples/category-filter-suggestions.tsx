@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxCategoryFilter } from '@siemens/ix-react';
+import { IxCategoryFilter } from '@irisieason/ix-react';
 import { useState } from 'react';
 
 export default () => {

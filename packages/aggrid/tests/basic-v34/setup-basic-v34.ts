@@ -11,8 +11,8 @@ import {
   createGrid,
   ModuleRegistry,
 } from 'ag-grid-community-34';
-import '@siemens/ix/dist/siemens-ix/siemens-ix.css';
-import { getIxTheme } from '@siemens/ix-aggrid';
+import '@irisieason/ix/dist/siemens-ix/siemens-ix.css';
+import { getIxTheme } from '@irisieason/ix-aggrid';
 import { COLUMN_DEFS, ROW_DATA } from '../utils/test/basic.const';
 import * as agGridCommunity34 from 'ag-grid-community-34';
 

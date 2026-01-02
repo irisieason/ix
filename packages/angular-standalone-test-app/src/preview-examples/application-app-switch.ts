@@ -18,9 +18,9 @@ import {
   IxMenuItem,
   IxContent,
   IxContentHeader,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
-import { AppSwitchConfiguration } from '@siemens/ix';
+import { AppSwitchConfiguration } from '@irisieason/ix';
 
 @Component({
   selector: 'app-example',

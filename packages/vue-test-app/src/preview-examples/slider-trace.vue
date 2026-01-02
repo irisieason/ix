@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxSlider } from '@siemens/ix-vue';
+import { IxSlider } from '@irisieason/ix-vue';
 </script>
 
 <template>

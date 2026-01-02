@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 import {
   IxToggle,
   IxBooleanValueAccessorDirective,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

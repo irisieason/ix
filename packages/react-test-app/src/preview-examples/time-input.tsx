@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxTimeInput } from '@siemens/ix-react';
+import { IxTimeInput } from '@irisieason/ix-react';
 
 export default () => {
   return <IxTimeInput></IxTimeInput>;

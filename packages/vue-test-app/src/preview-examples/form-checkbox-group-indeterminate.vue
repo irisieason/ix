@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { IxCheckboxCustomEvent } from '@siemens/ix';
-import { IxCheckbox, IxCheckboxGroup } from '@siemens/ix-vue';
+import { IxCheckboxCustomEvent } from '@irisieason/ix';
+import { IxCheckbox, IxCheckboxGroup } from '@irisieason/ix-vue';
 import { reactive, watch } from 'vue';
 
 const parentCheckboxState = reactive({

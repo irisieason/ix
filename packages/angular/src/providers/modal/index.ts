@@ -10,6 +10,6 @@ export {
   IxActiveModal,
   ModalConfig,
   ModalContext,
-} from '@siemens/ix-angular/common';
+} from '@irisieason/ix-angular/common';
 export * from './modal.service';
 

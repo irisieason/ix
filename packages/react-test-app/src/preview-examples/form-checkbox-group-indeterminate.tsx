@@ -7,10 +7,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxCheckboxCustomEvent } from '@siemens/ix';
+import { IxCheckboxCustomEvent } from '@irisieason/ix';
 import './form-checkbox-group-indeterminate.scoped.css';
 
-import { IxCheckbox, IxCheckboxGroup } from '@siemens/ix-react';
+import { IxCheckbox, IxCheckboxGroup } from '@irisieason/ix-react';
 import { useEffect, useState } from 'react';
 
 export default () => {

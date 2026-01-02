@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { DateDropdownOption } from '@siemens/ix';
+import { DateDropdownOption } from '@irisieason/ix';
 
 const today = new Date().toLocaleDateString('en-US', {
   year: 'numeric',

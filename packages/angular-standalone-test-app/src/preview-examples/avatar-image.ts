@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxAvatar } from '@siemens/ix-angular/standalone';
+import { IxAvatar } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

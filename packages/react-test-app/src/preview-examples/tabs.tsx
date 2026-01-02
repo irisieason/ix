@@ -9,7 +9,7 @@
 
 import './tabs.scoped.css';
 
-import { IxTabItem, IxTabs } from '@siemens/ix-react';
+import { IxTabItem, IxTabs } from '@irisieason/ix-react';
 import { useState } from 'react';
 
 export default () => {

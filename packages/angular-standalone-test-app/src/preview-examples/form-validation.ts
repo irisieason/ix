@@ -36,7 +36,7 @@ import {
   IxRadioValueAccessorDirective,
   IxSelectValueAccessorDirective,
   IxTextValueAccessorDirective,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 import {
   AbstractControl,

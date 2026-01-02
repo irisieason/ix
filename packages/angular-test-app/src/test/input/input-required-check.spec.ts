@@ -9,7 +9,7 @@ import {
   tick,
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { IxModule } from '@siemens/ix-angular';
+import { IxModule } from '@irisieason/ix-angular';
 import { TestInputFormRequired } from './form-ix-input-required';
 import { TestInputFormWithValidators } from './form-ix-input-with-validators';
 

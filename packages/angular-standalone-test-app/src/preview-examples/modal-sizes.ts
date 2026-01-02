@@ -8,9 +8,9 @@
  */
 
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { IxButton, ModalService } from '@siemens/ix-angular/standalone';
+import { IxButton, ModalService } from '@irisieason/ix-angular/standalone';
 
-import { IxModalSize } from '@siemens/ix-angular';
+import { IxModalSize } from '@irisieason/ix-angular';
 
 @Component({
   selector: 'app-example',

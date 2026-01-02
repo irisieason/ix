@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxCol, IxLayoutGrid, IxRow, IxTypography } from '@siemens/ix-vue';
+import { IxCol, IxLayoutGrid, IxRow, IxTypography } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./grid-padding.css"></style>

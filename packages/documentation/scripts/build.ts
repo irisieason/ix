@@ -10,7 +10,7 @@
 import path from 'path';
 import fs, { writeFile } from 'fs-extra';
 import Mustache from 'mustache';
-import componentDoc from '@siemens/ix/component-doc.json';
+import componentDoc from '@irisieason/ix/component-doc.json';
 import { convertDocsTagsToTSXElement } from './utils/docs-tags';
 import { generateTypeScriptDocs } from './typedoc-generator';
 import { escapeBackticks, parseJSDocsToMarkdown } from './utils/escape';
@@ -25,7 +25,7 @@ const version = 'v2';
 
 const __root = path.resolve(__dirname, '../');
 
-const __core = path.join(__dirname, '../node_modules', '@siemens', 'ix');
+const __core = path.join(__dirname, '../node_modules', '@irisieason', 'ix');
 const __packages = path.join(__dirname, '../node_modules');
 
 const __htmlTestAppRoot = path.join(__packages, 'html-test-app');

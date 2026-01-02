@@ -8,7 +8,7 @@
  */
 
 import { defineCustomElements as ixIconsDefineCustomElements } from '@irisieason/ix-icons/loader';
-import { defineCustomElements } from '@siemens/ix/loader';
+import { defineCustomElements } from '@irisieason/ix/loader';
 import './global.css';
 
 const scrollbarOverwrite = `

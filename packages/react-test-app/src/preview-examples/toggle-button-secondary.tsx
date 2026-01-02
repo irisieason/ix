@@ -9,7 +9,7 @@
 
 import './toggle-button-secondary.scoped.css';
 
-import { IxToggleButton } from '@siemens/ix-react';
+import { IxToggleButton } from '@irisieason/ix-react';
 
 export default () => {
   return (

@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconCheckboxes } from '@siemens/ix-icons/icons';
-import { IxIconToggleButton, IxLayoutGrid, IxRow } from '@siemens/ix-vue';
+import { iconCheckboxes } from '@irisieason/ix-icons/icons';
+import { IxIconToggleButton, IxLayoutGrid, IxRow } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./icon-toggle-button-primary-outline.css"></style>

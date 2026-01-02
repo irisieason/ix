@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxBreadcrumb, IxBreadcrumbItem } from '@siemens/ix-react';
+import { IxBreadcrumb, IxBreadcrumbItem } from '@irisieason/ix-react';
 
 export default () => {
   return (

@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { ModalService } from '@siemens/ix-angular';
+import { ModalService } from '@irisieason/ix-angular';
 import ModalByInstanceExample from './modal-by-instance-content';
 
 @Component({

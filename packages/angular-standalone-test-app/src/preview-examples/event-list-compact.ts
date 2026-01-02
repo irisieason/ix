@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxEventList, IxEventListItem } from '@siemens/ix-angular/standalone';
+import { IxEventList, IxEventListItem } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

@@ -13,7 +13,7 @@ import {
   IxMenu,
   IxMenuItem,
   IxMenuCategory,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

@@ -12,8 +12,8 @@ import {
   iconContextMenu,
   iconPen,
   iconTrashcan,
-} from '@siemens/ix-icons/icons';
-import { IxContentHeader, IxIconButton } from '@siemens/ix-vue';
+} from '@irisieason/ix-icons/icons';
+import { IxContentHeader, IxIconButton } from '@irisieason/ix-vue';
 </script>
 
 <template>

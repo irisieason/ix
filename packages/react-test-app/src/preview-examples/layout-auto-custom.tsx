@@ -9,7 +9,7 @@
 
 import './layout-auto.scoped.css';
 
-import { IxLayoutAuto, IxTypography } from '@siemens/ix-react';
+import { IxLayoutAuto, IxTypography } from '@irisieason/ix-react';
 
 export default () => {
   return (

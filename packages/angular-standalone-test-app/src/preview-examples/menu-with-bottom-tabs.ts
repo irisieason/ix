@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxMenu, IxMenuItem } from '@siemens/ix-angular/standalone';
+import { IxMenu, IxMenuItem } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

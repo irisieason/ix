@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { AppSwitchConfiguration } from '@siemens/ix';
+import { AppSwitchConfiguration } from '@irisieason/ix';
 import {
   IxApplication,
   IxApplicationHeader,
@@ -18,7 +18,7 @@ import {
   IxDropdownItem,
   IxMenu,
   IxMenuItem,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 
 const appSwitchConfig: AppSwitchConfiguration = {
   i18nAppSwitch: 'Switch to Application',

@@ -13,7 +13,7 @@ import {
   IxInput,
   IxIconButton,
   IxTextValueAccessorDirective,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

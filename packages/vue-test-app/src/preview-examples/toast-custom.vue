@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { IxButton, showToast } from '@siemens/ix-vue';
-import { iconUndo } from '@siemens/ix-icons/icons';
+import { IxButton, showToast } from '@irisieason/ix-vue';
+import { iconUndo } from '@irisieason/ix-icons/icons';
 import { ref } from 'vue';
 
 const customMessage = ref<HTMLElement | null>(null);

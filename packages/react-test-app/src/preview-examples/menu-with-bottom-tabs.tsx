@@ -8,7 +8,7 @@
  */
 
 import { iconGlobe, iconHome } from '@irisieason/ix-icons/icons';
-import { IxMenu, IxMenuItem } from '@siemens/ix-react';
+import { IxMenu, IxMenuItem } from '@irisieason/ix-react';
 
 export default () => {
   return (

@@ -7,9 +7,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { TreeContext, TreeModel } from '@siemens/ix';
+import { TreeContext, TreeModel } from '@irisieason/ix';
 import { iconCut, iconPrint, iconStar } from '@irisieason/ix-icons/icons';
-import { IxButton, IxIcon, IxTree } from '@siemens/ix-react';
+import { IxButton, IxIcon, IxTree } from '@irisieason/ix-react';
 import { useState } from 'react';
 
 type TreeData = {

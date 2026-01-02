@@ -1,5 +1,5 @@
 ---
-"@siemens/ix": patch
+"@irisieason/ix": patch
 ---
 
 Fix responsive behavior of **ix-pane-layout**.

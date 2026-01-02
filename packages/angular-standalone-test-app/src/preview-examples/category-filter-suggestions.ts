@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxCategoryFilter } from '@siemens/ix-angular/standalone';
+import { IxCategoryFilter } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

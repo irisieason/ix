@@ -19,9 +19,9 @@ import {
   IxSelect,
   IxSelectItem,
   IxSelectValueAccessorDirective,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
-import { themeSwitcher, ThemeVariant } from '@siemens/ix';
+import { themeSwitcher, ThemeVariant } from '@irisieason/ix';
 
 @Component({
   selector: 'app-example',

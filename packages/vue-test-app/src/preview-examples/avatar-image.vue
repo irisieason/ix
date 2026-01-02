@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxAvatar } from '@siemens/ix-vue';
+import { IxAvatar } from '@irisieason/ix-vue';
 </script>
 
 <template>

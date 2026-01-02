@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxDatetimePicker } from '@siemens/ix-angular/standalone';
+import { IxDatetimePicker } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

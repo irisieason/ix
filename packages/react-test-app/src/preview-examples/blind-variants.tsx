@@ -10,7 +10,7 @@
 import { iconBulb } from '@irisieason/ix-icons/icons';
 import './blind-variants.scoped.css';
 
-import { IxBlind } from '@siemens/ix-react';
+import { IxBlind } from '@irisieason/ix-react';
 
 export default () => {
   return (

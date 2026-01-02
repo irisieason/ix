@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxProgressIndicator } from '@siemens/ix-vue';
+import { IxProgressIndicator } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./progress-indicator.css"></style>

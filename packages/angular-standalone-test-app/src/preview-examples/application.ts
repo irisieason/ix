@@ -15,7 +15,7 @@ import {
   IxContentHeader,
   IxMenu,
   IxMenuItem,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

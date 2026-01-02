@@ -1,5 +1,5 @@
 
-import { IxProgressIndicator } from '@siemens/ix-react';
+import { IxProgressIndicator } from '@irisieason/ix-react';
 import './progress-indicator.scoped.css';
 
 export default () => {

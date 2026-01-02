@@ -15,7 +15,7 @@ import {
   IxMenu,
   IxMenuSettings,
   IxMenuSettingsItem,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 import { nextTick, onMounted, ref } from 'vue';
 
 const menu = ref<HTMLRefElement<HTMLIxMenuElement>>();

@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxBreadcrumb, IxBreadcrumbItem } from '@siemens/ix-vue';
+import { IxBreadcrumb, IxBreadcrumbItem } from '@irisieason/ix-vue';
 </script>
 
 <template>

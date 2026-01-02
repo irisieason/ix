@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxSplitButton, IxDropdownItem } from '@siemens/ix-angular/standalone';
+import { IxSplitButton, IxDropdownItem } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

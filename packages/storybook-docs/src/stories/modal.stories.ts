@@ -6,7 +6,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { dismissModal, showModal } from '@siemens/ix/components';
+import { dismissModal, showModal } from '@irisieason/ix/components';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html, render } from 'lit';
 import { icon } from './utils/arg-types';

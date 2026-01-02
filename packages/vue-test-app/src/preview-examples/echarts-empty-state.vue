@@ -9,16 +9,16 @@ LICENSE file in the root directory of this source tree.
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { registerTheme } from '@siemens/ix-echarts';
-import { themeSwitcher } from '@siemens/ix';
+import { registerTheme } from '@irisieason/ix-echarts';
+import { themeSwitcher } from '@irisieason/ix';
 import VueECharts from 'vue-echarts';
 import * as echarts from 'echarts';
 import * as charts from 'echarts/charts';
 import * as components from 'echarts/components';
 import * as renderer from 'echarts/renderers';
 import { EChartsOption } from 'echarts';
-import { IxEmptyState } from '@siemens/ix-vue';
-import { iconInfo } from '@siemens/ix-icons/icons';
+import { IxEmptyState } from '@irisieason/ix-vue';
+import { iconInfo } from '@irisieason/ix-icons/icons';
 
 echarts.use([
   components.TooltipComponent,

@@ -13,8 +13,8 @@ import {
   iconInfo,
   iconRename,
   iconTrashcan,
-} from '@siemens/ix-icons/icons';
-import { IxBlind, IxDropdown, IxIconButton } from '@siemens/ix-vue';
+} from '@irisieason/ix-icons/icons';
+import { IxBlind, IxDropdown, IxIconButton } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./blind-header-actions.css"></style>

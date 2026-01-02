@@ -9,7 +9,7 @@
 
 import './kpi.scoped.css';
 
-import { IxKpi } from '@siemens/ix-react';
+import { IxKpi } from '@irisieason/ix-react';
 
 export default () => {
   return (

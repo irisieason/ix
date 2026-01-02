@@ -6,6 +6,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-export { ToastConfig } from '@siemens/ix-angular/common';
+export { ToastConfig } from '@irisieason/ix-angular/common';
 export * from './toast.service';
 

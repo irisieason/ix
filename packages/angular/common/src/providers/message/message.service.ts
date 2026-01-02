@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MessageConfig, showMessage, TypedEvent } from '@siemens/ix';
+import { MessageConfig, showMessage, TypedEvent } from '@irisieason/ix';
 
 @Injectable({
   providedIn: 'root',

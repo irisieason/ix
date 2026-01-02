@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { AppSwitchConfiguration } from '@siemens/ix';
+import { AppSwitchConfiguration } from '@irisieason/ix';
 
 @Component({
   standalone: false,

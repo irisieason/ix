@@ -8,13 +8,13 @@
 -->
 
 <script setup lang="ts">
-import { iconGlobe, iconHome, iconRocket } from '@siemens/ix-icons/icons';
+import { iconGlobe, iconHome, iconRocket } from '@irisieason/ix-icons/icons';
 import {
   IxApplication,
   IxMenu,
   IxMenuCategory,
   IxMenuItem,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <template>

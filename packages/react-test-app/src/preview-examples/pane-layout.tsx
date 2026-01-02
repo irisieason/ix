@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxButton, IxPane, IxPaneLayout } from '@siemens/ix-react';
+import { IxButton, IxPane, IxPaneLayout } from '@irisieason/ix-react';
 import { useState } from 'react';
 
 export default () => {

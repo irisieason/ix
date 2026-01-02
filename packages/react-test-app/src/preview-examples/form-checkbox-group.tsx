@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxCheckbox, IxCheckboxGroup } from '@siemens/ix-react';
+import { IxCheckbox, IxCheckboxGroup } from '@irisieason/ix-react';
 
 export default () => {
   return (

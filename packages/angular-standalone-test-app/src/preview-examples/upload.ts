@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxUpload } from '@siemens/ix-angular/standalone';
+import { IxUpload } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

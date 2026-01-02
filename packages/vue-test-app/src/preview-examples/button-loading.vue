@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { iconStar } from '@siemens/ix-icons/icons';
-import { IxButton, IxIconButton } from '@siemens/ix-vue';
+import { iconStar } from '@irisieason/ix-icons/icons';
+import { IxButton, IxIconButton } from '@irisieason/ix-vue';
 import { ref } from 'vue';
 
 let toggle1 = ref(false);

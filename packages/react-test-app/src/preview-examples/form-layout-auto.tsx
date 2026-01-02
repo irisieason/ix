@@ -12,7 +12,7 @@ import {
   IxInput,
   IxLayoutAuto,
   IxSelect,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 
 export default () => {
   return (

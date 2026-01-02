@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxPushCard } from '@siemens/ix-angular/standalone';
+import { IxPushCard } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { IxToggleButton } from '@siemens/ix-angular/standalone';
+import { IxToggleButton } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

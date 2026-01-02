@@ -8,7 +8,7 @@
  */
 
 import './key-value-with-custom-value.scoped.css';
-import { IxKeyValue } from '@siemens/ix-react';
+import { IxKeyValue } from '@irisieason/ix-react';
 
 export default () => {
   return (

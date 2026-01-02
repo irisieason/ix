@@ -13,7 +13,7 @@ import {
   IxMenu,
   IxMenuSettings,
   IxMenuSettingsItem,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 import { useLayoutEffect, useRef } from 'react';
 
 export default () => {

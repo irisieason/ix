@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxRadio, IxRadioGroup } from '@siemens/ix-vue';
+import { IxRadio, IxRadioGroup } from '@irisieason/ix-vue';
 </script>
 
 <template>

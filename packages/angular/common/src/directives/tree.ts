@@ -24,7 +24,7 @@ import type {
   TreeContext,
   UpdateCallback,
   Components,
-} from '@siemens/ix';
+} from '@irisieason/ix';
 import { Subscription } from 'rxjs';
 
 export declare interface TreeBaseDirective

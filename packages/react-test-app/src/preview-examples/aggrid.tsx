@@ -10,7 +10,7 @@
 import { useEffect, useState } from 'react';
 
 import { AgGridReact } from 'ag-grid-react';
-import { getIxTheme } from '@siemens/ix-aggrid';
+import { getIxTheme } from '@irisieason/ix-aggrid';
 import {
   ModuleRegistry,
   AllCommunityModule,

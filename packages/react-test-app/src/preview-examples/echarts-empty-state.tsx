@@ -10,12 +10,12 @@
 import './echarts-empty-state.scoped.css';
 
 import { useEffect, useState } from 'react';
-import { registerTheme } from '@siemens/ix-echarts';
-import { themeSwitcher } from '@siemens/ix';
+import { registerTheme } from '@irisieason/ix-echarts';
+import { themeSwitcher } from '@irisieason/ix';
 import ReactEcharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 import { EChartsOption } from 'echarts';
-import { IxEmptyState } from '@siemens/ix-react';
+import { IxEmptyState } from '@irisieason/ix-react';
 import { iconInfo } from '@irisieason/ix-icons/icons';
 
 export default function Echarts() {

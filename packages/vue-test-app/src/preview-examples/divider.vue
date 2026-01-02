@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxDivider } from '@siemens/ix-vue';
+import { IxDivider } from '@irisieason/ix-vue';
 </script>
 
 <template>

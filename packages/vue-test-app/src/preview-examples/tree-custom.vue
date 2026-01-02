@@ -8,8 +8,8 @@
 -->
 
 <script setup lang="ts">
-import { TreeContext, TreeModel } from '@siemens/ix';
-import { IxButton, IxTree } from '@siemens/ix-vue';
+import { TreeContext, TreeModel } from '@irisieason/ix';
+import { IxButton, IxTree } from '@irisieason/ix-vue';
 import { defineComponent, onMounted, ref } from 'vue';
 
 type TreeData = {

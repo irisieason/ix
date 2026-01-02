@@ -8,9 +8,9 @@
  */
 
 import { Component } from '@angular/core';
-import { IxTree } from '@siemens/ix-angular/standalone';
+import { IxTree } from '@irisieason/ix-angular/standalone';
 
-import { TreeModel } from '@siemens/ix';
+import { TreeModel } from '@irisieason/ix';
 
 @Component({
   selector: 'app-example',

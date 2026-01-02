@@ -8,7 +8,7 @@
  */
 
 import { useRef } from 'react';
-import { IxCustomField, IxIconButton, IxInput } from '@siemens/ix-react';
+import { IxCustomField, IxIconButton, IxInput } from '@irisieason/ix-react';
 
 export default () => {
   const ref = useRef<HTMLInputElement>(null);

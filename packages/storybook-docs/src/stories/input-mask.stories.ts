@@ -8,7 +8,7 @@
  */
 import { Maskito, maskitoInitialCalibrationPlugin } from '@maskito/core';
 import { maskitoNumberOptionsGenerator } from '@maskito/kit';
-import type { Components } from '@siemens/ix/components';
+import type { Components } from '@irisieason/ix/components';
 import type { Meta, StoryObj } from '@storybook/web-components';
 
 type Element = Components.IxInput & {

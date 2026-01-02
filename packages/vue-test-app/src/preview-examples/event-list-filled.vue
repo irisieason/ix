@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxEventList, IxEventListItem } from '@siemens/ix-vue';
+import { IxEventList, IxEventListItem } from '@irisieason/ix-vue';
 
 const items = [
   { text: 'Text 1', color: 'color-primary' },

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import '@siemens/ix/dist/siemens-ix/siemens-ix.css';
+import '@irisieason/ix/dist/siemens-ix/siemens-ix.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

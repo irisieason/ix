@@ -12,7 +12,7 @@ import { NgClass } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
 
-import { IxLayoutGrid, IxRow, IxCol } from '@siemens/ix-angular/standalone';
+import { IxLayoutGrid, IxRow, IxCol } from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

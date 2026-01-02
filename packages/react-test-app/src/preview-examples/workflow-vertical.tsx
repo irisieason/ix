@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxWorkflowStep, IxWorkflowSteps } from '@siemens/ix-react';
+import { IxWorkflowStep, IxWorkflowSteps } from '@irisieason/ix-react';
 
 export default () => {
   return (

@@ -13,7 +13,7 @@ import {
   IxDropdownItem,
   IxGroup,
   IxGroupItem,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 </script>
 
 <template>

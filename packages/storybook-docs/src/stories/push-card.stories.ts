@@ -1,5 +1,5 @@
 import type { ArgTypes, Meta, StoryObj } from '@storybook/web-components';
-import type { Components } from '@siemens/ix/components';
+import type { Components } from '@irisieason/ix/components';
 import { genericRender, makeArgTypes } from './utils/generic-render';
 
 type Element = Components.IxPushCard & { defaultSlot: string };

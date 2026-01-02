@@ -13,7 +13,7 @@ import {
   IxRow,
   IxCol,
   IxPill,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 @Component({
   selector: 'app-example',

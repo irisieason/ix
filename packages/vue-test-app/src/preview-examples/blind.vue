@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxBlind } from '@siemens/ix-vue';
+import { IxBlind } from '@irisieason/ix-vue';
 </script>
 
 <style scoped src="./blind.css"></style>

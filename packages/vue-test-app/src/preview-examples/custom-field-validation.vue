@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxCustomField } from '@siemens/ix-vue';
+import { IxCustomField } from '@irisieason/ix-vue';
 </script>
 
 <template>

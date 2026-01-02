@@ -19,7 +19,7 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IxModule } from '@siemens/ix-angular';
+import { IxModule } from '@irisieason/ix-angular';
 import { By } from '@angular/platform-browser';
 import { waitForHydration } from '../utils/wait-for-hydration';
 import { checkForError } from '../utils/check-for-error';

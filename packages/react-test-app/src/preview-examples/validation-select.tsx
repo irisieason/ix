@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxButton, IxSelect, IxSelectItem } from '@siemens/ix-react';
+import { IxButton, IxSelect, IxSelectItem } from '@irisieason/ix-react';
 
 import { Controller, useForm } from 'react-hook-form';
 

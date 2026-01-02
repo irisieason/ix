@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxButton, IxCol, IxLayoutGrid, IxRow } from '@siemens/ix-vue';
+import { IxButton, IxCol, IxLayoutGrid, IxRow } from '@irisieason/ix-vue';
 import { reactive, ref } from 'vue';
 
 let firstName = ref('');

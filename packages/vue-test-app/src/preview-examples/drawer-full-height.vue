@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxButton, IxDrawer } from '@siemens/ix-vue';
+import { IxButton, IxDrawer } from '@irisieason/ix-vue';
 import { ref } from 'vue';
 
 const show = ref(false);

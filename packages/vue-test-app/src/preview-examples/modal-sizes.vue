@@ -8,13 +8,13 @@
 -->
 
 <script setup lang="tsx">
-import type { IxModalSize } from '@siemens/ix';
+import type { IxModalSize } from '@irisieason/ix';
 import {
   IxButton,
   Modal,
   type ModalSlotProps,
   showModal,
-} from '@siemens/ix-vue';
+} from '@irisieason/ix-vue';
 
 const sizes: IxModalSize[] = [
   '360',

@@ -9,7 +9,7 @@
 
 import './theme-switcher.scoped.css';
 
-import { themeSwitcher, ThemeVariant } from '@siemens/ix';
+import { themeSwitcher, ThemeVariant } from '@irisieason/ix';
 import {
   IxButton,
   IxCheckbox,
@@ -18,7 +18,7 @@ import {
   IxRow,
   IxSelect,
   IxSelectItem,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 import { useEffect, useState } from 'react';
 
 export default () => {

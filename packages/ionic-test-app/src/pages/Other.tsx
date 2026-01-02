@@ -15,7 +15,7 @@ import {
   IxIconButton,
   IxKpi,
   IxTypography,
-} from '@siemens/ix-react';
+} from '@irisieason/ix-react';
 import './Other.css';
 
 const Other: React.FC = () => {

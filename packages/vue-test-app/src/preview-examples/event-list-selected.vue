@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { IxEventList, IxEventListItem } from '@siemens/ix-vue';
+import { IxEventList, IxEventListItem } from '@irisieason/ix-vue';
 
 const selectedIndex = ref(1);
 const items = ['Text 1', 'Text 2', 'Text 3', 'Text 4'];

@@ -18,7 +18,7 @@ This document gives new contributors (humans and AI agents) a concise, high‑le
 | ----------------------- | --------------------------------------------- | -------------------------------------------- | -------------------------------------------------- |
 | Core Components         | Source of truth UI primitives & patterns      | Stencil, TS, SCSS                            | Emits compiled Web Components + type metadata      |
 | Framework Wrappers      | Convenience bindings for app frameworks       | Stencil output targets (Angular, React, Vue) | Auto-generated – never hand-edit generated proxies |
-| Theming Packages        | External lib theme alignment                  | `@siemens/ix-aggrid`, `@siemens/ix-echarts`  | Provide CSS vars + integration helpers             |
+| Theming Packages        | External lib theme alignment                  | `@irisieason/ix-aggrid`, `@irisieason/ix-echarts`  | Provide CSS vars + integration helpers             |
 | Test Apps               | Manual preview & doc example source           | `*-test-app` packages                        | Their `preview-examples` become docs snippets      |
 | Documentation Generator | Converts examples & JSDoc to docs site assets | `packages/documentation`                     | Output consumed by separate ix-docs repo           |
 | Tooling / Infra         | Build orchestration & automation              | Turborepo + pnpm + Changesets                | Ensures incremental builds & release versioning    |
@@ -68,9 +68,9 @@ Supporting roots:
 | Dev Components             | `pnpm storybook`                                               | Hot reload for core components            |
 | Preview Framework Examples | `pnpm start --filter react-test-app` (or other test app)       | Navigate to `/preview/*` routes           |
 | Build All                  | `pnpm build`                                                   | Required before any tests │               |
-| Build Single               | `pnpm build --filter @siemens/ix`                              | Core only (still regenerates wrappers)    |
+| Build Single               | `pnpm build --filter @irisieason/ix`                              | Core only (still regenerates wrappers)    |
 | Lint                       | `pnpm lint`                                                    | Use before commits                        |
-| Unit Tests                 | `pnpm test` or `pnpm test --filter @siemens/ix-react`          | Core uses Jest; React uses Vitest         |
+| Unit Tests                 | `pnpm test` or `pnpm test --filter @irisieason/ix-react`          | Core uses Jest; React uses Vitest         |
 | Visual Regression          | `pnpm build --filter !documentation && pnpm visual-regression` | Needs Docker + playwright image           |
 | Generate Changeset         | `pnpm changeset`                                               | Add semver intent (patch/minor/major)     |
 | Docs Sync (examples)       | Build + run docs pipeline                                      | Examples auto-generated from test apps    |
@@ -171,8 +171,8 @@ pnpm install
 pnpm storybook   # develop core component
 # edit core component files
 pnpm build       # regenerates wrappers
-pnpm test --filter @siemens/ix
-pnpm test --filter @siemens/ix-react  # if wrapper usage affected
+pnpm test --filter @irisieason/ix
+pnpm test --filter @irisieason/ix-react  # if wrapper usage affected
 pnpm lint
 # (optional) visual regression if UI surfaces changed
 pnpm changeset   # declare version bump intent

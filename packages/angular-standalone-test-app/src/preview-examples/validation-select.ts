@@ -14,7 +14,7 @@ import {
   IxSelectItem,
   IxButton,
   IxSelectValueAccessorDirective,
-} from '@siemens/ix-angular/standalone';
+} from '@irisieason/ix-angular/standalone';
 
 import {
   FormControl,

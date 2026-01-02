@@ -10,7 +10,7 @@
 import { iconCheckboxes } from '@irisieason/ix-icons/icons';
 import './icon-toggle-button-secondary-outline.scoped.css';
 
-import { IxIconToggleButton, IxLayoutGrid, IxRow } from '@siemens/ix-react';
+import { IxIconToggleButton, IxLayoutGrid, IxRow } from '@irisieason/ix-react';
 
 export default () => {
   return (

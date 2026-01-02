@@ -12,8 +12,8 @@ import {
   iconBulb,
   iconChevronDownSmall,
   iconCut,
-} from '@siemens/ix-icons/icons';
-import { IxSplitButton, IxDropdownItem } from '@siemens/ix-vue';
+} from '@irisieason/ix-icons/icons';
+import { IxSplitButton, IxDropdownItem } from '@irisieason/ix-vue';
 </script>
 
 <template>

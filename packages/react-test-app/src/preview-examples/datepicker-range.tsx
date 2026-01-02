@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { IxDatePicker } from '@siemens/ix-react';
+import { IxDatePicker } from '@irisieason/ix-react';
 
 export default () => {
   return <IxDatePicker from="2022/12/15" to="2022/12/24" />;

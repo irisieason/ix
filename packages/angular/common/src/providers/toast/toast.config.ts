@@ -8,7 +8,7 @@
  */
 
 import { TemplateRef } from '@angular/core';
-import { ToastConfig as IxToastConfig } from '@siemens/ix';
+import { ToastConfig as IxToastConfig } from '@irisieason/ix';
 
 export type ToastConfig = Omit<IxToastConfig, 'message' | 'action'> & {
   message?: string | TemplateRef<any>;

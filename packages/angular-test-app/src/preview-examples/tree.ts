@@ -8,7 +8,7 @@
  */
 
 import { Component } from '@angular/core';
-import { TreeModel } from '@siemens/ix';
+import { TreeModel } from '@irisieason/ix';
 
 @Component({
   standalone: false,

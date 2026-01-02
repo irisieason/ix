@@ -8,7 +8,7 @@
 -->
 
 <script setup lang="ts">
-import { IxCategoryFilter } from '@siemens/ix-vue';
+import { IxCategoryFilter } from '@irisieason/ix-vue';
 import { ref } from 'vue';
 
 const suggestions = ref(['Item 1', 'Item 2']);
