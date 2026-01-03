@@ -1,0 +1,184 @@
+/*
+ * SPDX-FileCopyrightText: 2025 Siemens AG
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@use 'mixins/shadow-dom/component';
+
+:host {
+  display: block;
+  width: 674px;
+  height: 332px;
+
+  @include component.ix-component;
+}
+
+.chart-container {
+  width: 100%;
+  height: 100%;
+  padding: 16px 16px 16px 8px; // 减少左侧padding
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: transparent;
+}
+
+// Header with title and navigation
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+  flex-shrink: 0;
+
+  .title {
+    flex: 1;
+
+    ix-typography {
+      color: var(--text-color-std-text, white);
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.43;
+      letter-spacing: 0.168px;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    gap: 0;
+  }
+}
+
+// Chart area
+.chart-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px; // 从8px减少到4px，让X轴标签更靠近图表
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 218px;
+  display: flex;
+  padding-left: 12px;  // 进一步减少左padding
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+// Y-axis labels
+.y-axis-labels {
+  position: relative;
+  width: 24px;  // 减少宽度，让标签更紧凑
+  height: 186px;
+  flex-shrink: 0;
+  margin-right: 2px;  // 减少右边距，让标签更靠近网格线
+
+  .y-label {
+    position: absolute;
+    right: 0;  // 右对齐，紧贴网格线
+    transform: translateY(-50%);
+
+    ix-typography {
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1.5;
+      letter-spacing: 0.144px;
+      text-align: right;
+    }
+  }
+}
+
+// Chart SVG container - 移除右边框，避免与垂直网格线颜色冲突
+.chart-svg-container {
+  position: relative;
+  flex: 1;
+  height: 186px;
+  border-left: 1px solid var(--theme-chart-axes, rgba(255, 255, 255, 0.3));
+  border-bottom: 1px solid var(--theme-chart-axes, rgba(255, 255, 255, 0.3));
+  // 移除右边框，让垂直网格线颜色统一
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+// 网格线使用 chart-grid-lines
+.grid-lines {
+  line {
+    stroke: var(--theme-chart-grid-lines, rgba(255, 255, 255, 0.1));
+    stroke-width: 1;
+  }
+}
+
+// Y轴刻度线使用 chart-axes
+.y-axis-ticks {
+  line {
+    stroke: var(--theme-chart-axes, rgba(255, 255, 255, 0.3));
+    stroke-width: 1;
+  }
+}
+
+// X-axis labels
+.x-axis-labels {
+  position: relative;
+  height: 18px;
+  width: 602px;  // 与chartWidth完全相同
+  margin-left: 47px;  // 与chart-svg-container的左边缘对齐
+  margin-right: 0;    // 不需要右边距
+  margin-top: -16px;   // 向上移动X轴标签16px
+
+  .x-label {
+    position: absolute;
+    transform: translateX(-50%);  // 标签中心对齐垂直线
+    white-space: nowrap;
+
+    ix-typography {
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1.5;
+      letter-spacing: 0.144px;
+      text-align: center;
+    }
+  }
+}
+
+// Legend
+.legend {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-shrink: 0;
+  height: 18px;
+}
+
+.legend-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 18px;
+
+  ix-typography {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 0.144px;
+  }
+}
+
+.legend-color {
+  width: 24px;
+  height: 12px;
+  flex-shrink: 0;
+}

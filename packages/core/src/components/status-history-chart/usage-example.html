@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status History Chart Example</title>
+    <script type="module" src="../../dist/ix/ix.esm.js"></script>
+    <link rel="stylesheet" href="../../dist/ix/ix.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Siemens Sans Global', sans-serif;
+            padding: 20px;
+        }
+        .example-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1200px;
+        }
+        .example-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .example-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="example-container">
+        <h1>Status History Chart Examples</h1>
+
+        <div class="example-section">
+            <div class="example-title">1. Default Status History Chart</div>
+            <ix-status-history-chart></ix-status-history-chart>
+        </div>
+
+        <div class="example-section">
+            <div class="example-title">2. Status History Chart in Standard Card</div>
+            <ix-card variant="outline">
+                <ix-card-content>
+                    <ix-status-history-chart chart-title="Server Status History"></ix-status-history-chart>
+                </ix-card-content>
+            </ix-card>
+        </div>
+
+        <div class="example-section">
+            <div class="example-title">3. Full-width Chart in Card (No Padding)</div>
+            <ix-card variant="outline">
+                <ix-status-history-chart chart-title="Network Status Trends"></ix-status-history-chart>
+            </ix-card>
+        </div>
+
+        <div class="example-section">
+            <div class="example-title">4. Custom Data Example</div>
+            <ix-status-history-chart
+                chart-title="Quarterly Network Status"
+                data='{"Q1": {"online": 15, "maintenance": -10, "error": -5, "offline": -80}, "Q2": {"online": 8, "maintenance": -20, "error": -15, "offline": -60}, "Q3": {"online": -5, "maintenance": -35, "error": -30, "offline": -45}, "Q4": {"online": 5, "maintenance": -15, "error": -10, "offline": -70}}'
+            ></ix-status-history-chart>
+        </div>
+
+        <div class="example-section">
+            <div class="example-title">5. Mixed Content Card</div>
+            <ix-card variant="outline">
+                <ix-card-content>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <ix-typography format="h4">System Monitoring Dashboard</ix-typography>
+                        <ix-button variant="secondary" size="small">Refresh</ix-button>
+                    </div>
+
+                    <ix-status-history-chart
+                        chart-title="Status Trends"
+                        data='{"Week 1": {"online": 20, "maintenance": 0, "error": -2, "offline": -90}, "Week 2": {"online": 12, "maintenance": -8, "error": -8, "offline": -65}}'
+                    ></ix-status-history-chart>
+
+                    <ix-typography format="caption" text-color="soft" style="margin-top: 16px;">
+                        Last updated: 2025-01-02 15:30:00
+                    </ix-typography>
+                </ix-card-content>
+            </ix-card>
+        </div>
+
+        <div class="example-section">
+            <div class="example-title">6. Comparison: Device Status vs Status History</div>
+            <div class="card-grid">
+                <ix-card variant="outline">
+                    <ix-card-content>
+                        <ix-device-status-chart chart-title="Current Device Status"></ix-device-status-chart>
+                    </ix-card-content>
+                </ix-card>
+
+                <ix-card variant="outline">
+                    <ix-card-content>
+                        <ix-status-history-chart chart-title="Status History Trends"></ix-status-history-chart>
+                    </ix-card-content>
+                </ix-card>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Example of dynamically updating data
+        setTimeout(() => {
+            const chart = document.querySelector('ix-status-history-chart[chart-title="Quarterly Network Status"]');
+            if (chart) {
+                chart.data = JSON.stringify({
+                    "Week 1": { online: 20, maintenance: 0, error: -2, offline: -90 },
+                    "Week 2": { online: 12, maintenance: -8, error: -8, offline: -65 },
+                    "Week 3": { online: 0, maintenance: -25, error: -20, offline: -50 },
+                    "Week 4": { online: 8, maintenance: -12, error: -5, offline: -75 }
+                });
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图表卡片示例</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Siemens Sans Global', sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #01d65a;
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #ffd732;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .code-example {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>图表卡片展示示例</h1>
+            <p>在 ix-card 中展示图表组件的不同方式</p>
+        </div>
+
+        <div class="section">
+            <h2>方法 1：标准卡片布局（有内边距）</h2>
+            <p>使用 ix-card-content 包装，提供标准的内边距和布局</p>
+
+            <div class="cards-grid">
+                <!-- 这里在实际项目中会渲染图表 -->
+                <div style="border: 2px dashed #444; padding: 20px; text-align: center; border-radius: 8px;">
+                    <p>设备状态图表卡片</p>
+                    <small>474px × 332px</small>
+                </div>
+
+                <div style="border: 2px dashed #444; padding: 20px; text-align: center; border-radius: 8px;">
+                    <p>状态历史图表卡片</p>
+                    <small>674px × 332px</small>
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;!-- 设备状态图表卡片 --&gt;
+&lt;ix-card variant="outline"&gt;
+  &lt;ix-card-content&gt;
+    &lt;ix-device-status-chart
+      chart-title="设备状态监控"
+      y-axis-label="IP 范围"
+      x-axis-label="设备数量"&gt;
+    &lt;/ix-device-status-chart&gt;
+  &lt;/ix-card-content&gt;
+&lt;/ix-card&gt;
+
+&lt;!-- 状态历史图表卡片 --&gt;
+&lt;ix-card variant="outline"&gt;
+  &lt;ix-card-content&gt;
+    &lt;ix-status-history-chart
+      chart-title="状态历史趋势"&gt;
+    &lt;/ix-status-history-chart&gt;
+  &lt;/ix-card-content&gt;
+&lt;/ix-card&gt;
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>方法 2：全屏图表（无额外内边距）</h2>
+            <p>图表直接放在 ix-card 中，占据整个卡片空间</p>
+
+            <div class="cards-grid">
+                <div style="border: 2px dashed #444; padding: 20px; text-align: center; border-radius: 8px;">
+                    <p>全屏设备状态图表</p>
+                    <small>图表自己管理内边距</small>
+                </div>
+
+                <div style="border: 2px dashed #444; padding: 20px; text-align: center; border-radius: 8px;">
+                    <p>全屏状态历史图表</p>
+                    <small>图表自己管理内边距</small>
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;!-- 全屏设备状态图表 --&gt;
+&lt;ix-card variant="outline"&gt;
+  &lt;ix-device-status-chart
+    chart-title="设备状态监控"&gt;
+  &lt;/ix-device-status-chart&gt;
+&lt;/ix-card&gt;
+
+&lt;!-- 全屏状态历史图表 --&gt;
+&lt;ix-card variant="outline"&gt;
+  &lt;ix-status-history-chart
+    chart-title="状态历史趋势"&gt;
+  &lt;/ix-status-history-chart&gt;
+&lt;/ix-card&gt;
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>方法 3：混合内容卡片</h2>
+            <p>在卡片中添加标题、按钮等其他内容</p>
+
+            <div style="border: 2px dashed #444; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 20px;">
+                <p>系统监控面板</p>
+                <small>标题 + 按钮 + 图表 + 说明文字</small>
+            </div>
+
+            <div class="code-example">
+&lt;ix-card variant="outline"&gt;
+  &lt;ix-card-content&gt;
+    &lt;!-- 顶部标题和按钮 --&gt;
+    &lt;div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;"&gt;
+      &lt;ix-typography format="h4"&gt;系统监控面板&lt;/ix-typography&gt;
+      &lt;ix-button variant="secondary" size="small"&gt;刷新&lt;/ix-button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- 图表 --&gt;
+    &lt;ix-device-status-chart
+      chart-title="实时设备状态"&gt;
+    &lt;/ix-device-status-chart&gt;
+
+    &lt;!-- 底部说明 --&gt;
+    &lt;ix-typography format="caption" text-color="soft" style="margin-top: 16px;"&gt;
+      最后更新：2025-01-02 15:30:00
+    &lt;/ix-typography&gt;
+  &lt;/ix-card-content&gt;
+&lt;/ix-card&gt;
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 使用建议</h2>
+            <div style="background: #2a2a2a; padding: 20px; border-radius: 8px; border-left: 4px solid #01d65a;">
+                <h3 style="color: #01d65a; margin-top: 0;">推荐使用方法 1（标准卡片布局）</h3>
+                <ul>
+                    <li>✅ 符合 Siemens iX 设计系统规范</li>
+                    <li>✅ 提供一致的内边距和布局</li>
+                    <li>✅ 可以轻松添加其他内容</li>
+                    <li>✅ 适合大多数使用场景</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('图表卡片示例页面已加载');
+        console.log('推荐使用：ix-card + ix-card-content + 图表组件');
+    </script>
+</body>
+</html>

@@ -28,7 +28,6 @@ import { IxChip as IxChipElement, defineCustomElement as defineIxChip } from "@i
 import { IxCol as IxColElement, defineCustomElement as defineIxCol } from "@irisieason/ix/components/ix-col.js";
 import { IxContentHeader as IxContentHeaderElement, defineCustomElement as defineIxContentHeader } from "@irisieason/ix/components/ix-content-header.js";
 import { IxContent as IxContentElement, defineCustomElement as defineIxContent } from "@irisieason/ix/components/ix-content.js";
-import { IxCustomCard as IxCustomCardElement, defineCustomElement as defineIxCustomCard } from "@irisieason/ix/components/ix-custom-card.js";
 import { IxCustomField as IxCustomFieldElement, defineCustomElement as defineIxCustomField } from "@irisieason/ix/components/ix-custom-field.js";
 import { IxDateDropdown as IxDateDropdownElement, defineCustomElement as defineIxDateDropdown } from "@irisieason/ix/components/ix-date-dropdown.js";
 import { IxDateInput as IxDateInputElement, defineCustomElement as defineIxDateInput } from "@irisieason/ix/components/ix-date-input.js";
@@ -94,6 +93,7 @@ import { IxSelect as IxSelectElement, defineCustomElement as defineIxSelect } fr
 import { IxSlider as IxSliderElement, defineCustomElement as defineIxSlider } from "@irisieason/ix/components/ix-slider.js";
 import { IxSpinner as IxSpinnerElement, defineCustomElement as defineIxSpinner } from "@irisieason/ix/components/ix-spinner.js";
 import { IxSplitButton as IxSplitButtonElement, defineCustomElement as defineIxSplitButton } from "@irisieason/ix/components/ix-split-button.js";
+import { IxStatusHistoryChart as IxStatusHistoryChartElement, defineCustomElement as defineIxStatusHistoryChart } from "@irisieason/ix/components/ix-status-history-chart.js";
 import { IxTabItem as IxTabItemElement, defineCustomElement as defineIxTabItem } from "@irisieason/ix/components/ix-tab-item.js";
 import { IxTabs as IxTabsElement, defineCustomElement as defineIxTabs } from "@irisieason/ix/components/ix-tabs.js";
 import { IxTextarea as IxTextareaElement, defineCustomElement as defineIxTextarea } from "@irisieason/ix/components/ix-textarea.js";
@@ -374,17 +374,6 @@ export const IxContentHeader: StencilReactComponent<IxContentHeaderElement, IxCo
     react: React,
     events: { onBackButtonClick: 'backButtonClick' } as IxContentHeaderEvents,
     defineCustomElement: defineIxContentHeader
-});
-
-export type IxCustomCardEvents = NonNullable<unknown>;
-
-export const IxCustomCard: StencilReactComponent<IxCustomCardElement, IxCustomCardEvents> = /*@__PURE__*/ createComponent<IxCustomCardElement, IxCustomCardEvents>({
-    tagName: 'ix-custom-card',
-    elementClass: IxCustomCardElement,
-    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
-    react: React,
-    events: {} as IxCustomCardEvents,
-    defineCustomElement: defineIxCustomCard
 });
 
 export type IxCustomFieldEvents = NonNullable<unknown>;
@@ -1226,6 +1215,17 @@ export const IxSplitButton: StencilReactComponent<IxSplitButtonElement, IxSplitB
     react: React,
     events: { onButtonClick: 'buttonClick' } as IxSplitButtonEvents,
     defineCustomElement: defineIxSplitButton
+});
+
+export type IxStatusHistoryChartEvents = NonNullable<unknown>;
+
+export const IxStatusHistoryChart: StencilReactComponent<IxStatusHistoryChartElement, IxStatusHistoryChartEvents> = /*@__PURE__*/ createComponent<IxStatusHistoryChartElement, IxStatusHistoryChartEvents>({
+    tagName: 'ix-status-history-chart',
+    elementClass: IxStatusHistoryChartElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as IxStatusHistoryChartEvents,
+    defineCustomElement: defineIxStatusHistoryChart
 });
 
 export type IxTabItemEvents = { onTabClick: EventName<IxTabItemCustomEvent<TabClickDetail>> };

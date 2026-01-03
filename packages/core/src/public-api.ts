@@ -9,8 +9,8 @@
 export * from './components/category-filter/filter-state';
 export * from './components/category-filter/input-state';
 export * from './components/category-filter/logical-filter-operator';
-export * from './components/custom-card/custom-card';
-export * from './components/device-status-chart/device-status-chart';
+export { DeviceStatusChart } from './components/device-status-chart/device-status-chart';
+export { StatusHistoryChart } from './components/status-history-chart/status-history-chart';
 export { FlipTileVariant } from './components/flip-tile/flip-tile.types';
 export * from './components/toast/toast-utils';
 export * from './components/tree-item/default-tree-item';

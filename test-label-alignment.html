@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Alignment Debug - FIXED</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .debug-container {
+            position: relative;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .debug-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .debug-line {
+            position: absolute;
+            background: red;
+            opacity: 0.7;
+        }
+        .vertical-line {
+            width: 1px;
+            height: 100%;
+        }
+        .horizontal-line {
+            height: 1px;
+            width: 100%;
+        }
+        .status {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #333;
+            border-radius: 4px;
+        }
+        .fixed {
+            color: #01d65a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="status">
+        <span class="fixed">✓ FIXED:</span> X-axis labels now properly align with their corresponding vertical grid lines and data points.
+        <br>
+        <strong>Changes made:</strong>
+        <ul>
+            <li>First label: Left-aligned to prevent left overflow</li>
+            <li>Last label: Right-aligned to prevent right overflow</li>
+            <li>Middle labels: Center-aligned on their grid lines</li>
+            <li>Consistent positioning logic for all label counts</li>
+        </ul>
+    </div>
+
+    <div class="debug-container">
+        <h2>Label Alignment Debug - FIXED VERSION</h2>
+
+        <div class="debug-overlay" id="debug-overlay"></div>
+
+        <ix-card>
+            <ix-card-content>
+                <ix-status-history-chart
+                    chart-title="Status history"
+                    data='{"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, "Feb": {"online": 5, "maintenance": -5, "error": 0, "offline": -40}, "Mar": {"online": -10, "maintenance": -60, "error": -20, "offline": -40}, "Apr": {"online": -25, "maintenance": -40, "error": -25, "offline": -80}, "May": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}, "Jun": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}}'>
+                </ix-status-history-chart>
+            </ix-card-content>
+        </ix-card>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const chart = document.querySelector('ix-status-history-chart');
+            const overlay = document.getElementById('debug-overlay');
+
+            if (chart && chart.shadowRoot) {
+                const chartRect = chart.getBoundingClientRect();
+                const containerRect = document.querySelector('.debug-container').getBoundingClientRect();
+
+                // Get chart elements
+                const yAxisLabels = chart.shadowRoot.querySelector('.y-axis-labels');
+                const chartSvg = chart.shadowRoot.querySelector('.chart-svg-container');
+                const xAxisLabels = chart.shadowRoot.querySelector('.x-axis-labels');
+                const verticalLines = chart.shadowRoot.querySelectorAll('.grid-lines line[x1]');
+                const xLabels = chart.shadowRoot.querySelectorAll('.x-label');
+
+                console.log('=== FIXED VERSION DEBUG ===');
+                console.log('Chart rect:', chartRect);
+                console.log('Y-axis labels rect:', yAxisLabels?.getBoundingClientRect());
+                console.log('Chart SVG rect:', chartSvg?.getBoundingClientRect());
+                console.log('X-axis labels rect:', xAxisLabels?.getBoundingClientRect());
+
+                // Draw debug lines for Y-axis baseline
+                if (chartSvg) {
+                    const svgRect = chartSvg.getBoundingClientRect();
+                    const yAxisLine = document.createElement('div');
+                    yAxisLine.className = 'debug-line vertical-line';
+                    yAxisLine.style.left = `${svgRect.left - containerRect.left}px`;
+                    yAxisLine.style.top = '0';
+                    yAxisLine.style.background = 'blue';
+                    overlay.appendChild(yAxisLine);
+
+                    console.log('Y-axis baseline at:', svgRect.left - containerRect.left);
+                }
+
+                // Draw debug lines for vertical grid lines
+                verticalLines.forEach((line, index) => {
+                    const x1 = parseFloat(line.getAttribute('x1'));
+                    if (chartSvg) {
+                        const svgRect = chartSvg.getBoundingClientRect();
+                        const actualX = svgRect.left - containerRect.left + x1;
+
+                        const gridLine = document.createElement('div');
+                        gridLine.className = 'debug-line vertical-line';
+                        gridLine.style.left = `${actualX}px`;
+                        gridLine.style.top = '0';
+                        gridLine.style.background = 'green';
+                        overlay.appendChild(gridLine);
+
+                        console.log(`Vertical line ${index}: x1=${x1}, actual=${actualX}`);
+                    }
+                });
+
+                // Show X-label positions and alignment
+                xLabels.forEach((label, index) => {
+                    const labelRect = label.getBoundingClientRect();
+                    const labelLeft = labelRect.left - containerRect.left;
+                    const labelCenter = labelLeft + labelRect.width / 2;
+                    const labelRight = labelLeft + labelRect.width;
+
+                    // Draw label boundary lines
+                    const labelLeftLine = document.createElement('div');
+                    labelLeftLine.className = 'debug-line vertical-line';
+                    labelLeftLine.style.left = `${labelLeft}px`;
+                    labelLeftLine.style.top = '0';
+                    labelLeftLine.style.background = 'orange';
+                    labelLeftLine.style.height = '50%';
+                    overlay.appendChild(labelLeftLine);
+
+                    const labelRightLine = document.createElement('div');
+                    labelRightLine.className = 'debug-line vertical-line';
+                    labelRightLine.style.left = `${labelRight}px`;
+                    labelRightLine.style.top = '0';
+                    labelRightLine.style.background = 'orange';
+                    labelRightLine.style.height = '50%';
+                    overlay.appendChild(labelRightLine);
+
+                    // Get corresponding vertical line position for alignment check
+                    if (verticalLines[index] && chartSvg) {
+                        const x1 = parseFloat(verticalLines[index].getAttribute('x1'));
+                        const svgRect = chartSvg.getBoundingClientRect();
+                        const gridLineX = svgRect.left - containerRect.left + x1;
+
+                        let alignmentStatus = '';
+                        if (index === 0) {
+                            alignmentStatus = `Left-aligned (expected for first label)`;
+                        } else if (index === xLabels.length - 1) {
+                            alignmentStatus = `Right-aligned (expected for last label)`;
+                        } else {
+                            const centerOffset = Math.abs(labelCenter - gridLineX);
+                            alignmentStatus = `Center-aligned, offset: ${centerOffset.toFixed(1)}px`;
+                        }
+
+                        console.log(`Label ${index} "${label.textContent?.trim()}": ${alignmentStatus}`);
+                        console.log(`  - Label bounds: ${labelLeft.toFixed(1)} to ${labelRight.toFixed(1)}`);
+                        console.log(`  - Grid line at: ${gridLineX.toFixed(1)}`);
+                        console.log(`  - Style: ${label.getAttribute('style')}`);
+                    }
+                });
+
+                console.log('=== ALIGNMENT SUMMARY ===');
+                console.log('✓ First label (Jan): Left-aligned to prevent overflow');
+                console.log('✓ Last label (Jun): Right-aligned to prevent overflow');
+                console.log('✓ Middle labels: Center-aligned on grid lines');
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment Debug</title>
+    <script type="module" src="./node_modules/@siemens/ix/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./node_modules/@siemens/ix/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .debug-container {
+            position: relative;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .debug-line {
+            position: absolute;
+            background: red;
+            z-index: 1000;
+        }
+        .vertical-debug {
+            width: 1px;
+            height: 100%;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <h2>Status History Chart Alignment Debug</h2>
+
+        <!-- Add debug lines to show where Y-axis should be -->
+        <div class="debug-line vertical-debug" style="left: 52px;"></div> <!-- 32px padding + 24px y-labels - 4px adjustment -->
+
+        <ix-card>
+            <ix-card-content>
+                <ix-status-history-chart
+                    chart-title="Status history"
+                    data='{"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, "Feb": {"online": 5, "maintenance": -5, "error": 0, "offline": -40}, "Mar": {"online": -10, "maintenance": -60, "error": -20, "offline": -40}, "Apr": {"online": -25, "maintenance": -40, "error": -25, "offline": -80}, "May": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}, "Jun": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}}'>
+                </ix-status-history-chart>
+            </ix-card-content>
+        </ix-card>
+    </div>
+
+    <script>
+        // Add some debug info
+        setTimeout(() => {
+            const chart = document.querySelector('ix-status-history-chart');
+            if (chart && chart.shadowRoot) {
+                const yAxisLabels = chart.shadowRoot.querySelector('.y-axis-labels');
+                const chartSvg = chart.shadowRoot.querySelector('.chart-svg-container');
+                const xAxisLabels = chart.shadowRoot.querySelector('.x-axis-labels');
+
+                console.log('Y-axis labels rect:', yAxisLabels?.getBoundingClientRect());
+                console.log('Chart SVG rect:', chartSvg?.getBoundingClientRect());
+                console.log('X-axis labels rect:', xAxisLabels?.getBoundingClientRect());
+
+                // Highlight the first X label
+                const firstLabel = chart.shadowRoot.querySelector('.x-label');
+                if (firstLabel) {
+                    firstLabel.style.background = 'rgba(255, 0, 0, 0.3)';
+                    console.log('First label rect:', firstLabel.getBoundingClientRect());
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

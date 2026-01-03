@@ -26,7 +26,6 @@ import { defineCustomElement as defineIxChip } from '@irisieason/ix/components/i
 import { defineCustomElement as defineIxCol } from '@irisieason/ix/components/ix-col.js';
 import { defineCustomElement as defineIxContent } from '@irisieason/ix/components/ix-content.js';
 import { defineCustomElement as defineIxContentHeader } from '@irisieason/ix/components/ix-content-header.js';
-import { defineCustomElement as defineIxCustomCard } from '@irisieason/ix/components/ix-custom-card.js';
 import { defineCustomElement as defineIxCustomField } from '@irisieason/ix/components/ix-custom-field.js';
 import { defineCustomElement as defineIxDateDropdown } from '@irisieason/ix/components/ix-date-dropdown.js';
 import { defineCustomElement as defineIxDateInput } from '@irisieason/ix/components/ix-date-input.js';
@@ -92,6 +91,7 @@ import { defineCustomElement as defineIxSelectItem } from '@irisieason/ix/compon
 import { defineCustomElement as defineIxSlider } from '@irisieason/ix/components/ix-slider.js';
 import { defineCustomElement as defineIxSpinner } from '@irisieason/ix/components/ix-spinner.js';
 import { defineCustomElement as defineIxSplitButton } from '@irisieason/ix/components/ix-split-button.js';
+import { defineCustomElement as defineIxStatusHistoryChart } from '@irisieason/ix/components/ix-status-history-chart.js';
 import { defineCustomElement as defineIxTabItem } from '@irisieason/ix/components/ix-tab-item.js';
 import { defineCustomElement as defineIxTabs } from '@irisieason/ix/components/ix-tabs.js';
 import { defineCustomElement as defineIxTextarea } from '@irisieason/ix/components/ix-textarea.js';
@@ -668,29 +668,6 @@ export declare interface IxContentHeader extends Components.IxContentHeader {
    */
   backButtonClick: EventEmitter<CustomEvent<void>>;
 }
-
-
-@ProxyCmp({
-  defineCustomElementFn: defineIxCustomCard,
-  inputs: ['cardTitle', 'data', 'passive', 'selected', 'variant', 'xAxisLabel', 'yAxisLabel']
-})
-@Component({
-  selector: 'ix-custom-card',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['cardTitle', 'data', 'passive', 'selected', 'variant', 'xAxisLabel', 'yAxisLabel'],
-})
-export class IxCustomCard {
-  protected el: HTMLIxCustomCardElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface IxCustomCard extends Components.IxCustomCard {}
 
 
 @ProxyCmp({
@@ -2608,6 +2585,29 @@ export declare interface IxSplitButton extends Components.IxSplitButton {
    */
   buttonClick: EventEmitter<CustomEvent<MouseEvent>>;
 }
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineIxStatusHistoryChart,
+  inputs: ['chartTitle', 'data']
+})
+@Component({
+  selector: 'ix-status-history-chart',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['chartTitle', 'data'],
+})
+export class IxStatusHistoryChart {
+  protected el: HTMLIxStatusHistoryChartElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface IxStatusHistoryChart extends Components.IxStatusHistoryChart {}
 
 
 @ProxyCmp({

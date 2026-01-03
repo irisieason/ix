@@ -60,6 +60,8 @@ export const config: Config = {
   watchIgnoredRegex: [/component-doc.json/],
   globalStyle: './scss/ix.scss',
   minifyCss: false,
+  // Improve build stability
+  hashFileNames: false, // Disable file hashing in development
   plugins: [
     sass({
       includePaths: ['./scss'],

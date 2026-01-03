@@ -8,7 +8,7 @@
  */
 
 import { Component, h, Host, Prop, Watch, State } from '@stencil/core';
-import type { ChartData } from './device-status-chart.types';
+import type { DeviceStatusChartData } from './device-status-chart.types';
 
 @Component({
   tag: 'ix-device-status-chart',
@@ -39,13 +39,13 @@ export class DeviceStatusChart {
   /**
    * Chart data as JSON string or object
    */
-  @Prop() data: string | ChartData = {
+  @Prop() data: string | DeviceStatusChartData = {
     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },
     '192.x': { online: 250, maintenance: 0, error: 26, offline: 15 },
     '172.x': { online: 180, maintenance: 49, error: 0, offline: 0 }
   };
 
-  @State() private chartData: ChartData = {
+  @State() private chartData: DeviceStatusChartData = {
     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },
     '192.x': { online: 250, maintenance: 0, error: 26, offline: 15 },
     '172.x': { online: 180, maintenance: 49, error: 0, offline: 0 }
@@ -117,7 +117,7 @@ export class DeviceStatusChart {
       { key: 'online' as keyof typeof data, color: '#01d65a', label: 'Online', class: 'bar-online' },
       { key: 'maintenance' as keyof typeof data, color: '#ffd732', label: 'Maintenance', class: 'bar-maintenance' },
       { key: 'error' as keyof typeof data, color: '#ff2640', label: 'Error', class: 'bar-error' },
-      { key: 'offline' as keyof typeof data, color: '#ff9000', label: 'Offline', class: 'bar-offline' }
+      { key: 'offline' as keyof typeof data, color: '#7d8099', label: 'Offline', class: 'bar-offline' }
     ];
 
     statuses.forEach((status, index) => {

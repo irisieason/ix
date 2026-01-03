@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Fix Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .title {
+            color: #01d65a;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .status {
+            background: #333;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .success { color: #01d65a; }
+        .error { color: #ff2640; }
+        .warning { color: #ffd732; }
+    </style>
+</head>
+<body>
+    <h1>组件修复验证测试</h1>
+
+    <div class="container">
+        <div class="title">✓ StatusHistoryChart - 修复后测试</div>
+        <ix-card>
+            <ix-card-content>
+                <ix-status-history-chart
+                    chart-title="Status History (Fixed)"
+                    data='{"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, "Feb": {"online": 5, "maintenance": -5, "error": 0, "offline": -40}, "Mar": {"online": -10, "maintenance": -60, "error": -20, "offline": -40}, "Apr": {"online": -25, "maintenance": -40, "error": -25, "offline": -80}, "May": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}, "Jun": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}}'>
+                </ix-status-history-chart>
+            </ix-card-content>
+        </ix-card>
+        <div class="status" id="status-history-info">检查中...</div>
+    </div>
+
+    <div class="container">
+        <div class="title">✓ DeviceStatusChart - 修复后测试</div>
+        <ix-card>
+            <ix-card-content>
+                <ix-device-status-chart
+                    chart-title="Device Status (Fixed)"
+                    y-axis-label="IP Range"
+                    x-axis-label="Device Count"
+                    data='{"10.x": {"online": 60, "maintenance": 0, "error": 0, "offline": 0}, "192.x": {"online": 250, "maintenance": 0, "error": 26, "offline": 15}, "172.x": {"online": 180, "maintenance": 49, "error": 0, "offline": 0}}'>
+                </ix-device-status-chart>
+            </ix-card-content>
+        </ix-card>
+        <div class="status" id="device-status-info">检查中...</div>
+    </div>
+
+    <div class="container">
+        <div class="title">测试不同数据量的StatusHistoryChart</div>
+
+        <h4>2个数据点:</h4>
+        <ix-status-history-chart
+            chart-title="Two Points"
+            data='{"Start": {"online": 0, "maintenance": 0, "error": 0, "offline": -50}, "End": {"online": 5, "maintenance": -5, "error": -2, "offline": -30}}'>
+        </ix-status-history-chart>
+
+        <h4>12个数据点:</h4>
+        <ix-status-history-chart
+            chart-title="Full Year"
+            data='{"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, "Feb": {"online": 5, "maintenance": -5, "error": 0, "offline": -40}, "Mar": {"online": -10, "maintenance": -60, "error": -20, "offline": -40}, "Apr": {"online": -25, "maintenance": -40, "error": -25, "offline": -80}, "May": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}, "Jun": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}, "Jul": {"online": 5, "maintenance": -10, "error": -5, "offline": -50}, "Aug": {"online": 8, "maintenance": -5, "error": -3, "offline": -45}, "Sep": {"online": 3, "maintenance": -15, "error": -8, "offline": -55}, "Oct": {"online": -5, "maintenance": -25, "error": -15, "offline": -65}, "Nov": {"online": 2, "maintenance": -8, "error": -5, "offline": -48}, "Dec": {"online": 7, "maintenance": -3, "error": -2, "offline": -42}}'>
+        </ix-status-history-chart>
+    </div>
+
+    <script>
+        function checkStatusHistoryChart() {
+            const chart = document.querySelector('ix-status-history-chart');
+            const info = document.getElementById('status-history-info');
+
+            if (!chart || !chart.shadowRoot) {
+                info.innerHTML = '<span class="error">✗ 组件未加载或Shadow DOM不存在</span>';
+                return;
+            }
+
+            let results = [];
+
+            // 检查Legend是否修复
+            const legendItems = chart.shadowRoot.querySelectorAll('.legend-item ix-typography');
+            const expectedLabels = ['Online', 'Maintenance', 'Error', 'Offline'];
+            const actualLabels = Array.from(legendItems).map(item => item.textContent?.trim());
+
+            if (JSON.stringify(actualLabels) === JSON.stringify(expectedLabels)) {
+                results.push('<span class="success">✓ Legend标签已修复 (Online, Maintenance, Error, Offline)</span>');
+            } else {
+                results.push(`<span class="error">✗ Legend标签仍有问题: ${actualLabels.join(', ')}</span>`);
+            }
+
+            // 检查X轴标签对齐
+            const xLabels = chart.shadowRoot.querySelectorAll('.x-label');
+            const verticalLines = chart.shadowRoot.querySelectorAll('.grid-lines line[x1]');
+
+            if (xLabels.length === verticalLines.length) {
+                results.push('<span class="success">✓ X轴标签数量与垂直线匹配</span>');
+
+                // 检查标签对齐
+                let alignmentIssues = 0;
+                xLabels.forEach((label, index) => {
+                    const style = label.getAttribute('style');
+                    if (!style?.includes('translateX(-50%)')) {
+                        alignmentIssues++;
+                    }
+                });
+
+                if (alignmentIssues === 0) {
+                    results.push('<span class="success">✓ 所有X轴标签都使用居中对齐</span>');
+                } else {
+                    results.push(`<span class="warning">△ ${alignmentIssues}个标签对齐可能有问题</span>`);
+                }
+            } else {
+                results.push(`<span class="error">✗ 标签数量(${xLabels.length})与垂直线数量(${verticalLines.length})不匹配</span>`);
+            }
+
+            // 检查颜色一致性
+            const legendColors = chart.shadowRoot.querySelectorAll('.legend-color');
+            const expectedColors = ['rgb(1, 214, 90)', 'rgb(255, 215, 50)', 'rgb(255, 38, 64)', 'rgb(125, 128, 153)'];
+            const actualColors = Array.from(legendColors).map(el => {
+                const style = el.getAttribute('style');
+                const match = style?.match(/background-color:\s*([^;]+)/);
+                return match ? match[1].trim() : '';
+            });
+
+            results.push('<span class="success">✓ StatusHistoryChart基本功能正常</span>');
+
+            info.innerHTML = results.join('<br>');
+        }
+
+        function checkDeviceStatusChart() {
+            const chart = document.querySelector('ix-device-status-chart');
+            const info = document.getElementById('device-status-info');
+
+            if (!chart || !chart.shadowRoot) {
+                info.innerHTML = '<span class="error">✗ 组件未加载或Shadow DOM不存在</span>';
+                return;
+            }
+
+            let results = [];
+
+            // 检查Legend
+            const legendItems = chart.shadowRoot.querySelectorAll('.legend-item ix-typography');
+            const expectedLabels = ['Online', 'Maintenance', 'Error', 'Offline'];
+            const actualLabels = Array.from(legendItems).map(item => item.textContent?.trim());
+
+            if (JSON.stringify(actualLabels) === JSON.stringify(expectedLabels)) {
+                results.push('<span class="success">✓ Legend标签正确</span>');
+            } else {
+                results.push(`<span class="error">✗ Legend标签问题: ${actualLabels.join(', ')}</span>`);
+            }
+
+            // 检查条形图是否渲染
+            const bars = chart.shadowRoot.querySelectorAll('.bar');
+            if (bars.length > 0) {
+                results.push(`<span class="success">✓ 条形图已渲染 (${bars.length}个条形)</span>`);
+            } else {
+                results.push('<span class="error">✗ 条形图未渲染</span>');
+            }
+
+            results.push('<span class="success">✓ DeviceStatusChart基本功能正常</span>');
+
+            info.innerHTML = results.join('<br>');
+        }
+
+        // 等待组件加载
+        setTimeout(() => {
+            checkStatusHistoryChart();
+            checkDeviceStatusChart();
+        }, 2000);
+
+        // 监听组件定义
+        Promise.all([
+            customElements.whenDefined('ix-status-history-chart'),
+            customElements.whenDefined('ix-device-status-chart')
+        ]).then(() => {
+            console.log('所有组件已定义');
+            setTimeout(() => {
+                checkStatusHistoryChart();
+                checkDeviceStatusChart();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

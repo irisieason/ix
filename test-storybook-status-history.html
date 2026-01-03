@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status History Chart Storybook 测试</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Siemens Sans Global', sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #01d65a;
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+
+        .story-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+
+        .story-title {
+            color: #ffd732;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .story-description {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .chart-placeholder {
+            border: 2px dashed #444;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            background: #1e1e1e;
+            margin: 20px 0;
+        }
+
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            overflow-x: auto;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Status History Chart Storybook 故事</h1>
+            <p>为新创建的状态历史图表组件准备的 Storybook 故事预览</p>
+        </div>
+
+        <div class="story-section">
+            <div class="story-title">📊 已创建的 Storybook 故事</div>
+            <div class="story-description">
+                我已经为 status-history-chart 组件创建了完整的 Storybook 故事文件，包含以下故事：
+            </div>
+
+            <div class="story-grid">
+                <div class="chart-placeholder">
+                    <h3>Default</h3>
+                    <p>默认月度趋势数据</p>
+                    <small>Jan-Jun 数据展示</small>
+                </div>
+
+                <div class="chart-placeholder">
+                    <h3>Quarterly Trends</h3>
+                    <p>季度网络状态趋势</p>
+                    <small>Q1-Q4 长期趋势</small>
+                </div>
+
+                <div class="chart-placeholder">
+                    <h3>Weekly Monitoring</h3>
+                    <p>周度系统性能监控</p>
+                    <small>Week 1-5 短期波动</small>
+                </div>
+
+                <div class="chart-placeholder">
+                    <h3>Server Recovery</h3>
+                    <p>服务器恢复时间线</p>
+                    <small>24小时恢复过程</small>
+                </div>
+
+                <div class="chart-placeholder">
+                    <h3>Maintenance Window</h3>
+                    <p>计划维护影响</p>
+                    <small>维护前后状态变化</small>
+                </div>
+
+                <div class="chart-placeholder">
+                    <h3>Critical Incident</h3>
+                    <p>关键事件响应</p>
+                    <small>事件处理全流程</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-title">🎯 故事特点</div>
+            <div class="story-description">
+                每个故事都展示了不同的使用场景和数据模式：
+            </div>
+
+            <ul style="color: #ccc; line-height: 1.6;">
+                <li><strong>多样化的时间标签</strong>：月份、季度、周、小时等</li>
+                <li><strong>不同的数据范围</strong>：从 -100 到 +10 的完整范围</li>
+                <li><strong>真实场景模拟</strong>：维护窗口、事件恢复、性能监控</li>
+                <li><strong>国际化支持</strong>：包含中文标签示例</li>
+                <li><strong>卡片集成</strong>：展示在 ix-card 中的使用方式</li>
+                <li><strong>边界情况</strong>：最小数据集、扩展时间线等</li>
+            </ul>
+        </div>
+
+        <div class="story-section">
+            <div class="story-title">🚀 如何查看 Storybook</div>
+            <div class="story-description">
+                要查看这些故事的实际效果，你需要：
+            </div>
+
+            <div class="code-block">
+# 1. 进入 storybook-docs 目录
+cd packages/storybook-docs
+
+# 2. 启动 Storybook 开发服务器
+npm run storybook
+# 或者
+yarn storybook
+
+# 3. 在浏览器中打开 http://localhost:6006
+# 4. 在左侧导航中找到 "Example/StatusHistoryChart"
+            </div>
+        </div>
+
+        <div class="story-section">
+            <div class="story-title">📋 故事文件位置</div>
+            <div class="story-description">
+                创建的文件位置：
+            </div>
+
+            <div class="code-block">
+packages/storybook-docs/src/stories/status-history-chart.stories.ts
+            </div>
+
+            <div class="story-description">
+                该文件包含：
+            </div>
+
+            <ul style="color: #ccc; line-height: 1.6;">
+                <li>✅ 完整的 TypeScript 类型定义</li>
+                <li>✅ Figma 设计链接集成</li>
+                <li>✅ 详细的组件文档说明</li>
+                <li>✅ 10个不同场景的故事</li>
+                <li>✅ 自动生成的控件（Args）</li>
+                <li>✅ 卡片集成示例</li>
+            </ul>
+        </div>
+
+        <div class="story-section">
+            <div class="story-title">🎨 Storybook 功能</div>
+            <div class="story-description">
+                在 Storybook 中你可以：
+            </div>
+
+            <ul style="color: #ccc; line-height: 1.6;">
+                <li><strong>实时编辑</strong>：通过控件面板修改属性值</li>
+                <li><strong>查看文档</strong>：自动生成的 API 文档</li>
+                <li><strong>设计对比</strong>：与 Figma 设计稿对比</li>
+                <li><strong>无障碍测试</strong>：内置的 a11y 检查</li>
+                <li><strong>响应式测试</strong>：不同屏幕尺寸预览</li>
+                <li><strong>代码示例</strong>：查看每个故事的源代码</li>
+            </ul>
+        </div>
+
+        <div class="story-section">
+            <div class="story-title">✨ 下一步</div>
+            <div class="story-description">
+                现在你可以：
+            </div>
+
+            <ol style="color: #ccc; line-height: 1.8;">
+                <li>启动 Storybook 查看所有故事的实际效果</li>
+                <li>使用控件面板测试不同的数据和配置</li>
+                <li>验证组件在不同场景下的表现</li>
+                <li>根据需要调整故事或添加新的使用场景</li>
+                <li>与团队分享 Storybook 链接进行评审</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        console.log('Status History Chart Storybook 故事已创建');
+        console.log('文件位置：packages/storybook-docs/src/stories/status-history-chart.stories.ts');
+        console.log('启动命令：cd packages/storybook-docs && npm run storybook');
+        console.log('访问地址：http://localhost:6006');
+    </script>
+</body>
+</html>

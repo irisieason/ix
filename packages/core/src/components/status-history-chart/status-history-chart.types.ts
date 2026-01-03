@@ -7,22 +7,23 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export interface DeviceStatusDataItem {
+export interface StatusHistoryDataPoint {
   online: number;
   maintenance: number;
   error: number;
   offline: number;
 }
 
-export interface DeviceStatusChartData {
-  [key: string]: DeviceStatusDataItem;
+export interface StatusHistoryData {
+  [timeLabel: string]: StatusHistoryDataPoint;
 }
 
-export interface DeviceBarConfiguration {
-  type: string;
-  class: string;
-  width: number;
+export type StatusType = 'online' | 'maintenance' | 'error' | 'offline';
+
+export interface ChartPoint {
+  x: number;
+  y: number;
   value: number;
-  label: string;
-  color: string;
+  status: StatusType;
+  timeLabel: string;
 }

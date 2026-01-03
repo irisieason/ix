@@ -25,7 +25,6 @@ import { defineCustomElement as defineIxChip } from '@irisieason/ix/components/i
 import { defineCustomElement as defineIxCol } from '@irisieason/ix/components/ix-col.js';
 import { defineCustomElement as defineIxContent } from '@irisieason/ix/components/ix-content.js';
 import { defineCustomElement as defineIxContentHeader } from '@irisieason/ix/components/ix-content-header.js';
-import { defineCustomElement as defineIxCustomCard } from '@irisieason/ix/components/ix-custom-card.js';
 import { defineCustomElement as defineIxCustomField } from '@irisieason/ix/components/ix-custom-field.js';
 import { defineCustomElement as defineIxDateDropdown } from '@irisieason/ix/components/ix-date-dropdown.js';
 import { defineCustomElement as defineIxDateInput } from '@irisieason/ix/components/ix-date-input.js';
@@ -91,6 +90,7 @@ import { defineCustomElement as defineIxSelectItem } from '@irisieason/ix/compon
 import { defineCustomElement as defineIxSlider } from '@irisieason/ix/components/ix-slider.js';
 import { defineCustomElement as defineIxSpinner } from '@irisieason/ix/components/ix-spinner.js';
 import { defineCustomElement as defineIxSplitButton } from '@irisieason/ix/components/ix-split-button.js';
+import { defineCustomElement as defineIxStatusHistoryChart } from '@irisieason/ix/components/ix-status-history-chart.js';
 import { defineCustomElement as defineIxTabItem } from '@irisieason/ix/components/ix-tab-item.js';
 import { defineCustomElement as defineIxTabs } from '@irisieason/ix/components/ix-tabs.js';
 import { defineCustomElement as defineIxTextarea } from '@irisieason/ix/components/ix-textarea.js';
@@ -364,17 +364,6 @@ export const IxContentHeader: StencilVueComponent<JSX.IxContentHeader> = /*@__PU
   'backButtonClick'
 ], [
   'backButtonClick'
-]);
-
-
-export const IxCustomCard: StencilVueComponent<JSX.IxCustomCard> = /*@__PURE__*/ defineContainer<JSX.IxCustomCard>('ix-custom-card', defineIxCustomCard, [
-  'variant',
-  'selected',
-  'passive',
-  'cardTitle',
-  'yAxisLabel',
-  'xAxisLabel',
-  'data'
 ]);
 
 
@@ -1263,6 +1252,12 @@ export const IxSplitButton: StencilVueComponent<JSX.IxSplitButton> = /*@__PURE__
   'buttonClick'
 ], [
   'buttonClick'
+]);
+
+
+export const IxStatusHistoryChart: StencilVueComponent<JSX.IxStatusHistoryChart> = /*@__PURE__*/ defineContainer<JSX.IxStatusHistoryChart>('ix-status-history-chart', defineIxStatusHistoryChart, [
+  'chartTitle',
+  'data'
 ]);
 
 

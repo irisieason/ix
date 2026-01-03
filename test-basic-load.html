@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Load Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .log {
+            background: #333;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>基础加载测试</h2>
+
+        <div class="log" id="log">检查中...</div>
+
+        <ix-status-history-chart
+            id="test-chart"
+            chart-title="测试图表"
+            data='{"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, "Feb": {"online": 5, "maintenance": -5, "error": 0, "offline": -40}}'>
+        </ix-status-history-chart>
+    </div>
+
+    <script>
+        const log = document.getElementById('log');
+
+        function addLog(message) {
+            log.textContent += message + '\n';
+            console.log(message);
+        }
+
+        // 检查脚本是否加载
+        addLog('1. 脚本已加载');
+
+        // 检查自定义元素是否已定义
+        if (customElements.get('ix-status-history-chart')) {
+            addLog('2. ✓ ix-status-history-chart 已定义');
+        } else {
+            addLog('2. ✗ ix-status-history-chart 未定义，等待...');
+
+            customElements.whenDefined('ix-status-history-chart').then(() => {
+                addLog('2. ✓ ix-status-history-chart 现在已定义');
+                checkComponent();
+            }).catch(err => {
+                addLog('2. ✗ 定义失败: ' + err.message);
+            });
+        }
+
+        function checkComponent() {
+            const chart = document.getElementById('test-chart');
+            addLog('3. 组件元素: ' + (chart ? '找到' : '未找到'));
+
+            if (chart) {
+                addLog('4. 标签名: ' + chart.tagName);
+                addLog('5. Shadow Root: ' + (chart.shadowRoot ? '存在' : '不存在'));
+
+                if (chart.shadowRoot) {
+                    const container = chart.shadowRoot.querySelector('.chart-container');
+                    addLog('6. 图表容器: ' + (container ? '找到' : '未找到'));
+
+                    const xLabels = chart.shadowRoot.querySelectorAll('.x-label');
+                    addLog('7. X轴标签数量: ' + xLabels.length);
+
+                    xLabels.forEach((label, index) => {
+                        const text = label.textContent?.trim();
+                        const style = label.getAttribute('style');
+                        addLog(`   标签 ${index}: "${text}" - ${style}`);
+                    });
+                } else {
+                    // 等待Shadow DOM创建
+                    setTimeout(() => {
+                        addLog('5. (延迟检查) Shadow Root: ' + (chart.shadowRoot ? '存在' : '不存在'));
+                        if (chart.shadowRoot) {
+                            checkComponent();
+                        }
+                    }, 1000);
+                }
+            }
+        }
+
+        // 立即检查
+        setTimeout(checkComponent, 100);
+
+        // 延迟检查
+        setTimeout(checkComponent, 2000);
+
+        // 监听错误
+        window.addEventListener('error', (e) => {
+            addLog('JavaScript错误: ' + e.message);
+        });
+
+        // 检查其他ix组件是否工作
+        setTimeout(() => {
+            if (customElements.get('ix-card')) {
+                addLog('8. ✓ ix-card 组件可用');
+            } else {
+                addLog('8. ✗ ix-card 组件不可用');
+            }
+
+            if (customElements.get('ix-typography')) {
+                addLog('9. ✓ ix-typography 组件可用');
+            } else {
+                addLog('9. ✗ ix-typography 组件不可用');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

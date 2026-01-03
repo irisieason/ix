@@ -20,13 +20,13 @@ import { InputState } from "./components/category-filter/input-state";
 import { ColumnSize } from "./components/col/col.types";
 import { ContentHeaderVariant } from "./components/content-header/content-header.types";
 import { CssGridTemplateType } from "./components/css-grid/css-grid.types";
-import { ChartData } from "./components/device-status-chart/device-status-chart.types";
 import { ButtonVariant as ButtonVariant1 } from "./components/button/button";
 import { DateDropdownOption, DateRangeChangeEvent } from "./components/date-dropdown/date-dropdown.types";
 import { DateInputValidityState } from "./components/date-input/date-input.types";
 import { DateTimeCardCorners } from "./components/date-time-card/date-time-card.types";
 import { DateChangeEvent } from "./components/date-picker/date-picker.events";
 import { DateTimeDateChangeEvent, DateTimeSelectEvent } from "./components/datetime-picker/datetime-picker.types";
+import { DeviceStatusChartData } from "./components/device-status-chart/device-status-chart.types";
 import { ElementReference } from "./components/utils/element-reference";
 import { CloseBehavior } from "./components/dropdown/dropdown-controller";
 import { AlignedPlacement, Side } from "./components/dropdown/placement";
@@ -43,6 +43,7 @@ import { ProgressIndicatorSize, ProgressIndicatorStatus } from "./components/pro
 import { PushCardVariant } from "./components/push-card/push-card.types";
 import { SliderMarker } from "./components/slider/slider.types";
 import { SplitButtonVariant } from "./components/split-button/split-button.types";
+import { StatusHistoryData } from "./components/status-history-chart/status-history-chart.types";
 import { TabClickDetail } from "./components/tab-item/tab-item.types";
 import { TextareaResizeBehavior } from "./components/input/textarea.types";
 import { TimeInputValidityState } from "./components/time-input/time-input.types";
@@ -71,13 +72,13 @@ export { InputState } from "./components/category-filter/input-state";
 export { ColumnSize } from "./components/col/col.types";
 export { ContentHeaderVariant } from "./components/content-header/content-header.types";
 export { CssGridTemplateType } from "./components/css-grid/css-grid.types";
-export { ChartData } from "./components/device-status-chart/device-status-chart.types";
 export { ButtonVariant as ButtonVariant1 } from "./components/button/button";
 export { DateDropdownOption, DateRangeChangeEvent } from "./components/date-dropdown/date-dropdown.types";
 export { DateInputValidityState } from "./components/date-input/date-input.types";
 export { DateTimeCardCorners } from "./components/date-time-card/date-time-card.types";
 export { DateChangeEvent } from "./components/date-picker/date-picker.events";
 export { DateTimeDateChangeEvent, DateTimeSelectEvent } from "./components/datetime-picker/datetime-picker.types";
+export { DeviceStatusChartData } from "./components/device-status-chart/device-status-chart.types";
 export { ElementReference } from "./components/utils/element-reference";
 export { CloseBehavior } from "./components/dropdown/dropdown-controller";
 export { AlignedPlacement, Side } from "./components/dropdown/placement";
@@ -94,6 +95,7 @@ export { ProgressIndicatorSize, ProgressIndicatorStatus } from "./components/pro
 export { PushCardVariant } from "./components/push-card/push-card.types";
 export { SliderMarker } from "./components/slider/slider.types";
 export { SplitButtonVariant } from "./components/split-button/split-button.types";
+export { StatusHistoryData } from "./components/status-history-chart/status-history-chart.types";
 export { TabClickDetail } from "./components/tab-item/tab-item.types";
 export { TextareaResizeBehavior } from "./components/input/textarea.types";
 export { TimeInputValidityState } from "./components/time-input/time-input.types";
@@ -799,43 +801,6 @@ export namespace Components {
          */
         "itemName": string;
     }
-    interface IxCustomCard {
-        /**
-          * Card title
-          * @default 'Device status'
-         */
-        "cardTitle": string;
-        /**
-          * Chart data as JSON string or object Format: {"10.x": {"online": 60, "maintenance": 0, "error": 0, "offline": 0}, ...}
-          * @default JSON.stringify({     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },     '192.x': { online: 250, maintenance: 0, error: 20, offline: 15 },     '172.x': { online: 180, maintenance: 30, error: 0, offline: 0 }   })
-         */
-        "data": string | ChartData;
-        /**
-          * If true, disables hover and active styles and changes cursor to default
-          * @default false
-         */
-        "passive": boolean;
-        /**
-          * Show card in selected state
-          * @default false
-         */
-        "selected": boolean;
-        /**
-          * Card variant
-          * @default 'outline'
-         */
-        "variant": CardVariant;
-        /**
-          * X-axis label
-          * @default 'Device'
-         */
-        "xAxisLabel": string;
-        /**
-          * Y-axis label
-          * @default 'IP Range'
-         */
-        "yAxisLabel": string;
-    }
     interface IxCustomField {
         /**
           * Show text below the field component which show additional information
@@ -1297,7 +1262,7 @@ export namespace Components {
           * Chart data as JSON string or object
           * @default {     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },     '192.x': { online: 250, maintenance: 0, error: 26, offline: 15 },     '172.x': { online: 180, maintenance: 49, error: 0, offline: 0 }   }
          */
-        "data": string | ChartData;
+        "data": string | DeviceStatusChartData;
         /**
           * Maximum value for scaling bars (auto-calculated if not provided)
          */
@@ -3341,6 +3306,18 @@ export namespace Components {
          */
         "variant": SplitButtonVariant;
     }
+    interface IxStatusHistoryChart {
+        /**
+          * Chart title
+          * @default 'Status history'
+         */
+        "chartTitle": string;
+        /**
+          * Chart data as JSON string or object Format: {"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, ...}
+          * @default JSON.stringify({     'Jan': { online: 10, maintenance: 0, error: 0, offline: -100 },     'Feb': { online: 5, maintenance: -5, error: 0, offline: -40 },     'Mar': { online: -10, maintenance: -60, error: -20, offline: -40 },     'Apr': { online: -25, maintenance: -40, error: -25, offline: -80 },     'May': { online: 0, maintenance: 0, error: 0, offline: -40 },     'Jun': { online: 0, maintenance: 0, error: 0, offline: -40 }   })
+         */
+        "data": string | StatusHistoryData;
+    }
     interface IxTabItem {
         /**
           * Set counter value
@@ -4692,12 +4669,6 @@ declare global {
         prototype: HTMLIxCssGridItemElement;
         new (): HTMLIxCssGridItemElement;
     };
-    interface HTMLIxCustomCardElement extends Components.IxCustomCard, HTMLStencilElement {
-    }
-    var HTMLIxCustomCardElement: {
-        prototype: HTMLIxCustomCardElement;
-        new (): HTMLIxCustomCardElement;
-    };
     interface HTMLIxCustomFieldElement extends Components.IxCustomField, HTMLStencilElement {
     }
     var HTMLIxCustomFieldElement: {
@@ -5581,6 +5552,12 @@ declare global {
         prototype: HTMLIxSplitButtonElement;
         new (): HTMLIxSplitButtonElement;
     };
+    interface HTMLIxStatusHistoryChartElement extends Components.IxStatusHistoryChart, HTMLStencilElement {
+    }
+    var HTMLIxStatusHistoryChartElement: {
+        prototype: HTMLIxStatusHistoryChartElement;
+        new (): HTMLIxStatusHistoryChartElement;
+    };
     interface HTMLIxTabItemElementEventMap {
         "tabClick": TabClickDetail;
     }
@@ -5883,7 +5860,6 @@ declare global {
         "ix-content-header": HTMLIxContentHeaderElement;
         "ix-css-grid": HTMLIxCssGridElement;
         "ix-css-grid-item": HTMLIxCssGridItemElement;
-        "ix-custom-card": HTMLIxCustomCardElement;
         "ix-custom-field": HTMLIxCustomFieldElement;
         "ix-date-dropdown": HTMLIxDateDropdownElement;
         "ix-date-input": HTMLIxDateInputElement;
@@ -5953,6 +5929,7 @@ declare global {
         "ix-slider": HTMLIxSliderElement;
         "ix-spinner": HTMLIxSpinnerElement;
         "ix-split-button": HTMLIxSplitButtonElement;
+        "ix-status-history-chart": HTMLIxStatusHistoryChartElement;
         "ix-tab-item": HTMLIxTabItemElement;
         "ix-tabs": HTMLIxTabsElement;
         "ix-textarea": HTMLIxTextareaElement;
@@ -6735,43 +6712,6 @@ declare namespace LocalJSX {
          */
         "itemName": string;
     }
-    interface IxCustomCard {
-        /**
-          * Card title
-          * @default 'Device status'
-         */
-        "cardTitle"?: string;
-        /**
-          * Chart data as JSON string or object Format: {"10.x": {"online": 60, "maintenance": 0, "error": 0, "offline": 0}, ...}
-          * @default JSON.stringify({     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },     '192.x': { online: 250, maintenance: 0, error: 20, offline: 15 },     '172.x': { online: 180, maintenance: 30, error: 0, offline: 0 }   })
-         */
-        "data"?: string | ChartData;
-        /**
-          * If true, disables hover and active styles and changes cursor to default
-          * @default false
-         */
-        "passive"?: boolean;
-        /**
-          * Show card in selected state
-          * @default false
-         */
-        "selected"?: boolean;
-        /**
-          * Card variant
-          * @default 'outline'
-         */
-        "variant"?: CardVariant;
-        /**
-          * X-axis label
-          * @default 'Device'
-         */
-        "xAxisLabel"?: string;
-        /**
-          * Y-axis label
-          * @default 'IP Range'
-         */
-        "yAxisLabel"?: string;
-    }
     interface IxCustomField {
         /**
           * Show text below the field component which show additional information
@@ -7248,7 +7188,7 @@ declare namespace LocalJSX {
           * Chart data as JSON string or object
           * @default {     '10.x': { online: 60, maintenance: 0, error: 0, offline: 0 },     '192.x': { online: 250, maintenance: 0, error: 26, offline: 15 },     '172.x': { online: 180, maintenance: 49, error: 0, offline: 0 }   }
          */
-        "data"?: string | ChartData;
+        "data"?: string | DeviceStatusChartData;
         /**
           * Maximum value for scaling bars (auto-calculated if not provided)
          */
@@ -9417,6 +9357,18 @@ declare namespace LocalJSX {
          */
         "variant"?: SplitButtonVariant;
     }
+    interface IxStatusHistoryChart {
+        /**
+          * Chart title
+          * @default 'Status history'
+         */
+        "chartTitle"?: string;
+        /**
+          * Chart data as JSON string or object Format: {"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, ...}
+          * @default JSON.stringify({     'Jan': { online: 10, maintenance: 0, error: 0, offline: -100 },     'Feb': { online: 5, maintenance: -5, error: 0, offline: -40 },     'Mar': { online: -10, maintenance: -60, error: -20, offline: -40 },     'Apr': { online: -25, maintenance: -40, error: -25, offline: -80 },     'May': { online: 0, maintenance: 0, error: 0, offline: -40 },     'Jun': { online: 0, maintenance: 0, error: 0, offline: -40 }   })
+         */
+        "data"?: string | StatusHistoryData;
+    }
     interface IxTabItem {
         /**
           * Set counter value
@@ -10298,7 +10250,6 @@ declare namespace LocalJSX {
         "ix-content-header": IxContentHeader;
         "ix-css-grid": IxCssGrid;
         "ix-css-grid-item": IxCssGridItem;
-        "ix-custom-card": IxCustomCard;
         "ix-custom-field": IxCustomField;
         "ix-date-dropdown": IxDateDropdown;
         "ix-date-input": IxDateInput;
@@ -10368,6 +10319,7 @@ declare namespace LocalJSX {
         "ix-slider": IxSlider;
         "ix-spinner": IxSpinner;
         "ix-split-button": IxSplitButton;
+        "ix-status-history-chart": IxStatusHistoryChart;
         "ix-tab-item": IxTabItem;
         "ix-tabs": IxTabs;
         "ix-textarea": IxTextarea;
@@ -10422,7 +10374,6 @@ declare module "@stencil/core" {
             "ix-content-header": LocalJSX.IxContentHeader & JSXBase.HTMLAttributes<HTMLIxContentHeaderElement>;
             "ix-css-grid": LocalJSX.IxCssGrid & JSXBase.HTMLAttributes<HTMLIxCssGridElement>;
             "ix-css-grid-item": LocalJSX.IxCssGridItem & JSXBase.HTMLAttributes<HTMLIxCssGridItemElement>;
-            "ix-custom-card": LocalJSX.IxCustomCard & JSXBase.HTMLAttributes<HTMLIxCustomCardElement>;
             "ix-custom-field": LocalJSX.IxCustomField & JSXBase.HTMLAttributes<HTMLIxCustomFieldElement>;
             "ix-date-dropdown": LocalJSX.IxDateDropdown & JSXBase.HTMLAttributes<HTMLIxDateDropdownElement>;
             /**
@@ -10521,6 +10472,7 @@ declare module "@stencil/core" {
             "ix-slider": LocalJSX.IxSlider & JSXBase.HTMLAttributes<HTMLIxSliderElement>;
             "ix-spinner": LocalJSX.IxSpinner & JSXBase.HTMLAttributes<HTMLIxSpinnerElement>;
             "ix-split-button": LocalJSX.IxSplitButton & JSXBase.HTMLAttributes<HTMLIxSplitButtonElement>;
+            "ix-status-history-chart": LocalJSX.IxStatusHistoryChart & JSXBase.HTMLAttributes<HTMLIxStatusHistoryChartElement>;
             "ix-tab-item": LocalJSX.IxTabItem & JSXBase.HTMLAttributes<HTMLIxTabItemElement>;
             "ix-tabs": LocalJSX.IxTabs & JSXBase.HTMLAttributes<HTMLIxTabsElement>;
             /**

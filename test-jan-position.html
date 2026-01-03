@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Position Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .debug-info {
+            background: #333;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h2>Jan Position Test - Should be at 20px</h2>
+
+        <ix-card>
+            <ix-card-content>
+                <ix-status-history-chart
+                    chart-title="Status history"
+                    data='{"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, "Feb": {"online": 5, "maintenance": -5, "error": 0, "offline": -40}, "Mar": {"online": -10, "maintenance": -60, "error": -20, "offline": -40}}'>
+                </ix-status-history-chart>
+            </ix-card-content>
+        </ix-card>
+    </div>
+
+    <div class="debug-info" id="debug-info">Loading...</div>
+
+    <script>
+        setTimeout(() => {
+            const chart = document.querySelector('ix-status-history-chart');
+            const debugInfo = document.getElementById('debug-info');
+
+            if (chart && chart.shadowRoot) {
+                const xLabels = chart.shadowRoot.querySelectorAll('.x-label');
+                let info = 'X-axis labels positions:\n';
+
+                xLabels.forEach((label, index) => {
+                    const style = label.getAttribute('style');
+                    const rect = label.getBoundingClientRect();
+                    const text = label.textContent.trim();
+                    info += `${index}: "${text}" - Style: ${style}\n`;
+                    info += `    Rect: left=${rect.left.toFixed(1)}, width=${rect.width.toFixed(1)}\n`;
+                });
+
+                debugInfo.textContent = info;
+
+                // Highlight Jan label
+                if (xLabels[0]) {
+                    xLabels[0].style.background = 'rgba(255, 0, 0, 0.3)';
+                    xLabels[0].style.border = '1px solid red';
+                }
+            } else {
+                debugInfo.textContent = 'Component not found or shadow DOM not available';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

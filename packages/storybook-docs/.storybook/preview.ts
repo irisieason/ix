@@ -47,7 +47,7 @@ const preview: Preview = {
   },
   decorators: [
     withThemeByClassName({
-      defaultTheme: hasAdditionalTheme ? 'brand-dark' : 'classic-dark',
+      defaultTheme: 'classic-dark',
       themes: {
         'classic-dark': 'theme-classic-dark',
         'classic-light': 'theme-classic-light',

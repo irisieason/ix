@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status History Chart Test</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Siemens Sans Global', sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1200px;
+        }
+        .section {
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #01d65a;
+        }
+        .chart-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Status History Chart Component Test</h1>
+
+        <div class="section">
+            <h2>1. 独立的状态历史图表组件</h2>
+            <ix-status-history-chart></ix-status-history-chart>
+        </div>
+
+        <div class="section">
+            <h2>2. 在自定义卡片中的状态历史图表</h2>
+            <ix-custom-card
+                chart-type="status-history"
+                card-title="服务器状态历史"
+            ></ix-custom-card>
+        </div>
+
+        <div class="section">
+            <h2>3. 对比：设备状态 vs 状态历史</h2>
+            <div class="chart-container">
+                <ix-custom-card
+                    chart-type="device-status"
+                    card-title="当前设备状态"
+                ></ix-custom-card>
+                <ix-custom-card
+                    chart-type="status-history"
+                    card-title="状态历史趋势"
+                ></ix-custom-card>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. 自定义数据示例</h2>
+            <ix-status-history-chart
+                chart-title="季度网络状态趋势"
+                data='{"Q1 2024": {"online": 15, "maintenance": -10, "error": -5, "offline": -80}, "Q2 2024": {"online": 8, "maintenance": -20, "error": -15, "offline": -60}, "Q3 2024": {"online": -5, "maintenance": -35, "error": -30, "offline": -45}, "Q4 2024": {"online": 5, "maintenance": -15, "error": -10, "offline": -70}}'
+            ></ix-status-history-chart>
+        </div>
+    </div>
+
+    <!-- 模拟 Stencil 组件加载 -->
+    <script>
+        // 这里应该加载实际的 Stencil 组件
+        // 在实际项目中，这些组件会通过 Stencil 构建系统生成
+        console.log('Status History Chart components should be loaded here');
+
+        // 模拟组件注册
+        if (!customElements.get('ix-status-history-chart')) {
+            console.log('ix-status-history-chart component would be registered here');
+        }
+
+        if (!customElements.get('ix-custom-card')) {
+            console.log('ix-custom-card component would be registered here');
+        }
+    </script>
+</body>
+</html>

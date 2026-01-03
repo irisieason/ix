@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Line Position Debug</title>
+    <script type="module" src="./node_modules/@siemens/ix/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./node_modules/@siemens/ix/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .debug-info {
+            background: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info" id="debug-info">
+        Loading debug info...
+    </div>
+
+    <ix-card>
+        <ix-card-content>
+            <ix-status-history-chart
+                chart-title="Status history"
+                data='{"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, "Feb": {"online": 5, "maintenance": -5, "error": 0, "offline": -40}, "Mar": {"online": -10, "maintenance": -60, "error": -20, "offline": -40}, "Apr": {"online": -25, "maintenance": -40, "error": -25, "offline": -80}, "May": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}, "Jun": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}}'>
+            </ix-status-history-chart>
+        </ix-card-content>
+    </ix-card>
+
+    <script>
+        setTimeout(() => {
+            const chart = document.querySelector('ix-status-history-chart');
+            const debugInfo = document.getElementById('debug-info');
+
+            if (chart && chart.shadowRoot) {
+                const chartContainer = chart.shadowRoot.querySelector('.chart-container');
+                const chartWrapper = chart.shadowRoot.querySelector('.chart-wrapper');
+                const yAxisLabels = chart.shadowRoot.querySelector('.y-axis-labels');
+                const chartSvgContainer = chart.shadowRoot.querySelector('.chart-svg-container');
+                const xAxisLabels = chart.shadowRoot.querySelector('.x-axis-labels');
+                const verticalLines = chart.shadowRoot.querySelectorAll('.grid-lines line[x1]');
+                const xLabels = chart.shadowRoot.querySelectorAll('.x-label');
+
+                let info = 'Debug Information:\n';
+                info += `Chart container rect: ${JSON.stringify(chartContainer?.getBoundingClientRect())}\n`;
+                info += `Chart wrapper rect: ${JSON.stringify(chartWrapper?.getBoundingClientRect())}\n`;
+                info += `Y-axis labels rect: ${JSON.stringify(yAxisLabels?.getBoundingClientRect())}\n`;
+                info += `Chart SVG container rect: ${JSON.stringify(chartSvgContainer?.getBoundingClientRect())}\n`;
+                info += `X-axis labels rect: ${JSON.stringify(xAxisLabels?.getBoundingClientRect())}\n\n`;
+
+                info += 'Vertical lines positions:\n';
+                verticalLines.forEach((line, index) => {
+                    const x1 = line.getAttribute('x1');
+                    info += `Line ${index}: x1=${x1}\n`;
+                });
+
+                info += '\nX-axis labels positions:\n';
+                xLabels.forEach((label, index) => {
+                    const style = label.getAttribute('style');
+                    const rect = label.getBoundingClientRect();
+                    info += `Label ${index} (${label.textContent}): ${style}, rect: ${JSON.stringify(rect)}\n`;
+                });
+
+                debugInfo.textContent = info;
+                debugInfo.style.whiteSpace = 'pre-wrap';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

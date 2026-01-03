@@ -569,29 +569,6 @@ export declare interface IxContentHeader extends Components.IxContentHeader {
 
 
 @ProxyCmp({
-  inputs: ['cardTitle', 'data', 'passive', 'selected', 'variant', 'xAxisLabel', 'yAxisLabel']
-})
-@Component({
-  selector: 'ix-custom-card',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['cardTitle', 'data', 'passive', 'selected', 'variant', 'xAxisLabel', 'yAxisLabel'],
-  standalone: false
-})
-export class IxCustomCard {
-  protected el: HTMLIxCustomCardElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface IxCustomCard extends Components.IxCustomCard {}
-
-
-@ProxyCmp({
   inputs: ['helperText', 'infoText', 'invalidText', 'label', 'required', 'showTextAsTooltip', 'validText', 'warningText']
 })
 @Component({
@@ -2506,6 +2483,29 @@ export declare interface IxSplitButton extends Components.IxSplitButton {
    */
   buttonClick: EventEmitter<CustomEvent<MouseEvent>>;
 }
+
+
+@ProxyCmp({
+  inputs: ['chartTitle', 'data']
+})
+@Component({
+  selector: 'ix-status-history-chart',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['chartTitle', 'data'],
+  standalone: false
+})
+export class IxStatusHistoryChart {
+  protected el: HTMLIxStatusHistoryChartElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface IxStatusHistoryChart extends Components.IxStatusHistoryChart {}
 
 
 @ProxyCmp({

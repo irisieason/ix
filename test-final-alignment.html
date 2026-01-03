@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Alignment Test</title>
+    <script type="module" src="./packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="./packages/core/dist/siemens-ix/siemens-ix.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .debug-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .debug-line {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            opacity: 0.8;
+        }
+        .grid-line { background: green; }
+        .label-line { background: red; }
+        .status {
+            background: #333;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .success { color: #01d65a; }
+        .error { color: #ff2640; }
+    </style>
+</head>
+<body>
+    <h1>StatusHistoryChart X轴标签对齐最终测试</h1>
+
+    <div class="container">
+        <div class="debug-overlay" id="debug-overlay"></div>
+
+        <h2>测试图表 (与Figma设计对比)</h2>
+        <ix-status-history-chart
+            chart-title="Status history"
+            data='{"Jan": {"online": 10, "maintenance": 0, "error": 0, "offline": -100}, "Feb": {"online": 5, "maintenance": -5, "error": 0, "offline": -40}, "Mar": {"online": -10, "maintenance": -60, "error": -20, "offline": -40}, "Apr": {"online": -25, "maintenance": -40, "error": -25, "offline": -80}, "May": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}, "Jun": {"online": 0, "maintenance": 0, "error": 0, "offline": -40}}'>
+        </ix-status-history-chart>
+
+        <div class="status" id="alignment-status">检查中...</div>
+    </div>
+
+    <script>
+        function checkAlignment() {
+            const chart = document.querySelector('ix-status-history-chart');
+            const overlay = document.getElementById('debug-overlay');
+            const status = document.getElementById('alignment-status');
+            const container = document.querySelector('.container');
+
+            if (!chart || !chart.shadowRoot) {
+                status.innerHTML = '<span class="error">✗ 组件未加载或Shadow DOM不存在</span>';
+                return;
+            }
+
+            const containerRect = container.getBoundingClientRect();
+            const xLabels = chart.shadowRoot.querySelectorAll('.x-label');
+            const verticalLines = chart.shadowRoot.querySelectorAll('.grid-lines line[x1]');
+            const chartSvg = chart.shadowRoot.querySelector('.chart-svg-container');
+
+            if (!chartSvg) {
+                status.innerHTML = '<span class="error">✗ 图表SVG容器未找到</span>';
+                return;
+            }
+
+            const svgRect = chartSvg.getBoundingClientRect();
+
+            // 清除之前的调试线
+            overlay.innerHTML = '';
+
+            let statusText = `标签数量: ${xLabels.length}, 垂直线数量: ${verticalLines.length}\n\n`;
+            let alignmentIssues = 0;
+            let totalOffset = 0;
+
+            // 绘制垂直网格线的调试线
+            verticalLines.forEach((line, index) => {
+                const x1 = parseFloat(line.getAttribute('x1'));
+                const actualX = svgRect.left - containerRect.left + x1;
+
+                const gridDebugLine = document.createElement('div');
+                gridDebugLine.className = 'debug-line grid-line';
+                gridDebugLine.style.left = `${actualX}px`;
+                gridDebugLine.title = `Grid line ${index}: x=${x1}`;
+                overlay.appendChild(gridDebugLine);
+            });
+
+            // 绘制标签中心的调试线并检查对齐
+            xLabels.forEach((label, index) => {
+                const labelRect = label.getBoundingClientRect();
+                const labelCenter = labelRect.left - containerRect.left + labelRect.width / 2;
+                const labelText = label.textContent?.trim();
+
+                const labelDebugLine = document.createElement('div');
+                labelDebugLine.className = 'debug-line label-line';
+                labelDebugLine.style.left = `${labelCenter}px`;
+                labelDebugLine.title = `Label "${labelText}" center`;
+                overlay.appendChild(labelDebugLine);
+
+                // 计算与对应网格线的偏移
+                if (verticalLines[index]) {
+                    const x1 = parseFloat(verticalLines[index].getAttribute('x1'));
+                    const gridX = svgRect.left - containerRect.left + x1;
+                    const offset = Math.abs(labelCenter - gridX);
+
+                    totalOffset += offset;
+
+                    if (offset > 2) {
+                        alignmentIssues++;
+                        statusText += `❌ "${labelText}": 偏移 ${offset.toFixed(1)}px (超出容差)\n`;
+                    } else {
+                        statusText += `✅ "${labelText}": 偏移 ${offset.toFixed(1)}px (良好对齐)\n`;
+                    }
+                }
+            });
+
+            const avgOffset = totalOffset / xLabels.length;
+            statusText += `\n平均偏移: ${avgOffset.toFixed(1)}px\n`;
+
+            if (alignmentIssues === 0) {
+                statusText += '\n🎉 所有标签都与垂直网格线完美对齐！';
+                status.innerHTML = `<span class="success">${statusText}</span>`;
+            } else {
+                statusText += `\n⚠️ ${alignmentIssues} 个标签存在对齐问题`;
+                status.innerHTML = `<span class="error">${statusText}</span>`;
+            }
+        }
+
+        // 等待组件加载
+        setTimeout(checkAlignment, 2000);
+
+        customElements.whenDefined('ix-status-history-chart').then(() => {
+            setTimeout(checkAlignment, 1000);
+        });
+
+        // 添加按钮来手动检查
+        const button = document.createElement('button');
+        button.textContent = '重新检查对齐';
+        button.style.cssText = 'margin: 10px 0; padding: 8px 16px; background: #01d65a; color: white; border: none; border-radius: 4px; cursor: pointer;';
+        button.onclick = checkAlignment;
+        document.body.appendChild(button);
+    </script>
+</body>
+</html>
