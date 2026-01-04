@@ -109,7 +109,7 @@ export class EventItemContent {
               ></ix-icon-button>
             )}
             {this.showCreateTaskButton && (
-              <ix-button variant="secondary" size="small">
+              <ix-button variant="secondary" {...({ size: "small" } as any)}>
                 {this.createTaskButtonText}
               </ix-button>
             )}
