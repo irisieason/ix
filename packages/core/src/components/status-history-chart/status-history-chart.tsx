@@ -137,10 +137,10 @@ export class StatusHistoryChart {
 
   private getStatusColor(status: StatusType): string {
     const colors = {
-      online: '#01d65a',
-      maintenance: '#ffd732',
-      error: '#ff2640',
-      offline: '#7d8099'
+      online: 'var(--theme-color-success)',
+      maintenance: 'var(--theme-color-warning)',
+      error: 'var(--theme-color-alarm)',
+      offline: 'var(--theme-color-soft-text)'
     };
     return colors[status];
   }
@@ -301,19 +301,19 @@ export class StatusHistoryChart {
           {/* Legend */}
           <div class="legend">
             <div class="legend-item">
-              <div class="legend-color" style={{ backgroundColor: '#01d65a' }}></div>
+              <div class="legend-color legend-online"></div>
               <ix-typography format="label">Online</ix-typography>
             </div>
             <div class="legend-item">
-              <div class="legend-color" style={{ backgroundColor: '#ffd732' }}></div>
+              <div class="legend-color legend-maintenance"></div>
               <ix-typography format="label">Maintenance</ix-typography>
             </div>
             <div class="legend-item">
-              <div class="legend-color" style={{ backgroundColor: '#ff2640' }}></div>
+              <div class="legend-color legend-error"></div>
               <ix-typography format="label">Error</ix-typography>
             </div>
             <div class="legend-item">
-              <div class="legend-color" style={{ backgroundColor: '#7d8099' }}></div>
+              <div class="legend-color legend-offline"></div>
               <ix-typography format="label">Offline</ix-typography>
             </div>
           </div>
