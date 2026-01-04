@@ -40,6 +40,7 @@ import { defineCustomElement as defineIxDropdownHeader } from '@irisieason/ix/co
 import { defineCustomElement as defineIxDropdownItem } from '@irisieason/ix/components/ix-dropdown-item.js';
 import { defineCustomElement as defineIxDropdownQuickActions } from '@irisieason/ix/components/ix-dropdown-quick-actions.js';
 import { defineCustomElement as defineIxEmptyState } from '@irisieason/ix/components/ix-empty-state.js';
+import { defineCustomElement as defineIxEventItemContent } from '@irisieason/ix/components/ix-event-item-content.js';
 import { defineCustomElement as defineIxEventList } from '@irisieason/ix/components/ix-event-list.js';
 import { defineCustomElement as defineIxEventListItem } from '@irisieason/ix/components/ix-event-list-item.js';
 import { defineCustomElement as defineIxExpandingSearch } from '@irisieason/ix/components/ix-expanding-search.js';
@@ -1091,6 +1092,29 @@ export declare interface IxEmptyState extends Components.IxEmptyState {
    */
   actionClick: EventEmitter<CustomEvent<void>>;
 }
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineIxEventItemContent,
+  inputs: ['createTaskButtonText', 'deviceInfo', 'deviceName', 'headerInfo', 'icon', 'showCreateTaskButton', 'showShareButton', 'timestamp', 'typeHeader']
+})
+@Component({
+  selector: 'ix-event-item-content',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['createTaskButtonText', 'deviceInfo', 'deviceName', 'headerInfo', 'icon', 'showCreateTaskButton', 'showShareButton', 'timestamp', 'typeHeader'],
+})
+export class IxEventItemContent {
+  protected el: HTMLIxEventItemContentElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface IxEventItemContent extends Components.IxEventItemContent {}
 
 
 @ProxyCmp({

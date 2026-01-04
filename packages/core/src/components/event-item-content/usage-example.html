@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Item Content Examples</title>
+    <script type="module" src="../../dist/ix/ix.esm.js"></script>
+    <link rel="stylesheet" href="../../dist/ix/ix.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Siemens Sans Global', sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .example-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .example-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .example-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        .description {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        .event-list-container {
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="example-container">
+        <h1>Event Item Content Examples</h1>
+        <p>Comprehensive examples of the EventItemContent component used within EventList.</p>
+
+        <!-- Basic Usage -->
+        <div class="example-section">
+            <div class="example-title">1. Basic Usage</div>
+            <div class="description">Default EventItemContent with standard properties</div>
+            <div class="event-list-container">
+                <ix-event-list>
+                    <ix-event-list-item>
+                        <ix-event-item-content></ix-event-item-content>
+                    </ix-event-list-item>
+                </ix-event-list>
+            </div>
+        </div>
+
+        <!-- System Events -->
+        <div class="example-section">
+            <div class="example-title">2. System Events</div>
+            <div class="description">Various system events with different severity levels</div>
+            <div class="event-list-container">
+                <ix-event-list item-height="L">
+                    <ix-event-list-item item-color="color-alarm">
+                        <ix-event-item-content
+                            icon="error"
+                            type-header="Critical System Error"
+                            header-info="Database connection failed"
+                            device-name="db-server-primary"
+                            device-info="192.168.1.10"
+                            timestamp="2026-01-05, 16:22:10"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-warning">
+                        <ix-event-item-content
+                            icon="warning"
+                            type-header="High CPU Usage"
+                            header-info="Usage at 85%"
+                            device-name="app-server-01"
+                            device-info="10.0.1.25"
+                            timestamp="2026-01-05, 15:45:33"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-info">
+                        <ix-event-item-content
+                            icon="info"
+                            type-header="Maintenance Window"
+                            header-info="Scheduled for tonight"
+                            device-name="load-balancer"
+                            device-info="172.16.0.1"
+                            timestamp="2026-01-06, 02:00:00"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-success">
+                        <ix-event-item-content
+                            icon="check"
+                            type-header="Backup Completed"
+                            header-info="Full system backup"
+                            device-name="backup-server"
+                            device-info="10.1.0.50"
+                            timestamp="2026-01-05, 03:30:15"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+                </ix-event-list>
+            </div>
+        </div>
+
+        <!-- Network Events -->
+        <div class="example-section">
+            <div class="example-title">3. Network Events</div>
+            <div class="description">Network-related events and connectivity issues</div>
+            <div class="event-list-container">
+                <ix-event-list>
+                    <ix-event-list-item item-color="color-alarm">
+                        <ix-event-item-content
+                            icon="network"
+                            type-header="Connection Lost"
+                            header-info="Timeout after 30 seconds"
+                            device-name="switch-core-01"
+                            device-info="10.0.1.1"
+                            timestamp="2026-01-05, 12:45:30"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-warning">
+                        <ix-event-item-content
+                            icon="wifi"
+                            type-header="Weak Signal"
+                            header-info="Signal strength: -75dBm"
+                            device-name="access-point-floor2"
+                            device-info="192.168.2.100"
+                            timestamp="2026-01-05, 11:20:45"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-success">
+                        <ix-event-item-content
+                            icon="ethernet"
+                            type-header="Link Restored"
+                            header-info="Gigabit connection active"
+                            device-name="switch-edge-03"
+                            device-info="172.20.1.15"
+                            timestamp="2026-01-05, 10:15:22"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+                </ix-event-list>
+            </div>
+        </div>
+
+        <!-- Software Updates -->
+        <div class="example-section">
+            <div class="example-title">4. Software Updates</div>
+            <div class="description">Software and firmware update events</div>
+            <div class="event-list-container">
+                <ix-event-list>
+                    <ix-event-list-item item-color="color-info">
+                        <ix-event-item-content
+                            icon="download"
+                            type-header="Update Available"
+                            header-info="v3.1.0 › v3.2.0"
+                            device-name="firmware-controller"
+                            device-info="172.16.0.50"
+                            timestamp="2026-01-05, 09:15:45"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-success">
+                        <ix-event-item-content
+                            icon="check"
+                            type-header="Update Completed"
+                            header-info="v2.1.0 installed successfully"
+                            device-name="gateway-01"
+                            device-info="172.20.1.1"
+                            timestamp="2026-01-05, 14:12:55"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-warning">
+                        <ix-event-item-content
+                            icon="pause"
+                            type-header="Update Paused"
+                            header-info="User intervention required"
+                            device-name="sensor-array-b"
+                            device-info="10.2.3.45"
+                            timestamp="2026-01-05, 13:30:20"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+                </ix-event-list>
+            </div>
+        </div>
+
+        <!-- Custom Button Configuration -->
+        <div class="example-section">
+            <div class="example-title">5. Custom Button Configuration</div>
+            <div class="description">Examples with different button configurations</div>
+            <div class="event-list-container">
+                <ix-event-list>
+                    <ix-event-list-item>
+                        <ix-event-item-content
+                            icon="maintenance"
+                            type-header="Maintenance Required"
+                            header-info="Scheduled maintenance"
+                            device-name="pump-station-03"
+                            device-info="10.1.5.23"
+                            timestamp="2026-01-06, 02:00:00"
+                            show-share-button="false"
+                            create-task-button-text="Schedule"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item>
+                        <ix-event-item-content
+                            icon="security"
+                            type-header="Security Alert"
+                            header-info="Unauthorized access attempt"
+                            device-name="firewall-dmz"
+                            device-info="203.0.113.10"
+                            timestamp="2026-01-05, 18:45:12"
+                            show-create-task-button="false"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item>
+                        <ix-event-item-content
+                            icon="report"
+                            type-header="Report Generated"
+                            header-info="Monthly performance report"
+                            device-name="analytics-server"
+                            device-info="10.0.5.100"
+                            timestamp="2026-01-01, 00:05:00"
+                            create-task-button-text="Download"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+                </ix-event-list>
+            </div>
+        </div>
+
+        <!-- Compact Layout -->
+        <div class="example-section">
+            <div class="example-title">6. Compact Layout</div>
+            <div class="description">Compact event list with smaller item height</div>
+            <div class="event-list-container">
+                <ix-event-list item-height="S" compact>
+                    <ix-event-list-item item-color="color-info">
+                        <ix-event-item-content
+                            icon="sync"
+                            type-header="Sync Started"
+                            header-info="Data synchronization"
+                            device-name="sync-service"
+                            device-info="10.0.0.200"
+                            timestamp="2026-01-05, 20:15:30"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-success">
+                        <ix-event-item-content
+                            icon="check"
+                            type-header="Sync Complete"
+                            header-info="1,234 records processed"
+                            device-name="sync-service"
+                            device-info="10.0.0.200"
+                            timestamp="2026-01-05, 20:18:45"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-info">
+                        <ix-event-item-content
+                            icon="clock"
+                            type-header="Scheduled Task"
+                            header-info="Daily cleanup job"
+                            device-name="cron-scheduler"
+                            device-info="localhost"
+                            timestamp="2026-01-06, 01:00:00"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+                </ix-event-list>
+            </div>
+        </div>
+
+        <!-- IoT Device Events -->
+        <div class="example-section">
+            <div class="example-title">7. IoT Device Events</div>
+            <div class="description">Events from IoT devices and sensors</div>
+            <div class="event-list-container">
+                <ix-event-list animated>
+                    <ix-event-list-item item-color="color-warning">
+                        <ix-event-item-content
+                            icon="thermometer"
+                            type-header="Temperature Alert"
+                            header-info="85°C detected"
+                            device-name="temp-sensor-room-a"
+                            device-info="10.0.2.15"
+                            timestamp="2026-01-05, 15:45:33"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-alarm">
+                        <ix-event-item-content
+                            icon="battery"
+                            type-header="Low Battery"
+                            header-info="15% remaining"
+                            device-name="wireless-sensor-07"
+                            device-info="MAC: AA:BB:CC:DD:EE:FF"
+                            timestamp="2026-01-05, 14:20:10"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+
+                    <ix-event-list-item item-color="color-success">
+                        <ix-event-item-content
+                            icon="power"
+                            type-header="Power Restored"
+                            header-info="UPS switched to mains"
+                            device-name="ups-rack-01"
+                            device-info="SNMP: 192.168.3.50"
+                            timestamp="2026-01-05, 13:55:42"
+                        ></ix-event-item-content>
+                    </ix-event-list-item>
+                </ix-event-list>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wait for components to load
+        Promise.all([
+            customElements.whenDefined('ix-event-list'),
+            customElements.whenDefined('ix-event-list-item'),
+            customElements.whenDefined('ix-event-item-content')
+        ]).then(() => {
+            console.log('All event components loaded successfully');
+
+            // Add some interactivity
+            document.querySelectorAll('ix-event-list-item').forEach(item => {
+                item.addEventListener('itemClick', (event) => {
+                    console.log('Event item clicked:', event.target);
+                });
+            });
+        }).catch(error => {
+            console.error('Failed to load event components:', error);
+        });
+    </script>
+</body>
+</html>

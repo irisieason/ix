@@ -42,6 +42,7 @@ import { IxDropdownItem as IxDropdownItemElement, defineCustomElement as defineI
 import { IxDropdownQuickActions as IxDropdownQuickActionsElement, defineCustomElement as defineIxDropdownQuickActions } from "@irisieason/ix/components/ix-dropdown-quick-actions.js";
 import { IxDropdown as IxDropdownElement, defineCustomElement as defineIxDropdown } from "@irisieason/ix/components/ix-dropdown.js";
 import { IxEmptyState as IxEmptyStateElement, defineCustomElement as defineIxEmptyState } from "@irisieason/ix/components/ix-empty-state.js";
+import { IxEventItemContent as IxEventItemContentElement, defineCustomElement as defineIxEventItemContent } from "@irisieason/ix/components/ix-event-item-content.js";
 import { IxEventListItem as IxEventListItemElement, defineCustomElement as defineIxEventListItem } from "@irisieason/ix/components/ix-event-list-item.js";
 import { IxEventList as IxEventListElement, defineCustomElement as defineIxEventList } from "@irisieason/ix/components/ix-event-list.js";
 import { IxExpandingSearch as IxExpandingSearchElement, defineCustomElement as defineIxExpandingSearch } from "@irisieason/ix/components/ix-expanding-search.js";
@@ -556,6 +557,17 @@ export const IxEmptyState: StencilReactComponent<IxEmptyStateElement, IxEmptySta
     react: React,
     events: { onActionClick: 'actionClick' } as IxEmptyStateEvents,
     defineCustomElement: defineIxEmptyState
+});
+
+export type IxEventItemContentEvents = NonNullable<unknown>;
+
+export const IxEventItemContent: StencilReactComponent<IxEventItemContentElement, IxEventItemContentEvents> = /*@__PURE__*/ createComponent<IxEventItemContentElement, IxEventItemContentEvents>({
+    tagName: 'ix-event-item-content',
+    elementClass: IxEventItemContentElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as IxEventItemContentEvents,
+    defineCustomElement: defineIxEventItemContent
 });
 
 export type IxEventListEvents = NonNullable<unknown>;

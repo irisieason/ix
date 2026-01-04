@@ -1507,6 +1507,53 @@ export namespace Components {
          */
         "subHeader"?: string;
     }
+    interface IxEventItemContent {
+        /**
+          * Text for the create task button
+          * @default 'Create task'
+         */
+        "createTaskButtonText": string;
+        /**
+          * Device information (e.g., IP address)
+          * @default '172.19.65.8'
+         */
+        "deviceInfo": string;
+        /**
+          * Device name
+          * @default 'robo1-net-sw17'
+         */
+        "deviceName": string;
+        /**
+          * Additional information for the event type
+          * @default 'V2.3 › V2.5'
+         */
+        "headerInfo": string;
+        /**
+          * Icon name for the event type
+          * @default 'distribution'
+         */
+        "icon": string;
+        /**
+          * Show create task button
+          * @default true
+         */
+        "showCreateTaskButton": boolean;
+        /**
+          * Show share button
+          * @default true
+         */
+        "showShareButton": boolean;
+        /**
+          * Timestamp for the event
+          * @default '2026-01-05, 08:51:21'
+         */
+        "timestamp": string;
+        /**
+          * Main header text for the event type
+          * @default 'Update available'
+         */
+        "typeHeader": string;
+    }
     interface IxEventList {
         /**
           * Animate state change transitions. Defaults to 'false'.
@@ -4861,6 +4908,12 @@ declare global {
         prototype: HTMLIxEmptyStateElement;
         new (): HTMLIxEmptyStateElement;
     };
+    interface HTMLIxEventItemContentElement extends Components.IxEventItemContent, HTMLStencilElement {
+    }
+    var HTMLIxEventItemContentElement: {
+        prototype: HTMLIxEventItemContentElement;
+        new (): HTMLIxEventItemContentElement;
+    };
     interface HTMLIxEventListElement extends Components.IxEventList, HTMLStencilElement {
     }
     var HTMLIxEventListElement: {
@@ -5875,6 +5928,7 @@ declare global {
         "ix-dropdown-item": HTMLIxDropdownItemElement;
         "ix-dropdown-quick-actions": HTMLIxDropdownQuickActionsElement;
         "ix-empty-state": HTMLIxEmptyStateElement;
+        "ix-event-item-content": HTMLIxEventItemContentElement;
         "ix-event-list": HTMLIxEventListElement;
         "ix-event-list-item": HTMLIxEventListItemElement;
         "ix-expanding-search": HTMLIxExpandingSearchElement;
@@ -7437,6 +7491,53 @@ declare namespace LocalJSX {
           * Optional empty state sub header
          */
         "subHeader"?: string;
+    }
+    interface IxEventItemContent {
+        /**
+          * Text for the create task button
+          * @default 'Create task'
+         */
+        "createTaskButtonText"?: string;
+        /**
+          * Device information (e.g., IP address)
+          * @default '172.19.65.8'
+         */
+        "deviceInfo"?: string;
+        /**
+          * Device name
+          * @default 'robo1-net-sw17'
+         */
+        "deviceName"?: string;
+        /**
+          * Additional information for the event type
+          * @default 'V2.3 › V2.5'
+         */
+        "headerInfo"?: string;
+        /**
+          * Icon name for the event type
+          * @default 'distribution'
+         */
+        "icon"?: string;
+        /**
+          * Show create task button
+          * @default true
+         */
+        "showCreateTaskButton"?: boolean;
+        /**
+          * Show share button
+          * @default true
+         */
+        "showShareButton"?: boolean;
+        /**
+          * Timestamp for the event
+          * @default '2026-01-05, 08:51:21'
+         */
+        "timestamp"?: string;
+        /**
+          * Main header text for the event type
+          * @default 'Update available'
+         */
+        "typeHeader"?: string;
     }
     interface IxEventList {
         /**
@@ -10265,6 +10366,7 @@ declare namespace LocalJSX {
         "ix-dropdown-item": IxDropdownItem;
         "ix-dropdown-quick-actions": IxDropdownQuickActions;
         "ix-empty-state": IxEmptyState;
+        "ix-event-item-content": IxEventItemContent;
         "ix-event-list": IxEventList;
         "ix-event-list-item": IxEventListItem;
         "ix-expanding-search": IxExpandingSearch;
@@ -10395,6 +10497,7 @@ declare module "@stencil/core" {
             "ix-dropdown-item": LocalJSX.IxDropdownItem & JSXBase.HTMLAttributes<HTMLIxDropdownItemElement>;
             "ix-dropdown-quick-actions": LocalJSX.IxDropdownQuickActions & JSXBase.HTMLAttributes<HTMLIxDropdownQuickActionsElement>;
             "ix-empty-state": LocalJSX.IxEmptyState & JSXBase.HTMLAttributes<HTMLIxEmptyStateElement>;
+            "ix-event-item-content": LocalJSX.IxEventItemContent & JSXBase.HTMLAttributes<HTMLIxEventItemContentElement>;
             "ix-event-list": LocalJSX.IxEventList & JSXBase.HTMLAttributes<HTMLIxEventListElement>;
             "ix-event-list-item": LocalJSX.IxEventListItem & JSXBase.HTMLAttributes<HTMLIxEventListItemElement>;
             "ix-expanding-search": LocalJSX.IxExpandingSearch & JSXBase.HTMLAttributes<HTMLIxExpandingSearchElement>;

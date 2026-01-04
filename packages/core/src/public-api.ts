@@ -10,6 +10,7 @@ export * from './components/category-filter/filter-state';
 export * from './components/category-filter/input-state';
 export * from './components/category-filter/logical-filter-operator';
 export { DeviceStatusChart } from './components/device-status-chart/device-status-chart';
+export { EventItemContent } from './components/event-item-content/event-item-content';
 export { StatusHistoryChart } from './components/status-history-chart/status-history-chart';
 export { FlipTileVariant } from './components/flip-tile/flip-tile.types';
 export * from './components/toast/toast-utils';

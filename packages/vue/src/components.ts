@@ -39,6 +39,7 @@ import { defineCustomElement as defineIxDropdownHeader } from '@irisieason/ix/co
 import { defineCustomElement as defineIxDropdownItem } from '@irisieason/ix/components/ix-dropdown-item.js';
 import { defineCustomElement as defineIxDropdownQuickActions } from '@irisieason/ix/components/ix-dropdown-quick-actions.js';
 import { defineCustomElement as defineIxEmptyState } from '@irisieason/ix/components/ix-empty-state.js';
+import { defineCustomElement as defineIxEventItemContent } from '@irisieason/ix/components/ix-event-item-content.js';
 import { defineCustomElement as defineIxEventList } from '@irisieason/ix/components/ix-event-list.js';
 import { defineCustomElement as defineIxEventListItem } from '@irisieason/ix/components/ix-event-list-item.js';
 import { defineCustomElement as defineIxExpandingSearch } from '@irisieason/ix/components/ix-expanding-search.js';
@@ -592,6 +593,19 @@ export const IxEmptyState: StencilVueComponent<JSX.IxEmptyState> = /*@__PURE__*/
   'actionClick'
 ], [
   'actionClick'
+]);
+
+
+export const IxEventItemContent: StencilVueComponent<JSX.IxEventItemContent> = /*@__PURE__*/ defineContainer<JSX.IxEventItemContent>('ix-event-item-content', defineIxEventItemContent, [
+  'icon',
+  'typeHeader',
+  'headerInfo',
+  'deviceName',
+  'deviceInfo',
+  'timestamp',
+  'showShareButton',
+  'showCreateTaskButton',
+  'createTaskButtonText'
 ]);
 
 

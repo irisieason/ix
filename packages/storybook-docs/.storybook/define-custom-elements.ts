@@ -34,6 +34,7 @@ import { defineCustomElement as ixDropdownHeader } from '@irisieason/ix/componen
 import { defineCustomElement as ixDropdownItem } from '@irisieason/ix/components/ix-dropdown-item.js';
 import { defineCustomElement as ixDropdownQuickActions } from '@irisieason/ix/components/ix-dropdown-quick-actions.js';
 import { defineCustomElement as ixEmptyState } from '@irisieason/ix/components/ix-empty-state.js';
+import { defineCustomElement as ixEventItemContent } from '@irisieason/ix/components/ix-event-item-content.js';
 import { defineCustomElement as ixEventList } from '@irisieason/ix/components/ix-event-list.js';
 import { defineCustomElement as ixEventListItem } from '@irisieason/ix/components/ix-event-list-item.js';
 import { defineCustomElement as ixExpandingSearch } from '@irisieason/ix/components/ix-expanding-search.js';
@@ -138,6 +139,7 @@ ixDropdownHeader();
 ixDropdownItem();
 ixDropdownQuickActions();
 ixEmptyState();
+ixEventItemContent();
 ixEventList();
 ixEventListItem();
 ixExpandingSearch();

@@ -43,6 +43,7 @@ import { IxDropdownItem as IxDropdownItemElement } from "@irisieason/ix/componen
 import { IxDropdownQuickActions as IxDropdownQuickActionsElement } from "@irisieason/ix/components/ix-dropdown-quick-actions.js";
 import { IxDropdown as IxDropdownElement } from "@irisieason/ix/components/ix-dropdown.js";
 import { IxEmptyState as IxEmptyStateElement } from "@irisieason/ix/components/ix-empty-state.js";
+import { IxEventItemContent as IxEventItemContentElement } from "@irisieason/ix/components/ix-event-item-content.js";
 import { IxEventListItem as IxEventListItemElement } from "@irisieason/ix/components/ix-event-list-item.js";
 import { IxEventList as IxEventListElement } from "@irisieason/ix/components/ix-event-list.js";
 import { IxExpandingSearch as IxExpandingSearchElement } from "@irisieason/ix/components/ix-expanding-search.js";
@@ -780,6 +781,26 @@ export const IxEmptyState: StencilReactComponent<IxEmptyStateElement, IxEmptySta
     },
     hydrateModule: import('@irisieason/ix/hydrate') as Promise<HydrateModule>,
     clientModule: clientComponents.IxEmptyState as ReactWebComponent<IxEmptyStateElement, IxEmptyStateEvents>,
+    serializeShadowRoot,
+});
+
+export type IxEventItemContentEvents = NonNullable<unknown>;
+
+export const IxEventItemContent: StencilReactComponent<IxEventItemContentElement, IxEventItemContentEvents> = /*@__PURE__*/ createComponent<IxEventItemContentElement, IxEventItemContentEvents>({
+    tagName: 'ix-event-item-content',
+    properties: {
+        icon: 'icon',
+        typeHeader: 'type-header',
+        headerInfo: 'header-info',
+        deviceName: 'device-name',
+        deviceInfo: 'device-info',
+        timestamp: 'timestamp',
+        showShareButton: 'show-share-button',
+        showCreateTaskButton: 'show-create-task-button',
+        createTaskButtonText: 'create-task-button-text'
+    },
+    hydrateModule: import('@irisieason/ix/hydrate') as Promise<HydrateModule>,
+    clientModule: clientComponents.IxEventItemContent as ReactWebComponent<IxEventItemContentElement, IxEventItemContentEvents>,
     serializeShadowRoot,
 });
 

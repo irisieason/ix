@@ -36,6 +36,7 @@ export const DIRECTIVES = [
   d.IxDropdownItem,
   d.IxDropdownQuickActions,
   d.IxEmptyState,
+  d.IxEventItemContent,
   d.IxEventList,
   d.IxEventListItem,
   d.IxExpandingSearch,
