@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventItemContent Button Mapping Test</title>
+    <script type="module" src="packages/core/components/ix-event-item-content.js"></script>
+    <script type="module" src="packages/core/components/ix-typography.js"></script>
+    <script type="module" src="packages/core/components/ix-icon.js"></script>
+    <script type="module" src="packages/core/components/ix-icon-button.js"></script>
+    <script type="module" src="packages/core/components/ix-button.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>EventItemContent Button Mapping Test</h1>
+
+    <h2>Test 1: Button目录属性映射到右侧ix-button</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="distribution"
+            type-header="Button Test"
+            header-info="Testing Button properties"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+
+            share-variant="subtle-tertiary"
+            share-disabled="false"
+            share-loading="false"
+
+            variant="primary"
+            disabled="false"
+            loading="false"
+            type="button"
+            icon="download">
+            Create Task
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 2: Button disabled状态测试</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="error"
+            type-header="Disabled Button Test"
+            header-info="Button should be disabled"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+
+            share-variant="subtle-tertiary"
+            share-disabled="false"
+            share-loading="false"
+
+            variant="secondary"
+            disabled="true"
+            loading="false"
+            type="button">
+            Disabled Button
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 3: Button loading状态测试</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="processing"
+            type-header="Loading Button Test"
+            header-info="Button should be loading"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+
+            share-variant="subtle-tertiary"
+            share-disabled="false"
+            share-loading="false"
+
+            variant="tertiary"
+            disabled="false"
+            loading="true"
+            type="button">
+            Loading Button
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 4: ShareIconButton disabled状态测试</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="security"
+            type-header="Share Button Disabled Test"
+            header-info="Share button should be disabled"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+
+            share-variant="subtle-primary"
+            share-disabled="true"
+            share-loading="false"
+
+            variant="secondary"
+            disabled="false"
+            loading="false"
+            type="button">
+            Normal Button
+        </ix-event-item-content>
+    </div>
+
+    <script>
+        // 设置instance属性
+        document.addEventListener('DOMContentLoaded', function() {
+            const components = document.querySelectorAll('ix-event-item-content');
+            components.forEach(component => {
+                component.instance = {
+                    iXIcons: {
+                        icon: {
+                            name: 'share'
+                        }
+                    }
+                };
+            });
+        });
+    </script>
+</body>
+</html>

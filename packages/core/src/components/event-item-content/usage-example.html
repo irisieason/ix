@@ -70,7 +70,7 @@
                 <ix-event-list item-height="L">
                     <ix-event-list-item item-color="color-alarm">
                         <ix-event-item-content
-                            icon="error"
+                            type-icon="error"
                             type-header="Critical System Error"
                             header-info="Database connection failed"
                             device-name="db-server-primary"
@@ -81,7 +81,7 @@
 
                     <ix-event-list-item item-color="color-warning">
                         <ix-event-item-content
-                            icon="warning"
+                            type-icon="warning"
                             type-header="High CPU Usage"
                             header-info="Usage at 85%"
                             device-name="app-server-01"
@@ -92,7 +92,7 @@
 
                     <ix-event-list-item item-color="color-info">
                         <ix-event-item-content
-                            icon="info"
+                            type-icon="info"
                             type-header="Maintenance Window"
                             header-info="Scheduled for tonight"
                             device-name="load-balancer"
@@ -103,7 +103,7 @@
 
                     <ix-event-list-item item-color="color-success">
                         <ix-event-item-content
-                            icon="check"
+                            type-icon="check"
                             type-header="Backup Completed"
                             header-info="Full system backup"
                             device-name="backup-server"
@@ -123,7 +123,7 @@
                 <ix-event-list>
                     <ix-event-list-item item-color="color-alarm">
                         <ix-event-item-content
-                            icon="network"
+                            type-icon="network"
                             type-header="Connection Lost"
                             header-info="Timeout after 30 seconds"
                             device-name="switch-core-01"
@@ -134,7 +134,7 @@
 
                     <ix-event-list-item item-color="color-warning">
                         <ix-event-item-content
-                            icon="wifi"
+                            type-icon="wifi"
                             type-header="Weak Signal"
                             header-info="Signal strength: -75dBm"
                             device-name="access-point-floor2"
@@ -145,7 +145,7 @@
 
                     <ix-event-list-item item-color="color-success">
                         <ix-event-item-content
-                            icon="ethernet"
+                            type-icon="ethernet"
                             type-header="Link Restored"
                             header-info="Gigabit connection active"
                             device-name="switch-edge-03"
@@ -165,9 +165,9 @@
                 <ix-event-list>
                     <ix-event-list-item item-color="color-info">
                         <ix-event-item-content
-                            icon="download"
+                            type-icon="download"
                             type-header="Update Available"
-                            header-info="v3.1.0 › v3.2.0"
+                            header-info="v3.1.0 �?v3.2.0"
                             device-name="firmware-controller"
                             device-info="172.16.0.50"
                             timestamp="2026-01-05, 09:15:45"
@@ -176,7 +176,7 @@
 
                     <ix-event-list-item item-color="color-success">
                         <ix-event-item-content
-                            icon="check"
+                            type-icon="check"
                             type-header="Update Completed"
                             header-info="v2.1.0 installed successfully"
                             device-name="gateway-01"
@@ -187,7 +187,7 @@
 
                     <ix-event-list-item item-color="color-warning">
                         <ix-event-item-content
-                            icon="pause"
+                            type-icon="pause"
                             type-header="Update Paused"
                             header-info="User intervention required"
                             device-name="sensor-array-b"
@@ -207,7 +207,7 @@
                 <ix-event-list>
                     <ix-event-list-item>
                         <ix-event-item-content
-                            icon="maintenance"
+                            type-icon="maintenance"
                             type-header="Maintenance Required"
                             header-info="Scheduled maintenance"
                             device-name="pump-station-03"
@@ -215,30 +215,38 @@
                             timestamp="2026-01-06, 02:00:00"
                             show-share-button="false"
                             create-task-button-text="Schedule"
+                            create-task-button-variant="primary"
+                            create-task-button-icon="calendar"
                         ></ix-event-item-content>
                     </ix-event-list-item>
 
                     <ix-event-list-item>
                         <ix-event-item-content
-                            icon="security"
+                            type-icon="security"
                             type-header="Security Alert"
                             header-info="Unauthorized access attempt"
                             device-name="firewall-dmz"
                             device-info="203.0.113.10"
                             timestamp="2026-01-05, 18:45:12"
                             show-create-task-button="false"
+                            share-button-variant="subtle-primary"
+                            share-button-icon="export"
                         ></ix-event-item-content>
                     </ix-event-list-item>
 
                     <ix-event-list-item>
                         <ix-event-item-content
-                            icon="report"
+                            type-icon="report"
                             type-header="Report Generated"
                             header-info="Monthly performance report"
                             device-name="analytics-server"
                             device-info="10.0.5.100"
                             timestamp="2026-01-01, 00:05:00"
                             create-task-button-text="Download"
+                            create-task-button-variant="secondary"
+                            create-task-button-icon="download"
+                            share-button-variant="subtle-tertiary"
+                            share-button-icon="share"
                         ></ix-event-item-content>
                     </ix-event-list-item>
                 </ix-event-list>
@@ -253,7 +261,7 @@
                 <ix-event-list item-height="S" compact>
                     <ix-event-list-item item-color="color-info">
                         <ix-event-item-content
-                            icon="sync"
+                            type-icon="sync"
                             type-header="Sync Started"
                             header-info="Data synchronization"
                             device-name="sync-service"
@@ -264,7 +272,7 @@
 
                     <ix-event-list-item item-color="color-success">
                         <ix-event-item-content
-                            icon="check"
+                            type-icon="check"
                             type-header="Sync Complete"
                             header-info="1,234 records processed"
                             device-name="sync-service"
@@ -275,7 +283,7 @@
 
                     <ix-event-list-item item-color="color-info">
                         <ix-event-item-content
-                            icon="clock"
+                            type-icon="clock"
                             type-header="Scheduled Task"
                             header-info="Daily cleanup job"
                             device-name="cron-scheduler"
@@ -295,7 +303,7 @@
                 <ix-event-list animated>
                     <ix-event-list-item item-color="color-warning">
                         <ix-event-item-content
-                            icon="thermometer"
+                            type-icon="thermometer"
                             type-header="Temperature Alert"
                             header-info="85°C detected"
                             device-name="temp-sensor-room-a"
@@ -306,7 +314,7 @@
 
                     <ix-event-list-item item-color="color-alarm">
                         <ix-event-item-content
-                            icon="battery"
+                            type-icon="battery"
                             type-header="Low Battery"
                             header-info="15% remaining"
                             device-name="wireless-sensor-07"
@@ -317,7 +325,7 @@
 
                     <ix-event-list-item item-color="color-success">
                         <ix-event-item-content
-                            icon="power"
+                            type-icon="power"
                             type-header="Power Restored"
                             header-info="UPS switched to mains"
                             device-name="ups-rack-01"
@@ -351,3 +359,4 @@
     </script>
 </body>
 </html>
+

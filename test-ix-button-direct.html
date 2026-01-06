@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct ix-button Test</title>
+    <script type="module" src="packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Direct ix-button ARIA Label Test</h1>
+
+    <h2>Test 1: 直接使用 ix-button 组件</h2>
+    <div style="margin: 20px 0;">
+        <ix-button
+            id="direct-button"
+            variant="primary"
+            aria-label-button="Direct ARIA Label">
+            Direct Button Text
+        </ix-button>
+    </div>
+
+    <h2>Test 2: 通过 JavaScript 设置</h2>
+    <div style="margin: 20px 0;">
+        <ix-button
+            id="js-button"
+            variant="secondary">
+            JS Button Text
+        </ix-button>
+    </div>
+
+    <button onclick="checkDirectButton()" style="margin: 20px 0;">检查直接设置的按钮</button>
+    <button onclick="setAndCheckJSButton()" style="margin: 20px 0;">设置并检查JS按钮</button>
+
+    <div id="result" style="margin: 20px 0; padding: 10px; background: #f0f0f0;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置第二个按钮的 ariaLabelButton
+            const jsButton = document.getElementById('js-button');
+            jsButton.ariaLabelButton = 'JS Set ARIA Label';
+        });
+
+        function checkDirectButton() {
+            const button = document.getElementById('direct-button');
+            checkButton(button, 'Direct Button', 'Direct ARIA Label');
+        }
+
+        function setAndCheckJSButton() {
+            const button = document.getElementById('js-button');
+            button.ariaLabelButton = 'Updated JS ARIA Label';
+
+            setTimeout(() => {
+                checkButton(button, 'JS Button', 'Updated JS ARIA Label');
+            }, 100);
+        }
+
+        function checkButton(button, name, expectedLabel) {
+            const resultDiv = document.getElementById('result');
+
+            try {
+                const htmlAttr = button.getAttribute('aria-label-button');
+                const jsProperty = button.ariaLabelButton;
+
+                console.log(`=== ${name} 检查 ===`);
+                console.log('HTML 属性:', htmlAttr);
+                console.log('JS 属性:', jsProperty);
+
+                if (!button.shadowRoot) {
+                    resultDiv.innerHTML = `❌ ${name}: 无法访问 shadow DOM`;
+                    return;
+                }
+
+                const actualButton = button.shadowRoot.querySelector('button');
+                if (!actualButton) {
+                    resultDiv.innerHTML = `❌ ${name}: 找不到实际的 button 元素`;
+                    return;
+                }
+
+                const finalAriaLabel = actualButton.getAttribute('aria-label');
+                console.log('最终 aria-label:', finalAriaLabel);
+
+                resultDiv.innerHTML = `
+                    <h3>${name} 检查结果</h3>
+                    <p><strong>HTML 属性:</strong> "${htmlAttr || 'undefined'}"</p>
+                    <p><strong>JS 属性:</strong> "${jsProperty || 'undefined'}"</p>
+                    <p><strong>最终 aria-label:</strong> "${finalAriaLabel || 'undefined'}"</p>
+                    <p><strong>期望值:</strong> "${expectedLabel}"</p>
+                    <p><strong>结果:</strong> ${finalAriaLabel === expectedLabel ? '✅ 成功' : '❌ 失败'}</p>
+                `;
+
+            } catch (error) {
+                console.error('检查过程中出错:', error);
+                resultDiv.innerHTML = `❌ ${name}: 检查过程中出错: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug AriaLabel</title>
+    <script type="module" src="packages/core/components/ix-event-item-content.js"></script>
+    <script type="module" src="packages/core/components/ix-typography.js"></script>
+    <script type="module" src="packages/core/components/ix-icon.js"></script>
+    <script type="module" src="packages/core/components/ix-icon-button.js"></script>
+    <script type="module" src="packages/core/components/ix-button.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Debug AriaLabel</h1>
+
+    <h2>Test 1: 直接测试ix-button组件</h2>
+    <div style="margin: 20px 0; padding: 10px; border: 1px solid #ccc;">
+        <ix-button id="direct-button" aria-label-button="直接设置的ARIA标签">
+            Direct Button Test
+        </ix-button>
+    </div>
+
+    <h2>Test 2: EventItemContent组件</h2>
+    <div style="margin: 20px 0; padding: 10px; border: 1px solid #ccc;">
+        <ix-event-item-content
+            id="event-component"
+            type-icon="test"
+            type-header="Test"
+            header-info="Test"
+            device-name="test"
+            device-info="test"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            aria-label-button="EventItemContent设置的ARIA标签">
+            EventItemContent Button
+        </ix-event-item-content>
+    </div>
+
+    <div style="margin: 20px 0;">
+        <button onclick="testDirectButton()">测试直接ix-button</button>
+        <button onclick="testEventItemContent()">测试EventItemContent</button>
+        <button onclick="changeAriaLabel()">修改EventItemContent的aria-label</button>
+    </div>
+
+    <div id="debug-output" style="margin: 20px 0; padding: 10px; background: #f0f0f0; white-space: pre-wrap;"></div>
+
+    <script>
+        let counter = 1;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置instance属性
+            const eventComponent = document.getElementById('event-component');
+            eventComponent.instance = {
+                iXIcons: {
+                    icon: {
+                        name: 'share'
+                    }
+                }
+            };
+
+            // 等待组件加载后进行初始测试
+            setTimeout(() => {
+                testBoth();
+            }, 2000);
+        });
+
+        function testDirectButton() {
+            const button = document.getElementById('direct-button');
+            const ariaLabel = button.getAttribute('aria-label-button');
+
+            setTimeout(() => {
+                if (button.shadowRoot) {
+                    const actualButton = button.shadowRoot.querySelector('button');
+                    const actualAriaLabel = actualButton ? actualButton.getAttribute('aria-label') : 'not found';
+
+                    document.getElementById('debug-output').textContent +=
+                        `直接ix-button测试:\n` +
+                        `  属性值: ${ariaLabel}\n` +
+                        `  实际aria-label: ${actualAriaLabel}\n` +
+                        `  结果: ${ariaLabel === actualAriaLabel ? '✅ 正确' : '❌ 错误'}\n\n`;
+                }
+            }, 100);
+        }
+
+        function testEventItemContent() {
+            const component = document.getElementById('event-component');
+            const ariaLabel = component.getAttribute('aria-label-button');
+
+            setTimeout(() => {
+                if (component.shadowRoot) {
+                    const ixButton = component.shadowRoot.querySelector('ix-button');
+                    if (ixButton && ixButton.shadowRoot) {
+                        const actualButton = ixButton.shadowRoot.querySelector('button');
+                        const actualAriaLabel = actualButton ? actualButton.getAttribute('aria-label') : 'not found';
+                        const ixButtonAriaLabel = ixButton.getAttribute('aria-label-button');
+
+                        document.getElementById('debug-output').textContent +=
+                            `EventItemContent测试:\n` +
+                            `  EventItemContent aria-label-button: ${ariaLabel}\n` +
+                            `  ix-button aria-label-button: ${ixButtonAriaLabel}\n` +
+                            `  实际button aria-label: ${actualAriaLabel}\n` +
+                            `  EventItemContent -> ix-button: ${ariaLabel === ixButtonAriaLabel ? '✅' : '❌'}\n` +
+                            `  ix-button -> button: ${ixButtonAriaLabel === actualAriaLabel ? '✅' : '❌'}\n\n`;
+                    }
+                }
+            }, 100);
+        }
+
+        function changeAriaLabel() {
+            const component = document.getElementById('event-component');
+            const newLabel = `修改后的ARIA标签 ${counter++}`;
+            component.setAttribute('aria-label-button', newLabel);
+
+            document.getElementById('debug-output').textContent += `修改aria-label-button为: ${newLabel}\n`;
+
+            // 等待一下再测试
+            setTimeout(() => {
+                testEventItemContent();
+            }, 500);
+        }
+
+        function testBoth() {
+            document.getElementById('debug-output').textContent = '开始测试...\n\n';
+            testDirectButton();
+            setTimeout(() => {
+                testEventItemContent();
+            }, 200);
+        }
+    </script>
+</body>
+</html>

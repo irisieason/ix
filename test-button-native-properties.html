@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Native Properties Test</title>
+    <script type="module" src="packages/core/components/ix-event-item-content.js"></script>
+    <script type="module" src="packages/core/components/ix-typography.js"></script>
+    <script type="module" src="packages/core/components/ix-icon.js"></script>
+    <script type="module" src="packages/core/components/ix-icon-button.js"></script>
+    <script type="module" src="packages/core/components/ix-button.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Button Native Properties Test</h1>
+    <p>测试Button目录下的属性是否与ix-button组件原生属性完全一致</p>
+
+    <h2>Test 1: 完整的Button variant选项</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="distribution"
+            type-header="Primary Button"
+            header-info="variant=primary"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="primary">
+            Primary Button
+        </ix-event-item-content>
+    </div>
+
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="distribution"
+            type-header="Subtle Primary Button"
+            header-info="variant=subtle-primary"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="subtle-primary">
+            Subtle Primary
+        </ix-event-item-content>
+    </div>
+
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="error"
+            type-header="Danger Primary Button"
+            header-info="variant=danger-primary"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="danger-primary">
+            Danger Primary
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 2: Button with icon and iconRight</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="download"
+            type-header="Button with Icons"
+            header-info="icon=download, iconRight=arrow-right"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="secondary"
+            icon="download"
+            icon-right="arrow-right">
+            Download File
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 3: Button alignment和iconSize</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="settings"
+            type-header="Button Alignment Start"
+            header-info="alignment=start, iconSize=16"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="tertiary"
+            icon="settings"
+            alignment="start"
+            icon-size="16">
+            Settings
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 4: Button as Link (href)</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="link"
+            type-header="Button as Link"
+            header-info="href=https://example.com, target=_blank"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="primary"
+            href="https://example.com"
+            target="_blank"
+            rel="noopener noreferrer">
+            Open Link
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 5: Button with ARIA label</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="accessibility"
+            type-header="Button with ARIA"
+            header-info="ariaLabelButton=Accessible button"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="secondary"
+            aria-label-button="Accessible button for screen readers">
+            Accessible Button
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 6: Submit Button with Form</h2>
+    <form id="test-form" style="margin: 20px 0;">
+        <div style="width: 800px; border: 1px solid #ccc; padding: 10px;">
+            <ix-event-item-content
+                type-icon="check"
+                type-header="Submit Button"
+                header-info="type=submit, form=test-form"
+                device-name="test-device"
+                device-info="test-info"
+                datestamp="2026-01-05"
+                timestamp="08:51:21"
+                variant="primary"
+                type="submit"
+                form="test-form">
+                Submit Form
+            </ix-event-item-content>
+        </div>
+    </form>
+
+    <script>
+        // 设置instance属性
+        document.addEventListener('DOMContentLoaded', function() {
+            const components = document.querySelectorAll('ix-event-item-content');
+            components.forEach(component => {
+                component.instance = {
+                    iXIcons: {
+                        icon: {
+                            name: 'share'
+                        }
+                    }
+                };
+            });
+
+            // 测试表单提交
+            document.getElementById('test-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Form submitted! Button type=submit 工作正常');
+            });
+        });
+    </script>
+</body>
+</html>

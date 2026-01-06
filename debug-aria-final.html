@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final ARIA Debug</title>
+    <script type="module" src="packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Final ARIA Label Debug</h1>
+
+    <div style="margin: 20px 0;">
+        <input type="text" id="aria-input" value="My Custom ARIA Label" placeholder="输入新的ARIA Label" />
+        <button onclick="updateAndCheck()">更新并检查</button>
+    </div>
+
+    <h2>EventItemContent 组件测试</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component"
+            type-icon="info"
+            type-header="ARIA 测试"
+            header-info="测试 ariaLabelButton 属性"
+            device-name="test-device"
+            device-info="192.168.1.1"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="primary"
+            aria-label-button="Initial ARIA Label"
+            button-text="测试按钮">
+        </ix-event-item-content>
+    </div>
+
+    <div id="result" style="margin: 20px 0; padding: 15px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;"></div>
+
+    <script>
+        let component;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            component = document.getElementById('test-component');
+
+            // 设置 instance 属性
+            component.instance = {
+                iXIcons: {
+                    icon: {
+                        name: 'share'
+                    }
+                }
+            };
+
+            // 延迟检查，确保组件完全渲染
+            setTimeout(() => {
+                checkAriaLabel();
+            }, 3000);
+        });
+
+        function updateAndCheck() {
+            const newAriaLabel = document.getElementById('aria-input').value;
+
+            console.log('=== 更新 ARIA Label ===');
+            console.log('新值:', newAriaLabel);
+
+            // 方法1: 设置 HTML 属性
+            component.setAttribute('aria-label-button', newAriaLabel);
+
+            // 方法2: 设置 JavaScript 属性
+            component.ariaLabelButton = newAriaLabel;
+
+            console.log('HTML 属性设置完成');
+            console.log('JS 属性设置完成');
+
+            // 延迟检查结果
+            setTimeout(() => {
+                checkAriaLabel();
+            }, 1000);
+        }
+
+        function checkAriaLabel() {
+            const resultDiv = document.getElementById('result');
+
+            try {
+                // 检查 EventItemContent 组件
+                const htmlAttr = component.getAttribute('aria-label-button');
+                const jsProperty = component.ariaLabelButton;
+
+                console.log('=== EventItemContent 检查 ===');
+                console.log('HTML 属性:', htmlAttr);
+                console.log('JS 属性:', jsProperty);
+
+                if (!component.shadowRoot) {
+                    resultDiv.innerHTML = '❌ 无法访问 EventItemContent 的 shadow DOM';
+                    return;
+                }
+
+                // 检查 ix-button 组件
+                const ixButton = component.shadowRoot.querySelector('ix-button');
+                if (!ixButton) {
+                    resultDiv.innerHTML = '❌ 找不到 ix-button 元素';
+                    return;
+                }
+
+                const ixButtonAriaLabel = ixButton.ariaLabelButton;
+                console.log('=== ix-button 检查 ===');
+                console.log('ix-button ariaLabelButton 属性:', ixButtonAriaLabel);
+
+                if (!ixButton.shadowRoot) {
+                    resultDiv.innerHTML = '❌ 无法访问 ix-button 的 shadow DOM';
+                    return;
+                }
+
+                // 检查实际的 HTML button 元素
+                const actualButton = ixButton.shadowRoot.querySelector('button');
+                if (!actualButton) {
+                    resultDiv.innerHTML = '❌ 找不到实际的 button 元素';
+                    return;
+                }
+
+                const finalAriaLabel = actualButton.getAttribute('aria-label');
+                console.log('=== 最终 HTML button 检查 ===');
+                console.log('最终 aria-label:', finalAriaLabel);
+
+                // 显示结果
+                resultDiv.innerHTML = `
+                    <h3>🔍 ARIA Label 检查结果</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background: #e9ecef;">
+                            <th style="padding: 8px; border: 1px solid #dee2e6; text-align: left;">层级</th>
+                            <th style="padding: 8px; border: 1px solid #dee2e6; text-align: left;">属性/值</th>
+                            <th style="padding: 8px; border: 1px solid #dee2e6; text-align: left;">结果</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">EventItemContent HTML</td>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">aria-label-button="${htmlAttr || 'undefined'}"</td>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">${htmlAttr ? '✅' : '❌'}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">EventItemContent JS</td>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">ariaLabelButton="${jsProperty || 'undefined'}"</td>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">${jsProperty ? '✅' : '❌'}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">ix-button</td>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">ariaLabelButton="${ixButtonAriaLabel || 'undefined'}"</td>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;">${ixButtonAriaLabel ? '✅' : '❌'}</td>
+                        </tr>
+                        <tr style="background: #fff3cd;">
+                            <td style="padding: 8px; border: 1px solid #dee2e6;"><strong>最终 HTML button</strong></td>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;"><strong>aria-label="${finalAriaLabel || 'undefined'}"</strong></td>
+                            <td style="padding: 8px; border: 1px solid #dee2e6;"><strong>${finalAriaLabel ? '✅ 成功' : '❌ 失败'}</strong></td>
+                        </tr>
+                    </table>
+                    <p style="margin-top: 15px;">
+                        <strong>总结:</strong> ${finalAriaLabel ?
+                            `✅ ARIA Label 正常工作！最终值为 "${finalAriaLabel}"` :
+                            '❌ ARIA Label 未正确传递到最终的 button 元素'
+                        }
+                    </p>
+                `;
+
+            } catch (error) {
+                console.error('检查过程中出错:', error);
+                resultDiv.innerHTML = `❌ 检查过程中出错: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

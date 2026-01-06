@@ -597,15 +597,35 @@ export const IxEmptyState: StencilVueComponent<JSX.IxEmptyState> = /*@__PURE__*/
 
 
 export const IxEventItemContent: StencilVueComponent<JSX.IxEventItemContent> = /*@__PURE__*/ defineContainer<JSX.IxEventItemContent>('ix-event-item-content', defineIxEventItemContent, [
-  'icon',
+  'typeIcon',
   'typeHeader',
   'headerInfo',
   'deviceName',
   'deviceInfo',
+  'datestamp',
   'timestamp',
-  'showShareButton',
-  'showCreateTaskButton',
-  'createTaskButtonText'
+  'ariaLabelButton',
+  'buttonVariant',
+  'buttonDisabled',
+  'buttonType',
+  'buttonLoading',
+  'form',
+  'buttonIcon',
+  'iconRight',
+  'alignment',
+  'iconSize',
+  'href',
+  'target',
+  'rel',
+  'iconButtonA11yLabel',
+  'iconButtonVariant',
+  'oval',
+  'iconButtonIcon',
+  'iconButtonSize',
+  'iconColor',
+  'iconButtonDisabled',
+  'iconButtonType',
+  'iconButtonLoading'
 ]);
 
 

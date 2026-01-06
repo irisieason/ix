@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test ARIA Label Mapping</title>
+    <script type="module" src="packages/core/components/ix-event-item-content.js"></script>
+    <script type="module" src="packages/core/components/ix-typography.js"></script>
+    <script type="module" src="packages/core/components/ix-icon.js"></script>
+    <script type="module" src="packages/core/components/ix-icon-button.js"></script>
+    <script type="module" src="packages/core/components/ix-button.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Test ARIA Label Mapping</h1>
+
+    <div style="margin: 20px 0;">
+        <label>修改ARIA Label: </label>
+        <input type="text" id="aria-input" value="Custom ARIA Label" />
+        <button onclick="updateAriaLabel()">更新</button>
+        <button onclick="checkAriaLabel()">检查ARIA Label</button>
+    </div>
+
+    <h2>Test 1: 直接设置 aria-label-button 属性</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component-1"
+            type-icon="test"
+            type-header="ARIA Test 1"
+            header-info="直接设置aria-label-button"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="primary"
+            aria-label-button="Initial ARIA Label"
+            button-text="Test Button">
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 2: 通过 JavaScript 设置属性</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component-2"
+            type-icon="test"
+            type-header="ARIA Test 2"
+            header-info="通过JS设置ariaLabelButton"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="secondary"
+            button-text="JS Button">
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 3: 动态修改</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component-3"
+            type-icon="test"
+            type-header="ARIA Test 3"
+            header-info="动态修改ARIA Label"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="tertiary"
+            aria-label-button="Original ARIA"
+            button-text="Dynamic Button">
+        </ix-event-item-content>
+    </div>
+
+    <div id="status" style="margin: 20px 0; padding: 10px; background: #e8f4fd;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置instance属性
+            const components = document.querySelectorAll('ix-event-item-content');
+            components.forEach(component => {
+                component.instance = {
+                    iXIcons: {
+                        icon: {
+                            name: 'share'
+                        }
+                    }
+                };
+            });
+
+            // 通过 JavaScript 设置第二个组件的 ariaLabelButton
+            const component2 = document.getElementById('test-component-2');
+            component2.ariaLabelButton = 'JS Set ARIA Label';
+
+            // 初始检查
+            setTimeout(() => {
+                checkAllAriaLabels();
+            }, 2000);
+        });
+
+        function updateAriaLabel() {
+            const input = document.getElementById('aria-input');
+            const component = document.getElementById('test-component-3');
+            const newValue = input.value;
+
+            console.log('Setting aria-label-button to:', newValue);
+
+            // 尝试两种方式设置
+            component.setAttribute('aria-label-button', newValue);
+            component.ariaLabelButton = newValue;
+
+            document.getElementById('status').innerHTML = `
+                <strong>已更新aria-label-button为:</strong> "${newValue}"<br>
+                <em>检查实际的ARIA label是否更新...</em>
+            `;
+
+            setTimeout(() => {
+                checkAriaLabel();
+            }, 1000);
+        }
+
+        function checkAriaLabel() {
+            const component = document.getElementById('test-component-3');
+            checkComponent(component, 'Dynamic Test');
+        }
+
+        function checkAllAriaLabels() {
+            const components = [
+                { id: 'test-component-1', name: 'Direct HTML Attribute', expected: 'Initial ARIA Label' },
+                { id: 'test-component-2', name: 'JavaScript Property', expected: 'JS Set ARIA Label' },
+                { id: 'test-component-3', name: 'Dynamic Test', expected: 'Original ARIA' }
+            ];
+
+            let results = '<strong>所有组件ARIA Label检查结果:</strong><br><br>';
+
+            components.forEach(comp => {
+                const component = document.getElementById(comp.id);
+                const result = checkComponent(component, comp.name, comp.expected);
+                results += result + '<br>';
+            });
+
+            document.getElementById('status').innerHTML = results;
+        }
+
+        function checkComponent(component, name, expectedValue) {
+            const htmlAttr = component.getAttribute('aria-label-button');
+            const jsProperty = component.ariaLabelButton;
+
+            if (component.shadowRoot) {
+                const ixButton = component.shadowRoot.querySelector('ix-button');
+                if (ixButton) {
+                    const buttonAriaLabel = ixButton.getAttribute('aria-label');
+                    const buttonAriaLabelButton = ixButton.ariaLabelButton;
+
+                    return `
+                        <strong>${name}:</strong><br>
+                        &nbsp;&nbsp;EventItemContent HTML属性: "${htmlAttr}"<br>
+                        &nbsp;&nbsp;EventItemContent JS属性: "${jsProperty}"<br>
+                        &nbsp;&nbsp;ix-button aria-label属性: "${buttonAriaLabel}"<br>
+                        &nbsp;&nbsp;ix-button ariaLabelButton属性: "${buttonAriaLabelButton}"<br>
+                        &nbsp;&nbsp;结果: ${buttonAriaLabel ? '✅ 有ARIA Label' : '❌ 无ARIA Label'}
+                    `;
+                } else {
+                    return `<strong>${name}:</strong> ❌ 找不到ix-button元素`;
+                }
+            } else {
+                return `<strong>${name}:</strong> ❌ 无法访问shadow DOM`;
+            }
+        }
+    </script>
+</body>
+</html>

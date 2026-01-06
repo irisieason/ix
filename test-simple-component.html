@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test EventItemContent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            border: 2px solid blue;
+            padding: 20px;
+            margin: 20px 0;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>EventItemContent Component Test</h1>
+
+    <div class="test-container">
+        <h3>Test 1: Direct Component Usage</h3>
+        <ix-event-item-content
+            type-icon="distribution"
+            type-header="Update available"
+            header-info="V2.3 › V2.5"
+            device-name="robo1-net-sw17"
+            device-info="172.19.65.8"
+            datestamp="2026-01-05"
+            timestamp="08:51:21">
+        </ix-event-item-content>
+    </div>
+
+    <div class="test-container">
+        <h3>Test 2: Simple HTML for comparison</h3>
+        <div style="border: 2px solid red; padding: 10px; background: yellow;">
+            This is a simple div that should always be visible
+        </div>
+    </div>
+
+    <script type="module">
+        console.log('Loading component...');
+
+        // Import and define the component
+        import { defineCustomElement } from './packages/core/components/ix-event-item-content.js';
+
+        try {
+            defineCustomElement();
+            console.log('Component defined successfully');
+
+            // Wait for component to be ready
+            customElements.whenDefined('ix-event-item-content').then(() => {
+                console.log('ix-event-item-content is ready');
+
+                // Check if component exists
+                const component = document.querySelector('ix-event-item-content');
+                console.log('Component element:', component);
+
+                if (component) {
+                    console.log('Component shadow root:', component.shadowRoot);
+                    console.log('Component innerHTML:', component.innerHTML);
+
+                    // Try to inspect shadow DOM
+                    if (component.shadowRoot) {
+                        console.log('Shadow DOM content:', component.shadowRoot.innerHTML);
+                    }
+
+                    // Check component properties
+                    console.log('Component properties:', {
+                        typeIcon: component.typeIcon,
+                        typeHeader: component.typeHeader,
+                        deviceName: component.deviceName
+                    });
+                }
+            });
+
+        } catch (error) {
+            console.error('Error loading component:', error);
+        }
+    </script>
+</body>
+</html>

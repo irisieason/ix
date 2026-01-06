@@ -1509,50 +1509,97 @@ export namespace Components {
     }
     interface IxEventItemContent {
         /**
-          * Text for the create task button
-          * @default 'Create task'
+          * @default 'center'
          */
-        "createTaskButtonText": string;
+        "alignment": 'center' | 'start';
+        "ariaLabelButton"?: string;
         /**
-          * Device information (e.g., IP address)
+          * @default false
+         */
+        "buttonDisabled": boolean;
+        "buttonIcon"?: string;
+        /**
+          * @default false
+         */
+        "buttonLoading": boolean;
+        /**
+          * @default 'button'
+         */
+        "buttonType": 'button' | 'submit';
+        /**
+          * @default 'primary'
+         */
+        "buttonVariant": 'primary' | 'secondary' | 'tertiary' | 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
+        /**
+          * @default '2026-01-05'
+         */
+        "datestamp": string;
+        /**
           * @default '172.19.65.8'
          */
         "deviceInfo": string;
         /**
-          * Device name
           * @default 'robo1-net-sw17'
          */
         "deviceName": string;
+        "form"?: string;
         /**
-          * Additional information for the event type
           * @default 'V2.3 › V2.5'
          */
         "headerInfo": string;
+        "href"?: string;
+        "iconButtonA11yLabel"?: string;
         /**
-          * Icon name for the event type
-          * @default 'distribution'
+          * @default false
          */
-        "icon": string;
+        "iconButtonDisabled": boolean;
         /**
-          * Show create task button
-          * @default true
+          * @default 'share'
          */
-        "showCreateTaskButton": boolean;
+        "iconButtonIcon"?: string;
         /**
-          * Show share button
-          * @default true
+          * @default false
          */
-        "showShareButton": boolean;
+        "iconButtonLoading": boolean;
         /**
-          * Timestamp for the event
-          * @default '2026-01-05, 08:51:21'
+          * @default '24'
+         */
+        "iconButtonSize": '24' | '16' | '12';
+        /**
+          * @default 'button'
+         */
+        "iconButtonType": 'button' | 'submit';
+        /**
+          * @default 'subtle-tertiary'
+         */
+        "iconButtonVariant": 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'primary' | 'secondary' | 'tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
+        "iconColor"?: string;
+        "iconRight"?: string;
+        /**
+          * @default '24'
+         */
+        "iconSize": '12' | '16' | '24';
+        /**
+          * @default false
+         */
+        "oval": boolean;
+        "rel"?: string;
+        /**
+          * @default '_self'
+         */
+        "target"?: '_self' | '_blank' | '_parent' | '_top';
+        /**
+          * @default '08:51:21'
          */
         "timestamp": string;
         /**
-          * Main header text for the event type
           * @default 'Update available'
          */
         "typeHeader": string;
+        /**
+          * @default 'distribution'
+         */
+        "typeIcon": string;
     }
     interface IxEventList {
         /**
@@ -7494,50 +7541,97 @@ declare namespace LocalJSX {
     }
     interface IxEventItemContent {
         /**
-          * Text for the create task button
-          * @default 'Create task'
+          * @default 'center'
          */
-        "createTaskButtonText"?: string;
+        "alignment"?: 'center' | 'start';
+        "ariaLabelButton"?: string;
         /**
-          * Device information (e.g., IP address)
+          * @default false
+         */
+        "buttonDisabled"?: boolean;
+        "buttonIcon"?: string;
+        /**
+          * @default false
+         */
+        "buttonLoading"?: boolean;
+        /**
+          * @default 'button'
+         */
+        "buttonType"?: 'button' | 'submit';
+        /**
+          * @default 'primary'
+         */
+        "buttonVariant"?: 'primary' | 'secondary' | 'tertiary' | 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
+        /**
+          * @default '2026-01-05'
+         */
+        "datestamp"?: string;
+        /**
           * @default '172.19.65.8'
          */
         "deviceInfo"?: string;
         /**
-          * Device name
           * @default 'robo1-net-sw17'
          */
         "deviceName"?: string;
+        "form"?: string;
         /**
-          * Additional information for the event type
           * @default 'V2.3 › V2.5'
          */
         "headerInfo"?: string;
+        "href"?: string;
+        "iconButtonA11yLabel"?: string;
         /**
-          * Icon name for the event type
-          * @default 'distribution'
+          * @default false
          */
-        "icon"?: string;
+        "iconButtonDisabled"?: boolean;
         /**
-          * Show create task button
-          * @default true
+          * @default 'share'
          */
-        "showCreateTaskButton"?: boolean;
+        "iconButtonIcon"?: string;
         /**
-          * Show share button
-          * @default true
+          * @default false
          */
-        "showShareButton"?: boolean;
+        "iconButtonLoading"?: boolean;
         /**
-          * Timestamp for the event
-          * @default '2026-01-05, 08:51:21'
+          * @default '24'
+         */
+        "iconButtonSize"?: '24' | '16' | '12';
+        /**
+          * @default 'button'
+         */
+        "iconButtonType"?: 'button' | 'submit';
+        /**
+          * @default 'subtle-tertiary'
+         */
+        "iconButtonVariant"?: 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'primary' | 'secondary' | 'tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
+        "iconColor"?: string;
+        "iconRight"?: string;
+        /**
+          * @default '24'
+         */
+        "iconSize"?: '12' | '16' | '24';
+        /**
+          * @default false
+         */
+        "oval"?: boolean;
+        "rel"?: string;
+        /**
+          * @default '_self'
+         */
+        "target"?: '_self' | '_blank' | '_parent' | '_top';
+        /**
+          * @default '08:51:21'
          */
         "timestamp"?: string;
         /**
-          * Main header text for the event type
           * @default 'Update available'
          */
         "typeHeader"?: string;
+        /**
+          * @default 'distribution'
+         */
+        "typeIcon"?: string;
     }
     interface IxEventList {
         /**

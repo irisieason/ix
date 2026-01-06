@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple ARIA Test</title>
+    <script type="module" src="packages/core/dist/siemens-ix/siemens-ix.esm.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Simple ARIA Label Test</h1>
+
+    <h2>Test: EventItemContent with ariaLabelButton</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component"
+            type-icon="info"
+            type-header="ARIA Test"
+            header-info="Testing ariaLabelButton"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="primary"
+            aria-label-button="My Custom ARIA Label"
+            button-text="Test Button">
+        </ix-event-item-content>
+    </div>
+
+    <button onclick="checkAriaLabel()" style="margin: 20px 0; padding: 10px;">检查 ARIA Label</button>
+
+    <div id="result" style="margin: 20px 0; padding: 10px; background: #f0f0f0;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置instance属性
+            const component = document.getElementById('test-component');
+            component.instance = {
+                iXIcons: {
+                    icon: {
+                        name: 'share'
+                    }
+                }
+            };
+
+            // 延迟检查，确保组件完全渲染
+            setTimeout(() => {
+                checkAriaLabel();
+            }, 2000);
+        });
+
+        function checkAriaLabel() {
+            const component = document.getElementById('test-component');
+            const resultDiv = document.getElementById('result');
+
+            if (!component.shadowRoot) {
+                resultDiv.innerHTML = '❌ 无法访问 shadow DOM';
+                return;
+            }
+
+            const ixButton = component.shadowRoot.querySelector('ix-button');
+            if (!ixButton) {
+                resultDiv.innerHTML = '❌ 找不到 ix-button 元素';
+                return;
+            }
+
+            // 检查 ix-button 的 shadow DOM
+            if (!ixButton.shadowRoot) {
+                resultDiv.innerHTML = '❌ 无法访问 ix-button 的 shadow DOM';
+                return;
+            }
+
+            const actualButton = ixButton.shadowRoot.querySelector('button');
+            if (!actualButton) {
+                resultDiv.innerHTML = '❌ 找不到实际的 button 元素';
+                return;
+            }
+
+            const ariaLabel = actualButton.getAttribute('aria-label');
+            const expectedLabel = 'My Custom ARIA Label';
+
+            resultDiv.innerHTML = `
+                <strong>ARIA Label 检查结果:</strong><br>
+                期望值: "${expectedLabel}"<br>
+                实际值: "${ariaLabel}"<br>
+                结果: ${ariaLabel === expectedLabel ? '✅ 成功' : '❌ 失败'}
+            `;
+
+            console.log('EventItemContent ariaLabelButton:', component.ariaLabelButton);
+            console.log('ix-button ariaLabelButton:', ixButton.ariaLabelButton);
+            console.log('Actual button aria-label:', ariaLabel);
+        }
+    </script>
+</body>
+</html>

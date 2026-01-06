@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Button Text</title>
+    <script type="module" src="packages/core/components/ix-event-item-content.js"></script>
+    <script type="module" src="packages/core/components/ix-typography.js"></script>
+    <script type="module" src="packages/core/components/ix-icon.js"></script>
+    <script type="module" src="packages/core/components/ix-icon-button.js"></script>
+    <script type="module" src="packages/core/components/ix-button.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Debug Button Text</h1>
+
+    <div style="margin: 20px 0;">
+        <label>修改Button文本: </label>
+        <input type="text" id="text-input" value="create" />
+        <button onclick="updateButtonText()">更新</button>
+        <button onclick="checkConsole()">检查Console日志</button>
+    </div>
+
+    <h2>Test 1: 初始状态</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component-1"
+            type-icon="test"
+            type-header="Initial Test"
+            header-info="默认buttonText"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="primary">
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 2: 设置了button-text属性</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component-2"
+            type-icon="test"
+            type-header="With ButtonText"
+            header-info="设置了button-text=Custom Text"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="secondary"
+            button-text="Custom Text">
+        </ix-event-item-content>
+    </div>
+
+    <h2>Test 3: 动态修改</h2>
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component-3"
+            type-icon="test"
+            type-header="Dynamic Test"
+            header-info="动态修改button-text"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="tertiary"
+            button-text="Original Text">
+        </ix-event-item-content>
+    </div>
+
+    <div id="status" style="margin: 20px 0; padding: 10px; background: #e8f4fd;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置instance属性
+            const components = document.querySelectorAll('ix-event-item-content');
+            components.forEach(component => {
+                component.instance = {
+                    iXIcons: {
+                        icon: {
+                            name: 'share'
+                        }
+                    }
+                };
+            });
+
+            // 初始检查
+            setTimeout(() => {
+                checkAllComponents();
+            }, 2000);
+        });
+
+        function updateButtonText() {
+            const input = document.getElementById('text-input');
+            const component = document.getElementById('test-component-3');
+            const newValue = input.value;
+
+            console.log('Setting button-text to:', newValue);
+            component.setAttribute('button-text', newValue);
+
+            // 也尝试直接设置属性
+            component.buttonText = newValue;
+
+            document.getElementById('status').innerHTML = `
+                <strong>已更新button-text为:</strong> "${newValue}"<br>
+                <em>检查Console是否有render日志...</em>
+            `;
+
+            setTimeout(() => {
+                checkComponent(component, 'Dynamic Test');
+            }, 1000);
+        }
+
+        function checkConsole() {
+            document.getElementById('status').innerHTML = `
+                <strong>请检查浏览器Console:</strong><br>
+                1. 打开开发者工具<br>
+                2. 查看Console标签<br>
+                3. 寻找 "EventItemContent render - buttonText:" 日志<br>
+                4. 确认buttonText值是否正确
+            `;
+        }
+
+        function checkAllComponents() {
+            const components = [
+                { id: 'test-component-1', name: 'Initial Test' },
+                { id: 'test-component-2', name: 'With ButtonText' },
+                { id: 'test-component-3', name: 'Dynamic Test' }
+            ];
+
+            let results = '<strong>所有组件检查结果:</strong><br><br>';
+
+            components.forEach(comp => {
+                const component = document.getElementById(comp.id);
+                const result = checkComponent(component, comp.name);
+                results += result + '<br>';
+            });
+
+            document.getElementById('status').innerHTML = results;
+        }
+
+        function checkComponent(component, name) {
+            const expectedValue = component.getAttribute('button-text') || 'Create task';
+            const propertyValue = component.buttonText;
+
+            if (component.shadowRoot) {
+                const ixButton = component.shadowRoot.querySelector('ix-button');
+                if (ixButton) {
+                    const buttonTextContent = ixButton.textContent.trim();
+
+                    return `
+                        <strong>${name}:</strong><br>
+                        &nbsp;&nbsp;HTML属性 button-text: "${expectedValue}"<br>
+                        &nbsp;&nbsp;JS属性 buttonText: "${propertyValue}"<br>
+                        &nbsp;&nbsp;实际button文本: "${buttonTextContent}"<br>
+                        &nbsp;&nbsp;结果: ${expectedValue === buttonTextContent ? '✅ 成功' : '❌ 失败'}
+                    `;
+                } else {
+                    return `<strong>${name}:</strong> ❌ 找不到ix-button元素`;
+                }
+            } else {
+                return `<strong>${name}:</strong> ❌ 无法访问shadow DOM`;
+            }
+        }
+    </script>
+</body>
+</html>

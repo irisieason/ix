@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Text Test</title>
+    <script type="module" src="packages/core/components/ix-event-item-content.js"></script>
+    <script type="module" src="packages/core/components/ix-typography.js"></script>
+    <script type="module" src="packages/core/components/ix-icon.js"></script>
+    <script type="module" src="packages/core/components/ix-icon-button.js"></script>
+    <script type="module" src="packages/core/components/ix-button.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Button Text Test</h1>
+
+    <div style="margin: 20px 0;">
+        <label>修改Button文本: </label>
+        <input type="text" id="text-input" value="create" />
+        <button onclick="updateButtonText()">更新</button>
+    </div>
+
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component"
+            type-icon="test"
+            type-header="Button Text Test"
+            header-info="测试Button文本更新"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="primary"
+            button-text="Create task">
+        </ix-event-item-content>
+    </div>
+
+    <div style="margin: 20px 0;">
+        <button onclick="testVariant()">测试Variant (应该正常)</button>
+        <button onclick="testDisabled()">测试Disabled (应该正常)</button>
+    </div>
+
+    <div id="status" style="margin: 20px 0; padding: 10px; background: #e8f4fd;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const component = document.getElementById('test-component');
+            component.instance = {
+                iXIcons: {
+                    icon: {
+                        name: 'share'
+                    }
+                }
+            };
+
+            // 初始检查
+            setTimeout(checkButtonText, 1000);
+        });
+
+        function updateButtonText() {
+            const input = document.getElementById('text-input');
+            const component = document.getElementById('test-component');
+            const newValue = input.value;
+
+            component.setAttribute('button-text', newValue);
+
+            document.getElementById('status').innerHTML = `
+                <strong>已更新button-text为:</strong> "${newValue}"<br>
+                <em>检查中...</em>
+            `;
+
+            setTimeout(checkButtonText, 500);
+        }
+
+        function testVariant() {
+            const component = document.getElementById('test-component');
+            const currentVariant = component.getAttribute('variant');
+            const newVariant = currentVariant === 'primary' ? 'secondary' : 'primary';
+
+            component.setAttribute('variant', newVariant);
+
+            document.getElementById('status').innerHTML = `
+                <strong>已更新variant为:</strong> "${newVariant}"<br>
+                <em>这个应该正常工作</em>
+            `;
+        }
+
+        function testDisabled() {
+            const component = document.getElementById('test-component');
+            const currentDisabled = component.getAttribute('disabled') === 'true';
+            const newDisabled = !currentDisabled;
+
+            if (newDisabled) {
+                component.setAttribute('disabled', 'true');
+            } else {
+                component.removeAttribute('disabled');
+            }
+
+            document.getElementById('status').innerHTML = `
+                <strong>已更新disabled为:</strong> "${newDisabled}"<br>
+                <em>这个应该正常工作</em>
+            `;
+        }
+
+        function checkButtonText() {
+            const component = document.getElementById('test-component');
+            const expectedValue = component.getAttribute('button-text');
+
+            if (component.shadowRoot) {
+                const ixButton = component.shadowRoot.querySelector('ix-button');
+                if (ixButton) {
+                    const buttonTextContent = ixButton.textContent.trim();
+
+                    const status = document.getElementById('status');
+                    status.innerHTML = `
+                        <strong>检查结果:</strong><br>
+                        EventItemContent button-text属性: "${expectedValue}"<br>
+                        ix-button实际文本内容: "${buttonTextContent}"<br>
+                        <strong>结果:</strong> ${expectedValue === buttonTextContent ? '✅ 成功' : '❌ 失败'}
+                    `;
+                } else {
+                    document.getElementById('status').innerHTML = '❌ 找不到ix-button元素';
+                }
+            } else {
+                document.getElementById('status').innerHTML = '❌ 无法访问EventItemContent的shadow DOM';
+            }
+        }
+    </script>
+</body>
+</html>

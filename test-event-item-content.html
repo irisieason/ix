@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventItemContent Test</title>
+    <script type="module" src="packages/core/components/ix-event-item-content.js"></script>
+    <script type="module" src="packages/core/components/ix-typography.js"></script>
+    <script type="module" src="packages/core/components/ix-icon.js"></script>
+    <script type="module" src="packages/core/components/ix-icon-button.js"></script>
+    <script type="module" src="packages/core/components/ix-button.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>EventItemContent Component Test</h1>
+
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="distribution"
+            type-header="Update available"
+            header-info="V2.3 › V2.5"
+            device-name="robo1-net-sw17"
+            device-info="172.19.65.8"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            icon-button-variant="subtle-tertiary"
+            icon-button-icon="share"
+            button-variant="secondary">
+            <span slot="button-text">Create task</span>
+        </ix-event-item-content>
+    </div>
+
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            type-icon="error"
+            type-header="Critical Error"
+            header-info="System failure detected"
+            device-name="main-server"
+            device-info="192.168.1.10"
+            datestamp="2026-01-05"
+            timestamp="16:22:10"
+            icon-button-variant="subtle-primary"
+            icon-button-icon="warning"
+            button-variant="primary">
+            <span slot="button-text">Investigate</span>
+        </ix-event-item-content>
+    </div>
+</body>
+</html>

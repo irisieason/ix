@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple ARIA Test</title>
+    <script type="module" src="packages/core/components/ix-event-item-content.js"></script>
+    <script type="module" src="packages/core/components/ix-typography.js"></script>
+    <script type="module" src="packages/core/components/ix-icon.js"></script>
+    <script type="module" src="packages/core/components/ix-icon-button.js"></script>
+    <script type="module" src="packages/core/components/ix-button.js"></script>
+    <link rel="stylesheet" href="packages/core/dist/siemens-ix/siemens-ix.css">
+</head>
+<body>
+    <h1>Simple ARIA Test</h1>
+
+    <div style="margin: 20px 0;">
+        <label>修改ARIA Label: </label>
+        <input type="text" id="aria-input" value="测试ARIA标签" />
+        <button onclick="updateAriaLabel()">更新</button>
+    </div>
+
+    <div style="width: 800px; border: 1px solid #ccc; margin: 20px 0;">
+        <ix-event-item-content
+            id="test-component"
+            type-icon="accessibility"
+            type-header="ARIA Test"
+            header-info="测试ARIA标签传递"
+            device-name="test-device"
+            device-info="test-info"
+            datestamp="2026-01-05"
+            timestamp="08:51:21"
+            variant="primary"
+            aria-label-button="初始ARIA标签">
+            Create Task
+        </ix-event-item-content>
+    </div>
+
+    <div id="status" style="margin: 20px 0; padding: 10px; background: #e8f4fd;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const component = document.getElementById('test-component');
+            component.instance = {
+                iXIcons: {
+                    icon: {
+                        name: 'share'
+                    }
+                }
+            };
+
+            // 初始检查
+            setTimeout(checkAriaLabel, 1000);
+        });
+
+        function updateAriaLabel() {
+            const input = document.getElementById('aria-input');
+            const component = document.getElementById('test-component');
+            const newValue = input.value;
+
+            component.setAttribute('aria-label-button', newValue);
+
+            document.getElementById('status').innerHTML = `
+                <strong>已更新aria-label-button为:</strong> "${newValue}"<br>
+                <em>检查中...</em>
+            `;
+
+            setTimeout(checkAriaLabel, 500);
+        }
+
+        function checkAriaLabel() {
+            const component = document.getElementById('test-component');
+            const expectedValue = component.getAttribute('aria-label-button');
+
+            if (component.shadowRoot) {
+                const ixButton = component.shadowRoot.querySelector('ix-button');
+                if (ixButton) {
+                    const ixButtonAriaLabel = ixButton.getAttribute('aria-label-button');
+
+                    if (ixButton.shadowRoot) {
+                        const actualButton = ixButton.shadowRoot.querySelector('button');
+                        const actualAriaLabel = actualButton ? actualButton.getAttribute('aria-label') : null;
+
+                        const status = document.getElementById('status');
+                        status.innerHTML = `
+                            <strong>检查结果:</strong><br>
+                            1. EventItemContent aria-label-button: "${expectedValue}"<br>
+                            2. ix-button aria-label-button: "${ixButtonAriaLabel}"<br>
+                            3. 实际button aria-label: "${actualAriaLabel}"<br><br>
+                            <strong>传递状态:</strong><br>
+                            EventItemContent → ix-button: ${expectedValue === ixButtonAriaLabel ? '✅ 成功' : '❌ 失败'}<br>
+                            ix-button → button: ${ixButtonAriaLabel === actualAriaLabel ? '✅ 成功' : '❌ 失败'}<br>
+                            整体: ${expectedValue === actualAriaLabel ? '✅ 完全成功' : '❌ 有问题'}
+                        `;
+                    } else {
+                        document.getElementById('status').innerHTML = '❌ 无法访问ix-button的shadow DOM';
+                    }
+                } else {
+                    document.getElementById('status').innerHTML = '❌ 找不到ix-button元素';
+                }
+            } else {
+                document.getElementById('status').innerHTML = '❌ 无法访问EventItemContent的shadow DOM';
+            }
+        }
+    </script>
+</body>
+</html>

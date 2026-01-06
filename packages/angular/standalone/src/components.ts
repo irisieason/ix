@@ -1096,14 +1096,14 @@ export declare interface IxEmptyState extends Components.IxEmptyState {
 
 @ProxyCmp({
   defineCustomElementFn: defineIxEventItemContent,
-  inputs: ['createTaskButtonText', 'deviceInfo', 'deviceName', 'headerInfo', 'icon', 'showCreateTaskButton', 'showShareButton', 'timestamp', 'typeHeader']
+  inputs: ['alignment', 'ariaLabelButton', 'buttonDisabled', 'buttonIcon', 'buttonLoading', 'buttonType', 'buttonVariant', 'datestamp', 'deviceInfo', 'deviceName', 'form', 'headerInfo', 'href', 'iconButtonA11yLabel', 'iconButtonDisabled', 'iconButtonIcon', 'iconButtonLoading', 'iconButtonSize', 'iconButtonType', 'iconButtonVariant', 'iconColor', 'iconRight', 'iconSize', 'oval', 'rel', 'target', 'timestamp', 'typeHeader', 'typeIcon']
 })
 @Component({
   selector: 'ix-event-item-content',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['createTaskButtonText', 'deviceInfo', 'deviceName', 'headerInfo', 'icon', 'showCreateTaskButton', 'showShareButton', 'timestamp', 'typeHeader'],
+  inputs: ['alignment', 'ariaLabelButton', 'buttonDisabled', 'buttonIcon', 'buttonLoading', 'buttonType', 'buttonVariant', 'datestamp', 'deviceInfo', 'deviceName', 'form', 'headerInfo', 'href', 'iconButtonA11yLabel', 'iconButtonDisabled', 'iconButtonIcon', 'iconButtonLoading', 'iconButtonSize', 'iconButtonType', 'iconButtonVariant', 'iconColor', 'iconRight', 'iconSize', 'oval', 'rel', 'target', 'timestamp', 'typeHeader', 'typeIcon'],
 })
 export class IxEventItemContent {
   protected el: HTMLIxEventItemContentElement;
