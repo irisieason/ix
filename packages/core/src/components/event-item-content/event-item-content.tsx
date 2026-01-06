@@ -25,33 +25,22 @@ export class EventItemContent {
   @Prop() datestamp: string = '2026-01-05';
   @Prop() timestamp: string = '08:51:21';
 
-  // Button text content comes from slot, no custom property needed
+  // Control visibility
+  @Prop() showIconButton: boolean = true;
+  @Prop() showButton: boolean = true;
 
-  // Button directory - ix-button native properties
-  @Prop({ reflect: true }) ariaLabelButton?: string;
-  @Prop({ reflect: true }) buttonVariant: 'primary' | 'secondary' | 'tertiary' | 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary' = 'primary';
-  @Prop({ reflect: true }) buttonDisabled: boolean = false;
-  @Prop({ reflect: true }) buttonType: 'button' | 'submit' = 'button';
-  @Prop({ reflect: true }) buttonLoading: boolean = false;
-  @Prop({ reflect: true }) form?: string;
-  @Prop({ reflect: true }) buttonIcon?: string;
-  @Prop({ reflect: true }) iconRight?: string;
-  @Prop({ reflect: true }) alignment: 'center' | 'start' = 'center';
-  @Prop({ reflect: true }) iconSize: '12' | '16' | '24' = '24';
-  @Prop({ reflect: true }) href?: string;
-  @Prop({ reflect: true }) target?: '_self' | '_blank' | '_parent' | '_top' = '_self';
-  @Prop({ reflect: true }) rel?: string;
+  // Icon Button Properties (完全对应原生属性)
+  @Prop() iconButtonIcon?: string = 'share';
+  @Prop() iconButtonVariant: 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'primary' | 'secondary' | 'tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary' = 'subtle-tertiary';
+  @Prop() iconButtonDisabled: boolean = false;
 
-  // ShareIconButton directory - ix-icon-button native properties (directly exposed)
-  @Prop({ reflect: true }) iconButtonA11yLabel?: string;
-  @Prop({ reflect: true }) iconButtonVariant: 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'primary' | 'secondary' | 'tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary' = 'subtle-tertiary';
-  @Prop({ reflect: true }) oval: boolean = false;
-  @Prop({ reflect: true }) iconButtonIcon?: string = 'share';
-  @Prop({ reflect: true }) iconButtonSize: '24' | '16' | '12' = '24';
-  @Prop({ reflect: true }) iconColor?: string;
-  @Prop({ reflect: true }) iconButtonDisabled: boolean = false;
-  @Prop({ reflect: true }) iconButtonType: 'button' | 'submit' = 'button';
-  @Prop({ reflect: true }) iconButtonLoading: boolean = false;
+  // Button Properties (完全对应原生属性)
+  @Prop() buttonVariant: 'primary' | 'secondary' | 'tertiary' | 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary' = 'primary';
+  @Prop() buttonDisabled: boolean = false;
+  @Prop() buttonIcon?: string;
+
+  // Button text content (便利属性，控制默认slot内容)
+  @Prop() buttonText: string = 'Create task';
 
   render() {
     return (
@@ -97,35 +86,32 @@ export class EventItemContent {
 
           {/* Actions Column */}
           <div class="actions-column">
-            <ix-icon-button
-              a11yLabel={this.iconButtonA11yLabel}
-              icon={this.iconButtonIcon}
-              variant={this.iconButtonVariant}
-              oval={this.oval}
-              size={this.iconButtonSize}
-              iconColor={this.iconColor}
-              disabled={this.iconButtonDisabled}
-              type={this.iconButtonType}
-              loading={this.iconButtonLoading}
-            ></ix-icon-button>
+            {/* Icon Button - 混合方式：slot + 默认子组件 */}
+            <slot name="icon-button">
+              {this.showIconButton && (
+                <ix-icon-button
+                  icon={this.iconButtonIcon}
+                  variant={this.iconButtonVariant}
+                  disabled={this.iconButtonDisabled}
+                ></ix-icon-button>
+              )}
+            </slot>
 
-            <ix-button
-              ariaLabelButton={this.ariaLabelButton}
-              variant={this.buttonVariant}
-              disabled={this.buttonDisabled}
-              type={this.buttonType}
-              loading={this.buttonLoading}
-              form={this.form}
-              icon={this.buttonIcon}
-              iconRight={this.iconRight}
-              alignment={this.alignment}
-              iconSize={this.iconSize}
-              href={this.href}
-              target={this.target}
-              rel={this.rel}
-            >
-              <slot name="button-text">Create task</slot>
-            </ix-button>
+            {/* Button - 混合方式：slot + 默认子组件 */}
+            <slot name="button">
+              {this.showButton && (
+                <ix-button
+                  variant={this.buttonVariant}
+                  disabled={this.buttonDisabled}
+                  icon={this.buttonIcon}
+                >
+                  <slot name="button-text">{this.buttonText}</slot>
+                </ix-button>
+              )}
+            </slot>
+
+            {/* Additional actions slot */}
+            <slot name="additional-actions"></slot>
           </div>
         </div>
       </Host>

@@ -47,129 +47,36 @@ export interface EventItemContentData {
   timestamp?: string;
 
   /**
-   * Legacy combined timestamp property (can be single line or comma-separated date and time)
-   * Examples: "2026-01-05, 08:51:21" or "2026-01-05 08:51:21"
-   * @deprecated Use datestamp and timestamp instead
+   * Show default icon button (share button)
+   * Set to false if you want to provide custom icon button via slot
    */
-  legacyTimestamp?: string;
-
-  // ShareIconButton directory - contains IconButton native properties
-  /**
-   * IconButton variant (native IconButton.variant)
-   */
-  shareVariant?: 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'primary' | 'secondary' | 'tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
+  showDefaultIconButton?: boolean;
 
   /**
-   * Button in oval shape (native IconButton.oval)
+   * Show default button (Create task button)
+   * Set to false if you want to provide custom button via slot
    */
-  oval?: boolean;
+  showDefaultButton?: boolean;
 
   /**
-   * Icon name (native IconButton.icon)
+   * Default icon button icon name
    */
-  shareIcon?: string;
+  defaultIconButtonIcon?: string;
 
   /**
-   * Size of icon in button (native IconButton.size)
+   * Default icon button variant
    */
-  shareSize?: '24' | '16' | '12';
+  defaultIconButtonVariant?: 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'primary' | 'secondary' | 'tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
 
   /**
-   * Color of icon in button (native IconButton.iconColor)
+   * Default button text
    */
-  shareIconColor?: string;
+  defaultButtonText?: string;
 
   /**
-   * IconButton disabled state (native IconButton.disabled)
+   * Default button variant
    */
-  shareDisabled?: boolean;
-
-  /**
-   * Type of the button (native IconButton.type)
-   */
-  shareType?: 'button' | 'submit';
-
-  /**
-   * IconButton loading state (native IconButton.loading)
-   */
-  shareLoading?: boolean;
-
-  /**
-   * IconButton Instance - contains iXIcons component (fallback for shareIcon)
-   */
-  instance?: {
-    iXIcons?: {
-      icon?: {
-        name?: string;
-      };
-    };
-  };
-
-  // Button directory - contains ix-button native properties
-  /**
-   * ARIA label for button (native Button.ariaLabelButton)
-   */
-  ariaLabelButton?: string;
-
-  /**
-   * Button variant (native Button.variant)
-   */
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
-
-  /**
-   * Button disabled state (native Button.disabled)
-   */
-  disabled?: boolean;
-
-  /**
-   * Button type (native Button.type)
-   */
-  type?: 'button' | 'submit';
-
-  /**
-   * Button loading state (native Button.loading)
-   */
-  loading?: boolean;
-
-  /**
-   * Form element ID (native Button.form)
-   */
-  form?: string;
-
-  /**
-   * Button icon name (native Button.icon)
-   */
-  icon?: string;
-
-  /**
-   * Button right icon name (native Button.iconRight)
-   */
-  iconRight?: string;
-
-  /**
-   * Button alignment (native Button.alignment)
-   */
-  alignment?: 'center' | 'start';
-
-  /**
-   * Button icon size (native Button.iconSize)
-   */
-  iconSize?: '12' | '16' | '24';
-
-  /**
-   * Button link URL (native Button.href)
-   */
-  href?: string;
-
-  /**
-   * Link target (native Button.target)
-   */
-  target?: '_self' | '_blank' | '_parent' | '_top';
-
-  /**
-   * Link relationship (native Button.rel)
-   */
-  rel?: string;
+  defaultButtonVariant?: 'primary' | 'secondary' | 'tertiary' | 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
 }
 
 /**

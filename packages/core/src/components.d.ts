@@ -1509,23 +1509,14 @@ export namespace Components {
     }
     interface IxEventItemContent {
         /**
-          * @default 'center'
-         */
-        "alignment": 'center' | 'start';
-        "ariaLabelButton"?: string;
-        /**
           * @default false
          */
         "buttonDisabled": boolean;
         "buttonIcon"?: string;
         /**
-          * @default false
+          * @default 'Create task'
          */
-        "buttonLoading": boolean;
-        /**
-          * @default 'button'
-         */
-        "buttonType": 'button' | 'submit';
+        "buttonText": string;
         /**
           * @default 'primary'
          */
@@ -1542,13 +1533,10 @@ export namespace Components {
           * @default 'robo1-net-sw17'
          */
         "deviceName": string;
-        "form"?: string;
         /**
           * @default 'V2.3 › V2.5'
          */
         "headerInfo": string;
-        "href"?: string;
-        "iconButtonA11yLabel"?: string;
         /**
           * @default false
          */
@@ -1558,36 +1546,17 @@ export namespace Components {
          */
         "iconButtonIcon"?: string;
         /**
-          * @default false
-         */
-        "iconButtonLoading": boolean;
-        /**
-          * @default '24'
-         */
-        "iconButtonSize": '24' | '16' | '12';
-        /**
-          * @default 'button'
-         */
-        "iconButtonType": 'button' | 'submit';
-        /**
           * @default 'subtle-tertiary'
          */
         "iconButtonVariant": 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'primary' | 'secondary' | 'tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
-        "iconColor"?: string;
-        "iconRight"?: string;
         /**
-          * @default '24'
+          * @default true
          */
-        "iconSize": '12' | '16' | '24';
+        "showButton": boolean;
         /**
-          * @default false
+          * @default true
          */
-        "oval": boolean;
-        "rel"?: string;
-        /**
-          * @default '_self'
-         */
-        "target"?: '_self' | '_blank' | '_parent' | '_top';
+        "showIconButton": boolean;
         /**
           * @default '08:51:21'
          */
@@ -7541,23 +7510,14 @@ declare namespace LocalJSX {
     }
     interface IxEventItemContent {
         /**
-          * @default 'center'
-         */
-        "alignment"?: 'center' | 'start';
-        "ariaLabelButton"?: string;
-        /**
           * @default false
          */
         "buttonDisabled"?: boolean;
         "buttonIcon"?: string;
         /**
-          * @default false
+          * @default 'Create task'
          */
-        "buttonLoading"?: boolean;
-        /**
-          * @default 'button'
-         */
-        "buttonType"?: 'button' | 'submit';
+        "buttonText"?: string;
         /**
           * @default 'primary'
          */
@@ -7574,13 +7534,10 @@ declare namespace LocalJSX {
           * @default 'robo1-net-sw17'
          */
         "deviceName"?: string;
-        "form"?: string;
         /**
           * @default 'V2.3 › V2.5'
          */
         "headerInfo"?: string;
-        "href"?: string;
-        "iconButtonA11yLabel"?: string;
         /**
           * @default false
          */
@@ -7590,36 +7547,17 @@ declare namespace LocalJSX {
          */
         "iconButtonIcon"?: string;
         /**
-          * @default false
-         */
-        "iconButtonLoading"?: boolean;
-        /**
-          * @default '24'
-         */
-        "iconButtonSize"?: '24' | '16' | '12';
-        /**
-          * @default 'button'
-         */
-        "iconButtonType"?: 'button' | 'submit';
-        /**
           * @default 'subtle-tertiary'
          */
         "iconButtonVariant"?: 'subtle-primary' | 'subtle-secondary' | 'subtle-tertiary' | 'primary' | 'secondary' | 'tertiary' | 'danger-primary' | 'danger-secondary' | 'danger-tertiary';
-        "iconColor"?: string;
-        "iconRight"?: string;
         /**
-          * @default '24'
+          * @default true
          */
-        "iconSize"?: '12' | '16' | '24';
+        "showButton"?: boolean;
         /**
-          * @default false
+          * @default true
          */
-        "oval"?: boolean;
-        "rel"?: string;
-        /**
-          * @default '_self'
-         */
-        "target"?: '_self' | '_blank' | '_parent' | '_top';
+        "showIconButton"?: boolean;
         /**
           * @default '08:51:21'
          */
